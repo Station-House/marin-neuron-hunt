@@ -120,8 +120,10 @@ strongest neurons. Check it with the `deep` tier in `fineweb-1m`, or request an 
 
 ## Credit
 
-Every explanation, request and result names its author in `by`. Credit shows on your Station House profile
-through the project's task cards, and will show on the public coverage map once it launches.
+Every explanation, request and result names its author in `by`. On Station House, a merged PR counts for a task
+card when its title or description names the card's id: `marin-explain-neuron` for an explanation,
+`marin-request-experiment` for a request. It's credited to the GitHub account verified on your Station House
+profile. Credit will also show on the public coverage map once it launches.
 
 ## Repo layout
 

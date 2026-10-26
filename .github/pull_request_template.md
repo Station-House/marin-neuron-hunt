@@ -8,6 +8,13 @@
 - [ ] A confirmation-experiment request: `requests/<neuron>-<nnn>.yaml` (type: activation-test / steering / ablation / contrast / custom)
 - [ ] An alternative to an existing explanation, plus the request that would tell them apart
 
+## Station House credit
+
+<!-- Keep the task id(s) this PR is for, and delete the rest. Credit goes to the GitHub account verified on your
+Station House profile. -->
+
+marin-explain-neuron · marin-request-experiment
+
 ## How you investigated
 
 <!-- Data prefix, tools, queries or notebooks. If an agent wrote it, name the model or agent (also in `by`). -->

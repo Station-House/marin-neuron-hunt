@@ -1,22 +1,23 @@
-# Worked example. Evidence = exemplar ranks in pilot/fineweb-1m/summaries/exemplars.parquet.
+# FORMAT EXAMPLE ONLY: not an explanation. L40-N25546 is unexplained; this file shows the fields, and lives in
+# examples/ so it doesn't count. A real one goes in explanations/L<layer>/. Evidence = exemplar ranks in
+# pilot/fineweb-1m/summaries/exemplars.parquet.
 neuron: L40-N25546
 data: pilot/fineweb-1m
 label: "expects a reversal: and/or before vice versa"
 positive:
-  status: explained
-  confidence: high
+  status: unclear
   cue_type: next-token
   explanation: >-
     Fires on "and" / "or" (and on "vice" itself) when the text is about to say the reverse also holds, as in
     "X disagrees or vice versa". The logit lens agrees: this side pushes " vice", " Conversely", " converse",
-    " likewise".
+    " likewise". Only about a quarter of its strong firings come right before "versa"; many precede other
+    mirror phrases ("conversely", "the other way around"), so the label may be too narrow.
   fires_on: "'and'/'or' right before 'vice versa', and 'vice' in 'vice versa'"
-  not_on: "ordinary list conjunctions such as 'salt and pepper' (untested; see requests/L40-N25546-001.yaml)"
+  not_on: "ordinary list conjunctions such as 'salt and pepper' (untested; see examples/L40-N25546-001.yaml)"
   evidence: [1, 2, 3, 5, 7, 9, 10, 14]
   verification: requested
 negative:
-  status: explained
-  confidence: weak
+  status: unclear
   cue_type: phrase-idiom
   explanation: >-
     Much weaker (min -14 vs max +93). Fires mostly on "other" in "on the other hand", another way of

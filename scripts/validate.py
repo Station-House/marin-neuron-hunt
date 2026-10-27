@@ -1,4 +1,5 @@
 """Checks every explanation and request file against its schema and the repo's naming rules.
+examples/ is checked against the schemas too, but not the location rules.
 
 Usage: python scripts/validate.py
 """
@@ -42,10 +43,10 @@ def schema_errors(validator, data, path, errors):
         errors.append(f"{path}: {where}: {err.message}")
 
 
-def check_explanation(path, data, validator, errors):
+def check_explanation(path, data, validator, errors, example=False):
     schema_errors(validator, data, path, errors)
     neuron = data.get("neuron")
-    if isinstance(neuron, str):
+    if isinstance(neuron, str) and not example:
         layer = neuron.split("-")[0]
         expected = ROOT / "explanations" / layer / f"{neuron}.yaml"
         if path != expected:
@@ -53,7 +54,7 @@ def check_explanation(path, data, validator, errors):
     label = data.get("label")
     if isinstance(label, str) and len(label.split()) > 8:
         errors.append(f"{path}: label has {len(label.split())} words; keep it to 8")
-    requests_dir = ROOT / "requests"
+    requests_dir = ROOT / ("examples" if example else "requests")
     for alt in data.get("alternatives") or []:
         rid = alt.get("discriminating_request") if isinstance(alt, dict) else None
         if isinstance(rid, str) and not (requests_dir / f"{rid}.yaml").exists():
@@ -88,6 +89,15 @@ def main():
         data = load_yaml(path, errors)
         if data is not None:
             check_request(path, data, validators["request"], errors)
+    for path in sorted((ROOT / "examples").glob("*.yaml")):
+        count += 1
+        data = load_yaml(path, errors)
+        if data is None:
+            continue
+        if REQUEST_ID.match(path.stem):
+            check_request(path, data, validators["request"], errors)
+        else:
+            check_explanation(path, data, validators["explanation"], errors, example=True)
     for message in errors:
         print(message)
     print(f"checked {count} files: {'OK' if not errors else f'{len(errors)} problem(s)'}")

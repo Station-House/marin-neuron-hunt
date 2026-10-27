@@ -6,7 +6,7 @@ exactly what was merged.
 
 Pick a type from the menu, or design your own (type E). Copy the template into
 `requests/<neuron>-<nnn>.yaml`, where `<nnn>` numbers the requests for that neuron (`001`, `002`, …).
-[`requests/L40-N25546-001.yaml`](requests/L40-N25546-001.yaml) is a complete example.
+[`examples/L40-N25546-001.yaml`](examples/L40-N25546-001.yaml) is a complete example.
 
 All runs use Marin 32B (`marin-community/marin-32b-base` @ `f19b3466`, bf16), the atlas's definition of
 activation (`act = silu(gate) * up`), and the atlas's per-neuron thresholds from

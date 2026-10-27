@@ -1,3 +1,4 @@
+# FORMAT EXAMPLE ONLY: not a live request. A real one goes in requests/<neuron>-<nnn>.yaml.
 type: activation-test
 neuron: L40-N25546
 side: "+"

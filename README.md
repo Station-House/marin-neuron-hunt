@@ -116,7 +116,15 @@ strongest neurons. Check it with the `deep` tier in `fineweb-1m`, or request an 
 - **One file per neuron.** If you disagree with a merged explanation, open a PR that adds your version under
   `alternatives:` in the same file, together with an experiment that would tell the two apart. The result
   decides which one becomes the main explanation.
-- **Claiming a neuron:** opening a draft PR is the claim. Claims with no activity for 7 days lapse.
+- **Claiming a neuron:** claim it on Station House (the project's Neurons tab) so nobody else takes it while
+  you work. One person holds a neuron at a time, and you can hold up to 5. A claim lapses after 7 days without
+  activity; opening a PR for it stops the clock. A draft PR on an unclaimed neuron also claims it, once
+  Station House sees it. Either way you need your GitHub account verified on your Station House profile.
+- **Challenging an explanation:** an explained neuron can be claimed again by someone who thinks the
+  explanation is wrong or incomplete. Their PR follows the alternatives rule above.
+- **CI checks claims:** a PR that changes the explanation of a neuron someone else holds fails the `claims`
+  check. List every neuron whose explanation your PR changes under `## Neuron(s)` (or in the title); that list
+  is how Station House links the PR to your claim.
 
 ## Credit
 

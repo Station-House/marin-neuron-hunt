@@ -57,7 +57,8 @@ WHERE e.layer = 40 AND e.neuron = 25546 AND e.pole = 1 ORDER BY e.rank LIMIT 10;
 ## The explanation format
 
 One YAML file per neuron, checked against [`schema/explanation.schema.json`](schema/explanation.schema.json).
-[`explanations/L40/L40-N25546.yaml`](explanations/L40/L40-N25546.yaml) is a complete example.
+[`examples/L40-N25546.yaml`](examples/L40-N25546.yaml) shows every field. It's a format example, not an explanation:
+L40-N25546 is still unexplained.
 
 | field | meaning |
 |---|---|
@@ -139,6 +140,7 @@ profile. Credit will also show on the public coverage map once it launches.
 explanations/L<layer>/L<layer>-N<neuron>.yaml   one per neuron, both sides
 requests/<neuron>-<nnn>.yaml                    confirmation-experiment requests
 results/<neuron>-<nnn>.yaml                     written by the daily runner
+examples/                                       format examples (don't count as explanations)
 schema/                                         JSON Schemas for the above
 scripts/validate.py                             the check CI runs on every PR
 ```

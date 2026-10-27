@@ -144,6 +144,7 @@ requests/<request id>/DESIGN.md                 the design of a custom (type E) 
 examples/                                       format examples (don't count as explanations)
 schema/                                         JSON Schemas for the above
 scripts/validate.py                             the check CI runs on every PR
+scripts/check_design.py                         the design check CI runs on request PRs
 ```
 
 Run the check locally: `pip install pyyaml jsonschema && python scripts/validate.py`.

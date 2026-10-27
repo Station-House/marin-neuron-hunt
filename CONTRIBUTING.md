@@ -48,10 +48,15 @@ them before you write any prompts.
    result would refute your explanation, and what you would change in the explanation if it did.
    A `refuted` result is credited and is useful to everyone.
 
-**Where the design goes.** For types A to D, fill in the `## Design` section of the PR template.
-Keep it to one or two lines per stage. For type E, write `requests/<request id>/DESIGN.md` from
-the [template](#tools), next to your code. A maintainer reads the design before the request is
-merged. After the run, leave it as it was, and put anything that changed in the PR.
+**Where the design goes, and the check.** A design is required for every request. For types A to D,
+fill in the `## Design` section of the PR template, keeping it to one or two lines per stage. For
+type E, write `requests/<request id>/DESIGN.md` from the [template](#tools), next to your code.
+
+The `design` CI check fails any PR that adds or changes a request without one. Each of the six
+stages must be filled in, and Controls must name a baseline. Editing the PR description re-runs the
+check. Run it locally with `python scripts/check_design.py <file>`. A maintainer still reads the
+design before merging: passing the check means nothing is missing, not that the design is good.
+After the run, leave the design as it was, and put anything that changed in the PR.
 
 **Order of tests.** Start with an activation test (A) or a contrast test (D). They are cheap, and a
 failure tells you exactly which prompts broke. Move on to steering (B) or ablation (C) only once the
@@ -66,7 +71,7 @@ stationhouse design check requests/L40-N25546-002/DESIGN.md # missing pieces (no
 stationhouse design review requests/L40-N25546-002/DESIGN.md  # a critique from the Station House assistant
 ```
 
-`check` also works on a PR description saved to a file, as long as it has the six `### ...`
+`stationhouse design check` uses the same rules as the CI check. It also works on a PR description saved to a file, as long as it has the six `### ...`
 headings under `## Design`. It finds missing pieces, not bad ideas. For the thinking, ask in the
 [atlas discussions](https://huggingface.co/datasets/Station-house/marin-32b-neuron-atlas/discussions),
 use `design review`, or use a coding agent. Claude Code, Codex and Cursor read [AGENTS.md](AGENTS.md)

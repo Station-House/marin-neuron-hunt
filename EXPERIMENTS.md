@@ -4,7 +4,7 @@ Every request names **one neuron side** (or a set of neurons), states a **predic
 rule** before anything runs. Write your prompts and prediction before you see any result: the daily runner uses
 exactly what was merged.
 
-Before writing one, work through the six design stages in [CONTRIBUTING.md](CONTRIBUTING.md#designing-a-request):
+Every request needs a design, and CI fails a request PR without one. Before writing one, work through the six design stages in [CONTRIBUTING.md](CONTRIBUTING.md#designing-a-request):
 the claim, what's measured, the controls (near misses, random neurons), fresh prompts, noise and the
 result that would refute you.
 

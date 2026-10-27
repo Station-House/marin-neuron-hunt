@@ -22,7 +22,8 @@ marin-explain-neuron · marin-request-experiment
 
 ## Design
 
-<!-- For a confirmation-experiment request; delete this section for an explanation-only PR. One or two
+<!-- Required for a confirmation-experiment request (CI's `design` check fails without it); delete this
+section for an explanation-only PR. One or two
 lines each, written before any result. See CONTRIBUTING.md, "Designing a request". Type E: put it in
 requests/<request id>/DESIGN.md instead and link it here. -->
 
@@ -54,5 +55,5 @@ requests/<request id>/DESIGN.md instead and link it here. -->
 
 - [ ] `python scripts/validate.py` passes
 - [ ] I wrote the request's prompts and prediction before seeing any result for them
-- [ ] The `## Design` section is filled in (`stationhouse design check` on the saved description passes)
+- [ ] The `## Design` section is filled in (the `design` check passes)
 - [ ] Each marked `[[target]]` is a single token for the Marin tokenizer

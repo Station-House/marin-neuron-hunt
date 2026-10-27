@@ -34,8 +34,9 @@ evidence holds up, act as their design partner. Don't design it for them.
    - Are there document-start, boundary or mid-word artifacts?
    - Is every target a single token?
    - Are the expected activations well clear of the threshold?
-4. **Check it** with `stationhouse design check <file> --json`, which also works on a saved PR
-   description. Fix the errors with them, and talk through each warning.
+4. **Check it** with `python scripts/check_design.py <file>` (or `stationhouse design check <file> --json`),
+   which also works on a saved PR description. CI runs the same check, and a request PR can't merge
+   while it fails. Fix the errors with them, and talk through each warning.
 5. **Red-team it before it's submitted.**
    - What simpler explanation would pass the same prompts: the token alone, the position, the
      document type?

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Marin confirmation-experiment request",
+  "description": "requests/<neuron>-<nnn>.yaml. See EXPERIMENTS.md for what each type measures and its pass rule.",
+  "type": "object",
+  "required": ["type", "by"],
+  "properties": {
+    "type": {"enum": ["activation-test", "steering", "ablation", "contrast", "custom"]}
+  },
+  "$defs": {
+    "neuron": {"$ref": "explanation.schema.json#/$defs/neuron"},
+    "side": {"enum": ["+", "-"]},
+    "prompt": {"type": "string", "pattern": "\\[\\[[^\\]]+\\]\\]", "maxLength": 4000, "description": "mark the target token with [[ ]]"},
+    "prompts": {"type": "array", "minItems": 10, "items": {"$ref": "#/$defs/prompt"}},
+    "by": {"$ref": "explanation.schema.json#/$defs/by"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"type": {"const": "activation-test"}}, "required": ["type"]},
+      "then": {
+        "additionalProperties": false,
+        "required": ["type", "neuron", "side", "hypothesis", "should_fire", "should_not_fire", "by"],
+        "properties": {
+          "type": true,
+          "neuron": {"$ref": "#/$defs/neuron"},
+          "side": {"$ref": "#/$defs/side"},
+          "hypothesis": {"type": "string", "minLength": 1},
+          "should_fire": {"$ref": "#/$defs/prompts"},
+          "should_not_fire": {"$ref": "#/$defs/prompts"},
+          "threshold": {"oneOf": [{"const": "atlas-q99"}, {"type": "number", "exclusiveMinimum": 0}]},
+          "by": {"$ref": "#/$defs/by"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"type": {"const": "steering"}}, "required": ["type"]},
+      "then": {
+        "additionalProperties": false,
+        "required": ["type", "neuron", "side", "prompts", "expect_up", "by"],
+        "properties": {
+          "type": true,
+          "neuron": {"$ref": "#/$defs/neuron"},
+          "side": {"$ref": "#/$defs/side"},
+          "k": {"type": "number", "exclusiveMinimum": 0, "maximum": 20},
+          "prompts": {"$ref": "#/$defs/prompts"},
+          "expect_up": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "expect_down": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "by": {"$ref": "#/$defs/by"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"type": {"const": "ablation"}}, "required": ["type"]},
+      "then": {
+        "additionalProperties": false,
+        "required": ["type", "neurons", "prompts", "metric", "predicted_effect", "by"],
+        "properties": {
+          "type": true,
+          "neurons": {"type": "array", "minItems": 1, "maxItems": 256, "items": {"$ref": "#/$defs/neuron"}},
+          "mode": {"enum": ["zero", "mean"]},
+          "prompts": {"$ref": "#/$defs/prompts"},
+          "metric": {
+            "oneOf": [
+              {"type": "object", "additionalProperties": false, "required": ["kind", "token"], "properties": {"kind": {"const": "next-token-logprob"}, "token": {"type": "string", "minLength": 1}}},
+              {"type": "object", "additionalProperties": false, "required": ["kind"], "properties": {"kind": {"const": "loss"}}}
+            ]
+          },
+          "predicted_effect": {"type": "number"},
+          "by": {"$ref": "#/$defs/by"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"type": {"const": "contrast"}}, "required": ["type"]},
+      "then": {
+        "additionalProperties": false,
+        "required": ["type", "neuron", "side", "pairs", "by"],
+        "properties": {
+          "type": true,
+          "neuron": {"$ref": "#/$defs/neuron"},
+          "side": {"$ref": "#/$defs/side"},
+          "pairs": {
+            "type": "array",
+            "minItems": 10,
+            "items": {"type": "object", "additionalProperties": false, "required": ["high", "low"], "properties": {"high": {"$ref": "#/$defs/prompt"}, "low": {"$ref": "#/$defs/prompt"}}}
+          },
+          "by": {"$ref": "#/$defs/by"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"type": {"const": "custom"}}, "required": ["type"]},
+      "then": {
+        "additionalProperties": false,
+        "required": ["type", "neurons", "title", "procedure", "prediction", "pass_rule", "refuted_if", "compute", "by"],
+        "properties": {
+          "type": true,
+          "neurons": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/neuron"}},
+          "title": {"type": "string", "minLength": 1},
+          "procedure": {"type": "string", "minLength": 1},
+          "prediction": {"type": "string", "minLength": 1},
+          "pass_rule": {"type": "string", "minLength": 1},
+          "refuted_if": {"type": "string", "minLength": 1},
+          "compute": {"type": "string", "minLength": 1},
+          "outputs": {"type": "string"},
+          "by": {"$ref": "#/$defs/by"}
+        }
+      }
+    }
+  ]
+}

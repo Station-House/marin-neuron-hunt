@@ -1,0 +1,33 @@
+# Worked example. Evidence = exemplar ranks in pilot/fineweb-1m/summaries/exemplars.parquet.
+neuron: L40-N25546
+data: pilot/fineweb-1m
+label: "expects a reversal: and/or before vice versa"
+positive:
+  status: explained
+  confidence: high
+  cue_type: next-token
+  explanation: >-
+    Fires on "and" / "or" (and on "vice" itself) when the text is about to say the reverse also holds, as in
+    "X disagrees or vice versa". The logit lens agrees: this side pushes " vice", " Conversely", " converse",
+    " likewise".
+  fires_on: "'and'/'or' right before 'vice versa', and 'vice' in 'vice versa'"
+  not_on: "ordinary list conjunctions such as 'salt and pepper' (untested; see requests/L40-N25546-001.yaml)"
+  evidence: [1, 2, 3, 5, 7, 9, 10, 14]
+  verification: requested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: phrase-idiom
+  explanation: >-
+    Much weaker (min -14 vs max +93). Fires mostly on "other" in "on the other hand", another way of
+    introducing a contrast; several exemplars are unrelated sentence boundaries.
+  fires_on: "'other' in 'on the other hand' (and 'other' more broadly: rank 14 is 'and other pets')"
+  not_on: "untested"
+  evidence: [0, 1, 2, 6, 11, 12, 13, 15]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides mark two-sided comparisons: the positive side anticipates "vice versa", the negative side marks
+  "on the other hand".
+by:
+  - {github: likelytobelaura, method: agent, model: claude-opus-5-5}

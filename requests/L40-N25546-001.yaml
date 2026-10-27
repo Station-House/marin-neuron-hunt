@@ -1,0 +1,34 @@
+type: activation-test
+neuron: L40-N25546
+side: "+"
+hypothesis: >-
+  The positive side fires on "and"/"or" when "vice versa" comes next, and stays below its 99th percentile on
+  ordinary conjunctions.
+should_fire:
+  - "Cats can chase dogs[[ or]] vice versa."
+  - "The teacher learns from the students[[ and]] vice versa."
+  - "Heat can turn ice into water[[ and]] vice versa, depending on the direction."
+  - "You can convert Celsius to Fahrenheit[[ or]] vice versa with this formula."
+  - "Sometimes the husband wants to move and the wife doesn't,[[ or]] vice versa."
+  - "Prices affect demand[[ and]] vice versa."
+  - "A thin blade can be paired with a thick rubber[[ or]] vice versa."
+  - "The left hemisphere controls the right side of the body[[ and]] vice versa."
+  - "Translate the sentence from English into French[[ or]] vice versa."
+  - "Stress can cause poor sleep[[ and]] vice versa."
+  - "Electric current creates a magnetic field[[ and]] vice versa."
+  - "Some players prefer offense to defense[[ or]] vice versa."
+should_not_fire:
+  - "Please pass the salt[[ and]] pepper."
+  - "We bought apples, pears[[ and]] grapes at the market."
+  - "Do you want tea[[ or]] coffee this morning?"
+  - "She opened the door[[ and]] walked inside."
+  - "The meeting is on Monday[[ or]] Tuesday next week."
+  - "He fixed the bike[[ and]] rode it to school."
+  - "Bread[[ and]] butter is a simple breakfast."
+  - "You can pay by card[[ or]] in cash."
+  - "The kids laughed[[ and]] ran around the garden."
+  - "Is the answer yes[[ or]] no?"
+  - "Rock[[ and]] roll was born in the 1950s."
+  - "Take the bus[[ or]] the train to get downtown."
+threshold: atlas-q99
+by: {github: likelytobelaura, method: agent, model: claude-opus-5-5}

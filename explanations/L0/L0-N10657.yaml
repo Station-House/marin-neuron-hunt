@@ -1,0 +1,48 @@
+# Evidence: exemplar ranks + token contexts in pilot/fineweb-10m-sparse/summaries/exemplars.parquet (tokens.parquet join),
+# pole_stats.parquet (pos_q99=0.9822, neg_q99=0.2690, frac_pos=0.999952, max=1.0938, min=-0.3340),
+# logit_lens.parquet, all filtered to layer=0, neuron=10657. Corpus-frequency medians computed over
+# pilot/fineweb-10m-sparse summaries/tokens.parquet (9,995,501 tokens): positive-side exemplar tokens
+# median 238 occurrences (max 7,779), negative-side exemplar tokens median 16 (24 of 26 below 70).
+neuron: L0-N10657
+data: pilot/fineweb-10m-sparse
+label: "common English morphemes on; rare subwords off"
+positive:
+  status: explained
+  confidence: high
+  cue_type: lexical
+  explanation: >-
+    All 32 positive exemplars are ordinary lowercase English content-word morphemes (" image", " bold",
+    " finite", " digital", " flow", " transform", " spin", " modern", " simple", " rely", " innovative", " use")
+    in running expository prose; their corpus frequencies are high (median 238 of 9,995,501 tokens). The logit
+    lens agrees: this side's top outputs are continuations of common English words ("isco", "izza", "iful",
+    "inary", " tuition", " admissions"). With frac_pos = 0.99995 the side is positive nearly everywhere, so the
+    claim is about magnitude: it peaks (above pos_q99 = 0.9822) exactly on frequent English morphemes.
+  fires_on: "frequent lowercase English content-word morphemes in ordinary prose, e.g. ' image', ' modern', ' use'"
+  not_on: >-
+    untested from the sparse tier (it keeps only each token's 64 strongest neurons, so absence can't be read);
+    requests/L0-N10657-001.yaml tests that ALL-CAPS variants, capitalized names and foreign/rare tokens stay
+    below pos_q99
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+  verification: requested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: subword
+  explanation: >-
+    All 32 negative exemplars are rare corpus tokens (median 16 occurrences, versus the word " the" at 369,975):
+    non-English fragments and non-Latin scripts (Greek "á½¶", "Î©Î£", Polish "owski", "insky", German "innen",
+    Italian "aggi", "ollah", Turkish-adjacent fragments), capitalized proper nouns and publication names
+    (" County", " Tribune", " Reviews", " Rating"), and stray subword pieces (" itz", " utzer", " edia"). The
+    logit lens bottom agrees, pushing ALL-CAPS and unusual tokens ("FROM", "ADDING", "FFFFFF", "Palindrome",
+    "Italic", "FOUNDATION", "Ä°stanbul"). The rare negative tail (~450 of 9,995,501 tokens) is this side's job:
+    suppression below zero exactly where the positive side's "frequent English morpheme" cue is violated.
+  fires_on: "rare subwords, non-English/non-Latin tokens, and capitalized names - the tokens the positive side excludes"
+  not_on: "untested from the sparse tier; frequency contrast is in the evidence numbers above"
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides run the same lexical-frequency axis in opposite directions: the positive side excites on frequent
+  English morphemes, the negative side suppresses on the rare/foreign/capitalized tokens left over.
+by:
+  - {github: alexcasper, method: agent, model: "Hermes agent (glm-5.3-flash), ops_sh seat"}

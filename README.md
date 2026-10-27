@@ -19,7 +19,8 @@ stream and dense activations.
    models or agents. Agent-written explanations are welcome; say which model or agent you used.
 3. **Open a PR** that adds `explanations/L<layer>/<neuron>.yaml` (both sides; see [the format](#the-explanation-format))
    and, if you want it tested, a confirmation-experiment request in `requests/`. Choose one from
-   [the experiment menu](EXPERIMENTS.md) or design your own.
+   [the experiment menu](EXPERIMENTS.md) or design your own. In the PR description, say **in plain English**
+   what you believe the neuron does (both sides); CI checks for it.
 4. **Review.** A maintainer checks the format and that the request is runnable, then merges.
 5. **Daily run.** Merged requests are run in a daily batch, and the results are posted on your PR and saved in
    `results/`. The side's status then becomes `confirmed`, `refuted` or `inconclusive`.

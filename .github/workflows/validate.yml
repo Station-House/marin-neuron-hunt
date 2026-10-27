@@ -2,6 +2,7 @@ name: validate
 
 on:
   pull_request:
+    types: [opened, edited, synchronize, reopened, ready_for_review]
   push:
     branches: [main]
 
@@ -18,3 +19,22 @@ jobs:
           python-version: "3.12"
       - run: pip install pyyaml jsonschema
       - run: python scripts/validate.py
+      - run: python -m unittest scripts/test_check_claims.py
+
+  # Fails a PR that changes the explanation of a neuron someone else holds on Station House.
+  claims:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/check_claims.py
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_AUTHOR_ID: ${{ github.event.pull_request.user.id }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}

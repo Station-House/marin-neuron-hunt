@@ -1,6 +1,7 @@
 ## Neuron(s)
 
-<!-- e.g. L40-N25546. Opening this PR as a draft claims the neuron(s); claims lapse after 7 days without activity. -->
+<!-- e.g. L40-N25546. List every neuron whose explanation this PR changes. Claim them on Station House first
+(the project's Neurons tab); a PR on an unclaimed neuron claims it for you. CI fails if someone else holds one. -->
 
 ## What's in this PR
 

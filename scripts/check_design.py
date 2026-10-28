@@ -147,14 +147,14 @@ def required_designs(request_ids, root=ROOT):
         design = root / "requests" / rid / "DESIGN.md"
         if yaml is None and not design.exists():
             continue  # deleted
-        custom = yaml is not None and CUSTOM.search(yaml.read_text())
+        custom = yaml is not None and CUSTOM.search(yaml.read_text(encoding="utf-8"))
         out.append((rid, design if custom or yaml is None else None))
     return out
 
 
 def main(argv):
     if argv:
-        return 1 if sum(report(p, Path(p).read_text()) for p in argv) else 0
+        return 1 if sum(report(p, Path(p).read_text(encoding="utf-8")) for p in argv) else 0
     base = os.environ.get("BASE_SHA")
     if not base:
         print("check_design: no BASE_SHA, so not a pull request; nothing to check.")
@@ -175,7 +175,7 @@ def main(argv):
                   f"(stationhouse design new requests/{rid}/DESIGN.md)")
             errors += 1
         else:
-            errors += report(str(path.relative_to(ROOT)), path.read_text())
+            errors += report(str(path.relative_to(ROOT)), path.read_text(encoding="utf-8"))
     if from_body:
         errors += report(f"the PR description's ## Design section (for {', '.join(from_body)})", os.environ.get("PR_BODY") or "")
     if errors:

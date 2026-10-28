@@ -44,7 +44,7 @@ class Check(unittest.TestCase):
         self.assertEqual(check(FILLED), [])
 
     def test_the_unedited_pr_template_fails_every_stage(self):
-        template = (ROOT / ".github" / "pull_request_template.md").read_text()
+        template = (ROOT / ".github" / "pull_request_template.md").read_text(encoding="utf-8")
         errors = {f["stage"] for f in check(template) if f["level"] == "error"}
         self.assertEqual(errors, {"claim", "metric", "controls", "data", "noise", "readout"})
 
@@ -62,10 +62,10 @@ class RequiredDesigns(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)
             (root / "requests").mkdir()
-            (root / "requests" / "L1-N1-001.yaml").write_text("type: activation-test\nneuron: L1-N1\n")
-            (root / "requests" / "L1-N2-001.yaml").write_text("type: custom\nneurons: [L1-N2]\n")
+            (root / "requests" / "L1-N1-001.yaml").write_text("type: activation-test\nneuron: L1-N1\n", encoding="utf-8")
+            (root / "requests" / "L1-N2-001.yaml").write_text("type: custom\nneurons: [L1-N2]\n", encoding="utf-8")
             (root / "requests" / "L1-N3-001").mkdir()
-            (root / "requests" / "L1-N3-001" / "DESIGN.md").write_text("# design only\n")
+            (root / "requests" / "L1-N3-001" / "DESIGN.md").write_text("# design only\n", encoding="utf-8")
             got = dict(required_designs(["L1-N1-001", "L1-N2-001", "L1-N3-001", "L1-N9-001"], root))
             self.assertIsNone(got["L1-N1-001"])
             self.assertEqual(got["L1-N2-001"], root / "requests" / "L1-N2-001" / "DESIGN.md")

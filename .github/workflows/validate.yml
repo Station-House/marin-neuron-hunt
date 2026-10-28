@@ -20,6 +20,7 @@ jobs:
       - run: pip install pyyaml jsonschema
       - run: python scripts/validate.py
       - run: python -m unittest scripts/test_check_claims.py
+      - run: python -m unittest scripts/test_check_design.py
 
   # Fails a PR that changes the explanation of a neuron someone else holds on Station House.
   claims:
@@ -37,4 +38,21 @@ jobs:
           PR_TITLE: ${{ github.event.pull_request.title }}
           PR_BODY: ${{ github.event.pull_request.body }}
           PR_AUTHOR_ID: ${{ github.event.pull_request.user.id }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+
+  # Fails a PR that adds or changes an experiment request without a filled-in design
+  # (the PR description's ## Design section, or requests/<id>/DESIGN.md for a custom request).
+  design:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/check_design.py
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
           BASE_SHA: ${{ github.event.pull_request.base.sha }}

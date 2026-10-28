@@ -4,6 +4,10 @@ Every request names **one neuron side** (or a set of neurons), states a **predic
 rule** before anything runs. Write your prompts and prediction before you see any result: the daily runner uses
 exactly what was merged.
 
+Every request needs a design, and CI fails a request PR without one. Before writing one, work through the six design stages in [CONTRIBUTING.md](CONTRIBUTING.md#designing-a-request):
+the claim, what's measured, the controls (near misses, random neurons), fresh prompts, noise and the
+result that would refute you.
+
 Pick a type from the menu, or design your own (type E). Copy the template into
 `requests/<neuron>-<nnn>.yaml`, where `<nnn>` numbers the requests for that neuron (`001`, `002`, …).
 [`examples/L40-N25546-001.yaml`](examples/L40-N25546-001.yaml) is a complete example.
@@ -110,6 +114,7 @@ by: {github: your-handle, method: human}
 Anything not on the menu: activation patching, interactions between neurons, a new prompt set, a different
 metric, attention attribution, and so on.
 
+- Write the design in `requests/<request id>/DESIGN.md` (`stationhouse design new requests/<request id>/DESIGN.md`).
 - Describe **the procedure** precisely enough that someone else could run it.
 - State **the prediction**, **the pass rule**, and what result would **refute** you.
 - Estimate **the compute** (prompts × forward passes) and say what the runner should save.

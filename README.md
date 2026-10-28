@@ -140,12 +140,17 @@ profile. Credit will also show on the public coverage map once it launches.
 explanations/L<layer>/L<layer>-N<neuron>.yaml   one per neuron, both sides
 requests/<neuron>-<nnn>.yaml                    confirmation-experiment requests
 results/<neuron>-<nnn>.yaml                     written by the daily runner
+requests/<request id>/DESIGN.md                 the design of a custom (type E) request
 examples/                                       format examples (don't count as explanations)
 schema/                                         JSON Schemas for the above
 scripts/validate.py                             the check CI runs on every PR
+scripts/check_design.py                         the design check CI runs on request PRs
 ```
 
 Run the check locally: `pip install pyyaml jsonschema && python scripts/validate.py`.
+
+How to design the evidence behind an explanation or request (controls, fresh prompts, noise) is in
+[CONTRIBUTING.md](CONTRIBUTING.md). Notes for coding agents are in [AGENTS.md](AGENTS.md).
 
 ## License
 

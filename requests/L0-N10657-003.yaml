@@ -1,0 +1,20 @@
+type: contrast
+neuron: L0-N10657
+side: "-"
+pairs:
+  # Each pair holds the sentence frame identical and swaps only the target token:
+  # high = rare/foreign/capitalized token (predicted to drive the negative side deeper),
+  # low = frequent lowercase morpheme. Swap verified single-token both arms.
+  - {high: "The label said[[ Tribune]] and nothing else.", low: "The label said[[ image]] and nothing else."}
+  - {high: "She circled the word[[ County]] on the page.", low: "She circled the word[[ bold]] on the page."}
+  - {high: "The departure board listed[[ İstanbul]] before dawn.", low: "The departure board listed[[ finite]] before dawn."}
+  - {high: "His notes simply read[[ Kubernetes]] twice.", low: "His notes simply read[[ modern]] twice."}
+  - {high: "The stamp on the crate said[[ PHOTO]] in red.", low: "The stamp on the crate said[[ flow]] in red."}
+  - {high: "The dashboard flashed[[ ENERGY]] and went dark.", low: "The dashboard flashed[[ digital]] and went dark."}
+  - {high: "The form asked for a[[ número]] in the margin.", low: "The form asked for a[[ simple]] in the margin."}
+  - {high: "One stray[[ の]] sat in the margin of the letter.", low: "One stray[[ use]] sat in the margin of the letter."}
+  - {high: "The recipe card began with[[ рецепт]] handwritten.", low: "The recipe card began with[[ transform]] handwritten."}
+  - {high: "The spray can rattled as he shook[[ IMAGE]] loose.", low: "The spray can rattled as he shook[[ rely]] loose."}
+  - {high: "The stencil spelled[[ SIMPLE]] across the lid.", low: "The stencil spelled[[ innovative]] across the lid."}
+  - {high: "The crate lid showed[[ USE]] stenciled twice.", low: "The crate lid showed[[ spin]] stenciled twice."}
+by: {github: alexcasper, method: agent, model: "Hermes agent (glm-5.3-flash), ops_sh seat"}

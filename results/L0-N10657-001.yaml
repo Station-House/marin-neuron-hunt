@@ -107,11 +107,11 @@ per_prompt:
   token: Ġãģ®
   act: 0.6328125
 model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
-runner_commit: 3968a01886e7528266edf578e4e14bda29afeaef
-request_commit: 1447456666073fd1702549cdc90625d4999860df
+runner_commit: 706c34d14442a5cbbacb607e548bd8906195092a
+request_commit: 43bc1e920897a0a5c242ab4da5e5277e6cd1146a
 gpu: NVIDIA H200
 date: '2026-11-06'
-seconds: 2.1
+seconds: 1.8
 atlas_stats:
   n: 9995501.0
   mean: 0.7744210362434387

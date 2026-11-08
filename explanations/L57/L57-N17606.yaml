@@ -1,0 +1,42 @@
+# L57-N17606 — nominated by SAE encoder attribution (latent 42429, top1_share 0.564).
+# Evidence: pilot/fineweb-10m-sparse exemplars + logit lens; correlational, untested.
+neuron: L57-N17606
+data: pilot/fineweb-10m-sparse
+label: "detects split 'con-' fragments, pushes conversation tokens"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: subword
+  explanation: >-
+    Top firings (acts 82.5–145) all contain the character sequence "con" split across
+    a hyphen or word boundary in spam text: "mid [[-con]] versation", "[[con]] versations",
+    "[[con]] ferences". The + logit-lens readout pushes " convers" (7.41), " converse"
+    (5.12), " Conversely", " vice" (4.06) — the two-sided-comparison family. This mirrors,
+    at layer 57, the kind of conversational-reversal tracking documented at L40 in the
+    format example.
+  fires_on: "split 'con-' fragments ('conversation', 'conference') in spam text"
+  not_on: "untested"
+  evidence: [4706357, 4433000, 6170799, 6013666, 6449303]
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: subword
+  explanation: >-
+    Strong negative activations (−276 to −462) land on " automated"/"[[automated]]" in
+    chatbot/AI SEO spam ("leverages the power of artificial intelligence to produce
+    [[automated]] discussions") and on translation/converting text ("[[translating]]
+    conversations"). The − logit-lens readout suppresses the bare letter fragment "con"
+    itself (−10.19/−9.94). Consistent with the − pole responding to "con" preceded by
+    something other than the + side's split-fragment context.
+  fires_on: "'automated'/'converting' in AI-tool spam (tentative)"
+  not_on: "untested"
+  evidence: [7135229, 7133488, 7556077, 1214122]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides are about the "con" character sequence — + on split "con versation"
+  fragments with a conversation/converse readout, − on "con"-suppression contexts.
+  Exact split needs experiments.
+by:
+  - {github: alexcasper, method: agent, model: glm-5.3-flash}

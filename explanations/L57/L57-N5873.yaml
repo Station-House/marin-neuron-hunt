@@ -1,0 +1,37 @@
+# L57-N5873 — nominated by SAE encoder attribution (latent 33792, top1_share 0.749).
+# Evidence: pilot/fineweb-10m-sparse exemplars + logit lens; correlational, untested.
+neuron: L57-N5873
+data: pilot/fineweb-10m-sparse
+label: "spam-doc flag pushing '-re' fragments (reality spam)"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Top firings (acts 506–1144, the largest in this nomination set) are VR/tech
+    SEO-spam documents: "virtual reality (VIRTUAL REALITY) as well as [[boosted]]
+    reality (AR)", "The Linux Foundation reviews". The logit lens + side pushes
+    "re" (10.00), "-re", "_re", "ality" (6.28) — i.e. the fragments of "reality" as
+    tokenized in these documents. Two firing tokens in the SAE sample.
+  fires_on: "VR/reality SEO-spam documents"
+  not_on: "untested"
+  evidence: [7085530, 2540127, 4778502, 1839586, 2540485]
+  verification: untested
+negative:
+  status: unclear
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Negative activations (−13 to −20.75) land on "[[of]]" inside interview/transcript
+    spam ("matter [[of]] fact", "stretching [[of]] the truth"). The lens − readout is
+    diffuse junk. A thin, possibly unrelated pattern.
+  fires_on: "'of' in transcript/interview spam (tentative)"
+  not_on: "untested"
+  evidence: [4407865, 4694924, 9991732, 6034672, 9035689]
+  verification: untested
+relation: unrelated
+relation_note: >-
+  The + side has a sharp reality-fragment readout; the − side's "of"-in-transcript
+  pattern shows no relation to it in the current evidence.
+by:
+  - {github: alexcasper, method: agent, model: glm-5.3-flash}

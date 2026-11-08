@@ -1,0 +1,39 @@
+# L57-N25368 — nominated by SAE encoder attribution (latent 23576, top1_share 0.643).
+# Evidence: pilot/fineweb-10m-sparse exemplars + logit lens; correlational, untested.
+neuron: L57-N25368
+data: pilot/fineweb-10m-sparse
+label: "spam-doc flag with medical-vocabulary readout"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Top firings (acts 548–652) are all debt-relief / bankruptcy SEO-spam documents
+    ("discharge your charge card financial debt, medical and also energy bills").
+    The logit lens shows the + side pushes " medical" (10.69), " Medical", " doctors",
+    " physician", " healthcare" — a medical-vocabulary readout, even though the firing
+    documents are finance spam. Fires rarely (2 firing tokens in the 200k-token SAE sample).
+  fires_on: "debt-relief/bankruptcy spam documents"
+  not_on: "untested; health-advice text is on the negative side instead"
+  evidence: [6024176, 5257439, 9284879, 5742138, 6023392]
+  verification: untested
+negative:
+  status: unclear
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Strong negative activations (−28 to −31) land in health-advice documents, repeatedly
+    on " your" in "discussing it with your doctor" / "call your doctor immediately"
+    contexts. Suggestive of an inverse relation to the medical theme, but only five
+    exemplars and the logit-lens negative readout is diffuse junk tokens, so this is
+    a lead, not a settled pattern.
+  fires_on: "'your' in doctor-advice health text (tentative)"
+  not_on: "untested"
+  evidence: [241654, 7187337, 1906801, 8827203, 1276347]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides touch medical/health content — positive flags medical-adjacent spam with a
+  medical readout, negative lands in health-advice text — but the exact relation needs experiments.
+by:
+  - {github: alexcasper, method: agent, model: glm-5.3-flash}

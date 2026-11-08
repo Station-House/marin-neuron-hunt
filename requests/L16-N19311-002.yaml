@@ -1,0 +1,38 @@
+# DRAFT from our investigation. These prompts are edited exemplars or already measured, so they are not a fair test yet.
+# They will be replaced with fresh prompts before this is ready. 'ours' is our own reading (Colab L4, bf16, from BOS).
+# high: a small counted increment. low: the same target with no count, a vague or 'even' amount, degree 'more', or a return frame.
+type: contrast
+neuron: L16-N19311
+side: "+"
+pairs:
+  # count removed. ours: +2.40 -> +0.40
+  - high: "In the end, I sat on it for a few[[ more]] days as I pondered which one to get."
+    low: "In the end, I sat on it for[[ more]] days as I pondered which one to get."
+  # 'a few' -> 'many'. ours: +2.40 -> +0.76
+  - high: "In the end, I sat on it for a few[[ more]] days as I pondered which one to get."
+    low: "In the end, I sat on it for many[[ more]] days as I pondered which one to get."
+  # 'a few' -> 'even'. ours: +2.40 -> -0.90
+  - high: "In the end, I sat on it for a few[[ more]] days as I pondered which one to get."
+    low: "In the end, I sat on it for even[[ more]] days as I pondered which one to get."
+  # degree 'more'. ours: +2.40 -> +0.26
+  - high: "In the end, I sat on it for a few[[ more]] days as I pondered which one to get."
+    low: "In the end, the choice only got[[ more]] difficult as I pondered which one to get."
+  # return frame added. ours: +2.40 -> +0.26
+  - high: "In the end, I sat on it for a few[[ more]] days as I pondered which one to get. I was determined to buy one! Just that… which one?"
+    low: "Back in town again, I sat on it for a few[[ more]] days as I pondered which one to get. I was determined to buy one! Just that… which one?"
+  # 'two more' vs bare 'more'. ours: +0.66 vs +0.03
+  - high: "I'm eating chocolate and I want two[[ more]] pieces."
+    low: "I'm eating chocolate and I want[[ more]]."
+  # 'one more' vs bare 'more'. ours: +0.35 vs +0.03
+  - high: "I'm eating chocolate and I want one[[ more]] piece."
+    low: "I'm eating chocolate and I want[[ more]]."
+  # 'a few more' vs bare 'more'. ours: +0.39 vs +0.03
+  - high: "I'm eating chocolate and I want a few[[ more]] pieces."
+    low: "I'm eating chocolate and I want[[ more]]."
+  # 'two more' vs bare 'more', no eating. ours: +0.80 vs -0.01
+  - high: "I want two[[ more]] pieces of chocolate."
+    low: "I want[[ more]] chocolate."
+  # 'a few more minutes' vs bare 'more'. ours: +0.24 vs +0.03
+  - high: "I'm eating chocolate and I want to keep going for a few[[ more]] minutes."
+    low: "I'm eating chocolate and I want[[ more]]."
+by: {github: narang99, method: agent, model: claude-opus-5-5}

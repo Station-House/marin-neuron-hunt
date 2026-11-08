@@ -7,10 +7,17 @@ each explanation with an experiment.
 Marin 32B has 64 layers × 27,648 MLP neurons = 1,769,472 neurons. Each neuron's activation is signed, so every
 neuron has a **positive side** and a **negative side**, and an explanation must cover both.
 
-The data to investigate is the
-[Marin 32B Neuron Atlas](https://huggingface.co/datasets/Station-house/marin-32b-neuron-atlas) on Hugging Face:
-per-neuron statistics, top exemplars, logit lens, every strong firing, and (for a smaller sample) the residual
-stream and dense activations.
+The data to investigate is the Marin 32B Neuron Atlas on Hugging Face. It is stored in two buckets:
+
+- [**activations**](https://huggingface.co/buckets/Station-house/marin-32b-neuron-atlas-activations): every strong
+  firing, per-neuron statistics, top exemplars, logit lens, and (for a smaller sample) the residual stream and dense
+  activations.
+- [**text**](https://huggingface.co/buckets/Station-house/marin-32b-neuron-atlas-text): the documents, tokens,
+  prompts and vocabulary those activations were computed on.
+
+Both buckets use the same paths, and you join them on `token_idx` within one prefix. The
+[dataset repo](https://huggingface.co/datasets/Station-house/marin-32b-neuron-atlas) holds the same files plus
+the card (schema and example queries) and the discussion tab.
 
 ## How it works
 
@@ -33,17 +40,18 @@ stream and dense activations.
 | prefix | use it for |
 |---|---|
 | `pilot/fineweb-10m-sparse/` | **Start here.** 10M tokens, 4,883 docs: exemplars, stats, every strong firing. |
-| `pilot/fineweb-1m/` | Residual-stream and dense (`deep`) vectors, and token text (`tokens.parquet`). |
+| `pilot/fineweb-1m/` | Residual-stream and dense (`deep`) vectors, and token strings (`tokens.parquet`). |
 | `pilot/stage-a-100k/` | Smoke test only. |
 
 The pilots are independent samples: `doc_id` and `token_idx` don't join across prefixes. Always say which
-prefix your evidence comes from. The dataset card has the schema and example queries.
+prefix your evidence comes from. The dataset card has the schema and example queries. `hf://buckets/` paths need
+a recent DuckDB; on older versions use `https://huggingface.co/buckets/<bucket>/resolve/<path>`.
 
 ```sql
--- strongest firings of L40-N25546's positive side, with the firing token
+-- strongest firings of L40-N25546's positive side (activations bucket), with the firing token (text bucket)
 SELECT e.rank, e.act, t.token_str
-FROM 'hf://datasets/Station-house/marin-32b-neuron-atlas/pilot/fineweb-1m/summaries/exemplars.parquet' e
-JOIN 'hf://datasets/Station-house/marin-32b-neuron-atlas/pilot/fineweb-1m/summaries/tokens.parquet' t USING (token_idx)
+FROM 'hf://buckets/Station-house/marin-32b-neuron-atlas-activations/pilot/fineweb-1m/summaries/exemplars.parquet' e
+JOIN 'hf://buckets/Station-house/marin-32b-neuron-atlas-text/pilot/fineweb-1m/summaries/tokens.parquet' t USING (token_idx)
 WHERE e.layer = 40 AND e.neuron = 25546 AND e.pole = 1 ORDER BY e.rank LIMIT 10;
 ```
 

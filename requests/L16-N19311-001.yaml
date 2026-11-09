@@ -13,6 +13,8 @@ should_fire:
   - "The school hired two[[ additional]] teachers this year."
   - "The trial needs three[[ further]] months of data."
   - "We set out ten[[ extra]] chairs for the guests."
+  - "We stayed at the cabin for fifty[[ more]] days before driving home."
+  - "The town will have to wait twenty[[ more]] years for a new bridge."
 should_not_fire:
   - "The storm kept us home for even[[ more]] days than last winter."
   - "I want[[ more]] coffee."

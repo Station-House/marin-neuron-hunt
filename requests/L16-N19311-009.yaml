@@ -1,0 +1,32 @@
+# Question: does adding a count before "more" raise the + side?
+# should_fire: "more" with a count before it ("two more chairs").
+# should_not_fire: the same sentence with the count removed ("more chairs").
+# Threshold: the + side's atlas q999 (0.655), as in -005.
+type: activation-test
+neuron: L16-N19311
+side: "+"
+hypothesis: "The positive side goes above its q999 on 'more' with a count before it, and stays below q999 on the same sentence with the count removed."
+should_fire:
+  - "We need two[[ more]] chairs for the guests."
+  - "She bought three[[ more]] apples at the market."
+  - "The library ordered ten[[ more]] copies of the book."
+  - "Please bring a few[[ more]] blankets for the kids."
+  - "The farm planted several[[ more]] trees along the fence."
+  - "We need a couple[[ more]] volunteers for Saturday."
+  - "The bakery made fifty[[ more]] loaves for the fair."
+  - "The workers asked for two[[ more]] days off."
+  - "The school bought five[[ more]] laptops for the class."
+  - "The shop put out four[[ more]] tables by the window."
+should_not_fire:
+  - "We need[[ more]] chairs for the guests."
+  - "She bought[[ more]] apples at the market."
+  - "The library ordered[[ more]] copies of the book."
+  - "Please bring[[ more]] blankets for the kids."
+  - "The farm planted[[ more]] trees along the fence."
+  - "We need[[ more]] volunteers for Saturday."
+  - "The bakery made[[ more]] loaves for the fair."
+  - "The workers asked for[[ more]] days off."
+  - "The school bought[[ more]] laptops for the class."
+  - "The shop put out[[ more]] tables by the window."
+threshold: 0.655
+by: {github: narang99, method: agent, model: claude-opus-5-5}

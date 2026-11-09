@@ -8,8 +8,7 @@ positive:
   explanation: >-
     Fires on a word that adds a counted increment to an amount already in play, as in "a few more
     days", "two more weeks", "another year" and "an additional benefit". The concept fires, not the word:
-    in the same sentence, "extra", "additional" and "another" keep it. Adding a count raises the activation:
-    removing "a few" drops it from +2.40 to +0.40, and a vague "many more" sits between. Exact counts up to
+    in the same sentence, "extra", "additional" and "another" keep it. Adding a count raises the activation. Exact counts up to
     fifty fire as strongly as small ones ("fifty more days" +1.72). "a hundred" and "a thousand" drop to about
     half, and vague large counts ("thousands more") go to about zero. The frame matters: days and years fire
     strongly, pages and miles weakly.

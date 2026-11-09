@@ -6,11 +6,11 @@ positive:
   confidence: weak
   cue_type: grammar
   explanation: >-
-    Fires on a word that adds a small, counted increment to an amount already in play, as in "a few more
+    Fires on a word that adds a counted increment to an amount already in play, as in "a few more
     days", "two more weeks", "another year" and "an additional benefit". The concept fires, not the word:
     in the same sentence, "extra", "additional" and "another" keep it. Adding a count raises the activation:
     removing "a few" drops it from +2.40 to +0.40, and a vague "many more" sits between.
-  fires_on: "'more' / 'another' / 'additional' / 'extra' / 'further' after a small count, e.g. 'for a few more days', 'two more weeks'"
+  fires_on: "'more' / 'another' / 'additional' / 'extra' / 'further' after a count, e.g. 'for a few more days', 'two more weeks'"
   not_on: >-
     degree 'more' ('the choice only got more difficult') fires weakly, above q99 but below q999. Bare 'more'
     ('I want more chocolate') stays near zero, and 'even more' goes negative. These are single edited prompts, not

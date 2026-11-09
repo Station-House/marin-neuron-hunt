@@ -1,0 +1,36 @@
+# Random baseline, - side. Kept apart from -002 so its near misses have their own pass rule.
+# should_fire repeats -002's should_fire. should_not_fire is 10 random everyday sentences, target on the last word.
+# Threshold: the - side's atlas q99. Fresh prompts, written before any reading.
+type: activation-test
+neuron: L16-N19311
+side: "-"
+hypothesis: "The negative side goes beyond its q99 on the -002 should-fire prompts, and stays below q99 on random everyday sentences."
+should_fire:
+  - "Another letter arrived from the council, this[[ time]] about parking."
+  - "In 1972, a second bridge was built, this[[ time]] in steel."
+  - "Second half: same[[ as]] the first, with the visitors pressing high."
+  - "Kitchen Tips, Part III\nToday we[[ continue]] with knife skills."
+  - "Kitchen Tips\nToday we[[ continue]] with knife skills."
+  - "After a short recess, the witness returned to[[ continue]] her account."
+  - "The witness took the stand to[[ continue]] her account."
+  - "Back on the farm, we had[[ more]] chores."
+  - "For weeks we have been reading Genesis, and on Sunday we'll go back and pick[[ up]] with chapter 12."
+  - "This Sunday you can pick[[ up]] a reading plan at the entrance."
+  - "We have worked through the textbook all term, and next week we'll start[[ another]] unit."
+  - "This term we begin the textbook, and next week we'll start[[ another]] unit."
+  - "We stayed in Rome last spring. This spring we went back for a few[[ more]] days."
+  - "The rash lasted a week. After a short break, it came back for two[[ more]] weeks."
+  - "I ate at this cafe yesterday. Today I came back and ordered[[ another]] sandwich."
+should_not_fire:
+  - "The bakery on the corner sells fresh[[ bread]]."
+  - "A tall oak stands in the[[ garden]]."
+  - "He bought a ticket at the[[ station]]."
+  - "The children played in the[[ park]]."
+  - "She ordered soup at the[[ restaurant]]."
+  - "The phone was on the[[ desk]]."
+  - "Our neighbor owns a large[[ dog]]."
+  - "The window looks out over the[[ harbor]]."
+  - "He tied his boat to the[[ dock]]."
+  - "The recipe calls for brown[[ sugar]]."
+threshold: atlas-q99
+by: {github: narang99, method: agent, model: claude-opus-5-5}

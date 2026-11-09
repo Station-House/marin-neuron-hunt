@@ -1,0 +1,36 @@
+# L57-N2462 — nominated by SAE encoder attribution (latent 6600, top1_share 0.629).
+# Evidence: pilot/fineweb-10m-sparse exemplars + logit lens; correlational, untested.
+neuron: L57-N2462
+data: pilot/fineweb-10m-sparse
+label: "advertising detector: + pushes 'ad', - suppresses 'adventure'"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Top firings (acts 156–242) are gaming/make-up/lifestyle SEO-spam documents
+    ("a growing number of [games]", "Become a Click Funnels..."). The logit lens
+    shows the + side pushes "ad"/"AD"/"-ad" fragments strongly (10.75/10.69/8.88).
+    Fires rarely (2 firing tokens in the SAE sample).
+  fires_on: "advertising/lifestyle spam documents"
+  not_on: "untested"
+  evidence: [4752211, 9095271, 4752183, 1491753, 415824]
+  verification: untested
+negative:
+  status: unclear
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Mild negative activations (−3.4 to −4.8) land on "for" inside the same gaming/lifestyle
+    spam genre, and the logit-lens − readout suppresses "adventure"/"adventures" (−4.59).
+    Possibly the inverse of the + side within the same doc genre, but evidence is thin.
+  fires_on: "'for' in gaming/lifestyle spam (tentative)"
+  not_on: "untested"
+  evidence: [4752330, 7790098, 2370209, 8676347, 9989849]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides live in the same spam genre; + pushes ad-fragments while − appears to
+  suppress the adventure-page vocabulary of the same docs.
+by:
+  - {github: alexcasper, method: agent, model: glm-5.3-flash}

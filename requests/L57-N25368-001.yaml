@@ -1,0 +1,24 @@
+# Confirmation experiment for explanations/L57/N25368's medical-vocabulary readout.
+# The + side fires on debt-relief spam while the logit lens pushes medical tokens;
+# steering tests whether pushing the neuron actually moves predictions toward the
+# medical vocabulary (vs 100 random neurons in the layer).
+type: steering
+neuron: L57-N25368
+side: "+"
+k: 4
+prompts:
+  - "The clinic sent[[ a]] reminder about the annual checkup."
+  - "After the surgery, the[[ nurse]] explained the recovery plan."
+  - "The hospital's new[[ wing]] opens in September."
+  - "Insurance paperwork can delay[[ treatment]] by several weeks."
+  - "The pharmacy on the corner[[ closes]] at nine."
+  - "He scheduled a[[ dentist]] appointment for Tuesday morning."
+  - "The study followed[[ patients]] for five years after discharge."
+  - "Vaccination clinics open[[ every]] morning at eight."
+  - "The department of[[ health]] issued new guidance yesterday."
+  - "Her[[ stethoscope]] was a gift from her grandfather."
+  - "The ambulance reached the[[ scene]] within minutes."
+  - "Researchers published new[[ findings]] on sleep and recovery."
+expect_up: [" medical", " doctors", " physician", " healthcare", " health"]
+expect_down: []
+by: {github: alexcasper, method: agent, model: glm-5.3-flash}

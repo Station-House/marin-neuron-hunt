@@ -1,32 +1,33 @@
-# DRAFT from our investigation. These prompts are edited exemplars or already measured, so they are not a fair test yet.
-# The threshold 1.0 was picked after seeing our readings. Both will be replaced before this is ready.
+# Question: does a counted increment fire the + side more strongly than degree "more"?
+# The + side ranks: counted increment > degree "more" > neutral tokens. This file tests the first step. -004 tests the second.
+# should_not_fire is degree "more". It still fires above the + side's q99 (0.195), so here it means "below q999", not quiet.
+# Threshold: the + side's atlas q999 (0.655). Fresh prompts, written before any reading.
 type: activation-test
 neuron: L16-N19311
 side: "+"
-hypothesis: "The positive side fires on a word that adds a small, counted increment ('a few more', 'two more', 'another', 'an additional', 'extra'), and stays low on bare, vague, 'even' or degree 'more'."
+hypothesis: "The positive side goes above its q999 on a word that adds a counted increment ('two more', 'a few more', 'another', 'an additional'), and stays below q999 on degree 'more'."
 should_fire:
-  - "In the end, I sat on it for a few[[ more]] days as I pondered which one to get."  # ours: +2.40
-  - "In the end, I sat on it for a few[[ extra]] days as I pondered which one to get."  # ours: extra +1.79
-  - "In the end, I sat on it for an[[ additional]] few days as I pondered which one to get."  # ours: additional +1.99
-  - "In the end, I sat on it for[[ another]] few days as I pondered which one to get."  # ours: another +2.74
-  - "In the end, I sat on it for two[[ more]] days as I pondered which one to get."  # ours: two more +2.29
-  - "In the end, I sat on it for several[[ more]] days as I pondered which one to get."  # ours: several more +2.39
-  - "In the end, I sat on it for a couple[[ more]] days as I pondered which one to get. I was determined to buy one! Just that… which one?"  # ours: a couple more +2.58
-  - "I don't like complaining (though I confess to being a world-class whiner!), but I've had a rough month. I won't belabor the details other than to say that I passed through the worst virus I've had in years only to tear some muscles in my arm which left me in such pain that I was unable to sleep for more than two hours at a time over the course of two[[ more]] weeks. I could barely sew and could not lift my big iron at all. It was my definition of misery! But so far, February has been great (ha! It's only February first!), so the year is looking up. I've started sewing again and lifting my iron more. As a result, I do have a few things to show you this month. I can't show them all to you because I ended up crunching a month's worth of sewing into 10 days... and didn't get a chance to take many pictures. You'll see my un-photographed projects next month."  # ours: two more weeks +2.14
-  - "Technology sales positions use a series of advantages that make them extremely desirable. Not only can they be financially fulfilling, yet they likewise give the benefit of working from home. The tech market is flourishing, and also firms are frequently on the lookout for skilled people to sell their ingenious remedies. Whether you have previous sales experience or are simply starting out, technology sales is a field that allows you to showcase your communication and persuasion skills. You’ll have the possibility to deal with a diverse clients, offering software program, hardware, or other tech options. The very best part is that you can do all of this from[[ another]] location, getting rid of the demand for a day-to-day commute as well as rigid workplace hrs. If you’re trying to find a versatile and well-paying job that permits you to leverage your sales skills, tech sales might be the ideal fit for you."  # ours: another location +1.52
-  - "The trip cost me 200 dollars, and I needed[[ another]] 50 dollars."  # ours: another 50 dollars +1.12
-  - "We had walked five miles, with two[[ more]] miles to go."  # ours: two more miles +1.12
+  - "The train was delayed, so we waited two[[ more]] hours at the station."
+  - "She asked for three[[ more]] days to finish the report."
+  - "The recipe needs a few[[ more]] minutes in the oven."
+  - "They stayed in Rome for a couple[[ more]] nights."
+  - "The coach gave the team five[[ more]] minutes to warm up."
+  - "After the first lap, she ran four[[ more]] laps around the track."
+  - "The doctor told him to rest for several[[ more]] weeks."
+  - "He ordered two[[ extra]] chairs for the guests."
+  - "I need[[ another]] week to finish the painting."
+  - "The landlord asked for an[[ additional]] month of rent."
+  - "We have just one[[ more]] stop before home."
 should_not_fire:
-  - "In the end, I sat on it for[[ more]] days as I pondered which one to get."  # ours: no count +0.40
-  - "In the end, I sat on it for many[[ more]] days as I pondered which one to get."  # ours: many more +0.76
-  - "In the end, I sat on it for even[[ more]] days as I pondered which one to get."  # ours: even more -0.90
-  - "In the end, the choice only got[[ more]] difficult as I pondered which one to get."  # ours: degree +0.26
-  - "Back in town again, I sat on it for a few[[ more]] days as I pondered which one to get. I was determined to buy one! Just that… which one?"  # ours: return frame +0.26
-  - "I'm eating chocolate and I want[[ more]]."  # ours: bare, eating +0.03
-  - "I want[[ more]] chocolate."  # ours: bare want -0.01
-  - "I love chocolate, and I always want[[ more]]."  # ours: always want more -0.27
-  - "Compared with milk chocolate, dark chocolate has[[ more]] cocoa."  # ours: comparison +0.03
-  - "Compared with milk chocolate, dark chocolate tastes[[ more]] bitter."  # ours: degree -0.23
-  - "I had already eaten two bars of chocolate, but I wanted[[ more]]."  # ours: after an earlier episode -0.74
-threshold: 1.0
+  - "As the night went on, the music got[[ more]] intense."
+  - "The second test was much[[ more]] difficult than the first."
+  - "She became[[ more]] confident after the interview."
+  - "This version of the app feels[[ more]] responsive."
+  - "The roads grew[[ more]] crowded near the city."
+  - "He is[[ more]] careful with money now."
+  - "The soup tastes[[ more]] salty than usual."
+  - "Over the years the town became[[ more]] expensive."
+  - "The questions were[[ more]] personal than I expected."
+  - "Her paintings look[[ more]] colorful in daylight."
+threshold: 0.655
 by: {github: narang99, method: agent, model: claude-opus-5-5}

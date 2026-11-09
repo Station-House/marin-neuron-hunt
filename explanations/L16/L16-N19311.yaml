@@ -8,12 +8,13 @@ positive:
   explanation: >-
     Fires on a word that adds a small, counted increment to an amount already in play, as in "a few more
     days", "two more weeks", "another year" and "an additional benefit". The concept fires, not the word:
-    in the same sentence, "extra", "additional" and "another" keep it. The count matters: removing "a few"
-    closes the gate, and a vague "many more" is weak.
+    in the same sentence, "extra", "additional" and "another" keep it. Adding a count raises the activation:
+    removing "a few" drops it from +2.40 to +0.40, and a vague "many more" sits between.
   fires_on: "'more' / 'another' / 'additional' / 'extra' / 'further' after a small count, e.g. 'for a few more days', 'two more weeks'"
   not_on: >-
-    degree 'more' ('the choice only got more difficult'), bare 'more' ('I want more chocolate') and
-    'even more' (negative). Measured on edited prompts, not in the deep tier.
+    degree 'more' ('the choice only got more difficult') fires weakly, above q99 but below q999. Bare 'more'
+    ('I want more chocolate') stays near zero, and 'even more' goes negative. These are single edited prompts, not
+    the deep tier.
   evidence: [1, 2, 5, 6, 8, 9, 11, 12, 14, 25]
   verification: untested
 negative:
@@ -28,8 +29,10 @@ negative:
   fires_on: "'continue', 'this time', 'same', 'yet', 'again', 'pick up' when they point back to an earlier, separate episode"
   not_on: >-
     the same words with no earlier episode ('The first entry ... this time', '1stRound: Opening verse, same as').
-    Measured on edited prompts, not in the deep tier. The stored negative rows are 3 times as many as the
-    positive rows and include many common tokens (',', ' the', ' to'), so this side is broader than stated.
+    'continue' and 'pick up' are exceptions: they stay negative with the history removed, so the word carries the
+    return by itself. Measured on edited prompts, not in the deep tier. The stored negative rows are 3 times as
+    many as the positive rows and include many common tokens (',', ' the', ' to'), so this side is broader than
+    stated.
   evidence: [0, 1, 6, 10, 11, 14, 22, 24, 25, 26]
   verification: untested
 relation: variant

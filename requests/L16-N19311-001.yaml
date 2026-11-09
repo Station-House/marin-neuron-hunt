@@ -1,50 +1,33 @@
-# DRAFT from our investigation. These prompts are edited exemplars, already measured, so they are not a fair test yet.
-# They will be replaced with fresh prompts before this is ready. 'ours' is our own reading (Colab L4, bf16, from BOS).
-# high: the target points back to an earlier episode. low: the same target, with no earlier episode.
+# Question: does an earlier episode drive the - side, with the target word kept the same?
+# high: the text marks an earlier episode ("second", "another", "back", "rematch"). low: one or two words swapped so there is none.
+# Pairs are matched in length. We expect each low to fall below the - side's q99 (0.372), so here low means quiet.
+# Fresh prompts, written before any reading.
 type: contrast
 neuron: L16-N19311
 side: "-"
 pairs:
-  # fight, 2nd round -> 1st round. ours: -2.89 -> +0.05
-  - high: "2ndRound: Second verse, same[[ as]] the first – Pierce immediately clinches him against the fence. Not the most thrilling way to kick off a big card… Oh my. Pierce drops him with a vicious left hook and brings the pain on the canvas. It’s a wrap."
-    low: "1stRound: Opening verse, same[[ as]] the first – Pierce immediately clinches him against the fence. Not the most thrilling way to kick off a big card… Oh my. Pierce drops him with a vicious left hook and brings the pain on the canvas. It’s a wrap."
-  # drugs, another entry -> first entry. ours: -3.47 -> +0.02
-  - high: "- Another entry in the Destruction-of-the-War-on-Drugs file, this[[ time]] in Mexico and Colombia. Stephanie Hanson at CATO looks at the US$6 billion failure of Plan Colombia, which in six years failed to drop cocaine production, but did succeed in raising prices for producers – and adding to the already-present violence in the area."
-    low: "- The first entry in the Destruction-of-the-War-on-Drugs file, this[[ time]] in Mexico and Colombia. Stephanie Hanson at CATO looks at the US$6 billion failure of Plan Colombia, which in six years failed to drop cocaine production, but did succeed in raising prices for producers – and adding to the already-present violence in the area."
-  # sermon, history removed, 'pick up with' kept. ours: -2.57 -> -2.61
-  - high: "Over the past few months, we’ve been studying from I Corinthians, and this morning I want to continue in that book, but we’re going to jump ahead to chapter 15 and see what Paul has to say about the resurrection, and then next week, we’ll go back and pick[[ up]] with chapter 10."
-    low: "This morning we begin a new study of I Corinthians. We’ll look at chapter 15 and see what Paul has to say about the resurrection, and then next week, we’ll go on and pick[[ up]] with chapter 16."
-  # sermon, history and resume sense removed. ours: -2.57 -> -1.16
-  - high: "Over the past few months, we’ve been studying from I Corinthians, and this morning I want to continue in that book, but we’re going to jump ahead to chapter 15 and see what Paul has to say about the resurrection, and then next week, we’ll go back and pick[[ up]] with chapter 10."
-    low: "This morning we begin a new study of I Corinthians. We’ll look at chapter 15 and see what Paul has to say about the resurrection, and then next week, you can pick[[ up]] a study guide at the door."
-  # second prototype -> prototype. ours: -2.28 -> +1.00
-  - high: "In 1956, a second prototype was constructed, this[[ time]] with a Metro-Cammell body."
-    low: "In 1956, a prototype was constructed, this[[ time]] with a Metro-Cammell body."
-  # another entry -> first entry, short. ours: -3.45 -> +0.01
-  - high: "- Another entry in the Destruction-of-the-War-on-Drugs file, this[[ time]] in Mexico and Colombia."
-    low: "- The first entry in the Destruction-of-the-War-on-Drugs file, this[[ time]] in Mexico and Colombia."
-  # Part II removed. ours: -4.06 -> -1.62
-  - high: "Business Cards: Ideas and Inspiration, Part II\nToday we[[ continue]] looking at business cards that stand out."
-    low: "Business Cards: Ideas and Inspiration\nToday we[[ continue]] looking at business cards that stand out."
-  # break and 'back' removed. ours: -2.41 -> -0.80
-  - high: "10:11 a.m. After a 10 minute break, Fay is called to back to the stand to[[ continue]] his testimony."
-    low: "10:11 a.m. Fay is called to the stand to[[ continue]] his testimony."
-  # 'Back' removed. ours: -1.75 -> +0.17
-  - high: "Music: A Sea Breeze Blows\nBack in town, we have[[ more]] banter."
-    low: "Music: A Sea Breeze Blows\nIn town, we have[[ more]] banter."
-  # resuming sermon -> fresh sermon. ours: -2.01 -> -0.86
-  - high: "Over the past few months, we’ve been studying from I Corinthians, and this morning I want to continue in that book, but we’re going to jump ahead to chapter 15 and see what Paul has to say about the resurrection, and then next week, we’ll start[[ another]] chapter."
-    low: "This morning we begin a new study of I Corinthians. We’ll look at chapter 15 and see what Paul has to say about the resurrection, and then next week, we’ll start[[ another]] chapter."
-  # second bout after a break vs same bout. ours: -0.45 vs +1.28
-  - high: "The pain kept me up at night for two weeks. After a short break, it came back for two[[ more]] weeks."
-    low: "The pain kept me up at night, and it went on for two[[ more]] weeks."
-  # went back on a later trip vs stayed longer. ours: -0.69 vs +0.37
-  - high: "We visited Paris last year. This year we went back for a few[[ more]] days."
-    low: "We loved Paris, so we stayed a few[[ more]] days."
-  # return visit vs same sitting. ours: -0.41 vs -0.03
-  - high: "I had coffee here last week. Today I came back and ordered[[ another]] cup."
-    low: "The coffee was good, so I ordered[[ another]] cup."
-  # knocking on a later visit vs twice in a row. ours: -0.16 vs +0.98
-  - high: "She knocked on the door last Tuesday. Today she came back and knocked[[ again]]."
-    low: "She knocked on the door, waited a second, and knocked[[ again]]."
+  - high: "The second batch came out of the oven at noon, this[[ time]] with less sugar."
+    low: "The first batch came out of the oven at noon, this[[ time]] with less sugar."
+  - high: "Another storm hit the coast on Friday, this[[ time]] with stronger winds."
+    low: "A storm hit the coast on Friday, this[[ time]] with stronger winds."
+  - high: "Her second album, recorded in Nashville, was this[[ time]] produced by her brother."
+    low: "Her debut album, recorded in Nashville, was this[[ time]] produced by her brother."
+  - high: "The rematch was held in Chicago, this[[ time]] in front of a full arena."
+    low: "The match was held in Chicago, this[[ time]] in front of a full arena."
+  - high: "Day 4 of the hike: this[[ time]] we left before sunrise."
+    low: "Day 1 of the hike: this[[ time]] we left before sunrise."
+  - high: "Episode 2: The team meets the client, and this[[ time]] they bring a working demo."
+    low: "Episode 1: The team meets the client, and this[[ time]] they bring a working demo."
+  - high: "Volume 3 of the series opens in Paris, and this[[ time]] the narrator is the sister."
+    low: "Volume 1 of the series opens in Paris, and this[[ time]] the narrator is the sister."
+  - high: "Set 2: Much the same[[ as]] the first, with both players holding serve."
+    low: "Set 1: Much the same[[ as]] the first, with both players holding serve."
+  - high: "Back in the kitchen, she baked[[ more]] bread."
+    low: "In the kitchen, she baked[[ more]] bread."
+  - high: "Back at the market, we bought[[ more]] apples."
+    low: "At the market, we bought[[ more]] apples."
+  - high: "Back at the office, we had[[ more]] meetings."
+    low: "At the office, we had[[ more]] meetings."
+  - high: "Our second visit to the museum was in June, and this[[ time]] we saw the east wing."
+    low: "Our first visit to the museum was in June, and this[[ time]] we saw the east wing."
 by: {github: narang99, method: agent, model: claude-opus-5-5}

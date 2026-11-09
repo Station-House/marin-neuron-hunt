@@ -16,6 +16,6 @@ pairs:
   - {high: "Their[[ pride]] in the restored church showed in every detail.", low: "Showcase[[ pride]] in the repair of your local community today."}
   - {high: "A quiet[[ pride]] settled over the workshop after the last piece was placed.", low: "We carry[[ pride]] in the upkeep of our area, says the new listing."}
   - {high: "The[[ pride]] on her face needed no translation.", low: "Encouraging[[ pride]] throughout the society is our ecological friendly approach."}
-  - {high: "Grandfather never hid his[[ pride]] in the family orchard.", low: "Local teams endorse [[pride]] and ecological recognition across the county."}
-  - {high: "It was the [[pride]] of a craftswoman signing her first commission.", low: "Listings promise [[pride]] in the upkeep of dumpsters and rental yards."}
+  - {high: "Grandfather never hid his[[ pride]] in the family orchard.", low: "Local teams endorse [[ pride]] and ecological recognition across the county."}
+  - {high: "It was the [[ pride]] of a craftswoman signing her first commission.", low: "Listings promise [[ pride]] in the upkeep of dumpsters and rental yards."}
 by: {github: alexcasper, method: agent, model: glm-5.3-flash}

@@ -1,0 +1,41 @@
+# Confirmation experiment for explanations/L57/L57-N2462.yaml (+ side).
+# Tests the advertising readout: should fire on real advertising contexts,
+# should NOT fire on 'ad'-substring words in non-advertising prose (adventure,
+# advantage, address, ...). Prompts are fresh, not copied from atlas exemplars.
+type: activation-test
+neuron: L57-N2462
+side: "+"
+hypothesis: >-
+  The positive side fires on tokens in genuine advertising contexts (classified ads,
+  ad campaigns, ad slots) and stays below its 99th percentile on 'ad'-substring words
+  (adventure, advantage, address, adopt, admit, adjust, addition, advocate, adequate,
+  admiral) in non-advertising prose — i.e. it tracks the advertising concept, not the
+  letter sequence 'ad'.
+should_fire:
+  - "The classifieds section charges five dollars for each[[ ad]] placed that week."
+  - "Their Facebook[[ ad]] campaign doubled sales over a single weekend."
+  - "Please stop scrolling past every[[ ad]] and support the site directly."
+  - "The Super Bowl[[ ad]] cost more than the movie it promoted."
+  - "She designs banner[[ ad]] graphics for a small marketing agency."
+  - "Local radio[[ ad]] slots are cheaper than television commercials."
+  - "The app now shows a full-screen[[ ad]] before each level loads."
+  - "His first[[ ad]] copywriting job was at a downtown agency."
+  - "They pulled the print[[ ad]] after readers complained it was misleading."
+  - "An eye-catching[[ ad]] in the trade magazine brought forty inquiries."
+  - "The podcast reads one sponsor[[ ad]] at the start of each episode."
+  - "Renting that billboard is the most expensive[[ ad]] space in the city."
+should_not_fire:
+  - "We booked a jungle[[ adventure]] tour for March."
+  - "Speaking frankly gave her an[[ advantage]] in the negotiation."
+  - "Please[[ address]] the envelope to the office manager."
+  - "They decided to[[ adopt]] a shelter cat instead of buying one."
+  - "He had to[[ admit]] the mistake during the meeting."
+  - "You can[[ adjust]] the shelf height with this knob."
+  - "She is a strong[[ advocate]] for public transit."
+  - "The[[ adequate]] supply of solar panels arrived on Friday."
+  - "In[[ addition]] to the report, include the signed invoice."
+  - "The[[ admiral]] inspected the fleet at first light."
+  - "The committee will[[ announce]] the shortlist on Monday."
+  - "Fresh[[ air]] and long walks help me think."
+threshold: atlas-q99
+by: {github: alexcasper, method: agent, model: glm-5.3-flash}

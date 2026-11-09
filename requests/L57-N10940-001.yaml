@@ -1,0 +1,21 @@
+# Confirmation experiment for explanations/L57/L57-N10940.yaml (+ side).
+# Contrast test of the discrimination claim: genuine pride prose vs SEO-spam
+# pride phrasing, same target token (" pride") in every pair, differing only in
+# register. Prompts are fresh, not copied from atlas exemplars.
+type: contrast
+neuron: L57-N10940
+side: "+"
+pairs:
+  - {high: "She looked at the finished garden with real[[ pride]].", low: "Residents showcase cleaner communities as well as true[[ pride]] in the neighborhood."}
+  - {high: "His voice was full of[[ pride]] when he described his daughter's graduation.", low: "Our dumpsters showcase[[ pride]] in cleaner communities every single day."}
+  - {high: "Winning the regional final filled the whole team with[[ pride]].", low: "Take[[ pride]] in your home as nice and clean as possible with our service."}
+  - {high: "There was[[ pride]] in the way she described her students' progress.", low: "Encourage environmental recognition and[[ pride]] throughout the society, experts say."}
+  - {high: "He spoke with[[ pride]] about the badge he had earned.", low: "Keep your home as nice and clean as possible and show[[ pride]] where you live."}
+  - {high: "The little[[ pride]] she allowed herself was quiet and earned.", low: "Waste dumpsters showcase[[ pride]] as well as cleaner communities."}
+  - {high: "You could hear the[[ pride]] in his voice at the ceremony.", low: "Dumpster hire aims at endorsing cleanliness and[[ pride]] in the community."}
+  - {high: "Their[[ pride]] in the restored church showed in every detail.", low: "Showcase[[ pride]] in the repair of your local community today."}
+  - {high: "A quiet[[ pride]] settled over the workshop after the last piece was placed.", low: "We carry[[ pride]] in the upkeep of our area, says the new listing."}
+  - {high: "The[[ pride]] on her face needed no translation.", low: "Encouraging[[ pride]] throughout the society is our ecological friendly approach."}
+  - {high: "Grandfather never hid his[[ pride]] in the family orchard.", low: "Local teams endorse [[pride]] and ecological recognition across the county."}
+  - {high: "It was the [[pride]] of a craftswoman signing her first commission.", low: "Listings promise [[pride]] in the upkeep of dumpsters and rental yards."}
+by: {github: alexcasper, method: agent, model: glm-5.3-flash}

@@ -1,0 +1,23 @@
+# Confirmation experiment for explanations/L57/L57-N17606.yaml (+ side).
+# Contrast test of the split-fragment claim: the + side should fire higher on
+# hyphen-spliced 'con-' fragments (the SEO-spam tokenization register) than on
+# the corresponding whole word in clean prose. Targets verified single-token
+# for the Marin tokenizer ("-con" and " con" are single tokens; mid-word
+# fragments like " versation" are NOT, so pairs use the hyphen-splice form).
+type: contrast
+neuron: L57-N17606
+side: "+"
+pairs:
+  - {high: "He recalled their mid[[-con]] versation about the case.", low: "He recalled their long[[ conversation]] about the case."}
+  - {high: "Notes from the county[[ con]] ference were filed away.", low: "Notes from the county[[ conference]] were filed away."}
+  - {high: "The flyer promised a[[ con]] cert series downtown.", low: "The flyer promised a[[ concert]] series downtown."}
+  - {high: "Doctors ordered a[[ con]] sultation after the scan.", low: "Doctors ordered a[[ consultation]] after the scan."}
+  - {high: "The contract clause covered[[ con]] trol of the account.", low: "The contract clause covered[[ control]] of the account."}
+  - {high: "Their[[ con]] version of the file kept crashing.", low: "Their[[ conversion]] of the file kept crashing."}
+  - {high: "A hidden[[ con]] nection linked the two cases.", low: "A hidden[[ connection]] linked the two cases."}
+  - {high: "The draft described a central[[ con]] cept about memory.", low: "The draft described a central[[ concept]] about memory."}
+  - {high: "Workers poured[[ con]] crete before dawn.", low: "Workers poured[[ concrete]] before dawn."}
+  - {high: "His[[ con]] fidence grew after every rehearsal.", low: "His[[ confidence]] grew after every rehearsal."}
+  - {high: "The group planned an outdoor[[ con]] cert that summer.", low: "The group planned an outdoor[[ concert]] that summer."}
+  - {high: "A weekly[[ con]] ference reviewed the patient's care.", low: "A weekly[[ conference]] reviewed the patient's care."}
+by: {github: alexcasper, method: agent, model: glm-5.3-flash}

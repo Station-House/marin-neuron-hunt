@@ -1,0 +1,40 @@
+# L57-N10940 — nominated by SAE encoder attribution (latent 1316, top1_share 0.592).
+# Evidence: pilot/fineweb-10m-sparse exemplars + logit lens; correlational, untested.
+neuron: L57-N10940
+data: pilot/fineweb-10m-sparse
+label: "tracks 'pride' language: + genuine, - spam misuse"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Top firings (acts 111–132) all express pride: "take [[an]] enormous pride in the
+    people that are celebrated", "would [[be]] proud of her", "[[took]] pride in what
+    they do", "I [[am]] proud of you". The + logit-lens readout is weak and diffuse.
+    Genuine-pride language, as opposed to the spam repetition the − side responds to.
+  fires_on: "'pride'/'proud' language in ordinary prose"
+  not_on: "untested"
+  evidence: [4696834, 4696833, 3324703, 2440199, 4827956]
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Very strong negative activations (−276 to −600, the largest in this nomination set)
+    land in community-cleanup SEO-spam documents that repeat "pride"/"delight" phrasing:
+    "we all carry [[extreme]] delight in the upkeep of our area", "[[extreme]] take great
+    pride in the repair of our local community". The − logit-lens readout suppresses
+    "pride"/"proud" sharply (−9.62/−9.31/−8.88). Reads as: the same pride vocabulary,
+    pushed negative when it appears in spam phrasing.
+  fires_on: "'pride'/'delight' phrasing inside SEO-spam documents"
+  not_on: "untested"
+  evidence: [6813307, 8967324, 1169976, 5647759, 6982538]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides respond to pride vocabulary — positive in genuine prose, strongly negative
+  in spam repetition. Whether that is a genuine-vs-spam discrimination or a saturation
+  effect needs experiments.
+by:
+  - {github: alexcasper, method: agent, model: glm-5.3-flash}

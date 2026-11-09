@@ -16,7 +16,7 @@ prompts:
   - "The study followed[[ patients]] for five years after discharge."
   - "Vaccination clinics open[[ every]] morning at eight."
   - "The department of[[ health]] issued new guidance yesterday."
-  - "Her[[ stethoscope]] was a gift from her grandfather."
+  - "Her[[ doctor]] recommended a follow-up visit next month."
   - "The ambulance reached the[[ scene]] within minutes."
   - "Researchers published new[[ findings]] on sleep and recovery."
 expect_up: [" medical", " doctors", " physician", " healthcare", " health"]

@@ -1,0 +1,23 @@
+# Confirmation experiment for explanations/L57/L57-N5873.yaml (+ side).
+# Steering tests the '-re / reality' logit-lens readout: pushing the neuron should
+# move predictions toward the reality-fragment vocabulary it pushed in the lens.
+type: steering
+neuron: L57-N5873
+side: "+"
+k: 4
+prompts:
+  - "The startup demoed[[ a]] headset that overlays graphics on the world."
+  - "Their[[ booth]] at the trade show featured interactive displays."
+  - "The[[ headset]] tracks hand movement without controllers."
+  - "Reviewers said the[[ display]] feels more immersive than last year's."
+  - "The[[ firm]] published benchmarks for its new AR platform."
+  - "Attendees tried the[[ prototype]] in the demo hall."
+  - "The[[ launch]] event streamed to thousands of viewers."
+  - "Its[[ engine]] renders overlays with low latency."
+  - "The[[ company]] partnered with an optics manufacturer."
+  - "Early[[ builds]] of the software shipped to testers."
+  - "The[[ panel]] discussed spatial computing trends."
+  - "Their[[ roadmap]] puts the consumer version two years out."
+expect_up: [" reality", "ality", " re", "-re"]
+expect_down: []
+by: {github: alexcasper, method: agent, model: glm-5.3-flash}

@@ -1,8 +1,6 @@
 # Question: does degree "more" fire the + side above its background?
 # The + side ranks: counted increment > degree "more" > neutral tokens. This file tests the second step. -005 tests the first.
 # should_not_fire is the same sentence with the target moved to a neutral word before "more".
-# Threshold: the + side's atlas q99 (0.195). The margin is thin: our one degree reading was 0.26.
-# Fresh prompts, written before any reading.
 type: activation-test
 neuron: L16-N19311
 side: "+"

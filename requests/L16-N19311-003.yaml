@@ -1,7 +1,8 @@
 # Question: does an earlier episode drive the - side, with the target word kept the same?
-# high: the text marks an earlier episode ("second", "another", "back", "rematch"). low: one or two words swapped so there is none.
-# Pairs are matched in length. We expect each low to fall below the - side's q99 (0.372), so here low means quiet.
-# Fresh prompts, written before any reading.
+# We stress test the negative side in this file.
+# We simply change a token or two in the original sentence (which drives the neuron negative)
+# To change the context in a way that it stops talking about an earlier episode
+# Crucially we do not change the token being tested.
 type: contrast
 neuron: L16-N19311
 side: "-"

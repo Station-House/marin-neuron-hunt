@@ -1,32 +1,31 @@
-# Question: does "pick up" carry the - side by itself, with or without an earlier episode in the text?
-# should_fire: "pick up" in a resume sense and in a plain sense ("pick up the pen"). Removing the history should not matter.
-# should_not_fire: " up" in other phrasal verbs with no return sense.
-# Threshold: the - side's atlas q99 (0.372). Fresh prompts, written before any reading.
+# Question: does "pick up" carry the - side in its resume sense, even with no earlier episode in the text?
+# should_fire: "pick up" meaning resume or continue. The text before it has no earlier episode.
+# should_not_fire: "pick up" meaning lift or collect, in sentences of similar length.
 type: activation-test
 neuron: L16-N19311
 side: "-"
-hypothesis: "The negative side fires on 'pick up' whether or not the text has an earlier episode, and stays below its q99 on ' up' in other phrasal verbs."
+hypothesis: "The negative side goes beyond its q99 on 'pick up' meaning resume, and stays below it on 'pick up' meaning lift or collect."
 should_fire:
   - "After lunch, we'll pick[[ up]] where we left off."
   - "Next week we will pick[[ up]] with the third chapter."
-  - "Please pick[[ up]] a handout at the door."
-  - "Can you pick[[ up]] some milk on the way home?"
   - "When the meeting resumes, the committee will pick[[ up]] the budget item."
-  - "I'll pick[[ up]] the kids from school at four."
   - "The sequel picks[[ up]] ten years later."
   - "Let's pick[[ up]] the conversation tomorrow."
-  - "She bent down to pick[[ up]] the pen."
   - "In Act Two, the brothers pick[[ up]] the thread of the story."
+  - "Tomorrow the class will pick[[ up]] at page forty."
+  - "The second season picks[[ up]] right after the crash."
+  - "The band picked[[ up]] the song from the second verse."
+  - "The talks will pick[[ up]] on Monday morning."
 should_not_fire:
-  - "Before the meeting, she had to look[[ up]] the address."
-  - "He stood[[ up]] when the judge entered."
-  - "We need to set[[ up]] the chairs before noon."
-  - "Please sign[[ up]] for the newsletter at the door."
-  - "The kids woke[[ up]] early on Saturday."
-  - "They cleaned[[ up]] the kitchen after dinner."
-  - "Can you turn[[ up]] the volume a little?"
-  - "She grew[[ up]] in a small town by the sea."
-  - "The guests showed[[ up]] an hour late."
-  - "Prices went[[ up]] this spring."
+  - "Please pick[[ up]] a handout at the door."
+  - "Can you pick[[ up]] some milk on the way home?"
+  - "I'll pick[[ up]] the kids from school at four."
+  - "She bent down to pick[[ up]] the pen."
+  - "Could you pick[[ up]] my dry cleaning?"
+  - "The dog tried to pick[[ up]] the stick."
+  - "He stopped at the station to pick[[ up]] his sister."
+  - "Pick[[ up]] a basket at the entrance."
+  - "She learned to pick[[ up]] heavy boxes safely."
+  - "The crane can pick[[ up]] ten tonnes."
 threshold: atlas-q99
 by: {github: narang99, method: agent, model: claude-opus-5-5}

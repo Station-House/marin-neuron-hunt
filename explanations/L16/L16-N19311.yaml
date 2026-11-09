@@ -9,12 +9,15 @@ positive:
     Fires on a word that adds a counted increment to an amount already in play, as in "a few more
     days", "two more weeks", "another year" and "an additional benefit". The concept fires, not the word:
     in the same sentence, "extra", "additional" and "another" keep it. Adding a count raises the activation:
-    removing "a few" drops it from +2.40 to +0.40, and a vague "many more" sits between.
+    removing "a few" drops it from +2.40 to +0.40, and a vague "many more" sits between. Exact counts up to
+    fifty fire as strongly as small ones ("fifty more days" +1.72). "a hundred" and "a thousand" drop to about
+    half, and vague large counts ("thousands more") go to about zero. The frame matters: days and years fire
+    strongly, pages and miles weakly.
   fires_on: "'more' / 'another' / 'additional' / 'extra' / 'further' after a count, e.g. 'for a few more days', 'two more weeks'"
   not_on: >-
-    degree 'more' ('the choice only got more difficult') fires weakly, above q99 but below q999. Bare 'more'
-    ('I want more chocolate') stays near zero, and 'even more' goes negative. These are single edited prompts, not
-    the deep tier.
+    degree 'more' ('the climb only got more steep') stays at background, -0.32 to +0.18 on fresh prompts. Bare
+    'more' ('I want more chocolate') stays near zero, and 'even more' goes negative. Measured on prompts we
+    wrote, not the deep tier.
   evidence: [1, 2, 5, 6, 8, 9, 11, 12, 14, 25]
   verification: untested
 negative:
@@ -26,11 +29,12 @@ negative:
     "Part II ... Today we continue", "this time", "pick up with chapter 10" and "returned to continue". When
     the earlier episode is removed ("The first entry ... this time", "1stRound ... same as"), the activation
     goes to about zero. The gate stays open; `up` carries the sign.
-  fires_on: "'continue', 'this time', 'same', 'yet', 'again', 'pick up' when they point back to an earlier, separate episode"
+  fires_on: "'continue', 'this time', 'same', 'yet', 'again', and 'pick up' in its resume sense, when they point back to an earlier, separate episode"
   not_on: >-
     the same words with no earlier episode ('The first entry ... this time', '1stRound: Opening verse, same as').
-    'continue' and 'pick up' are exceptions: they stay negative with the history removed, so the word carries the
-    return by itself. Measured on edited prompts, not in the deep tier. The stored negative rows are 3 times as
+    'pick up' in its resume sense is an exception: it stays negative with no history ('the committee will pick
+    up the budget item' -2.92). 'pick up' in its plain sense ('pick up the pen', 'pick up some milk') stays near
+    zero. Measured on prompts we wrote, not in the deep tier. The stored negative rows are 3 times as
     many as the positive rows and include many common tokens (',', ' the', ' to'), so this side is broader than
     stated.
   evidence: [0, 1, 6, 10, 11, 14, 22, 24, 25, 26]

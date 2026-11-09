@@ -1,37 +1,33 @@
-# Summary file, - side. One fresh prompt for each version we measured, not a controlled test.
-# Each comment names the version and our reading on the original edit. Beyond the - side's q99 (0.372) means should_fire.
-# Three should_fire versions sit close to the bar (ours -0.41 to -0.69).
-# Fresh prompts, written before any reading.
 type: activation-test
 neuron: L16-N19311
 side: "-"
-hypothesis: "Each version we measured keeps its side of the - side's q99 on a new sentence."
+hypothesis: "The neuron fires (> q99) in the negative side when we talk about an earlier episode. Words like `more` which also occur on the positive side turn the neuron negative if they are talking about adding something to an earlier episode"
 should_fire:
-  - "Another letter arrived from the council, this[[ time]] about parking."  # 'another ... this time', ours -3.47
-  - "In 1972, a second bridge was built, this[[ time]] in steel."  # 'a second ... this time', ours -2.28
-  - "Second half: same[[ as]] the first, with the visitors pressing high."  # '2nd round ... same as', ours -2.89
-  - "Kitchen Tips, Part III\nToday we[[ continue]] with knife skills."  # 'Part II ... continue', ours -4.06
-  - "Kitchen Tips\nToday we[[ continue]] with knife skills."  # 'continue' without Part II, ours -1.62
-  - "After a short recess, the witness returned to[[ continue]] her account."  # 'after a break ... continue', ours -2.41
-  - "The witness took the stand to[[ continue]] her account."  # 'continue' without the break, ours -0.80
-  - "Back on the farm, we had[[ more]] chores."  # 'Back ... more', ours -1.75
-  - "For weeks we have been reading Genesis, and on Sunday we'll go back and pick[[ up]] with chapter 12."  # 'pick up' with history, ours -2.57
-  - "This Sunday you can pick[[ up]] a reading plan at the entrance."  # 'pick up' without history, ours -1.16
-  - "We have worked through the textbook all term, and next week we'll start[[ another]] unit."  # resuming 'start another', ours -2.01
-  - "This term we begin the textbook, and next week we'll start[[ another]] unit."  # fresh 'start another', ours -0.86
-  - "We stayed in Rome last spring. This spring we went back for a few[[ more]] days."  # later trip 'a few more', ours -0.69
-  - "The rash lasted a week. After a short break, it came back for two[[ more]] weeks."  # 'came back for two more', ours -0.45
-  - "I ate at this cafe yesterday. Today I came back and ordered[[ another]] sandwich."  # 'came back ... another', ours -0.41
+  - "Another letter arrived from the council, this[[ time]] about parking."
+  - "In 1972, a second bridge was built, this[[ time]] in steel."
+  - "Second half: same[[ as]] the first, with the visitors pressing high."
+  - "Kitchen Tips, Part III\nToday we[[ continue]] with knife skills."
+  - "Kitchen Tips\nToday we[[ continue]] with knife skills."
+  - "After a short recess, the witness returned to[[ continue]] her account."
+  - "The witness took the stand to[[ continue]] her account."
+  - "Back on the farm, we had[[ more]] chores."
+  - "For weeks we have been reading Genesis, and on Sunday we'll go back and pick[[ up]] with chapter 12."
+  - "This Sunday you can pick[[ up]] a reading plan at the entrance."
+  - "We have worked through the textbook all term, and next week we'll start[[ another]] unit."
+  - "This term we begin the textbook, and next week we'll start[[ another]] unit."
+  - "We stayed in Rome last spring. This spring we went back for a few[[ more]] days."
+  - "The rash lasted a week. After a short break, it came back for two[[ more]] weeks."
+  - "I ate at this cafe yesterday. Today I came back and ordered[[ another]] sandwich."
 should_not_fire:
-  - "The first letter arrived from the council, this[[ time]] about parking."  # 'the first ... this time', ours +0.02
-  - "Opening half: same[[ as]] expected, with the visitors pressing high."  # '1st round ... same as', ours +0.05
-  - "In 1972, a bridge was built, this[[ time]] in steel."  # 'a ... this time', ours +1.00
-  - "On the farm, we had[[ more]] chores."  # 'more' without 'Back', ours +0.17
-  - "The rash lasted a week, and it went on for two[[ more]] weeks."  # same episode 'two more', ours +1.28
-  - "We liked Rome, so we stayed a few[[ more]] days."  # same trip 'a few more', ours +0.37
-  - "The sandwich was good, so I ordered[[ another]] one."  # same sitting 'another', ours -0.03
-  - "He rang the bell, waited a moment, and rang[[ again]]."  # same visit 'again', ours +0.98
-  - "He rang the bell last Monday. Today he came back and rang[[ again]]."  # later visit 'again', ours -0.16
-  - "The[[ witness]] took the stand to continue her account."  # neutral token
+  - "The first letter arrived from the council, this[[ time]] about parking."
+  - "Opening half: same[[ as]] expected, with the visitors pressing high."
+  - "In 1972, a bridge was built, this[[ time]] in steel."
+  - "On the farm, we had[[ more]] chores."
+  - "The rash lasted a week, and it went on for two[[ more]] weeks."
+  - "We liked Rome, so we stayed a few[[ more]] days."
+  - "The sandwich was good, so I ordered[[ another]] one."
+  - "He rang the bell, waited a moment, and rang[[ again]]."
+  - "He rang the bell last Monday. Today he came back and rang[[ again]]."
+  - "The[[ witness]] took the stand to continue her account."
 threshold: atlas-q99
 by: {github: narang99, method: agent, model: claude-opus-5-5}

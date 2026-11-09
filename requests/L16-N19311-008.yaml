@@ -1,10 +1,7 @@
-# Random baseline, - side. Kept apart from -002 so its near misses have their own pass rule.
-# should_fire repeats -002's should_fire. should_not_fire is 10 random everyday sentences, target on the last word.
-# Threshold: the - side's atlas q99. Fresh prompts, written before any reading.
 type: activation-test
 neuron: L16-N19311
 side: "-"
-hypothesis: "The negative side goes beyond its q99 on the -002 should-fire prompts, and stays below q99 on random everyday sentences."
+hypothesis: "The neuron fires (-ve) when a token talks about (it can also add) an earlier episode instead of something to an existing one. This file tests it against random baseline"
 should_fire:
   - "Another letter arrived from the council, this[[ time]] about parking."
   - "In 1972, a second bridge was built, this[[ time]] in steel."

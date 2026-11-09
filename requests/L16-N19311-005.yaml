@@ -1,7 +1,7 @@
 # Question: does a counted increment fire the + side more strongly than degree "more"?
 # The + side ranks: counted increment > degree "more" > neutral tokens. This file tests the first step. -006 tests the second.
-# should_not_fire is degree "more". It still fires above the + side's q99 (0.195), so here it means "below q999", not quiet.
-# Threshold: the + side's atlas q999 (0.655). Fresh prompts, written before any reading.
+# should_not_fire is degree "more".
+# Threshold: the + side's atlas q999 (0.655).
 type: activation-test
 neuron: L16-N19311
 side: "+"
@@ -29,5 +29,7 @@ should_not_fire:
   - "Over the years the town became[[ more]] expensive."
   - "The questions were[[ more]] personal than I expected."
   - "Her paintings look[[ more]] colorful in daylight."
+# the runner does not accept atlas-q999, this seems like a bug and should be fixed
+# for now, we are using the exact number
 threshold: 0.655
 by: {github: narang99, method: agent, model: claude-opus-5-5}

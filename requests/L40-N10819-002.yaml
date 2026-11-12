@@ -1,0 +1,40 @@
+type: contrast
+neuron: L40-N10819
+side: "+"
+pairs:
+  - high: "At the seminar, the two graduate students exchanged detailed feedback on their theses. The two students said they learned[[ from]]"
+    low: "At the seminar, the two graduate students studied detailed feedback in the writing handbook. The two students said they learned[[ from]]"
+  - high: "During rehearsal, the two violinists traded suggestions about their timing. The two violinists said they learned[[ from]]"
+    low: "During rehearsal, the two violinists followed instructions about their timing from the conductor. The two violinists said they learned[[ from]]"
+  - high: "On the research project, the two biologists compared their experimental methods. The two biologists said they learned[[ from]]"
+    low: "On the research project, the two biologists consulted the laboratory manual for experimental methods. The two biologists said they learned[[ from]]"
+  - high: "At the design review, the two architects critiqued their competing plans. The two architects said they learned[[ from]]"
+    low: "At the design review, the two architects inspected the available reference plans. The two architects said they learned[[ from]]"
+  - high: "Over the season, the two basketball players compared their defensive choices during practice. The two players said they learned[[ from]]"
+    low: "Over the season, the two basketball players analyzed recorded defensive drills. The two players said they learned[[ from]]"
+  - high: "During the coding workshop, the two developers demonstrated their debugging techniques to their partner. The two developers said they learned[[ from]]"
+    low: "During the coding workshop, the two developers read a guide to debugging techniques. The two developers said they learned[[ from]]"
+  - high: "At the clinic, the two nurses shared their observations about difficult cases. The two nurses said they learned[[ from]]"
+    low: "At the clinic, the two nurses reviewed written observations about difficult cases. The two nurses said they learned[[ from]]"
+  - high: "In the studio, the two sculptors traded practical advice about their tools. The two sculptors said they learned[[ from]]"
+    low: "In the studio, the two sculptors consulted a catalog of practical advice about tools. The two sculptors said they learned[[ from]]"
+  - high: "Throughout the expedition, the two geologists compared their field notes and interpretations. The two geologists said they learned[[ from]]"
+    low: "Throughout the expedition, the two geologists reread the field manual and its interpretations. The two geologists said they learned[[ from]]"
+  - high: "At the debate club, the two speakers challenged their opposing arguments. The two speakers said they learned[[ from]]"
+    low: "At the debate club, the two speakers studied a textbook about constructing arguments. The two speakers said they learned[[ from]]"
+  - high: "During the internship, the two translators exchanged corrections on their draft translations. The two translators said they learned[[ from]]"
+    low: "During the internship, the two translators used a dictionary to correct draft translations. The two translators said they learned[[ from]]"
+  - high: "On the farm, the two apprentices compared the methods they had developed. The two apprentices said they learned[[ from]]"
+    low: "On the farm, the two apprentices copied the methods in a training manual. The two apprentices said they learned[[ from]]"
+  - high: "At the lab, the two chemists debated their interpretations of the spectra. The two chemists said they learned[[ from]]"
+    low: "At the lab, the two chemists read published interpretations of the spectra. The two chemists said they learned[[ from]]"
+  - high: "During the planning session, the two organizers offered critiques of their schedules. The two organizers said they learned[[ from]]"
+    low: "During the planning session, the two organizers read the official guidance on schedules. The two organizers said they learned[[ from]]"
+  - high: "On the project, the two engineers compared the circuit designs they had drafted. The two engineers said they learned[[ from]]"
+    low: "On the project, the two engineers reviewed sample circuit designs in the handbook. The two engineers said they learned[[ from]]"
+  - high: "In the language class, the two learners exchanged corrections on pronunciation. The two learners said they learned[[ from]]"
+    low: "In the language class, the two learners followed a recording of standard pronunciation. The two learners said they learned[[ from]]"
+by:
+  github: chaewon-research
+  method: agent
+  model: GPT-6

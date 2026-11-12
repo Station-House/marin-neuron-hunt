@@ -1,0 +1,48 @@
+neuron: L43-N22771
+data: pilot/fineweb-10m-sparse
+label: "expects back-referring 'so': think so, do so"
+positive:
+  status: explained
+  confidence: high
+  cue_type: next-token
+  explanation: >-
+    Fires on the word just before a "so" that stands in for something already said or forms a fixed phrase:
+    "I don't think so", "continue to do so", "in doing so", "and if so,", "a year or so", "and rightly so",
+    "much/more/less so". Its output pushes " so" (logit lens top: " so" 14.5, "so", "-so", " So"). All 32 top
+    exemplars sit right before "so" (32 documents; ranks 0-31 are think, do/doing/done, if, or, rightly/rightfully,
+    less), and 82% of its 631 firings above +91.4 (q999) come right before "so", spread over 554 documents with
+    no document holding more than 5. Weaker firings (+25 to +50) land on the same trigger words when "so" does
+    not follow ("do this", "if you", "or two"), so it reads as expecting "so" rather than seeing it.
+  fires_on: >-
+    the token before pronoun-like or set-phrase "so": 'do' (85% of 402 'do so' past the + threshold, 40% strong),
+    'doing' (93% of 151), 'if' (83% of 101), 'or' (86% of 251), 'think' (85% of 53), 'done', 'much', 'more',
+    'rightly'
+  not_on: >-
+    the word before conjunction or intensifier "so": ', so' (2% of 3,475), '. So' (0.1% of 3,124), 'is so'
+    (2% of 473), 'was so' (0 of 344), 'are so' (0 of 295); and the trigger words when "so" does not follow
+    ('do' 3% of 13,463, 'if' 2% of 20,830, 'or' 1% of 41,156). Read from the sparse tier, which keeps only each
+    token's top 64 neurons, so these rates are floors. In the fineweb-1m deep sample (6,141 tokens, 3 documents)
+    the 13 tokens before a conjunction or intensifier "so" all stay at or below 0. But the one back-referring "so"
+    there, "without saying so", gives -1.5 on "saying", and that sample has no "do so", "think so" or "if so",
+    so the claim needs an activation test.
+  evidence: [0, 1, 2, 3, 4, 5, 6, 9, 13, 14, 16, 17, 24, 25, 28, 31]
+  verification: untested
+negative:
+  status: unclear
+  cue_type: mixed
+  explanation: >-
+    About 30x weaker (min -8.75 against max +266) and never stored in the sparse tier, so only the 32 exemplars
+    can be read. 12 of them sit inside a phrase that starts with a non-pronoun "so": "so" itself in "so what?",
+    "so can you", "so were others" (ranks 1, 12, 13, 16, 18) and "to" in "so to speak" (ranks 11, 15, 17, 19, 22,
+    23, 30). Six more (ranks 21, 24-28) are one boilerplate sentence ("they did not") repeated across six
+    documents, and the rest are unrelated ("all the more", "in particular"). The logit lens bottom has no theme.
+  fires_on: "partly 'so' in 'so what' / 'so can you' and 'to' in 'so to speak'; no single pattern"
+  not_on: "untested"
+  evidence: [1, 11, 12, 13, 15, 16, 17, 18, 19, 22, 23, 30]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides touch the word "so": the positive side predicts a "so" that refers back ("think so", "do so"),
+  while the much weaker negative side partly marks fixed phrases led by a different "so" ("so what", "so to speak").
+by:
+  - {github: faisalhacks, method: agent, model: claude-opus-5-5}

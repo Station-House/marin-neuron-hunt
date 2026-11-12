@@ -30,12 +30,6 @@ them before you write any prompts.
    - **The other side:** say what the opposite side does on the same prompts.
 4. **Data.**
    - Name the atlas prefix your evidence comes from.
-   - Write fresh prompts. Don't copy exemplar text from the atlas into the request: those are the
-     examples you built the hypothesis from, so they will pass whether or not it's right.
-   - Exception: in a contrast test you may build a pair by copying an exemplar and changing only
-     the difference your explanation names (often a single token). The evidence is whether that one
-     edit moves the activation, so the copy isn't circular. The two prompts in a pair can't be
-     identical.
    - The `sparse` tier can't show where a side *doesn't* fire. Check non-firing claims in the
      `deep` tier of `fineweb-1m`.
    - Watch for artifacts: the first tokens of a document, document boundaries, repeated

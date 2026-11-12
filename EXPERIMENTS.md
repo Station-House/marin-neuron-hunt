@@ -5,7 +5,7 @@ rule** before anything runs. Write your prompts and prediction before you see an
 exactly what was merged.
 
 Every request needs a design, and CI fails a request PR without one. Before writing one, work through the six design stages in [CONTRIBUTING.md](CONTRIBUTING.md#designing-a-request):
-the claim, what's measured, the controls (near misses, random neurons), fresh prompts, noise and the
+the claim, what's measured, the controls (near misses, random neurons), data, noise and the
 result that would refute you.
 
 Pick a type from the menu, or design your own (type E). Copy the template into
@@ -96,9 +96,8 @@ by: {github: your-handle, method: human}
 
 - Write **at least 10 pairs** of prompts that differ only in the thing your explanation says matters (for
   example "or vice versa" versus "or the reverse"), with the target token marked in both.
-- Pairs may be **exemplar edits**: copy an atlas exemplar as `high` and change only the named difference for
-  `low`. Check that the edit doesn't retokenize the neighbouring text. The two prompts in a pair can't be
-  identical.
+- Pairs can start from atlas exemplars (copy one as `high`, change only the named difference for `low`). Check
+  that the edit doesn't retokenize the neighbouring text. The two prompts in a pair can't be identical.
 - **Measured:** the side's activation difference within each pair.
 - **Pass:** the side is higher on the predicted member in at least 80% of pairs, and the mean difference is at
   least half the side's threshold.

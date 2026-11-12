@@ -29,9 +29,6 @@ evidence holds up, act as their design partner. Don't design it for them.
 3. **Push on the usual weak spots.**
    - Do the shouldn't-fire prompts use the same target token in the wrong context?
    - Did they compare with random neurons from the same layer?
-   - Are the test prompts fresh, rather than copied from exemplars? Exception: contrast pairs may
-     copy an exemplar and change only the named difference. Don't flag those; the two prompts in a
-     pair just can't be identical.
    - Are non-firing claims checked in the `deep` tier, not the `sparse` one?
    - Are there document-start, boundary or mid-word artifacts?
    - Is every target a single token?

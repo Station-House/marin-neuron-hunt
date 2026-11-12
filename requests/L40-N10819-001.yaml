@@ -1,0 +1,39 @@
+type: activation-test
+neuron: L40-N10819
+side: "-"
+hypothesis: >-
+  At the token ' each', the negative side is predicted to exceed its atlas
+  threshold more often when the preceding context suggests reciprocal
+  interaction than when it describes individual people or items.
+  Future words, including 'other', are not visible at the measured token.
+should_fire:
+  - "After a dispute, the two neighbors apologized to[[ each]] other at the community meeting."
+  - "The teammates encouraged[[ each]] other through the final training session."
+  - "The two researchers exchanged notes with[[ each]] other before drafting the report."
+  - "The siblings promised to look after[[ each]] other during the journey."
+  - "The dancers carefully mirrored[[ each]] other during the rehearsal."
+  - "The negotiating teams listened to[[ each]] other before proposing terms."
+  - "The partners learned to trust[[ each]] other after several setbacks."
+  - "The rival captains greeted[[ each]] other before the opening match."
+  - "The committee members debated with[[ each]] other before reaching an agreement."
+  - "The classmates helped[[ each]] other prepare for the final examination."
+  - "The visitors introduced themselves to[[ each]] other at the reception."
+  - "The old friends embraced[[ each]] other on the station platform."
+should_not_fire:
+  - "After the inspection, the two neighbors delivered notices to[[ each]] tenant on the block."
+  - "The teammates checked[[ each]] helmet before the final training session."
+  - "The two researchers recorded measurements for[[ each]] sample before drafting the report."
+  - "The siblings packed supplies into[[ each]] suitcase before leaving on the journey."
+  - "The dancers practiced[[ each]] movement separately during the rehearsal."
+  - "The negotiating teams reviewed[[ each]] clause before proposing terms."
+  - "The partners initialed[[ each]] document after several meetings."
+  - "The rival captains inspected[[ each]] safety rope before the opening match."
+  - "The committee members evaluated[[ each]] proposal before reaching an agreement."
+  - "The classmates numbered[[ each]] page before the final examination."
+  - "The visitors examined[[ each]] exhibit at the reception hall."
+  - "The old friends sorted[[ each]] photograph before leaving the station."
+threshold: atlas-q99
+by:
+  github: chaewon-research
+  method: agent
+  model: GPT-6

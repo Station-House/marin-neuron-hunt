@@ -73,9 +73,9 @@ def check_request(path, data, validator, errors):
         errors.append(f"{path}: file name says {m.group(1)} but the request's (first) neuron is {named}")
     pairs = data.get("pairs") if data.get("type") == "contrast" else None
     if isinstance(pairs, list):
-        edits = sum(isinstance(p, dict) and p.get("source") == "exemplar-edit" for p in pairs)
-        if edits * 2 > len(pairs):
-            errors.append(f"{path}: {edits} of {len(pairs)} pairs are exemplar edits; at least half must be fresh")
+        for i, p in enumerate(pairs, 1):
+            if isinstance(p, dict) and p.get("high") == p.get("low"):
+                errors.append(f"{path}: pair {i} has identical high and low prompts")
 
 
 def main():

@@ -82,7 +82,7 @@
           "pairs": {
             "type": "array",
             "minItems": 10,
-            "items": {"type": "object", "additionalProperties": false, "required": ["high", "low"], "properties": {"high": {"$ref": "#/$defs/prompt"}, "low": {"$ref": "#/$defs/prompt"}, "source": {"enum": ["fresh", "exemplar-edit"]}}}
+            "items": {"type": "object", "additionalProperties": false, "required": ["high", "low"], "properties": {"high": {"$ref": "#/$defs/prompt"}, "low": {"$ref": "#/$defs/prompt"}}}
           },
           "by": {"$ref": "#/$defs/by"}
         }

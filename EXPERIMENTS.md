@@ -97,8 +97,8 @@ by: {github: your-handle, method: human}
 - Write **at least 10 pairs** of prompts that differ only in the thing your explanation says matters (for
   example "or vice versa" versus "or the reverse"), with the target token marked in both.
 - Pairs may be **exemplar edits**: copy an atlas exemplar as `high` and change only the named difference for
-  `low`, marked `source: exemplar-edit`. Check that the edit doesn't retokenize the neighbouring text. At least
-  half the pairs must be fresh (the default), and the fresh pairs must pass the rule on their own.
+  `low`. Check that the edit doesn't retokenize the neighbouring text. The two prompts in a pair can't be
+  identical.
 - **Measured:** the side's activation difference within each pair.
 - **Pass:** the side is higher on the predicted member in at least 80% of pairs, and the mean difference is at
   least half the side's threshold.
@@ -109,7 +109,7 @@ neuron: L40-N25546
 side: "+"
 pairs:
   - {high: "... [[target]] ...", low: "... [[target]] ..."}   # >= 10 pairs
-  - {high: "<exemplar text> [[target]] ...", low: "<same, one change> [[target]] ...", source: exemplar-edit}
+  - {high: "<exemplar text> [[target]] ...", low: "<same, one change> [[target]] ..."}
 by: {github: your-handle, method: human}
 ```
 

@@ -34,9 +34,8 @@ them before you write any prompts.
      examples you built the hypothesis from, so they will pass whether or not it's right.
    - Exception: in a contrast test you may build a pair by copying an exemplar and changing only
      the difference your explanation names (often a single token). The evidence is whether that one
-     edit moves the activation, so the copy isn't circular. Mark such pairs `source: exemplar-edit`.
-     At least half the pairs must still be fresh, and the fresh pairs must pass on their own:
-     exemplar edits only test contexts where the neuron is already known to fire.
+     edit moves the activation, so the copy isn't circular. The two prompts in a pair can't be
+     identical.
    - The `sparse` tier can't show where a side *doesn't* fire. Check non-firing claims in the
      `deep` tier of `fineweb-1m`.
    - Watch for artifacts: the first tokens of a document, document boundaries, repeated

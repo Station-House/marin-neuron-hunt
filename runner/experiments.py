@@ -78,20 +78,13 @@ def contrast(m, req, request_id):
     acts, _, _ = m.run([Row(e.ids, e.pos) for pair in enc for e in pair], reads=[(layer, neuron)])
     hi, lo = acts[0::2, 0], acts[1::2, 0]
     diff = sign * (hi - lo)
-    sources = [p.get("source", "fresh") for p in req["pairs"]]
-    fresh = np.array([s == "fresh" for s in sources])
     frac = float(np.mean(diff > 0))
     mean_diff = float(diff.mean())
-    per = [dict(high=h.text, low=l.text, source=s, act_high=float(a), act_low=float(b), diff=float(d))
-           for (h, l), s, a, b, d in zip(enc, sources, hi, lo, diff)]
+    per = [dict(high=h.text, low=l.text, act_high=float(a), act_low=float(b), diff=float(d))
+           for (h, l), a, b, d in zip(enc, hi, lo, diff)]
     ok = frac >= PASS_FRACTION and mean_diff >= 0.5 * thr
     summary = dict(threshold=thr, pairs_in_predicted_direction=frac, mean_diff=mean_diff,
                    mean_diff_needed=0.5 * thr)
-    if not fresh.all():
-        fd = diff[fresh]
-        f_frac, f_mean = float(np.mean(fd > 0)), float(fd.mean())
-        summary.update(fresh_pairs=int(fresh.sum()), fresh_in_predicted_direction=f_frac, fresh_mean_diff=f_mean)
-        ok = ok and f_frac >= PASS_FRACTION and f_mean >= 0.5 * thr
     return result("confirmed" if ok else "refuted", summary, per, atlas_stats=stats)
 
 

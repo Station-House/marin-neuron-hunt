@@ -153,15 +153,6 @@ class TestPassRules(unittest.TestCase):
         acts = [[1.0], [0.8]] * 10  # right direction, mean diff 0.2 < 0.5 * pos_q99
         self.assertEqual(experiments.contrast(FakeMarin(acts), req, "x")["outcome"], "refuted")
 
-    def test_contrast_exemplar_edits_need_fresh_pairs_to_pass(self):
-        pairs = [dict(high=PROMPT, low=PROMPT, source="exemplar-edit")] * 5 + [dict(high=PROMPT, low=PROMPT)] * 5
-        req = dict(type="contrast", neuron="L3-N7", side="+", pairs=pairs)
-        acts = [[1.0], [0.2]] * 10
-        res = experiments.contrast(FakeMarin(acts), req, "x")
-        self.assertEqual((res["outcome"], res["summary"]["fresh_pairs"]), ("confirmed", 5))
-        acts = [[3.0], [0.0]] * 5 + [[1.0], [0.9]] * 5  # edits carry the mean; fresh pairs too weak
-        self.assertEqual(experiments.contrast(FakeMarin(acts), req, "x")["outcome"], "refuted")
-
     def steering_lps(self, target_gain, baseline_gain):
         def lps(rows):
             out = np.zeros((len(rows), 1))

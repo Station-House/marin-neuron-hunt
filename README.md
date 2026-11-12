@@ -150,7 +150,7 @@ scripts/check_design.py                         the design check CI runs on requ
 
 Run the check locally: `pip install pyyaml jsonschema && python scripts/validate.py`.
 
-How to design the evidence behind an explanation or request (controls, fresh prompts, noise) is in
+How to design the evidence behind an explanation or request (controls, noise) is in
 [CONTRIBUTING.md](CONTRIBUTING.md). Notes for coding agents are in [AGENTS.md](AGENTS.md).
 
 ## License

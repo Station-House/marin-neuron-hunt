@@ -47,7 +47,7 @@ requests/<request id>/DESIGN.md instead and link it here. -->
 
 ### Data
 
-<!-- Atlas prefix; prompts written fresh (not copied from exemplars; contrast pairs may be one-change exemplar edits marked `source: exemplar-edit`); non-firing checked in `deep`. -->
+<!-- Atlas prefix; non-firing checked in `deep`. -->
 
 ### Noise
 

@@ -1,0 +1,132 @@
+request: L40-N10819-001
+type: activation-test
+outcome: refuted
+reason: null
+summary:
+  threshold: 0.6552488207817078
+  should_fire_above: 1.0
+  should_not_fire_below: 0.0
+  auroc: 0.9097222222222222
+  should_fire_mean: -48.1875
+  should_not_fire_mean: -23.447916666666668
+per_prompt:
+- group: should_fire
+  prompt: After a dispute, the two neighbors apologized to[[ each]] other at the community meeting.
+  token: Ġeach
+  act: -69.0
+- group: should_fire
+  prompt: The teammates encouraged[[ each]] other through the final training session.
+  token: Ġeach
+  act: -42.75
+- group: should_fire
+  prompt: The two researchers exchanged notes with[[ each]] other before drafting the report.
+  token: Ġeach
+  act: -42.25
+- group: should_fire
+  prompt: The siblings promised to look after[[ each]] other during the journey.
+  token: Ġeach
+  act: -70.5
+- group: should_fire
+  prompt: The dancers carefully mirrored[[ each]] other during the rehearsal.
+  token: Ġeach
+  act: -47.0
+- group: should_fire
+  prompt: The negotiating teams listened to[[ each]] other before proposing terms.
+  token: Ġeach
+  act: -47.25
+- group: should_fire
+  prompt: The partners learned to trust[[ each]] other after several setbacks.
+  token: Ġeach
+  act: -39.25
+- group: should_fire
+  prompt: The rival captains greeted[[ each]] other before the opening match.
+  token: Ġeach
+  act: -56.5
+- group: should_fire
+  prompt: The committee members debated with[[ each]] other before reaching an agreement.
+  token: Ġeach
+  act: -51.25
+- group: should_fire
+  prompt: The classmates helped[[ each]] other prepare for the final examination.
+  token: Ġeach
+  act: -39.5
+- group: should_fire
+  prompt: The visitors introduced themselves to[[ each]] other at the reception.
+  token: Ġeach
+  act: -29.25
+- group: should_fire
+  prompt: The old friends embraced[[ each]] other on the station platform.
+  token: Ġeach
+  act: -43.75
+- group: should_not_fire
+  prompt: After the inspection, the two neighbors delivered notices to[[ each]] tenant on the block.
+  token: Ġeach
+  act: -30.875
+- group: should_not_fire
+  prompt: The teammates checked[[ each]] helmet before the final training session.
+  token: Ġeach
+  act: -37.0
+- group: should_not_fire
+  prompt: The two researchers recorded measurements for[[ each]] sample before drafting the report.
+  token: Ġeach
+  act: -7.90625
+- group: should_not_fire
+  prompt: The siblings packed supplies into[[ each]] suitcase before leaving on the journey.
+  token: Ġeach
+  act: -25.0
+- group: should_not_fire
+  prompt: The dancers practiced[[ each]] movement separately during the rehearsal.
+  token: Ġeach
+  act: -7.96875
+- group: should_not_fire
+  prompt: The negotiating teams reviewed[[ each]] clause before proposing terms.
+  token: Ġeach
+  act: -26.375
+- group: should_not_fire
+  prompt: The partners initialed[[ each]] document after several meetings.
+  token: Ġeach
+  act: -16.875
+- group: should_not_fire
+  prompt: The rival captains inspected[[ each]] safety rope before the opening match.
+  token: Ġeach
+  act: -45.0
+- group: should_not_fire
+  prompt: The committee members evaluated[[ each]] proposal before reaching an agreement.
+  token: Ġeach
+  act: -11.25
+- group: should_not_fire
+  prompt: The classmates numbered[[ each]] page before the final examination.
+  token: Ġeach
+  act: -9.375
+- group: should_not_fire
+  prompt: The visitors examined[[ each]] exhibit at the reception hall.
+  token: Ġeach
+  act: -20.25
+- group: should_not_fire
+  prompt: The old friends sorted[[ each]] photograph before leaving the station.
+  token: Ġeach
+  act: -43.5
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: 020d27aa36aa3e4b4fabcf458168fc4cd38bc1b2
+request_commit: 26f1c57b4b4bb08687f20e8d6c49ca8fd737ece5
+gpu: NVIDIA H200
+date: '2026-11-12'
+seconds: 1.8
+atlas_stats:
+  n: 9995501.0
+  mean: 0.00822466891258955
+  std: 0.6970990300178528
+  frac_pos: 0.5045340061187744
+  max: 119.0
+  min: -99.0
+  scale_abs_p999: 5.376117706298828
+  pos_q5: 0.11970850080251694
+  pos_q9: 0.342891126871109
+  pos_q99: 0.9057977795600891
+  pos_q999: 5.829415321350098
+  pos_q9999: 37.51619338989258
+  neg_q5: 0.11039991676807404
+  neg_q9: 0.3162277638912201
+  neg_q99: 0.6552488207817078
+  neg_q999: 5.376117706298828
+  neg_q9999: 37.51619338989258

@@ -1,0 +1,32 @@
+neuron: L32-N16234
+data: pilot/fineweb-10m-sparse
+label: "legal boilerplate vs spun spam text"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: mixed
+  explanation: >-
+    Weak (max 4.1). Fires inside machine-spun or scrambled spam text, where sentences are grammatical
+    in pieces but make no sense ("The several collaboration must better the gente of"). Most of a random 40
+    strong firings (act 1.2 or more) are in text like this.
+  fires_on: "tokens inside garbled, machine-rewritten spam text"
+  not_on: "untested"
+  evidence: [0, 2, 3, 6, 7, 8, 10, 11, 13, 15, 16, 23, 24, 27, 28]
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Fires in legal boilerplate such as website terms, privacy policies and forward-looking statement
+    disclaimers ("If you breach any term", "appear to violate these Terms"). About 18 of a random 40 strong
+    firings (act -2.0 or less) fit.
+  fires_on: "terms of service, privacy policy and legal disclaimer wording"
+  not_on: "untested"
+  evidence: [0, 1, 2, 3, 4, 7, 8, 15, 17, 19, 23, 24, 26, 27, 30]
+  verification: untested
+relation: unrelated
+relation_note: >-
+  One side tracks formal legal text and the other tracks garbled spam text.
+by:
+  - {github: roshaneyshah, method: human}

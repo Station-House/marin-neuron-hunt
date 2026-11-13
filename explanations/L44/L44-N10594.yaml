@@ -1,0 +1,49 @@
+neuron: L44-N10594
+data: pilot/fineweb-10m-sparse
+label: "team-sport context: American football (+) vs basketball (-)"
+positive:
+  status: explained
+  confidence: high
+  cue_type: semantic-topic
+  explanation: >-
+    Fires throughout American-football text (NFL and college) rather than on any single marker. Across
+    all 13,417 positive stored firings it lands mostly on ordinary words and punctuation ("the", ",",
+    "of", "and") carried along the passage; only ~3% of firings are on numbers (and only ~4% even among
+    the 300 strongest), so the stat-numbers in the top exemplars are the rare high-magnitude peaks, not
+    the rule. The contexts are unmistakably football: Monday Night Football, the line of scrimmage,
+    snaps, sacks, wideouts/receivers, roster sizes, the 25-second play clock, win-loss records, and the
+    1869 origin (Walter Camp). The football identity is carried by the logit lens (pushing " QB",
+    " quarterback", " linebacker", " NFL", " football") and clinched by the football-vs-basketball sign
+    split, not by a specific token. Five random selective L44 neurons showed no sports pattern.
+  fires_on: "American-football text (NFL / college), broadly across the passage - scrimmage, snaps, sacks, receivers, rosters, Monday Night Football, win-loss records; mostly common words, strongest on salient stats"
+  not_on: >-
+    basketball (that is the - side) and non-sports text. Untested beyond the exemplars: non-firing can't
+    be read from the sparse tier, so a contrast test (football vs basketball) is the real check.
+  evidence: [1, 5, 6, 8, 9, 10, 14, 19, 22, 23]
+  verification: untested
+negative:
+  status: explained
+  confidence: high
+  cue_type: semantic-topic
+  explanation: >-
+    Fires throughout basketball text (NCAA and NBA), the mirror of the + side. Across all 5,393 negative
+    stored firings it also lands mostly on ordinary words and punctuation, with only ~3% on numbers. The
+    contexts are clearly basketball: the paint, assists, the buzzer, the NCAA tournament, coaches (Matt
+    Painter), players (Greivis Vasquez, LaceDarius Dunn), the NBA draft, and basketball scores and records
+    ("Baylor 67, Kentucky 62"; "9-21"). The gate is open and a negative `up` carries the sign, and the
+    logit lens is coherent too, pushing " forwards", " foul", " Shooting", " baskets", " tournament" and
+    " Floor". As on the + side the very strongest firings fall on scores/records, but most firings are
+    common tokens within basketball passages.
+  fires_on: "basketball text (NCAA / NBA), broadly across the passage - the paint, assists, buzzer, the tournament, coaches, the NBA draft, scores/records; mostly common words, strongest on scores"
+  not_on: >-
+    American football (the + side) and non-sports text. Untested beyond the exemplars (same sparse-tier
+    caveat); a contrast test pairing the two sports would be the clean check.
+  evidence: [0, 1, 4, 5, 6, 10, 11, 12, 14, 16]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides fire throughout team-sport text (mostly on ordinary tokens, not on any one marker); they
+  split by sport - the + side marks American football, the - side marks basketball. The sign split is
+  itself evidence that the neuron encodes the sport, not merely sports numbers.
+by:
+  - {github: vissutalim, method: agent, model: claude-opus-4-8}

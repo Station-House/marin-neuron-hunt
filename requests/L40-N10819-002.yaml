@@ -1,0 +1,40 @@
+type: contrast
+neuron: L40-N10819
+side: "+"
+pairs:
+  - high: "At the seminar, the two students exchanged feedback on their drafts. Later, they talked about what they had learned[[ from]]"
+    low: "At the seminar, the two students reviewed feedback on their drafts. Later, they talked about what they had learned[[ from]]"
+  - high: "During rehearsal, two violinists compared notes about timing. Afterward, they described what they had learned[[ from]]"
+    low: "During rehearsal, two violinists reviewed notes about timing. Afterward, they described what they had learned[[ from]]"
+  - high: "At the lab, the two biologists debated the assay results. Later, they talked about insights they had gained[[ from]]"
+    low: "At the lab, the two biologists documented the assay results. Later, they talked about insights they had gained[[ from]]"
+  - high: "At a design meeting, two architects critiqued the floor plans. Later, they described ideas they had taken[[ from]]"
+    low: "At a design meeting, two architects inspected the floor plans. Later, they described ideas they had taken[[ from]]"
+  - high: "At practice, two players debated defensive strategies. They later discussed what they had learned[[ from]]"
+    low: "At practice, two players rehearsed defensive strategies. They later discussed what they had learned[[ from]]"
+  - high: "At a coding workshop, two developers shared debugging techniques. Later, they explained what they had learned[[ from]]"
+    low: "At a coding workshop, two developers studied debugging techniques. Later, they explained what they had learned[[ from]]"
+  - high: "During handoff, the two nurses discussed their observations. After the shift, they described what they had learned[[ from]]"
+    low: "During handoff, the two nurses documented their observations. After the shift, they described what they had learned[[ from]]"
+  - high: "In the studio, two sculptors exchanged tips on casting. They later described what they had learned[[ from]]"
+    low: "In the studio, two sculptors reviewed tips on casting. They later described what they had learned[[ from]]"
+  - high: "In the field, two geologists compared their maps. At the end of the trip, they described insights they had drawn[[ from]]"
+    low: "In the field, two geologists updated their maps. At the end of the trip, they described insights they had drawn[[ from]]"
+  - high: "At debate club, two speakers debated their positions. Afterward, they talked about the lessons they had learned[[ from]]"
+    low: "At debate club, two speakers rehearsed their positions. Afterward, they talked about the lessons they had learned[[ from]]"
+  - high: "During an internship, two translators exchanged corrections on draft translations. Later, they discussed what they had learned[[ from]]"
+    low: "During an internship, two translators reviewed corrections on draft translations. Later, they discussed what they had learned[[ from]]"
+  - high: "On the farm, two apprentices compared planting methods. They later talked about what they had learned[[ from]]"
+    low: "On the farm, two apprentices practiced planting methods. They later talked about what they had learned[[ from]]"
+  - high: "At a lab meeting, two chemists debated their readings of the spectra. They later described what they had learned[[ from]]"
+    low: "At a lab meeting, two chemists documented their readings of the spectra. They later described what they had learned[[ from]]"
+  - high: "During planning, two organizers negotiated the proposed schedule. They later described lessons they had learned[[ from]]"
+    low: "During planning, two organizers reviewed the proposed schedule. They later described lessons they had learned[[ from]]"
+  - high: "In a design session, two engineers exchanged circuit diagrams. Afterward, they explained what they had learned[[ from]]"
+    low: "In a design session, two engineers inspected circuit diagrams. Afterward, they explained what they had learned[[ from]]"
+  - high: "In language class, two learners exchanged pronunciation feedback. After class, they discussed what they had learned[[ from]]"
+    low: "In language class, two learners reviewed pronunciation feedback. After class, they discussed what they had learned[[ from]]"
+by:
+  github: chaewon-research
+  method: agent
+  model: GPT-6

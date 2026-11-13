@@ -1,0 +1,36 @@
+neuron: L40-N10819
+data: pilot/fineweb-10m-sparse
+label: "reciprocal phrases: preceding words and each"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: grammar
+  explanation: >-
+    Strong positive firings occur mainly on verbs or prepositions before
+    reciprocal phrases such as "each other" and "one another". The cue can
+    also extend to an earlier verb in a coordinated phrase, as in
+    "influence and transform each other".
+  fires_on: "'transform each other', 'from each other', 'know each other', 'against one another'"
+  not_on: "verbs and prepositions without a reciprocal phrase (not tested)"
+  evidence: [5433078, 1630135, 5069115, 8354981, 3530408, 8746334, 5433076]
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: phrase-idiom
+  explanation: >-
+    Strong negative firings concentrate on "each" in "each other", including
+    possessive uses such as "each other's". Some negative firings also occur
+    on "each" without a following "other", so the cue is not exclusive to
+    the reciprocal phrase.
+  fires_on: "the token 'each' in 'each other' and possessive 'each other's'"
+  not_on: "other uses of 'each' (not established; counterexamples occur)"
+  evidence: [7193905, 5640015, 7783001, 6628500, 8307119, 7000615, 9248546]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides respond to reciprocal phrasing at different token positions:
+  positive firings tend to precede the phrase, while negative firings tend
+  to occur on "each".
+by:
+  - {github: chaewon-research, method: agent, model: GPT-6}

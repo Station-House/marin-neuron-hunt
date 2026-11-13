@@ -1,0 +1,132 @@
+request: L44-N14190-002
+type: activation-test
+outcome: confirmed
+reason: null
+summary:
+  threshold: 1.1547819375991821
+  should_fire_above: 0.8333333333333334
+  should_not_fire_below: 1.0
+  auroc: 0.8333333333333334
+  should_fire_mean: -10.592447916666666
+  should_not_fire_mean: -0.23487345377604166
+per_prompt:
+- group: should_fire
+  prompt: The animal shelter's annual gala raised[[ $]]80,000 for rescue dogs.
+  token: Ġ$
+  act: -17.875
+- group: should_fire
+  prompt: Your donation of[[ $]]25 buys a week of meals at the food bank.
+  token: Ġ$
+  act: 2.796875
+- group: should_fire
+  prompt: The charity's filing shows total revenue of[[ $]]3.2 million last year.
+  token: Ġ$
+  act: -15.8125
+- group: should_fire
+  prompt: Raffle tickets for the fundraiser are[[ $]]5 each, with proceeds to the shelter.
+  token: Ġ$
+  act: -25.125
+- group: should_fire
+  prompt: The foundation awarded a[[ $]]50,000 grant to the youth mentoring nonprofit.
+  token: Ġ$
+  act: 7.15625
+- group: should_fire
+  prompt: Museum members who give[[ $]]100 receive free admission all year.
+  token: Ġ$
+  act: -21.75
+- group: should_fire
+  prompt: The capital campaign has raised[[ $]]2 million toward the new wing.
+  token: Ġ$
+  act: -5.25
+- group: should_fire
+  prompt: A suggested donation of[[ $]]10 supports the community arts program.
+  token: Ġ$
+  act: -9.0625
+- group: should_fire
+  prompt: The nonprofit's endowment is valued at roughly[[ $]]6 million.
+  token: Ġ$
+  act: -10.1875
+- group: should_fire
+  prompt: Silent-auction bids started at[[ $]]15 to benefit the children's hospital.
+  token: Ġ$
+  act: -10.625
+- group: should_fire
+  prompt: The walkathon pledged[[ $]]40 per mile for cancer research.
+  token: Ġ$
+  act: -15.5
+- group: should_fire
+  prompt: Freewill offerings of[[ $]]5 help keep the mission's doors open.
+  token: Ġ$
+  act: -5.875
+- group: should_not_fire
+  prompt: The new smartphone retails for[[ $]]999 at most electronics stores.
+  token: Ġ$
+  act: -0.0213623046875
+- group: should_not_fire
+  prompt: Her monthly apartment rent rose to[[ $]]2,100 this spring.
+  token: Ġ$
+  act: -0.056884765625
+- group: should_not_fire
+  prompt: The streaming service costs[[ $]]15.99 a month after the trial.
+  token: Ġ$
+  act: -0.65625
+- group: should_not_fire
+  prompt: The company reported quarterly profit of[[ $]]3.2 million to investors.
+  token: Ġ$
+  act: -0.158203125
+- group: should_not_fire
+  prompt: A gallon of gas hit[[ $]]4 at the corner station.
+  token: Ġ$
+  act: -0.5546875
+- group: should_not_fire
+  prompt: The contractor's invoice came to[[ $]]12,500 for the kitchen remodel.
+  token: Ġ$
+  act: -0.1328125
+- group: should_not_fire
+  prompt: Shares of the firm opened at[[ $]]47 on the exchange this morning.
+  token: Ġ$
+  act: -0.34375
+- group: should_not_fire
+  prompt: The used sedan was listed for[[ $]]8,900 at the dealership.
+  token: Ġ$
+  act: -1.03125
+- group: should_not_fire
+  prompt: His annual salary was raised to[[ $]]85,000 after the promotion.
+  token: Ġ$
+  act: 1.7890625
+- group: should_not_fire
+  prompt: A large pizza there now costs[[ $]]22 with delivery.
+  token: Ġ$
+  act: -0.185546875
+- group: should_not_fire
+  prompt: The startup raised a[[ $]]6 million round from venture investors.
+  token: Ġ$
+  act: -1.1484375
+- group: should_not_fire
+  prompt: The hotel charged[[ $]]250 a night during peak season.
+  token: Ġ$
+  act: -0.318359375
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: 91f1378050d5bb0210ba5e658282e7c6461db42a
+request_commit: 23c5c23e2d973a6913ef9bc7b93b9b594d33ea44
+gpu: NVIDIA H200
+date: '2026-11-13'
+seconds: 0.2
+atlas_stats:
+  n: 9995501.0
+  mean: -0.1862451434135437
+  std: 0.7980276942253113
+  frac_pos: 0.1599762737751007
+  max: 123.0
+  min: -40.0
+  scale_abs_p999: 10.273508071899414
+  pos_q5: 0.08659642934799194
+  pos_q9: 0.6552488207817078
+  pos_q99: 7.431795597076416
+  pos_q999: 25.028654098510742
+  pos_q9999: 51.86134338378906
+  neg_q5: 0.2480454444885254
+  neg_q9: 0.6552488207817078
+  neg_q99: 1.1547819375991821
+  neg_q999: 2.035137414932251
+  neg_q9999: 7.431795597076416

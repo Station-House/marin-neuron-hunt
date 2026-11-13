@@ -1,0 +1,132 @@
+request: L20-N1234-001
+type: activation-test
+outcome: confirmed
+reason: null
+summary:
+  threshold: 0.2480454444885254
+  should_fire_above: 1.0
+  should_not_fire_below: 1.0
+  auroc: 1.0
+  should_fire_mean: 1.833984375
+  should_not_fire_mean: 0.06539535522460938
+per_prompt:
+- group: should_fire
+  prompt: We waited two hours for the plumber and, oh my[[ God]], he brought the wrong part.
+  token: ĠGod
+  act: 0.7890625
+- group: should_fire
+  prompt: My[[ God]], the traffic on the bridge is unbearable tonight.
+  token: ĠGod
+  act: 2.203125
+- group: should_fire
+  prompt: The cake collapsed in the oven.[[ Heck]], at least the frosting tastes fine.
+  token: ĠHeck
+  act: 3.359375
+- group: should_fire
+  prompt: Nobody showed up to the meeting.[[ Heck]], I almost skipped it myself.
+  token: ĠHeck
+  act: 3.71875
+- group: should_fire
+  prompt: What the[[ heck]] is that noise coming from the attic?
+  token: Ġheck
+  act: 0.34375
+- group: should_fire
+  prompt: I dropped my keys in the lake,[[ darn]] it.
+  token: Ġdarn
+  act: 1.4765625
+- group: should_fire
+  prompt: That[[ darn]] printer jammed again right before the deadline.
+  token: Ġdarn
+  act: 1.5
+- group: should_fire
+  prompt: Will you please, for[[ goodness]] sake, close the gate behind you?
+  token: Ġgoodness
+  act: 1.28125
+- group: should_fire
+  prompt: Oh my[[ goodness]], look at the size of that pumpkin!
+  token: Ġgoodness
+  act: 0.734375
+- group: should_fire
+  prompt: Well,[[ heck]], I never expected a party for my birthday.
+  token: Ġheck
+  act: 3.640625
+- group: should_fire
+  prompt: Oh[[ God]], I left the stove on when we left the house.
+  token: ĠGod
+  act: 1.71875
+- group: should_fire
+  prompt: The referee missed the call again, and the coach yelled, oh for[[ goodness]] sake.
+  token: Ġgoodness
+  act: 1.2421875
+- group: should_not_fire
+  prompt: The theologian argued that[[ God]] is beyond complete human understanding.
+  token: ĠGod
+  act: -0.004180908203125
+- group: should_not_fire
+  prompt: In the creed, believers affirm that[[ God]] made heaven and earth.
+  token: ĠGod
+  act: -0.053466796875
+- group: should_not_fire
+  prompt: The cathedral inscription honors[[ God]] and the city founders.
+  token: ĠGod
+  act: 0.0024871826171875
+- group: should_not_fire
+  prompt: Her grandmother taught her to[[ darn]] wool socks by the fire.
+  token: Ġdarn
+  act: 0.10107421875
+- group: should_not_fire
+  prompt: He used a wooden egg to[[ darn]] the hole in his sweater.
+  token: Ġdarn
+  act: 0.138671875
+- group: should_not_fire
+  prompt: A good sweater is worth the time it takes to[[ darn]] it carefully.
+  token: Ġdarn
+  act: -0.019775390625
+- group: should_not_fire
+  prompt: Farmers praised the[[ goodness]] of the rich valley soil.
+  token: Ġgoodness
+  act: 0.10693359375
+- group: should_not_fire
+  prompt: The philosopher wrote about the quiet[[ goodness]] of ordinary people.
+  token: Ġgoodness
+  act: -0.00384521484375
+- group: should_not_fire
+  prompt: The recipe preserves the natural[[ goodness]] of ripe tomatoes.
+  token: Ġgoodness
+  act: 0.18359375
+- group: should_not_fire
+  prompt: The engineer, Dr.[[ Heck]], presented the bridge survey results.
+  token: ĠHeck
+  act: 0.018310546875
+- group: should_not_fire
+  prompt: The parish register lists Johann[[ Heck]] as a miller in 1790.
+  token: ĠHeck
+  act: 0.2158203125
+- group: should_not_fire
+  prompt: The court ruled against[[ Heck]] in the 1994 appeal.
+  token: ĠHeck
+  act: 0.09912109375
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: 077262a53b4c58a22d63815723af06571bc1f2a9
+request_commit: 607b29d513603ef1a10c2cee9980fadc2c8cc02f
+gpu: NVIDIA H200
+date: '2026-11-13'
+seconds: 2.6
+atlas_stats:
+  n: 9995501.0
+  mean: -0.0015793414786458015
+  std: 0.061849936842918396
+  frac_pos: 0.4857097268104553
+  max: 6.21875
+  min: -1.6015625
+  scale_abs_p999: 0.5139696598052979
+  pos_q5: 0.020169146358966827
+  pos_q9: 0.08659642934799194
+  pos_q99: 0.2480454444885254
+  pos_q999: 0.6042963862419128
+  pos_q9999: 1.2521497011184692
+  neg_q5: 0.02186974696815014
+  neg_q9: 0.08659642934799194
+  neg_q99: 0.2287573218345642
+  neg_q999: 0.4740031659603119
+  neg_q9999: 0.7704043984413147

@@ -3,7 +3,7 @@ data: pilot/fineweb-10m-sparse
 label: "added increment vs return to earlier episode"
 positive:
   status: explained
-  confidence: weak
+  confidence: high
   cue_type: grammar
   explanation: >-
     Fires on a word that adds a counted increment to an amount already in play, as in "a few more
@@ -11,23 +11,25 @@ positive:
     in the same sentence, "extra", "additional" and "another" keep it. Adding a count raises the activation. Exact counts up to
     fifty fire as strongly as small ones ("fifty more days" +1.72). "a hundred" and "a thousand" drop to about
     half, and vague large counts ("thousands more") go to about zero. The frame matters: days and years fire
-    strongly, pages and miles weakly.
+    strongly, pages and miles weakly. Confirmed by -001 (#33), -005 (#37) and -007 (#39); -006 (#38) was
+    refuted, as predicted, since degree 'more' stays at background.
   fires_on: "'more' / 'another' / 'additional' / 'extra' / 'further' after a count, e.g. 'for a few more days', 'two more weeks'"
   not_on: >-
     degree 'more' ('the climb only got more steep') stays at background, -0.32 to +0.18 on fresh prompts. Bare
     'more' ('I want more chocolate') stays near zero, and 'even more' goes negative. Measured on prompts we
     wrote, not the deep tier.
   evidence: [1, 2, 5, 6, 8, 9, 11, 12, 14, 25]
-  verification: untested
+  verification: confirmed
 negative:
   status: explained
-  confidence: weak
+  confidence: high
   cue_type: discourse-structure
   explanation: >-
     Fires when the text marks the current event as a repeat of, or a return to, an earlier episode, as in
     "Part II ... Today we continue", "this time", "pick up with chapter 10" and "returned to continue". When
     the earlier episode is removed ("The first entry ... this time", "1stRound ... same as"), the activation
-    goes to about zero. The gate stays open; `up` carries the sign.
+    goes to about zero. The gate stays open; `up` carries the sign. Confirmed by -002 (#34), -003 (#35),
+    -004 (#36) and -008 (#40).
   fires_on: "'continue', 'this time', 'same', 'yet', 'again', and 'pick up' in its resume sense, when they point back to an earlier, separate episode"
   not_on: >-
     the same words with no earlier episode ('The first entry ... this time', '1stRound: Opening verse, same as').
@@ -37,7 +39,7 @@ negative:
     many as the positive rows and include many common tokens (',', ' the', ' to'), so this side is broader than
     stated.
   evidence: [0, 1, 6, 10, 11, 14, 22, 24, 25, 26]
-  verification: untested
+  verification: confirmed
 relation: variant
 relation_note: >-
   Both sides place an item relative to earlier ones: the positive side adds a new increment, the negative

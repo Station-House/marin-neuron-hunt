@@ -1,0 +1,332 @@
+request: L20-N1234-004
+type: custom
+outcome: inconclusive
+reason: 'Post-hoc design, so inconclusive by its own rule. Null on the numbers: the target produced swears in 0 of 351 steered
+  generations (clamp up to 8.22, additive up to +32.9); random layer-20 neurons steered the same way produced swears in 17
+  of 1350, all on frustrated prompts.'
+summary:
+  scale_abs_p999: 0.514
+  prompts: 9
+  samples_per_prompt: 3
+  max_new_tokens: 80
+  temperature: 0.8
+  top_p: 0.95
+  seed: 1234
+  target_steered_generations: 351
+  target_swearing_generations: 0
+  control_generations: 1350
+  control_swearing_generations: 17
+  supported: false
+  post_hoc_design: true
+  sweeps:
+    clamp:
+      mode: act := k * scale
+      k_target:
+      - -8
+      - -4
+      - 0
+      - 2
+      - 4
+      - 8
+      - 16
+      k_controls:
+      - 8
+      - 16
+      control_neurons:
+      - 2900
+      - 3837
+      - 4737
+      - 7235
+      - 8823
+      - 10509
+      - 25522
+      - 26996
+      - 27068
+      - 27307
+      target_steered_generations: 162
+      target_swearing_generations: 0
+      control_generations: 540
+      control_swearing_generations: 7
+      gpu: NVIDIA H200
+    add:
+      mode: act += k * scale
+      k_target:
+      - -32
+      - -16
+      - 0
+      - 4
+      - 8
+      - 16
+      - 32
+      - 64
+      k_controls:
+      - 16
+      - 32
+      - 64
+      control_neurons:
+      - 2900
+      - 3837
+      - 4737
+      - 7235
+      - 8823
+      - 10509
+      - 25522
+      - 26996
+      - 27068
+      - 27307
+      target_steered_generations: 189
+      target_swearing_generations: 0
+      control_generations: 810
+      control_swearing_generations: 10
+      gpu: NVIDIA H200
+per_prompt:
+- sweep: clamp
+  neurons: L20-N1234
+  k: 0
+  value: 0.0
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 0.0
+  words: {}
+- sweep: clamp
+  neurons: L20-N1234
+  k: 2
+  value: 1.0279
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 0.556
+  words: {}
+- sweep: clamp
+  neurons: L20-N1234
+  k: 4
+  value: 2.0559
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 0.556
+  words: {}
+- sweep: clamp
+  neurons: L20-N1234
+  k: 8
+  value: 4.1118
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 0.778
+  words: {}
+- sweep: clamp
+  neurons: L20-N1234
+  k: 16
+  value: 8.2235
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 0.852
+  words: {}
+- sweep: clamp
+  neurons: L20-N1234
+  k: -4
+  value: -2.0559
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 0.593
+  words: {}
+- sweep: clamp
+  neurons: L20-N1234
+  k: -8
+  value: -4.1118
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 0.741
+  words: {}
+- sweep: clamp
+  neurons: 10 random L20
+  k: 8
+  generations: 270
+  swearing_generations: 4
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 4
+  changed_vs_k0: 0.822
+  words:
+    shit: 4
+    damn: 1
+    hell: 1
+- sweep: clamp
+  neurons: 10 random L20
+  k: 16
+  generations: 270
+  swearing_generations: 3
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 3
+  changed_vs_k0: 0.937
+  words:
+    shit: 3
+- sweep: add
+  neurons: L20-N1234
+  k: 0
+  value: 0.0
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 0.0
+  words: {}
+- sweep: add
+  neurons: L20-N1234
+  k: 4
+  value: 2.0559
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 0.556
+  words: {}
+- sweep: add
+  neurons: L20-N1234
+  k: 8
+  value: 4.1118
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 0.741
+  words: {}
+- sweep: add
+  neurons: L20-N1234
+  k: 16
+  value: 8.2235
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 0.963
+  words: {}
+- sweep: add
+  neurons: L20-N1234
+  k: 32
+  value: 16.447
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 1.0
+  words: {}
+- sweep: add
+  neurons: L20-N1234
+  k: 64
+  value: 32.8941
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 1.0
+  words: {}
+- sweep: add
+  neurons: L20-N1234
+  k: -16
+  value: -8.2235
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 0.963
+  words: {}
+- sweep: add
+  neurons: L20-N1234
+  k: -32
+  value: -16.447
+  generations: 27
+  swearing_generations: 0
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 0
+  changed_vs_k0: 1.0
+  words: {}
+- sweep: add
+  neurons: 10 random L20
+  k: 16
+  generations: 270
+  swearing_generations: 4
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 4
+  changed_vs_k0: 0.93
+  words:
+    shit: 3
+    bloody: 1
+- sweep: add
+  neurons: 10 random L20
+  k: 32
+  generations: 270
+  swearing_generations: 2
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 2
+  changed_vs_k0: 0.993
+  words:
+    hell: 1
+    shit: 1
+- sweep: add
+  neurons: 10 random L20
+  k: 64
+  generations: 270
+  swearing_generations: 4
+  neutral_soft: 0
+  neutral_strong: 0
+  frustrated_soft: 0
+  frustrated_strong: 4
+  changed_vs_k0: 1.0
+  words:
+    shit: 3
+    hell: 1
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: 'hand-run: results/L20-N1234-004/gpu_run.py'
+request_commit: b5a0ee6a16496eacafd99cdc2557ae66cf63df3c
+gpu: NVIDIA H200
+date: '2026-11-13'

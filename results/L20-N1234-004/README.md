@@ -1,9 +1,12 @@
-# L20-N1234: steering during generation (exploratory)
+# L20-N1234-004: steering during generation
 
-**This is an exploratory experiment, not a pre-registered request.** It was designed and run by hand, did not go
-through the Experimentation Wizard, and its numbers are not runner output, so it has no request file and no
-`results/<request id>.yaml`. Treat it as a pointer for a future steering request, not as verification of the
-explanation.
+Request: [`requests/L20-N1234-004.yaml`](../../requests/L20-N1234-004.yaml) (design:
+[`DESIGN.md`](../../requests/L20-N1234-004/DESIGN.md)). Result: [`results/L20-N1234-004.yaml`](../L20-N1234-004.yaml),
+outcome **inconclusive**. Code: [`gpu_run.py`](gpu_run.py) (Modal, H200) and [`score.py`](score.py).
+
+**Run by hand, design written after the run.** The experiment was run on 2026-11-13 before the request existed, so
+it is not pre-registered and did not go through the Experimentation Wizard; the request records what was run.
+Treat it as a pointer for a future type B steering request, not as verification of the explanation.
 
 Question: if we push `L20-N1234+` (soft exclamatives: "Heck,", "darn", "my goodness", "you name it") up while Marin 32B
 is writing, does it swear or interject more?

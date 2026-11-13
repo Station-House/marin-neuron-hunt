@@ -1,0 +1,141 @@
+# Design: requests/L62-N24835-001/DESIGN.md
+type: custom
+neurons: [L62-N24835, L63-N27150, L57-N14263, L46-N25555, L50-N4018]
+title: "Capybara scene control: do the capybara candidates track the animal or the spelling of its name?"
+procedure: |
+  Model marin-community/marin-32b-base @ f19b3466, bf16. Activation = silu(gate) * up. One forward pass per
+  prompt, no steering, no ablation. Prompts are in requests/L62-N24835-001/prompts.json (182 activation
+  prompts, every [[ ]] target checked as one Marin token, longest prompt 48 tokens with BOS; the same
+  file also gives 39 naming contexts for positive control P2).
+
+  Arms:
+    scene (120): 10 animals x 3 descriptions x 4 shared endings. The description never names the animal
+      (no English, Spanish or Portuguese name, no name pieces). Target = " it" in the shared ending, e.g.
+      "This animal is the largest rodent in the world and lives in noisy groups along rivers and marshes in
+      South America. The keeper said visitors are allowed to feed[[ it]] on weekends."
+    word (40): 10 animals x 4 fresh frames with the name present. Target = last Marin piece of the name
+      (capy[[bara]], guinea[[ pig]], be[[aver]], nut[[ria]], mar[[a]], tap[[ir]], hipp[[o]], ot[[ter]],
+      wom[[bat]], [[ dog]]).
+    ruby (12): the Ruby testing gem. Every ruby prompt and every capybara word-arm prompt tokenizes the
+      name as " cap" + "y" + "bara", with the same target = capy[[bara]]; the only intended contrast is
+      the referent established by the context, the software library rather than the animal.
+    unrelated (10): plain sentences with no animal, for the baseline in the contamination fraction.
+  Animals: capybara, guinea pig, beaver, nutria, mara, tapir, hippo, otter, wombat, dog.
+
+  Naming contexts (for P2, not activation prompts): prompts.json's "naming" section gives the 30 exact
+    scene-description stems, 9 neutral contexts, the frame " The animal is:", and the 10 candidate
+    names. For every one of the 39 contexts and every candidate, record the summed log probability of
+    " " + the candidate's full name as the continuation after context + frame (390 scores). Also record
+    the raw log probability; the pass metric uses prior-corrected lift, defined below.
+
+  Record, for every prompt, at the target token and at the token after it (both sites, as in
+  probes/capybara-v1: word_last and next): the activation of every side named in
+  requests/L62-N24835-001/readouts.json (61 named sides plus the 1,920 distinct random sides, 1,981 in
+  all). Also the full per-token trace for the 61 named sides.
+
+  Readouts (frozen before the run, from probes/capybara-v1 @ 6402b9e, all 20 pair templates):
+    singles: L62-N24835+, L63-N27150-, L57-N14263+, L46-N25555+, L50-N4018- (raw side activation).
+    capybara groups (caps on): standardized sum at sizes 4, 10, 12, 16 and logistic at 10, 12, 16, as listed
+      in notes/analysis/capybara-coalition-sets-16.csv. Standardization means/SDs and logistic weights are
+      fixed in readouts.json; they are not refit on the new prompts.
+    tapir groups (fake target): tapir standardized sum and logistic at sizes 4, 10, 12, 16.
+  Positive controls (not candidate readouts):
+    P1 scene-fitted readout: using the scene-arm activations of all 1,981 recorded sides at " it", fit a
+      binary L2 logistic readout (C = 1.0, balanced class weights) for capybara versus the nine rivals.
+      Standardize each feature inside the training fold. Cross-fit in 3 folds by description index:
+      hold out one description for every animal (40 prompts), train on the other two descriptions
+      (80 prompts), and pool all held-out scores. A held-out description and its 4 endings are never in
+      training. P1 must also show breadth: for every held-out description, capybara wins at least 3 of
+      its 4 slots and its held-out mean score exceeds the strongest rival's mean for that description.
+      Report the same one-versus-rest cross-fitting for every animal as a diagnostic.
+      P1 failure protocol (fixed in advance): if the full readout fails, report (a) how many of the
+      other nine animals pass the P1 bars under the same 8-positive folds, (b) a reduced refit on the
+      61 named sides only, same folds, C and class weights, and (c) a label-permutation null (200
+      shuffles within folds) with the observed held-out margin's position in it. If the reduced
+      readout passes every P1 bar, P1 is scored by the reduced readout.
+    P2 prior-corrected naming: for candidate a and context d, lift(a, d) = log P(a | d) minus the mean
+      log P(a | neutral context) over the 9 neutral contexts. The same full name is used in both terms,
+      so the candidate's baseline frequency and token length under the naming frame are subtracted.
+      Report raw log probabilities, the full lift matrix, each true candidate's lift rank, and for
+      every candidate the range and SD of its log probability across the 9 neutral contexts.
+  Run order: stage 1 (pilot) runs the 120 scene passes and the 390 naming scores and scores P1
+    (including its failure protocol) and P2 before any candidate is scored. Stage 2 runs the remaining
+    62 passes (word, ruby, unrelated) and all candidate scoring, and runs only if at least one control
+    passes. If both controls fail, stop after the pilot and report the pilot result.
+  Margin for an arm and a readout R, target animal t: (mean score of t) minus (highest mean among the
+  other nine animals), divided by the SD of the other nine animals' prompt scores ("rival-SD units").
+  For the scene arm the denominator is the larger of that pooled SD and the SD of the 27 rival
+  description means (endings collapsed); the rival scene scores' variance is also decomposed into
+  between-animal, between-description and between-ending components and reported for every readout.
+  That larger-SD margin governs confirmation (S1); the refutation bar takes the larger margin
+  (smaller SD), so both margins must fall below 0.5 for a margin-based refutation.
+  Matched-slot win: in a slot (same description index and ending, or same word frame), t beats all nine.
+  Description breadth: within one description index (the target animal's 4 ending variants against the
+  rivals' matching variants), count the target's slot wins and compare its mean score with the highest
+  rival mean for that description. Scene margins and slot wins are reported per description as well as
+  pooled.
+  Random baseline: 1,000 random sets per size (1, 4, 10, 12, 16), numpy default_rng(0), drawn from the
+  1,920 random neurons (30 per layer, all 64 layers) extracted for the coalition screens, each side's pole
+  oriented by capybara minus rival mean at word_last; sum and logistic readouts fit the same way on
+  probes/capybara-v1 and frozen in readouts.json before the run. The first 200 sets per size are the
+  original freeze; 800 more per size were appended on the same rng stream before the run.
+  Contamination fraction at a site: (mean ruby score - mean unrelated score) / (mean capybara word-arm score
+  - mean unrelated score), at the bara token and at the next token.
+prediction: >-
+  Our prior is negative. We expect the capybara groups to separate capybara on the word arm but not on the
+  scene arm (they track the spelling cap y bara, not the animal), L62-N24835+ to be animal-generic on the
+  scene arm, and L63-N27150- to put capybara with tapir, mara, nutria and guinea pig (a South American
+  mammal cluster). We expect both positive controls to pass: a readout fitted on scene descriptions
+  should separate held-out capybara descriptions, and capybara's name should show the largest
+  prior-corrected lift on its own descriptions. A capybara concept readout, if one exists, would
+  separate capybara on the scene arm without the word and stay quiet on the Ruby gem. Registered
+  numeric prediction: the best readout's scene margin lands roughly between 0 and 0.5 rival-SD, at
+  about 60% confidence (intuition, not a screen result); a margin of 1.0 or better with at least 10 of
+  12 slots would flip the conclusion to a claim.
+pass_rule: >-
+  Each capybara readout R is scored on its own. All scene gates are scored at the target token (" it")
+  only; next-token scores are diagnostics and cannot confirm or refute (the ruby checks C1 and C2 are
+  defined at both sites, as stated). Validity gates: (V1) R's word-arm margin is at least 1.0 and
+  (V2) the tapir standardized-sum size-4 set, scored with tapir as target, does not pass S1 and S2 on the
+  scene arm. Positive controls: (P1) the pooled held-out scene-fitted readout has a capybara margin of
+  at least 1.0, capybara wins at least 10 of 12 matched slots, and the breadth check passes for every
+  held-out description, with P1 scored by the pre-registered reduced 61-side readout if the full
+  readout fails and the reduced readout passes every P1 bar; (P2) capybara's mean naming lift on
+  its own contexts is above 0, it scores a clear win in at least 2 of its 3 contexts (ranks first and
+  beats the runner-up's lift by more than capybara's neutral-context SD), and it exceeds capybara's
+  mean lift on the 27 rival contexts; if capybara's log probability range across the 9 neutral
+  contexts exceeds 1.0, P2 is not validated. P1 and P2 are refutation gates, not extra
+  confirmation gates. R is a confirmed capybara-concept readout if V1 and V2 hold and: (S1) scene margin at the " it"
+  target is at least 1.0; (S2) capybara beats all nine rivals in at least 10 of 12 matched scene slots; (S3)
+  the scene margin is above the 99th percentile of the 1,000 random sets of the same size and kind
+  (sum against sum, logistic against logistic; the S3 family is the 12 capybara readouts at the target
+  site, and the tapir readouts are the V2 control, never S3 tests); (S4) for each
+  of the 3 capybara descriptions, capybara wins at least 3 of 4 slots and its mean score exceeds the
+  strongest rival's mean score for that description; (C1) the ruby
+  contamination fraction is at most 0.35 at both the bara token and the next token; (C2) no single ruby
+  prompt is above 0.50 at the bara token. The request is confirmed if at least one capybara readout is
+  confirmed. The PR headline is built from the verdict counts: a confirmation names the readout; if
+  every readout that passes V1 is refuted, the negative-result headline stands; any other split gets
+  a count headline ("No capybara readout confirmed. N readouts refuted as spelling-bound; M
+  inconclusive."), with the inconclusive readouts named as unresolved. If a readout confirms, the
+  named next test is a transfer test in a follow-up request (frozen readout; new capybara descriptions
+  from unused facts in a different frame, plus a vocabulary swap on the original descriptions as the
+  discriminator between tracking the animal and tracking the wording).
+refuted_if: >-
+  Refuted (spelling-bound) for R only if V1 and V2 hold, P1 and P2 both pass, and both scene margins
+  (pooled-SD and description-mean-SD) are below 0.5, or capybara wins fewer than 6 of 12 matched scene
+  slots. If the two margins disagree across the refutation bar, the readout is inconclusive, not
+  refuted. The request is refuted if every
+  readout that passes V1 is refuted. If a readout would otherwise be refuted but P1 or P2 fails, that
+  readout is inconclusive because the scene arm was not validated.
+  If S1 fails only because the strongest rivals are tapir, mara, nutria or guinea pig and all five of those
+  animals score above the other five, R is reported as a South American mammal cluster, not capybara.
+  Inconclusive if V2 fails (the scene arm leaks the word form, so nothing on it counts), if no readout
+  passes V1, if every readout lands between the confirmed and refuted bars, or if a positive control
+  needed for a refutation fails. Any readout that neither confirms nor refutes is inconclusive,
+  including a best readout at scene margin 0.7 with 8 of 12 slots; report its exact margin and slots.
+  If the best readout is inconclusive, the request outcome is "no confirmed capybara readout; best
+  readout inconclusive," not a clean negative result.
+compute: "182 activation forward passes of at most 48 tokens each (with BOS), no steering; all candidate readouts, random baselines and the P1 scene-fitted control are scored from the same passes (1,981 sides x 2 sites x 182 prompts); plus 390 short teacher-forced naming scores (39 contexts x 10 candidate names) for P2"
+outputs: "per prompt: activations of the 1,981 sides in readouts.json at the target and next token, per-token traces for the 61 named sides; per readout: arm means per animal, pooled and per-description margins and matched-slot wins, contamination fractions, the rival-SD variance components and both scene-margin denominators, the exact empirical percentile among the 1,000 random sets and the 99th-percentile cutoff with its order-statistic interval, V1/V2/S1-S4/C1-C2 checks and the outcome; positive controls: P1 held-out scores, pooled and per-description margins and matched-slot wins and per-animal diagnostics, the P1 failure-protocol results (per-animal pass count, reduced-readout scores, permutation-null position), P2 raw name log probabilities, the full prior-corrected lift matrix, true-candidate lift ranks, per-name neutral-context ranges and SDs, and the P1/P2 pass checks"
+by: {github: NososAnosos, method: agent, model: "fleet orchestration (Muse + Grok Bot over multiple models)"}

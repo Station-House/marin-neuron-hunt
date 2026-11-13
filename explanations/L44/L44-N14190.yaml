@@ -1,0 +1,50 @@
+neuron: L44-N14190
+data: pilot/fineweb-10m-sparse
+label: "nonprofit/charity text: sector identity vs dollar amounts"
+positive:
+  status: explained
+  confidence: high
+  cue_type: semantic-topic
+  explanation: >-
+    Fires on nonprofit and charity sector content: an organization's legal/charitable status
+    ("501(c)", "501(c)3", "registered charity", "nonprofit corporation", Australian "DGR status"),
+    charity infrastructure ("Google for Nonprofits", a "4-star rating on Charity Navigator"), and the
+    fundraising profession ("Non-profit leadership", "Canada's charitable sector", "digital fundraising
+    strategy"). The logit lens is textbook-clean, pushing " nonprofit", " nonprofits", " charitable",
+    " charity", " donors" and " donation". Very selective (positive on only 16% of tokens; max +123,
+    pos_q99 7.43) with 18,575 positive stored firings. The strongest firings are unmistakably nonprofit;
+    nearer the pos_q99 threshold they get noisier (one mid-level firing lands on "align themselves with
+    the radicals"). Five random selective L44 neurons showed no nonprofit pattern, so this is specific
+    to this neuron, not the layer.
+  fires_on: "nonprofit / charity sector markers: '501(c)', 'registered charity', 'nonprofit corporation', 'DGR status', 'Charity Navigator', and fundraising / charitable-sector language"
+  not_on: >-
+    ordinary prose and for-profit business text. Untested: non-firing can't be read from the sparse
+    tier, so it needs the deep tier or an activation-test request.
+  evidence: [1, 3, 4, 5, 8, 10, 11, 12, 17, 20]
+  verification: requested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: mixed
+  explanation: >-
+    Much rarer and weaker than the + side (678 stored negative firings vs 18,575 positive; min -40.0 vs
+    max +123.0). Fires on monetary amounts and financial specifics inside nonprofit and fundraising text,
+    overwhelmingly on the "$" token before a figure: organizational finances ("revenue totalled $212
+    million", "assets total $6.71", budgets of "$500,000") and the prices of fundraising ("donation of
+    $18 per family", "raffle tickets for $5", admission "$12", "Freewill donation: $5 per person"), plus
+    a few fundraising-event words ("silent auction", "the event raised"). The gate is open and a negative
+    `up` carries the sign; the logit lens is incoherent, so this side is an input detector, not an
+    output-pusher.
+  fires_on: "dollar amounts and financial figures in nonprofit / fundraising text - revenue, assets, budgets, ticket / admission / donation prices - firing mainly on the '$' token"
+  not_on: >-
+    untested whether it also fires on dollar amounts outside the nonprofit domain. The stored firings are
+    all in nonprofit / fundraising documents, but the sparse tier can't rule out that it fires on "$" more
+    broadly; this needs an activation test or the deep tier.
+  evidence: [0, 1, 2, 7, 9, 13, 15, 21, 28, 31]
+  verification: requested
+relation: variant
+relation_note: >-
+  Both sides fire inside nonprofit and charity text; the + side marks the sector and an organization's
+  charitable identity, while the - side marks the monetary amounts and financial specifics within it.
+by:
+  - {github: vissutalim, method: agent, model: claude-opus-4-8}

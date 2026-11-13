@@ -1,0 +1,53 @@
+# Design: requests/L20-N1234-004/DESIGN.md
+# Written after the run (2026-11-13): this request documents a hand-run exploratory experiment, so it is not
+# pre-registered and its outcome is reported as inconclusive whatever the numbers.
+type: custom
+neurons: [L20-N1234]
+title: "Steering during generation: does pushing L20-N1234+ up make Marin 32B swear or interject more?"
+procedure: |
+  Model marin-community/marin-32b-base @ f19b3466, bf16, one H200. Activation = silu(gate) * up of L20-N1234,
+  the input to layers[20].mlp.down_proj. A forward pre-hook edits it at the newest position on every decoding
+  step of model.generate (with the KV cache this is every generated token; on prefill only the last prompt
+  token). Code: results/L20-N1234-004/gpu_run.py.
+
+  Two sweeps, scale s = scale_abs_p999 of L20-N1234 (0.514, pilot/fineweb-10m-sparse):
+    clamp:    act := k * s,   k in {0, 2, 4, 8, 16, -4, -8}
+    additive: act += k * s,   k in {0, 4, 8, 16, 32, 64, -16, -32}
+  k = 0 means no hook.
+
+  Prompts (9; 6 neutral, 3 frustrated), each sampled 3 times, 80 new tokens, temperature 0.8, top-p 0.95,
+  torch.manual_seed(1234) reset before every condition on the same batch, so each steered text shares its
+  random draws with its k = 0 twin:
+    neutral: "Here is my grandmother's recipe for banana bread. First,"
+    neutral: "Tomorrow's weather forecast for the Bay Area:"
+    neutral: "Dear customer, thank you for contacting our support team regarding your order."
+    neutral: "The mitochondria is an organelle found in most eukaryotic cells. It"
+    neutral: "Meeting notes, Tuesday: The team discussed the Q3 roadmap and"
+    neutral: "My cat spent the whole afternoon"
+    frustrated: "I stubbed my toe on the coffee table this morning and"
+    frustrated: "The printer jammed for the third time today, so I"
+    frustrated: "We missed the last train home by thirty seconds."
+
+  Random baseline: 10 random layer-20 neurons (numpy default_rng(1234), excluding 1234), each steered with k times
+  its own scale_abs_p999: clamp at k = 8, 16; additive at k = 16, 32, 64.
+
+  Metric (results/L20-N1234-004/score.py): per condition, the number of generations containing a soft swear
+  (heck|darn|darned|dang|gosh|golly|shoot|frick|fricking|freaking|crud|jeez|geez|gee) or a strong oath
+  (hell|damn|damned|god|christ|jesus|goddamn|shit|fuck*|crap|bloody), whole words, any case. Also the share of
+  generations whose text differs from the k = 0 generation with the same prompt and sample.
+prediction: >-
+  If L20-N1234+ drives interjections rather than only reading them, pushing it up raises the rate of soft swears
+  and oaths in generated text above the k = 0 baseline and above random layer-20 neurons steered by the same k.
+pass_rule: >-
+  Supported if, in either sweep, the target at some k > 0 produces swears in at least 3 more of its 27
+  generations than k = 0 does, and its swear rate at that k exceeds the pooled random-neuron rate at the same k.
+  Because this rule was written after the run, the outcome is reported as inconclusive in every case; a
+  supported result would call for a pre-registered type B follow-up.
+refuted_if: >-
+  Not refutable here: the design is post hoc, and as with ablation a null effect from steering one neuron in a
+  32B model is reported as inconclusive (other neurons may carry the same feature, and sampled text is an
+  insensitive metric). A null result points to a type B request (log-probability at a marked interjection slot,
+  100-random-neuron baseline) as the proper causal test.
+compute: "2 sweeps x (target + controls) = 47 batched generate calls of 27 prompts x 80 new tokens each, plus one model load per sweep; about 25 minutes on one H200"
+outputs: "every generation (condition, neuron, k, value, prompt, sample, text) in results/L20-N1234-004/clamp.json and add.json; per-condition swear counts and share of texts changed vs k = 0 in results/L20-N1234-004.yaml"
+by: {github: likelytobelaura, method: agent, model: "Claude Opus 5.5 (Claude Code)"}

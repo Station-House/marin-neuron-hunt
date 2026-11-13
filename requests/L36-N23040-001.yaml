@@ -1,0 +1,36 @@
+type: activation-test
+neuron: L36-N23040
+side: "+"
+hypothesis: >-
+  The + side fires on references to higher-court adjudication (the Supreme Court, appellate courts,
+  precedent, and "U.S." citations), not on non-legal uses of the same words such as "tennis court"
+  or "Supreme pizza".
+threshold: atlas-q99
+should_fire:
+  - "The justices heard oral arguments before[[ the]] Supreme Court this term."
+  - "These constitutional questions are decided[[ by]] the Supreme Court."
+  - "The standard of review was first established[[ by]] the appellate courts."
+  - "After full briefing, the petition for certiorari was[[ denied]]."
+  - "The case was argued[[ before]] the Supreme Court last fall."
+  - "Both parties awaited the opinion of the[[ Supreme]] Court."
+  - "Stare decisis requires lower courts to[[ follow]] binding precedent."
+  - "The dispute was ultimately resolved[[ by]] the Supreme Court."
+  - "The appeal was taken directly[[ to]] the Supreme Court."
+  - "The justices will review[[ the]] ruling of the appellate court."
+  - "A unanimous[[ Supreme]] Court issued the opinion in June."
+  - "On reconsideration, the request for review was again[[ denied]]."
+should_not_fire:
+  - "The coach gathered the players before[[ the]] championship game."
+  - "The quarterly budget was approved[[ by]] the finance committee."
+  - "The new onboarding policy was drafted[[ by]] the human resources team."
+  - "Her request for a refund was[[ denied]] by the airline."
+  - "She rehearsed her toast[[ before]] the wedding reception."
+  - "They ordered a[[ Supreme]] pizza with extra toppings."
+  - "New employees must[[ follow]] the office dress code."
+  - "The championship trophy was won[[ by]] the home team."
+  - "The hikers walked directly[[ to]] the mountain lodge."
+  - "The editor will review[[ the]] draft of the magazine article."
+  - "The diner's[[ Supreme]] breakfast comes with extra bacon."
+  - "His application for the loyalty program was[[ denied]]."
+by:
+  - {github: vissutalim, method: agent, model: claude-opus-4-8}

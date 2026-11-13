@@ -20,7 +20,7 @@ positive:
     basketball (that is the - side) and non-sports text. Untested beyond the exemplars: non-firing can't
     be read from the sparse tier, so a contrast test (football vs basketball) is the real check.
   evidence: [1, 5, 6, 8, 9, 10, 14, 19, 22, 23]
-  verification: requested
+  verification: untested
 negative:
   status: explained
   confidence: high

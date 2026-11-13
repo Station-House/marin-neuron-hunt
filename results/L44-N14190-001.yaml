@@ -1,0 +1,132 @@
+request: L44-N14190-001
+type: activation-test
+outcome: refuted
+reason: null
+summary:
+  threshold: 7.431795597076416
+  should_fire_above: 0.5
+  should_not_fire_below: 0.8333333333333334
+  auroc: 0.7847222222222222
+  should_fire_mean: 11.256998697916666
+  should_not_fire_mean: 1.6528549194335938
+per_prompt:
+- group: should_fire
+  prompt: The tax-exempt charitable[[ foundation]] funds free clinics with donor gifts.
+  token: Ġfoundation
+  act: 12.75
+- group: should_fire
+  prompt: The charity's[[ mission]] is to end childhood hunger through donations.
+  token: Ġmission
+  act: -1.3671875
+- group: should_fire
+  prompt: The nonprofit foundation awards small[[ grants]] to community groups.
+  token: Ġgrants
+  act: 1.828125
+- group: should_fire
+  prompt: They operate as a[[ registered]] charity and a tax-exempt 501(c)(3).
+  token: Ġregistered
+  act: 37.25
+- group: should_fire
+  prompt: As a nonprofit, the charity is[[ exempt]] from federal income tax.
+  token: Ġexempt
+  act: 15.625
+- group: should_fire
+  prompt: The community[[ fund]] awards grants to neighborhood charities.
+  token: Ġfund
+  act: 7.8125
+- group: should_fire
+  prompt: Major[[ donors]] and volunteers sustain the charity's food bank.
+  token: Ġdonors
+  act: 0.9921875
+- group: should_fire
+  prompt: Dozens of[[ volunteers]] run the nonprofit's donation drive.
+  token: Ġvolunteers
+  act: 0.62109375
+- group: should_fire
+  prompt: The clinic incorporated as a[[ nonprofit]] and sought charitable grants.
+  token: Ġnonprofit
+  act: 16.375
+- group: should_fire
+  prompt: He founded a[[ charity]] funded by donors to fight cancer.
+  token: Ġcharity
+  act: -0.490234375
+- group: should_fire
+  prompt: Their[[ charitable]] foundation distributes grants to homeless shelters.
+  token: Ġcharitable
+  act: 6.1875
+- group: should_fire
+  prompt: The platform helps small[[ nonprofits]] collect tax-deductible donations.
+  token: Ġnonprofits
+  act: 37.5
+- group: should_not_fire
+  prompt: Workers poured the concrete[[ foundation]] for the new parking garage.
+  token: Ġfoundation
+  act: 0.26171875
+- group: should_not_fire
+  prompt: The spacecraft completed its[[ mission]] to the outer planets.
+  token: Ġmission
+  act: -0.021484375
+- group: should_not_fire
+  prompt: The university's research[[ grants]] funded three new physics labs.
+  token: Ġgrants
+  act: 0.007598876953125
+- group: should_not_fire
+  prompt: The logo is a[[ registered]] trademark of the software company.
+  token: Ġregistered
+  act: 10.625
+- group: should_not_fire
+  prompt: Salaried managers are[[ exempt]] from the overtime rules.
+  token: Ġexempt
+  act: -0.486328125
+- group: should_not_fire
+  prompt: The pension[[ fund]] invests mainly in corporate bonds.
+  token: Ġfund
+  act: -0.74609375
+- group: should_not_fire
+  prompt: Blood[[ donors]] lined up at the mobile clinic downtown.
+  token: Ġdonors
+  act: -1.453125
+- group: should_not_fire
+  prompt: Paid[[ volunteers]] tested the new phone app for two weeks.
+  token: Ġvolunteers
+  act: 1.015625
+- group: should_not_fire
+  prompt: The clinic incorporated as a[[ company]] and sought venture capital.
+  token: Ġcompany
+  act: 12.5625
+- group: should_not_fire
+  prompt: He founded a[[ firm]] funded by investors to drill for oil.
+  token: Ġfirm
+  act: -0.50390625
+- group: should_not_fire
+  prompt: Their[[ business]] division distributes profits to shareholders.
+  token: Ġbusiness
+  act: -0.09912109375
+- group: should_not_fire
+  prompt: The platform helps a small[[ startup]] collect customer payments.
+  token: Ġstartup
+  act: -1.328125
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: 91f1378050d5bb0210ba5e658282e7c6461db42a
+request_commit: 23c5c23e2d973a6913ef9bc7b93b9b594d33ea44
+gpu: NVIDIA H200
+date: '2026-11-13'
+seconds: 0.2
+atlas_stats:
+  n: 9995501.0
+  mean: -0.1862451434135437
+  std: 0.7980276942253113
+  frac_pos: 0.1599762737751007
+  max: 123.0
+  min: -40.0
+  scale_abs_p999: 10.273508071899414
+  pos_q5: 0.08659642934799194
+  pos_q9: 0.6552488207817078
+  pos_q99: 7.431795597076416
+  pos_q999: 25.028654098510742
+  pos_q9999: 51.86134338378906
+  neg_q5: 0.2480454444885254
+  neg_q9: 0.6552488207817078
+  neg_q99: 1.1547819375991821
+  neg_q999: 2.035137414932251
+  neg_q9999: 7.431795597076416

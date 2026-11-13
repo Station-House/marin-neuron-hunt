@@ -1,0 +1,365 @@
+request: L20-N1234-003
+type: custom
+outcome: inconclusive
+reason: 'the minced arm (a) or the neutral arm (c) failed, so the comparison means nothing (checks {''a'': False, ''b'': False,
+  ''c'': True, ''d'': True, ''e'': True}, geo-mean S/M 0.6768, S>T 8/12, M>T 9/12, N>T 0/12)'
+summary:
+  threshold_pos_q99: 0.248
+  ratio_floor: 0.062
+  M_above: 9
+  S_above: 8
+  N_above: 0
+  geo_mean_ratio: 0.6768
+  frames_ratio_in_band: 8
+  a: false
+  b: false
+  c: true
+  d: true
+  random_abc_pass: 0
+  e: true
+  mean_act:
+    S: 0.518
+    M: 0.7837
+    N: 0.0411
+  neg_side_min_act: -0.105
+  random_baseline: 100 L20 neurons, np.random.default_rng(0).choice of all L20 neurons except 1234; each scored on (a)-(c)
+    with its own pos_q99
+  random_passing: []
+per_prompt:
+- frame: 1
+  arm: S
+  prompt: What the[[ fuck]] is that noise in the attic?
+  token: Ġfuck
+  act: 0.0179
+  above_T: false
+  ratio_S_over_M: 0.1764
+- frame: 1
+  arm: M
+  prompt: What the[[ heck]] is that noise in the attic?
+  token: Ġheck
+  act: 0.3516
+  above_T: true
+- frame: 1
+  arm: N
+  prompt: What the[[ children]] heard in the attic was a mouse.
+  token: Ġchildren
+  act: 0.1934
+  above_T: false
+- frame: 2
+  arm: S
+  prompt: Where the[[ hell]] did I leave my car keys?
+  token: Ġhell
+  act: 0.1079
+  above_T: false
+  ratio_S_over_M: 0.9779
+- frame: 2
+  arm: M
+  prompt: Where the[[ heck]] did I leave my car keys?
+  token: Ġheck
+  act: 0.1104
+  above_T: false
+- frame: 2
+  arm: N
+  prompt: Where the[[ river]] bends, I left my car keys.
+  token: Ġriver
+  act: 0.0552
+  above_T: false
+- frame: 3
+  arm: S
+  prompt: God[[ damn]] it, the printer jammed again.
+  token: Ġdamn
+  act: 1.75
+  above_T: true
+  ratio_S_over_M: 0.655
+- frame: 3
+  arm: M
+  prompt: Gosh[[ darn]] it, the printer jammed again.
+  token: Ġdarn
+  act: 2.6719
+  above_T: true
+- frame: 3
+  arm: N
+  prompt: Gord[[ fixed]] it, and the printer works again.
+  token: Ġfixed
+  act: 0.0347
+  above_T: false
+- frame: 4
+  arm: S
+  prompt: That[[ damn]] dog dug up the garden again.
+  token: Ġdamn
+  act: 1.2812
+  above_T: true
+  ratio_S_over_M: 0.8632
+- frame: 4
+  arm: M
+  prompt: That[[ darn]] dog dug up the garden again.
+  token: Ġdarn
+  act: 1.4844
+  above_T: true
+- frame: 4
+  arm: N
+  prompt: That[[ brown]] dog dug up the garden again.
+  token: Ġbrown
+  act: 0.0435
+  above_T: false
+- frame: 5
+  arm: S
+  prompt: Oh my[[ God]], look at the size of that pumpkin!
+  token: ĠGod
+  act: 0.5938
+  above_T: true
+  ratio_S_over_M: 0.8128
+- frame: 5
+  arm: M
+  prompt: Oh my[[ goodness]], look at the size of that pumpkin!
+  token: Ġgoodness
+  act: 0.7305
+  above_T: true
+- frame: 5
+  arm: N
+  prompt: Oh, my[[ neighbor]] grew the biggest pumpkin on the street!
+  token: Ġneighbor
+  act: 0.2422
+  above_T: false
+- frame: 6
+  arm: S
+  prompt: Hammers, saws, drills, you[[ fucking]] name it, the shop sells them all.
+  token: Ġfucking
+  act: 0.5078
+  above_T: true
+  ratio_S_over_M: 0.7027
+- frame: 6
+  arm: M
+  prompt: Hammers, saws, drills, you[[ freaking]] name it, the shop sells them all.
+  token: Ġfreaking
+  act: 0.7227
+  above_T: true
+- frame: 6
+  arm: N
+  prompt: 'Hammers, saws, drills: you[[ will]] find them all at the shop.'
+  token: Ġwill
+  act: -0.0108
+  above_T: false
+- frame: 7
+  arm: S
+  prompt: Oh[[ shit]], I left the stove on when we left the house.
+  token: Ġshit
+  act: 0.0752
+  above_T: false
+  ratio_S_over_M: 0.0613
+- frame: 7
+  arm: M
+  prompt: Oh[[ shoot]], I left the stove on when we left the house.
+  token: Ġshoot
+  act: 1.2266
+  above_T: true
+- frame: 7
+  arm: N
+  prompt: Oh[[ Sam]], I left the stove on when we left the house.
+  token: ĠSam
+  act: 0.0334
+  above_T: false
+- frame: 8
+  arm: S
+  prompt: Holy[[ shit]], the river flooded the whole parking lot.
+  token: Ġshit
+  act: 0.5352
+  above_T: true
+  ratio_S_over_M: 0.5
+- frame: 8
+  arm: M
+  prompt: Holy[[ cow]], the river flooded the whole parking lot.
+  token: Ġcow
+  act: 1.0703
+  above_T: true
+- frame: 8
+  arm: N
+  prompt: Holy[[ water]] was sprinkled over the crowd at the parade.
+  token: Ġwater
+  act: 0.0038
+  above_T: false
+- frame: 9
+  arm: S
+  prompt: This[[ fucking]] traffic is going to make me late again.
+  token: Ġfucking
+  act: 0.4434
+  above_T: true
+  ratio_S_over_M: 2.7683
+- frame: 9
+  arm: M
+  prompt: This[[ flipping]] traffic is going to make me late again.
+  token: Ġflipping
+  act: 0.1602
+  above_T: false
+- frame: 9
+  arm: N
+  prompt: This[[ morning]] traffic is going to make me late again.
+  token: Ġmorning
+  act: -0.0361
+  above_T: false
+- frame: 10
+  arm: S
+  prompt: The ref blew the call again,[[ damn]] it.
+  token: Ġdamn
+  act: 0.4141
+  above_T: true
+  ratio_S_over_M: 0.6347
+- frame: 10
+  arm: M
+  prompt: The ref blew the call again,[[ dang]] it.
+  token: Ġdang
+  act: 0.6523
+  above_T: true
+- frame: 10
+  arm: N
+  prompt: The ref blew the call again,[[ and]] the fans booed.
+  token: Ġand
+  act: -0.105
+  above_T: false
+- frame: 11
+  arm: S
+  prompt: I was so[[ fucking]] tired after the double shift.
+  token: Ġfucking
+  act: 0.3184
+  above_T: true
+  ratio_S_over_M: 1.1164
+- frame: 11
+  arm: M
+  prompt: I was so[[ freaking]] tired after the double shift.
+  token: Ġfreaking
+  act: 0.2852
+  above_T: true
+- frame: 11
+  arm: N
+  prompt: I was so[[ tired]] after the double shift.
+  token: Ġtired
+  act: 0.0413
+  above_T: false
+- frame: 12
+  arm: S
+  prompt: Shut the[[ hell]] up, yelled the cranky neighbor.
+  token: Ġhell
+  act: 0.1709
+  above_T: false
+  ratio_S_over_M: 2.7559
+- frame: 12
+  arm: M
+  prompt: Shut the[[ heck]] up, yelled the cranky neighbor.
+  token: Ġheck
+  act: -0.062
+  above_T: false
+- frame: 12
+  arm: N
+  prompt: Shut the[[ door]], yelled the cranky neighbor.
+  token: Ġdoor
+  act: -0.0016
+  above_T: false
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: 077262a53b4c58a22d63815723af06571bc1f2a9
+request_commit: 607b29d513603ef1a10c2cee9980fadc2c8cc02f
+gpu: NVIDIA H200
+date: '2026-11-13'
+atlas_stats:
+  pos_q99: 0.248
+  neg_q99: 0.2288
+baseline_neurons:
+- 75
+- 147
+- 228
+- 455
+- 609
+- 781
+- 926
+- 1128
+- 1343
+- 2016
+- 2074
+- 2218
+- 2323
+- 2463
+- 3430
+- 3731
+- 4830
+- 4845
+- 6279
+- 7035
+- 7101
+- 7295
+- 7433
+- 7646
+- 8268
+- 8482
+- 8569
+- 8894
+- 9071
+- 9339
+- 9885
+- 10369
+- 10427
+- 10477
+- 10590
+- 10739
+- 10824
+- 10868
+- 11125
+- 11661
+- 11683
+- 12722
+- 13271
+- 13420
+- 13880
+- 13940
+- 14082
+- 14504
+- 14509
+- 14679
+- 14936
+- 14986
+- 15285
+- 15435
+- 15791
+- 15986
+- 16423
+- 16720
+- 16983
+- 17227
+- 17428
+- 17548
+- 17860
+- 17897
+- 17958
+- 18497
+- 18505
+- 18587
+- 18925
+- 19008
+- 19438
+- 19742
+- 19856
+- 19882
+- 19924
+- 20108
+- 20122
+- 21022
+- 21087
+- 21093
+- 22220
+- 22412
+- 22493
+- 23021
+- 23200
+- 23347
+- 23349
+- 23433
+- 23642
+- 23808
+- 24165
+- 24571
+- 24607
+- 25155
+- 25778
+- 25803
+- 26229
+- 26756
+- 27074
+- 27524

@@ -1,0 +1,132 @@
+request: L36-N23040-001
+type: activation-test
+outcome: confirmed
+reason: null
+summary:
+  threshold: 1.8768843412399292
+  should_fire_above: 1.0
+  should_not_fire_below: 0.9166666666666666
+  auroc: 0.9791666666666666
+  should_fire_mean: 21.03125
+  should_not_fire_mean: 0.9360453287760416
+per_prompt:
+- group: should_fire
+  prompt: The justices heard oral arguments before[[ the]] Supreme Court this term.
+  token: Ġthe
+  act: 12.75
+- group: should_fire
+  prompt: These constitutional questions are decided[[ by]] the Supreme Court.
+  token: Ġby
+  act: 20.5
+- group: should_fire
+  prompt: The standard of review was first established[[ by]] the appellate courts.
+  token: Ġby
+  act: 31.625
+- group: should_fire
+  prompt: After full briefing, the petition for certiorari was[[ denied]].
+  token: Ġdenied
+  act: 19.125
+- group: should_fire
+  prompt: The case was argued[[ before]] the Supreme Court last fall.
+  token: Ġbefore
+  act: 16.125
+- group: should_fire
+  prompt: Both parties awaited the opinion of the[[ Supreme]] Court.
+  token: ĠSupreme
+  act: 29.25
+- group: should_fire
+  prompt: Stare decisis requires lower courts to[[ follow]] binding precedent.
+  token: Ġfollow
+  act: 35.0
+- group: should_fire
+  prompt: The dispute was ultimately resolved[[ by]] the Supreme Court.
+  token: Ġby
+  act: 7.46875
+- group: should_fire
+  prompt: The appeal was taken directly[[ to]] the Supreme Court.
+  token: Ġto
+  act: 32.0
+- group: should_fire
+  prompt: The justices will review[[ the]] ruling of the appellate court.
+  token: Ġthe
+  act: 9.875
+- group: should_fire
+  prompt: A unanimous[[ Supreme]] Court issued the opinion in June.
+  token: ĠSupreme
+  act: 34.75
+- group: should_fire
+  prompt: On reconsideration, the request for review was again[[ denied]].
+  token: Ġdenied
+  act: 3.90625
+- group: should_not_fire
+  prompt: The coach gathered the players before[[ the]] championship game.
+  token: Ġthe
+  act: 0.16796875
+- group: should_not_fire
+  prompt: The quarterly budget was approved[[ by]] the finance committee.
+  token: Ġby
+  act: 0.1396484375
+- group: should_not_fire
+  prompt: The new onboarding policy was drafted[[ by]] the human resources team.
+  token: Ġby
+  act: -0.10400390625
+- group: should_not_fire
+  prompt: Her request for a refund was[[ denied]] by the airline.
+  token: Ġdenied
+  act: 0.0284423828125
+- group: should_not_fire
+  prompt: She rehearsed her toast[[ before]] the wedding reception.
+  token: Ġbefore
+  act: -0.0361328125
+- group: should_not_fire
+  prompt: They ordered a[[ Supreme]] pizza with extra toppings.
+  token: ĠSupreme
+  act: 10.0
+- group: should_not_fire
+  prompt: New employees must[[ follow]] the office dress code.
+  token: Ġfollow
+  act: -0.30078125
+- group: should_not_fire
+  prompt: The championship trophy was won[[ by]] the home team.
+  token: Ġby
+  act: 0.09423828125
+- group: should_not_fire
+  prompt: The hikers walked directly[[ to]] the mountain lodge.
+  token: Ġto
+  act: -0.51171875
+- group: should_not_fire
+  prompt: The editor will review[[ the]] draft of the magazine article.
+  token: Ġthe
+  act: 0.3046875
+- group: should_not_fire
+  prompt: The diner's[[ Supreme]] breakfast comes with extra bacon.
+  token: ĠSupreme
+  act: 1.3515625
+- group: should_not_fire
+  prompt: His application for the loyalty program was[[ denied]].
+  token: Ġdenied
+  act: 0.0986328125
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: 91f1378050d5bb0210ba5e658282e7c6461db42a
+request_commit: cb27e8e367f8de2e9ccba789417e3c2bf2b4b501
+gpu: NVIDIA H200
+date: '2026-11-13'
+seconds: 1.9
+atlas_stats:
+  n: 9995501.0
+  mean: -0.034210409969091415
+  std: 0.5495501160621643
+  frac_pos: 0.4022517800331116
+  max: 101.5
+  min: -22.0
+  scale_abs_p999: 8.058422088623047
+  pos_q5: 0.08659642934799194
+  pos_q9: 0.2480454444885254
+  pos_q99: 1.8768843412399292
+  pos_q999: 13.097472190856934
+  pos_q9999: 27.138994216918945
+  neg_q5: 0.14074645936489105
+  neg_q9: 0.3718026578426361
+  neg_q99: 0.7104974389076233
+  neg_q999: 2.2067341804504395
+  neg_q9999: 6.320933818817139

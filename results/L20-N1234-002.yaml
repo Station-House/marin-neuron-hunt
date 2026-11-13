@@ -1,0 +1,84 @@
+request: L20-N1234-002
+type: contrast
+outcome: confirmed
+reason: null
+summary:
+  threshold: 0.2480454444885254
+  pairs_in_predicted_direction: 1.0
+  mean_diff: 3.2125564575195313
+  mean_diff_needed: 0.1240227222442627
+per_prompt:
+- high: Hammers, saws, drills, you[[ name]] it, the shop sells them all.
+  low: At the ceremony, you[[ name]] the ship before it launches.
+  act_high: 3.5
+  act_low: 0.0130615234375
+  diff: 3.4869384765625
+- high: Jazz, folk, metal, you[[ name]] it, she has played it on stage.
+  low: When the puppy arrives, you[[ name]] it whatever you like.
+  act_high: 3.15625
+  act_low: -0.048583984375
+  diff: 3.204833984375
+- high: Floods, fires, droughts, you[[ name]] it, the town has survived it.
+  low: On the form, you[[ name]] it after the street you live on.
+  act_high: 3.46875
+  act_low: -0.01043701171875
+  diff: 3.47918701171875
+- high: Tacos, curry, sushi, you[[ name]] it, the food court has it.
+  low: In the final round, you[[ name]] the capital of each country.
+  act_high: 2.84375
+  act_low: 0.0224609375
+  diff: 2.8212890625
+- high: Late trains, lost bags, rude staff, you[[ name]] it, we had it all.
+  low: If you find a new star, you[[ name]] it in the official catalog.
+  act_high: 2.84375
+  act_low: 0.006256103515625
+  diff: 2.837493896484375
+- high: Chess, poker, darts, you[[ name]] it, my uncle wins at it.
+  low: First you plant the tree, then you[[ name]] it for your grandmother.
+  act_high: 3.09375
+  act_low: -0.0205078125
+  diff: 3.1142578125
+- high: Taxes, permits, inspections, you[[ name]] it, the office handles it.
+  low: In this game, you[[ name]] an animal for every letter.
+  act_high: 3.375
+  act_low: -0.027587890625
+  diff: 3.402587890625
+- high: Rust, mold, termites, you[[ name]] it, the old barn had it.
+  low: When you sign the lease, you[[ name]] a second tenant.
+  act_high: 3.171875
+  act_low: 0.0152587890625
+  diff: 3.1566162109375
+- high: Python, Rust, Go, you[[ name]] it, the team writes it.
+  low: In the script, you[[ name]] the file before saving it.
+  act_high: 3.3125
+  act_low: 0.0023956298828125
+  diff: 3.3101043701171875
+- high: Snow, hail, sleet, you[[ name]] it, the pass gets it every winter.
+  low: At the end of the quiz, you[[ name]] your favorite planet.
+  act_high: 3.25
+  act_low: -0.062255859375
+  diff: 3.312255859375
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: 077262a53b4c58a22d63815723af06571bc1f2a9
+request_commit: 607b29d513603ef1a10c2cee9980fadc2c8cc02f
+gpu: NVIDIA H200
+date: '2026-11-13'
+seconds: 1.1
+atlas_stats:
+  n: 9995501.0
+  mean: -0.0015793414786458015
+  std: 0.061849936842918396
+  frac_pos: 0.4857097268104553
+  max: 6.21875
+  min: -1.6015625
+  scale_abs_p999: 0.5139696598052979
+  pos_q5: 0.020169146358966827
+  pos_q9: 0.08659642934799194
+  pos_q99: 0.2480454444885254
+  pos_q999: 0.6042963862419128
+  pos_q9999: 1.2521497011184692
+  neg_q5: 0.02186974696815014
+  neg_q9: 0.08659642934799194
+  neg_q99: 0.2287573218345642
+  neg_q999: 0.4740031659603119
+  neg_q9999: 0.7704043984413147

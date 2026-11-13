@@ -8,16 +8,17 @@ positive:
   explanation: >-
     Fires in text about appellate and supreme-court adjudication: the Supreme Court, appellate courts,
     "case law" and precedent (stare decisis, "cert. denied", a writ of certiorari), constitutional and
-    federal law, and "U.S." (U.S. Reports) citations. It is anticipatory, usually firing on the token just
-    before the reference: " the" in "oral arguments before the Supreme Court" (+44.0), " by" in "as
-    determined by the Supreme Court" (+42.5), " denied" in "a petition for writ of certiorari was denied"
-    (+40.0). The logit lens pushes " Supreme", " judicial", " courts", " appellate" and " court", so part
+    federal law, and "U.S." (U.S. Reports) citations. It fires throughout court / case-law text, landing on court terms
+    themselves (" Court", " Supreme", " case", " v.", " U.S.") as much as on the surrounding words; its
+    strongest firings are often anticipatory, on the token just before a reference: " the" in "oral
+    arguments before the Supreme Court" (+44.0), " by" in "as determined by the Supreme Court" (+42.5),
+    " denied" in "a petition for writ of certiorari was denied" (+40.0). The logit lens pushes " Supreme", " judicial", " courts", " appellate" and " court", so part
     of its job is expecting a court reference. The pattern holds down the whole stored distribution
     (15,812 positive firings): the strongest is " ing" in "an amendment to the Constitution overturning"
     (+101.5), and even weak stored firings land on precedent and citations ("long-standing precedents"
     +8.7, "supra at p.387" +6.5). Five random selective L36 neurons showed no legal pattern, so this is
     specific to this neuron, not the layer.
-  fires_on: "'Supreme Court', appellate courts, precedent / 'case law', certiorari / 'cert. denied', constitutional & federal law, and 'U.S.' reporter citations - usually on the token just before the reference"
+  fires_on: "'Supreme Court', appellate courts, precedent / 'case law', certiorari / 'cert. denied', constitutional & federal law, and 'U.S.' reporter citations - firing throughout such text, on court terms and the surrounding words"
   not_on: >-
     non-legal "court" (tennis / basketball court, royal court, courtship) and ordinary prose. Untested:
     non-firing can't be read from the sparse tier, so this needs the deep tier or an activation-test request.

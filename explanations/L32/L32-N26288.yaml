@@ -1,0 +1,31 @@
+neuron: L32-N26288
+data: pilot/fineweb-10m-sparse
+label: "just before a list, value or answer"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: format-markup
+  explanation: >-
+    Fires where a label or question ends and its value or answer starts: the colon after a field name
+    ("Time: Fri"), the "||" between a table label and its value, speaker labels and interview turns.
+    About 29 of a random 40 strong firings (act 3.0 or more) fit.
+  fires_on: "colon after a field name, table separators, speaker labels, the line break after an interview question"
+  not_on: "untested"
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 12, 14, 16, 17, 19, 20, 22, 27, 28, 30, 31]
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: discourse-structure
+  explanation: >-
+    Top firings are the noun that announces a coming list ("three reasons", "four key mechanisms:",
+    "two ways. The first"). Only about 12 of a random 40 strong firings (act -2.2 or less) fit, the rest are mixed.
+  fires_on: "the noun after a count that sets up a list, as in 'two things:' or 'three reasons'"
+  not_on: "untested"
+  evidence: [0, 1, 3, 4, 9, 14, 19, 23, 29]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides mark the point just before content arrives, a list on the negative side and a value or answer on the positive side.
+by:
+  - {github: roshaneyshah, method: human}

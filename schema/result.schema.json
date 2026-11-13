@@ -5,7 +5,7 @@
   "type": "object",
   "required": ["request", "type", "outcome", "summary", "per_prompt", "model", "runner_commit", "request_commit", "gpu", "date"],
   "properties": {
-    "request": {"type": "string", "pattern": "^L\\d+-N\\d+-\\d{3}$"},
+    "request": {"type": "string", "pattern": "^(L\\d+-N\\d+|[a-z][a-z0-9-]*)-\\d{3}$"},
     "type": {"enum": ["activation-test", "steering", "ablation", "contrast", "custom"]},
     "outcome": {"enum": ["confirmed", "refuted", "inconclusive"]},
     "reason": {"type": ["string", "null"]},

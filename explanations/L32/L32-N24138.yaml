@@ -28,4 +28,3 @@ relation_note: >-
   The positive side has no clear job of its own.
 by:
   - {github: roshaneyshah, method: human}
-  - {github: roshaneyshah, method: agent, model: claude-opus-5-5}

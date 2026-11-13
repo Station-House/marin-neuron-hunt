@@ -1,0 +1,128 @@
+request: L40-N10819-002
+type: contrast
+outcome: confirmed
+reason: null
+summary:
+  threshold: 0.9057977795600891
+  pairs_in_predicted_direction: 0.9375
+  mean_diff: 10.2080078125
+  mean_diff_needed: 0.45289888978004456
+per_prompt:
+- high: At the seminar, the two students exchanged feedback on their drafts. Later, they talked about what they had learned[[
+    from]]
+  low: At the seminar, the two students reviewed feedback on their drafts. Later, they talked about what they had learned[[
+    from]]
+  act_high: 16.0
+  act_low: 8.8125
+  diff: 7.1875
+- high: During rehearsal, two violinists compared notes about timing. Afterward, they described what they had learned[[ from]]
+  low: During rehearsal, two violinists reviewed notes about timing. Afterward, they described what they had learned[[ from]]
+  act_high: 26.75
+  act_low: 12.0625
+  diff: 14.6875
+- high: At the lab, the two biologists debated the assay results. Later, they talked about insights they had gained[[ from]]
+  low: At the lab, the two biologists documented the assay results. Later, they talked about insights they had gained[[ from]]
+  act_high: 6.75
+  act_low: 1.4921875
+  diff: 5.2578125
+- high: At a design meeting, two architects critiqued the floor plans. Later, they described ideas they had taken[[ from]]
+  low: At a design meeting, two architects inspected the floor plans. Later, they described ideas they had taken[[ from]]
+  act_high: 12.875
+  act_low: 8.9375
+  diff: 3.9375
+- high: At practice, two players debated defensive strategies. They later discussed what they had learned[[ from]]
+  low: At practice, two players rehearsed defensive strategies. They later discussed what they had learned[[ from]]
+  act_high: 14.625
+  act_low: 12.8125
+  diff: 1.8125
+- high: At a coding workshop, two developers shared debugging techniques. Later, they explained what they had learned[[ from]]
+  low: At a coding workshop, two developers studied debugging techniques. Later, they explained what they had learned[[ from]]
+  act_high: 27.0
+  act_low: 8.75
+  diff: 18.25
+- high: During handoff, the two nurses discussed their observations. After the shift, they described what they had learned[[
+    from]]
+  low: During handoff, the two nurses documented their observations. After the shift, they described what they had learned[[
+    from]]
+  act_high: 26.25
+  act_low: 21.5
+  diff: 4.75
+- high: In the studio, two sculptors exchanged tips on casting. They later described what they had learned[[ from]]
+  low: In the studio, two sculptors reviewed tips on casting. They later described what they had learned[[ from]]
+  act_high: 39.0
+  act_low: 7.25
+  diff: 31.75
+- high: In the field, two geologists compared their maps. At the end of the trip, they described insights they had drawn[[
+    from]]
+  low: In the field, two geologists updated their maps. At the end of the trip, they described insights they had drawn[[ from]]
+  act_high: 2.734375
+  act_low: 0.578125
+  diff: 2.15625
+- high: At debate club, two speakers debated their positions. Afterward, they talked about the lessons they had learned[[
+    from]]
+  low: At debate club, two speakers rehearsed their positions. Afterward, they talked about the lessons they had learned[[
+    from]]
+  act_high: 13.0
+  act_low: 17.5
+  diff: -4.5
+- high: During an internship, two translators exchanged corrections on draft translations. Later, they discussed what they
+    had learned[[ from]]
+  low: During an internship, two translators reviewed corrections on draft translations. Later, they discussed what they had
+    learned[[ from]]
+  act_high: 36.75
+  act_low: 14.3125
+  diff: 22.4375
+- high: On the farm, two apprentices compared planting methods. They later talked about what they had learned[[ from]]
+  low: On the farm, two apprentices practiced planting methods. They later talked about what they had learned[[ from]]
+  act_high: 8.4375
+  act_low: 7.65625
+  diff: 0.78125
+- high: At a lab meeting, two chemists debated their readings of the spectra. They later described what they had learned[[
+    from]]
+  low: At a lab meeting, two chemists documented their readings of the spectra. They later described what they had learned[[
+    from]]
+  act_high: 17.25
+  act_low: 6.09375
+  diff: 11.15625
+- high: During planning, two organizers negotiated the proposed schedule. They later described lessons they had learned[[
+    from]]
+  low: During planning, two organizers reviewed the proposed schedule. They later described lessons they had learned[[ from]]
+  act_high: 3.921875
+  act_low: 0.8828125
+  diff: 3.0390625
+- high: In a design session, two engineers exchanged circuit diagrams. Afterward, they explained what they had learned[[ from]]
+  low: In a design session, two engineers inspected circuit diagrams. Afterward, they explained what they had learned[[ from]]
+  act_high: 32.0
+  act_low: 7.5625
+  diff: 24.4375
+- high: In language class, two learners exchanged pronunciation feedback. After class, they discussed what they had learned[[
+    from]]
+  low: In language class, two learners reviewed pronunciation feedback. After class, they discussed what they had learned[[
+    from]]
+  act_high: 24.0
+  act_low: 7.8125
+  diff: 16.1875
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: d5ca447c2a3c7f24741ac7e6bc5b97f8b2053b0f
+request_commit: 2e4780e52e9e75c73a49efdf6071c99fec111c1b
+gpu: NVIDIA H200
+date: '2026-11-13'
+seconds: 2.5
+atlas_stats:
+  n: 9995501.0
+  mean: 0.00822466891258955
+  std: 0.6970990300178528
+  frac_pos: 0.5045340061187744
+  max: 119.0
+  min: -99.0
+  scale_abs_p999: 5.376117706298828
+  pos_q5: 0.11970850080251694
+  pos_q9: 0.342891126871109
+  pos_q99: 0.9057977795600891
+  pos_q999: 5.829415321350098
+  pos_q9999: 37.51619338989258
+  neg_q5: 0.11039991676807404
+  neg_q9: 0.3162277638912201
+  neg_q99: 0.6552488207817078
+  neg_q999: 5.376117706298828
+  neg_q9999: 37.51619338989258

@@ -1,0 +1,52 @@
+neuron: L47-N16894
+data: pilot/fineweb-10m-sparse
+label: "these days phrase; days/time vs night"
+positive:
+  status: explained
+  confidence: high
+  cue_type: next-token
+  explanation: >-
+    All 32 of the side's stored strong firings are on " these": 31 are
+    immediately before " days", and the 32nd is the last token of a document
+    (a truncated "these days"). Only 32 of the 9,537 "these" tokens in the 10M
+    sample fire strongly, and the logit lens pushes " days", "days", " Days",
+    " DAYS", and "Days". This is a next-token detector for "these days".
+  fires_on: >-
+    " these" when the next token is " days", e.g. "these days are", "these days
+    of", and "these days when".
+  not_on: >-
+    "these" before other nouns: none of the other 9,505 "these" tokens in the
+    10M sample is stored as a strong firing. This is sparse-tier evidence only,
+    so an activation test is needed to check the below-threshold cases.
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+  verification: untested
+negative:
+  status: explained
+  confidence: high
+  cue_type: lexical
+  explanation: >-
+    26 of the side's 32 stored strong firings are on " days", " day", or
+    " times" (24 on day(s)), almost all in past-time phrases such as "days of",
+    "days past", "old days", "days when", "this day", and "times past". The
+    10M sample has 9,200 day tokens, so this is a selective subset, not a
+    generic "days" detector. The neuron's logit lens bottom tokens are
+    "tonight", "nightly", "night", and "evening", consistent with a day/night
+    contrast.
+  fires_on: >-
+    Temporal nouns " days", " day", and " times" in phrases about past or
+    elapsed time ("the days of", "days past", "old days", "this day").
+  not_on: >-
+    Generic "days" outside past-time phrases: only 24 of the 9,200 day tokens
+    in the 10M sample are stored as strong firings. The sparse tier cannot show
+    non-firing, so this needs an activation test.
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides are variants of a day/time feature: the positive side anticipates
+  "days" after "these" (present-day idiom), while the negative side marks
+  past-time day(s)/times, with a day/night axis in the logit lens.
+by:
+  - github: Vivian0108
+    method: agent
+    model: "DeepSeek V4.1 Flash Free (OpenCode)"

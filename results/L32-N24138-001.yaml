@@ -1,0 +1,94 @@
+request: L32-N24138-001
+type: contrast
+outcome: confirmed
+reason: null
+summary:
+  threshold: 0.6042963862419128
+  pairs_in_predicted_direction: 1.0
+  mean_diff: 6.4549560546875
+  mean_diff_needed: 0.3021481931209564
+per_prompt:
+- high: Last spring, 50 or 60 walleyes were tested[[.]]
+  low: Last spring, 50 or 60 walleyes were stocked[[.]]
+  act_high: -16.625
+  act_low: -0.62109375
+  diff: 16.00390625
+- high: We ran the blood test twice[[.]]
+  low: We ran the marathon twice[[.]]
+  act_high: -11.3125
+  act_low: -0.94921875
+  diff: 10.36328125
+- high: The votes were counted again on Monday[[.]]
+  low: The votes were cast again on Monday[[.]]
+  act_high: -11.125
+  act_low: -2.53125
+  diff: 8.59375
+- high: The water was checked for lead[[.]]
+  low: The water was boiled for tea[[.]]
+  act_high: -10.25
+  act_low: -0.18359375
+  diff: 10.06640625
+- high: Inspectors examined the bridge last week[[.]]
+  low: Painters repainted the bridge last week[[.]]
+  act_high: -2.390625
+  act_low: 1.2890625
+  diff: 3.6796875
+- high: She took a pregnancy test this morning[[.]]
+  low: She took a long walk this morning[[.]]
+  act_high: -7.46875
+  act_low: 0.2890625
+  diff: 7.7578125
+- high: The lawyers investigated the shareholder's complaint[[.]]
+  low: The lawyers received the shareholder's complaint[[.]]
+  act_high: -1.1328125
+  act_low: 2.1875
+  diff: 3.3203125
+- high: The engineers ran a stress test on the server[[.]]
+  low: The engineers installed a new fan on the server[[.]]
+  act_high: -4.28125
+  act_low: 0.80859375
+  diff: 5.08984375
+- high: Researchers surveyed 2,000 adults about their diet[[.]]
+  low: Researchers met 2,000 adults at the conference[[.]]
+  act_high: -0.65625
+  act_low: 0.06396484375
+  diff: 0.72021484375
+- high: The soil samples were analyzed in the lab[[.]]
+  low: The soil samples were stored in the lab[[.]]
+  act_high: -2.0625
+  act_low: 0.1962890625
+  diff: 2.2587890625
+- high: The doctor ordered an MRI scan[[,]]
+  low: The doctor ordered a coffee[[,]]
+  act_high: -3.484375
+  act_low: 0.54296875
+  diff: 4.02734375
+- high: Every server was checked for DNS leaks[[.]]
+  low: Every server was moved to a new rack[[.]]
+  act_high: -4.71875
+  act_low: 0.859375
+  diff: 5.578125
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: 91f1378050d5bb0210ba5e658282e7c6461db42a
+request_commit: 8c421e07f0f81f75f186b1a6225d42647ef02a39
+gpu: NVIDIA H200
+date: '2026-11-13'
+seconds: 0.2
+atlas_stats:
+  n: 9995501.0
+  mean: -0.020692041143774986
+  std: 0.1738521009683609
+  frac_pos: 0.41236943006515503
+  max: 5.9375
+  min: -15.75
+  scale_abs_p999: 1.7309370040893555
+  pos_q5: 0.04531583562493324
+  pos_q9: 0.21096904575824738
+  pos_q99: 0.6552488207817078
+  pos_q999: 1.4722065925598145
+  pos_q9999: 2.392799139022827
+  neg_q5: 0.06264335662126541
+  neg_q9: 0.21096904575824738
+  neg_q99: 0.6042963862419128
+  neg_q999: 2.035137414932251
+  neg_q9999: 4.958068370819092

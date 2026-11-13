@@ -1,0 +1,32 @@
+neuron: L32-N25027
+data: pilot/fineweb-10m-sparse
+label: "sleep, and full stops in scientific references"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: format-markup
+  explanation: >-
+    Fires on the full stop or closing bracket inside scientific references and lab methods text, as in
+    "Seeger, C." or "(1995)." or "Incubate at 37°C with vigorous shaking." About 22 of a random 40 strong
+    firings (act 2.8 or more) fit, many on spam pages with scrambled science text.
+  fires_on: "full stops and closing brackets in citations and lab protocol text"
+  not_on: "untested"
+  evidence: [0, 1, 2, 3, 4]
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Fires on sleep words ("sleep", "sleeping", "insomnia", "sleepless"), mostly in health text. 29 of the top 32
+    fit, and about 22 of a random 40 strong firings (act -4.1 or less), with a smaller group on money and vices
+    ("money", "spending", "drinking", "gambling").
+  fires_on: "sleep, sleeping, insomnia, sleeplessness"
+  not_on: "untested"
+  evidence: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 30, 31]
+  verification: untested
+relation: unrelated
+relation_note: >-
+  The negative side tracks the topic of sleep and the positive side tracks punctuation in scientific text.
+by:
+  - {github: roshaneyshah, method: human}

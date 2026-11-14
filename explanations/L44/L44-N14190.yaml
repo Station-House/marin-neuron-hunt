@@ -3,7 +3,7 @@ data: pilot/fineweb-10m-sparse
 label: "nonprofit/charity text: sector identity vs dollar amounts"
 positive:
   status: explained
-  confidence: high
+  confidence: weak
   cue_type: semantic-topic
   explanation: >-
     Fires on nonprofit and charity sector content: an organization's legal/charitable status
@@ -12,18 +12,21 @@ positive:
     fundraising profession ("Non-profit leadership", "Canada's charitable sector", "digital fundraising
     strategy"). The logit lens is textbook-clean, pushing " nonprofit", " nonprofits", " charitable",
     " charity", " donors" and " donation". Very selective (positive on only 16% of tokens; max +123,
-    pos_q99 7.43) with 18,575 positive stored firings. Across all of them it fires throughout nonprofit
-    documents, mostly on ordinary words (only ~1% of firings are numbers; its top firing tokens are
-    "the", ",", "of"); the strongest firings land unmistakably on the markers above, and nearer the
-    pos_q99 threshold they get noisier (one mid-level firing lands on "align themselves with the
-    radicals"). Five random selective L44 neurons showed no nonprofit pattern, so this is specific
-    to this neuron, not the layer.
-  fires_on: "nonprofit / charity text (501(c), registered charity, nonprofit corporation, DGR status, Charity Navigator, fundraising language); fires throughout the document, mostly on ordinary words, strongest on these markers"
+    pos_q99 7.43) with 18,575 positive stored firings. An activation test (-001, #68) REFUTED the broad
+    "nonprofit sector identity" reading: only half the nonprofit should-fire prompts cleared the pos_q99
+    threshold - status and registration terms ("nonprofit", "nonprofits", "exempt", "registered",
+    "foundation") fired strongly, but "mission", "grants", "donors", "volunteers" and "charity" stayed
+    weak - and it false-fired on "registered" in "registered trademark" (+10.6) and "company" in
+    "incorporated as a company" (+12.6). So it keys on formal legal / organizational-status and
+    incorporation wording, which overlaps nonprofit language without being specific to it; the whole-sector
+    claim is too strong, hence weak confidence.
+  fires_on: "formal nonprofit / organizational-status wording (501(c), registered, nonprofit corporation, exempt, DGR status, Charity Navigator) fires strongly; broader charity vocabulary (mission, grants, donors, volunteers) only weakly"
   not_on: >-
-    ordinary prose and for-profit business text. Untested: non-firing can't be read from the sparse
-    tier, so it needs the deep tier or an activation-test request.
+    the broad "whole nonprofit sector" reading is refuted (-001, #68): much general charity vocabulary
+    fires only weakly, and "registered" / "company" fire in for-profit and legal contexts too. Non-firing
+    is still read only from the sparse tier.
   evidence: [1, 3, 4, 5, 8, 10, 11, 12, 17, 20]
-  verification: requested
+  verification: refuted
 negative:
   status: explained
   confidence: weak
@@ -37,17 +40,21 @@ negative:
     $18 per family", "raffle tickets for $5", admission "$12", "Freewill donation: $5 per person"), plus
     a few fundraising-event words ("silent auction", "the event raised"). The gate is open and a negative
     `up` carries the sign; the logit lens is incoherent, so this side is an input detector, not an
-    output-pusher.
+    output-pusher. An activation test (-002, #69) CONFIRMED that it fires on "$" specifically in nonprofit /
+    fundraising context and not on "$" generally: donation and charity-finance "$" prompts fired strongly
+    (should-fire 83% past threshold, mean act -10.6) while for-profit / consumer "$" (smartphone price,
+    rent, salary, venture round) stayed near zero (should-not-fire 100% below threshold, AUROC 0.83).
   fires_on: "dollar amounts and financial figures in nonprofit / fundraising text - revenue, assets, budgets, ticket / admission / donation prices; '$' is the most common single firing token (~5%) but it fires broadly across such text"
   not_on: >-
-    untested whether it also fires on dollar amounts outside the nonprofit domain. The stored firings are
-    all in nonprofit / fundraising documents, but the sparse tier can't rule out that it fires on "$" more
-    broadly; this needs an activation test or the deep tier.
+    confirmed nonprofit-specific (-002, #69): it does NOT fire on "$" in for-profit / consumer contexts
+    (phone price, rent, salary, venture round). Non-firing outside "$" is still read only from the sparse tier.
   evidence: [0, 1, 2, 7, 9, 13, 15, 21, 28, 31]
-  verification: requested
+  verification: confirmed
 relation: variant
 relation_note: >-
-  Both sides fire inside nonprofit and charity text; the + side marks the sector and an organization's
-  charitable identity, while the - side marks the monetary amounts and financial specifics within it.
+  Both sides fire inside nonprofit and charity text: the + side keys on formal nonprofit /
+  organizational-status wording (narrower and noisier than first claimed - refuted, -001), and the
+  - side on the monetary amounts and financial specifics within such text (confirmed nonprofit-specific,
+  -002).
 by:
   - {github: vissutalim, method: agent, model: claude-opus-4-8}

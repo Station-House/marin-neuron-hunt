@@ -1,0 +1,49 @@
+neuron: L42-N970
+data: pilot/fineweb-10m-sparse
+label: "Pauline epistles (+) vs Gospel-narrative & Law/Prophets (-)"
+positive:
+  status: explained
+  confidence: high
+  cue_type: semantic-topic
+  explanation: >-
+    Fires across PAULINE-EPISTLE and Christian-community text: Paul's letters and their citations
+    (1 Thessalonians, 1 Corinthians, Romans - "1 Corinthians 12:26", "Paul wrote to the Corinthians"),
+    and the doctrine and life of the believing community ("believers", "Christians", "congregations",
+    being "in Christ", "saved", sanctification, the church as a community). The logit lens pushes
+    " Christians", " believers", " brothers", " sisters" and " Christianity". Across all 11,270 positive
+    stored firings it fires throughout such passages, mostly on ordinary words (the / , / to / of and the
+    epistolary "we / our / you"; only ~2% are numbers), so it is a topic detector active across the
+    passage, not a single-marker neuron. Both poles are strong and balanced (11,270 positive vs 8,844
+    negative firings; pos_q999 13.1 vs neg_q999 12.1), so the sign split is the identity.
+  fires_on: "Pauline-epistle & Christian-community text - Paul's letters (1 Corinthians/Thessalonians/Romans), believers, 'in Christ', saved, sanctification, church community; fires across the passage, mostly on common words"
+  not_on: >-
+    Gospel narrative and the Law/Prophets (that is the - side), and non-Christian text. Untested beyond
+    the exemplars (non-firing can't be read from the sparse tier); a contrast test (Pauline/community vs
+    Gospel/Law-Prophets passages) is the real check.
+  evidence: [0, 2, 3, 4, 5, 11, 14, 19, 20, 25]
+  verification: untested
+negative:
+  status: explained
+  confidence: high
+  cue_type: semantic-topic
+  explanation: >-
+    The mirror of the + side: fires across GOSPEL-NARRATIVE and Hebrew-scripture text - the Gospels,
+    especially Luke ("Luke 1:80", "Jesus said in Luke 19:10", Matthew, John the Baptist), and "the Law
+    and the Prophets" (Moses, the Prophets, the Psalms, Isaiah, Noah). The logit lens pushes " Jonah",
+    " Luke", " evangel", " preaching", " missionary", " Noah" and " preached". Across all 8,844 negative
+    stored firings it fires throughout such passages, mostly on ordinary narrative words (the / of / and,
+    "John", "his", "was"; only ~0.5% are numbers). The gate is open and a negative `up` carries the sign.
+  fires_on: "Gospel-narrative & Hebrew-scripture text - the Gospels (esp. Luke; Matthew, John the Baptist, Jesus' sayings) and the Law/Prophets (Moses, the Prophets, Psalms, Isaiah); fires across the passage, mostly on common words"
+  not_on: >-
+    Pauline epistles / Christian-community doctrine (the + side), and non-Christian text. Untested beyond
+    the exemplars (same sparse-tier caveat); the contrast test above also covers this side.
+  evidence: [0, 1, 3, 4, 7, 10, 11, 20, 21, 23]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both poles fire inside Christian / biblical text and split by which part of scripture and which mode:
+  the + side marks the Pauline epistles and the believing community (letters written TO a community),
+  the - side the Gospel narrative and the Law/Prophets (narrative ABOUT Jesus and the Hebrew scripture).
+  The sign split is itself the evidence that the neuron encodes the scriptural register, not a single token.
+by:
+  - {github: vissutalim, method: agent, model: claude-opus-4-8}

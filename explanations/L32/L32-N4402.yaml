@@ -1,0 +1,29 @@
+neuron: L32-N4402
+data: pilot/fineweb-10m-sparse
+label: "something stays the same or continues"
+positive:
+  status: unclear
+  cue_type: none
+  explanation: >-
+    Top firings include legal "will relieve either party for any liability" and some continuity wording,
+    but a random 40 strong firings (act 2.2 or more) show no shared pattern.
+  fires_on: "no clear pattern"
+  not_on: "untested"
+  evidence: []
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Fires where something stays as it is or keeps going: "remain", "stays", "keep", "existing", "same",
+    "present", "still", "continue". About 22 of a random 40 strong firings (act -3.1 or less) fit.
+  fires_on: "words for staying unchanged or continuing, and the token right after them"
+  not_on: "untested"
+  evidence: [0, 1, 2, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 20, 22, 24, 25, 26, 27]
+  verification: untested
+relation: none
+relation_note: >-
+  The positive side has no clear job of its own.
+by:
+  - {github: roshaneyshah, method: human}

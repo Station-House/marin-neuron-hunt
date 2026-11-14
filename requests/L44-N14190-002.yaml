@@ -1,0 +1,35 @@
+type: activation-test
+neuron: L44-N14190
+side: "-"
+hypothesis: >-
+  The - side fires on dollar amounts in nonprofit / fundraising text, not on dollar amounts in
+  ordinary commercial or financial text; it should stay quiet on non-nonprofit prices and figures.
+threshold: atlas-q99
+should_fire:
+  - "The animal shelter's annual gala raised[[ $]]80,000 for rescue dogs."
+  - "Your donation of[[ $]]25 buys a week of meals at the food bank."
+  - "The charity's filing shows total revenue of[[ $]]3.2 million last year."
+  - "Raffle tickets for the fundraiser are[[ $]]5 each, with proceeds to the shelter."
+  - "The foundation awarded a[[ $]]50,000 grant to the youth mentoring nonprofit."
+  - "Museum members who give[[ $]]100 receive free admission all year."
+  - "The capital campaign has raised[[ $]]2 million toward the new wing."
+  - "A suggested donation of[[ $]]10 supports the community arts program."
+  - "The nonprofit's endowment is valued at roughly[[ $]]6 million."
+  - "Silent-auction bids started at[[ $]]15 to benefit the children's hospital."
+  - "The walkathon pledged[[ $]]40 per mile for cancer research."
+  - "Freewill offerings of[[ $]]5 help keep the mission's doors open."
+should_not_fire:
+  - "The new smartphone retails for[[ $]]999 at most electronics stores."
+  - "Her monthly apartment rent rose to[[ $]]2,100 this spring."
+  - "The streaming service costs[[ $]]15.99 a month after the trial."
+  - "The company reported quarterly profit of[[ $]]3.2 million to investors."
+  - "A gallon of gas hit[[ $]]4 at the corner station."
+  - "The contractor's invoice came to[[ $]]12,500 for the kitchen remodel."
+  - "Shares of the firm opened at[[ $]]47 on the exchange this morning."
+  - "The used sedan was listed for[[ $]]8,900 at the dealership."
+  - "His annual salary was raised to[[ $]]85,000 after the promotion."
+  - "A large pizza there now costs[[ $]]22 with delivery."
+  - "The startup raised a[[ $]]6 million round from venture investors."
+  - "The hotel charged[[ $]]250 a night during peak season."
+by:
+  - {github: vissutalim, method: agent, model: claude-opus-4-8}

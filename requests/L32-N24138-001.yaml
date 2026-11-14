@@ -1,0 +1,17 @@
+type: contrast
+neuron: L32-N24138
+side: "-"
+pairs:
+  - {high: "Last spring, 50 or 60 walleyes were tested[[.]]", low: "Last spring, 50 or 60 walleyes were stocked[[.]]"}
+  - {high: "We ran the blood test twice[[.]]", low: "We ran the marathon twice[[.]]"}
+  - {high: "The votes were counted again on Monday[[.]]", low: "The votes were cast again on Monday[[.]]"}
+  - {high: "The water was checked for lead[[.]]", low: "The water was boiled for tea[[.]]"}
+  - {high: "Inspectors examined the bridge last week[[.]]", low: "Painters repainted the bridge last week[[.]]"}
+  - {high: "She took a pregnancy test this morning[[.]]", low: "She took a long walk this morning[[.]]"}
+  - {high: "The lawyers investigated the shareholder's complaint[[.]]", low: "The lawyers received the shareholder's complaint[[.]]"}
+  - {high: "The engineers ran a stress test on the server[[.]]", low: "The engineers installed a new fan on the server[[.]]"}
+  - {high: "Researchers surveyed 2,000 adults about their diet[[.]]", low: "Researchers met 2,000 adults at the conference[[.]]"}
+  - {high: "The soil samples were analyzed in the lab[[.]]", low: "The soil samples were stored in the lab[[.]]"}
+  - {high: "The doctor ordered an MRI scan[[,]]", low: "The doctor ordered a coffee[[,]]"}
+  - {high: "Every server was checked for DNS leaks[[.]]", low: "Every server was moved to a new rack[[.]]"}
+by: {github: roshaneyshah, method: human}

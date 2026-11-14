@@ -1,0 +1,30 @@
+neuron: L32-N24138
+data: pilot/fineweb-10m-sparse
+label: "outcome of a test or check comes next"
+positive:
+  status: unclear
+  cue_type: none
+  explanation: >-
+    Much weaker than the negative side (max 5.9 vs min -15.8). In a random sample of 40 strong firings
+    (act 1.8 or more) most land on sentence or clause boundaries in casual narrative text, with no shared theme.
+  fires_on: "sentence and clause boundaries in casual narrative text, no clear theme"
+  not_on: "untested"
+  evidence: []
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: discourse-structure
+  explanation: >-
+    Fires where a test, study, vote or check has just been described and its outcome comes next, as in
+    "walleyes were tested. So far," and the logit lens pushes only "results" forms. About 25 of a random
+    40 strong firings (act -4.7 or less) clearly fit and about 8 set up a surprise or reveal instead.
+  fires_on: "the token right after a test, study, vote or investigation is mentioned, before its result is stated"
+  not_on: "untested"
+  evidence: [0, 1, 3, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 21, 23, 24, 27, 30]
+  verification: untested
+relation: none
+relation_note: >-
+  The positive side has no clear job of its own.
+by:
+  - {github: roshaneyshah, method: human}

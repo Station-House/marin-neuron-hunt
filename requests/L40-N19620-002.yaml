@@ -1,0 +1,73 @@
+type: activation-test
+neuron: L40-N19620
+side: '-'
+hypothesis: Across 30 matched geographic-direction sentence pairs, the negative side of L40-N19620 will exceed its
+  atlas-q99 activation-magnitude threshold at the following " of" token in at least 80% of north, west, and northwest
+  contexts, while at least 80% of matched south, east, and southeast controls remain below the threshold. This is
+  a pooled prediction, not a claim that each direction independently passes.
+should_fire:
+- The maintenance entrance to the clinic lies north[[ of]] the pedestrian tunnel on the survey map.
+- The weather balloon launch pad is north[[ of]] the science building on the campus plan.
+- The snow fence was installed north[[ of]] the road maintenance shed.
+- The community food pantry operates north[[ of]] the fire training yard.
+- The trail junction appears north[[ of]] the wooden observation deck.
+- The excavation spoil pile was mapped north[[ of]] the temporary field office.
+- The public reading garden sits north[[ of]] the museum loading dock.
+- The geological sampling marker is positioned north[[ of]] the gravel access path.
+- The storage containers were placed north[[ of]] the livestock shelter.
+- The backup radio antenna stands north[[ of]] the flood monitoring hut.
+- The laboratory annex is west[[ of]] the pedestrian overpass on the facility map.
+- The solar panel array lies west[[ of]] the composting station.
+- The new cycle rack sits west[[ of]] the public library entrance.
+- The park entrance kiosk stands west[[ of]] the freshwater pump house.
+- The archaeology team found pottery shards west[[ of]] the ruined boundary wall.
+- The temporary security checkpoint is west[[ of]] the ferry ticket office.
+- The prototype greenhouse was built west[[ of]] the seed processing shed.
+- The logistics trailer was parked west[[ of]] the outdoor lecture tent.
+- The traffic sensor was deployed west[[ of]] the railway maintenance gate.
+- The flood warning siren is mounted west[[ of]] the elementary school gym.
+- The new equipment shelter lies northwest[[ of]] the mobile research laboratory.
+- The excavation grid is marked northwest[[ of]] the shallow drainage ditch.
+- The river sampling point sits northwest[[ of]] the marked concrete culvert.
+- The recycling collection bay is northwest[[ of]] the industrial safety office.
+- The emergency generator platform was built northwest[[ of]] the temporary water reservoir.
+- The field coordination cabin is northwest[[ of]] the abandoned cable station.
+- The temporary stage was erected northwest[[ of]] the botanical research hut.
+- The ranger supply shed stands northwest[[ of]] the public birdwatching hide.
+- The portable radar station was placed northwest[[ of]] the coastal medical outpost.
+- The navigation marker appears northwest[[ of]] the isolated road junction.
+should_not_fire:
+- The maintenance entrance to the clinic lies south[[ of]] the pedestrian tunnel on the survey map.
+- The weather balloon launch pad is south[[ of]] the science building on the campus plan.
+- The snow fence was installed south[[ of]] the road maintenance shed.
+- The community food pantry operates south[[ of]] the fire training yard.
+- The trail junction appears south[[ of]] the wooden observation deck.
+- The excavation spoil pile was mapped south[[ of]] the temporary field office.
+- The public reading garden sits south[[ of]] the museum loading dock.
+- The geological sampling marker is positioned south[[ of]] the gravel access path.
+- The storage containers were placed south[[ of]] the livestock shelter.
+- The backup radio antenna stands south[[ of]] the flood monitoring hut.
+- The laboratory annex is east[[ of]] the pedestrian overpass on the facility map.
+- The solar panel array lies east[[ of]] the composting station.
+- The new cycle rack sits east[[ of]] the public library entrance.
+- The park entrance kiosk stands east[[ of]] the freshwater pump house.
+- The archaeology team found pottery shards east[[ of]] the ruined boundary wall.
+- The temporary security checkpoint is east[[ of]] the ferry ticket office.
+- The prototype greenhouse was built east[[ of]] the seed processing shed.
+- The logistics trailer was parked east[[ of]] the outdoor lecture tent.
+- The traffic sensor was deployed east[[ of]] the railway maintenance gate.
+- The flood warning siren is mounted east[[ of]] the elementary school gym.
+- The new equipment shelter lies southeast[[ of]] the mobile research laboratory.
+- The excavation grid is marked southeast[[ of]] the shallow drainage ditch.
+- The river sampling point sits southeast[[ of]] the marked concrete culvert.
+- The recycling collection bay is southeast[[ of]] the industrial safety office.
+- The emergency generator platform was built southeast[[ of]] the temporary water reservoir.
+- The field coordination cabin is southeast[[ of]] the abandoned cable station.
+- The temporary stage was erected southeast[[ of]] the botanical research hut.
+- The ranger supply shed stands southeast[[ of]] the public birdwatching hide.
+- The portable radar station was placed southeast[[ of]] the coastal medical outpost.
+- The navigation marker appears southeast[[ of]] the isolated road junction.
+threshold: atlas-q99
+by:
+  github: chaewon-research
+  method: human

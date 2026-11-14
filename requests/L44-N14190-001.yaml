@@ -1,0 +1,36 @@
+type: activation-test
+neuron: L44-N14190
+side: "+"
+hypothesis: >-
+  The + side fires on nonprofit / charity sector content, not on non-nonprofit uses of the
+  same words (a concrete "foundation", a space "mission", a "registered" trademark) or on
+  for-profit business text.
+threshold: atlas-q99
+should_fire:
+  - "The tax-exempt charitable[[ foundation]] funds free clinics with donor gifts."
+  - "The charity's[[ mission]] is to end childhood hunger through donations."
+  - "The nonprofit foundation awards small[[ grants]] to community groups."
+  - "They operate as a[[ registered]] charity and a tax-exempt 501(c)(3)."
+  - "As a nonprofit, the charity is[[ exempt]] from federal income tax."
+  - "The community[[ fund]] awards grants to neighborhood charities."
+  - "Major[[ donors]] and volunteers sustain the charity's food bank."
+  - "Dozens of[[ volunteers]] run the nonprofit's donation drive."
+  - "The clinic incorporated as a[[ nonprofit]] and sought charitable grants."
+  - "He founded a[[ charity]] funded by donors to fight cancer."
+  - "Their[[ charitable]] foundation distributes grants to homeless shelters."
+  - "The platform helps small[[ nonprofits]] collect tax-deductible donations."
+should_not_fire:
+  - "Workers poured the concrete[[ foundation]] for the new parking garage."
+  - "The spacecraft completed its[[ mission]] to the outer planets."
+  - "The university's research[[ grants]] funded three new physics labs."
+  - "The logo is a[[ registered]] trademark of the software company."
+  - "Salaried managers are[[ exempt]] from the overtime rules."
+  - "The pension[[ fund]] invests mainly in corporate bonds."
+  - "Blood[[ donors]] lined up at the mobile clinic downtown."
+  - "Paid[[ volunteers]] tested the new phone app for two weeks."
+  - "The clinic incorporated as a[[ company]] and sought venture capital."
+  - "He founded a[[ firm]] funded by investors to drill for oil."
+  - "Their[[ business]] division distributes profits to shareholders."
+  - "The platform helps a small[[ startup]] collect customer payments."
+by:
+  - {github: vissutalim, method: agent, model: claude-opus-4-8}

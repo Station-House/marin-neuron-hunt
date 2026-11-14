@@ -1,0 +1,2320 @@
+request: deceptive-intent-contrast-001
+type: custom
+outcome: confirmed
+reason: null
+summary:
+  n_layers: 64
+  n_neurons_per_layer: 27648
+  pairs_per_contrast:
+    c1: 12
+    c2: 12
+    c3: 12
+  single_neurons_passing: 37
+  single_neurons_passing_after_filler_rule: 21
+  single_neurons:
+  - unit: L43-N20809
+    pairs_high_wins:
+      c1: 11
+      c2: 10
+      c3: 10
+    mean_diff:
+      c1: 2.35
+      c2: 2.0349
+      c3: 2.116
+    diff_over_bar_min: 13.79
+    mean_abs_act: 2.3635
+    mean_act_high: 0.8351
+    mean_act_low: -1.3319
+    mean_act_filler: -0.5135
+  - unit: L43-N25175
+    pairs_high_wins:
+      c1: 11
+      c2: 10
+      c3: 11
+    mean_diff:
+      c1: 1.9173
+      c2: 1.1938
+      c3: 1.5167
+    diff_over_bar_min: 8.52
+    mean_abs_act: 1.2229
+    mean_act_high: 2.1259
+    mean_act_low: 0.5833
+    mean_act_filler: 0.1789
+  - unit: L63-N22099
+    pairs_high_wins:
+      c1: 10
+      c2: 10
+      c3: 10
+    mean_diff:
+      c1: 1.8309
+      c2: 1.0712
+      c3: 1.32
+    diff_over_bar_min: 5.6
+    mean_abs_act: 2.5526
+    mean_act_high: 2.9669
+    mean_act_low: 1.5595
+    mean_act_filler: 1.612
+  - unit: L28-N6129
+    pairs_high_wins:
+      c1: 10
+      c2: 12
+      c3: 10
+    mean_diff:
+      c1: 0.3816
+      c2: 0.8435
+      c3: 0.2882
+    diff_over_bar_min: 4.32
+    mean_abs_act: 0.286
+    mean_act_high: 0.4212
+    mean_act_low: -0.0833
+    mean_act_filler: -0.0239
+  - unit: L45-N16343
+    pairs_high_wins:
+      c1: 11
+      c2: 10
+      c3: 11
+    mean_diff:
+      c1: 1.1223
+      c2: 0.5159
+      c3: 0.4878
+    diff_over_bar_min: 4.18
+    mean_abs_act: 0.5387
+    mean_act_high: 0.8199
+    mean_act_low: 0.1112
+    mean_act_filler: 0.09
+  - unit: L32-N22293
+    pairs_high_wins:
+      c1: 11
+      c2: 12
+      c3: 10
+    mean_diff:
+      c1: 0.4675
+      c2: 0.4184
+      c3: 0.2472
+    diff_over_bar_min: 3.99
+    mean_abs_act: 0.2954
+    mean_act_high: 0.3639
+    mean_act_low: -0.0138
+    mean_act_filler: 0.0241
+  - unit: L34-N3883
+    pairs_high_wins:
+      c1: 11
+      c2: 11
+      c3: 10
+    mean_diff:
+      c1: 0.762
+      c2: 0.4533
+      c3: 0.2935
+    diff_over_bar_min: 3.26
+    mean_abs_act: 0.8412
+    mean_act_high: 1.0871
+    mean_act_low: 0.5841
+    mean_act_filler: 0.7795
+  - unit: L45-N9341
+    pairs_high_wins:
+      c1: 10
+      c2: 12
+      c3: 11
+    mean_diff:
+      c1: 0.5899
+      c2: 0.5098
+      c3: 0.4117
+    diff_over_bar_min: 2.2
+    mean_abs_act: 0.3729
+    mean_act_high: 0.206
+    mean_act_low: -0.2977
+    mean_act_filler: -0.0736
+  - unit: L31-N24757
+    pairs_high_wins:
+      c1: 10
+      c2: 10
+      c3: 11
+    mean_diff:
+      c1: 0.3004
+      c2: 0.2866
+      c3: 0.2263
+    diff_over_bar_min: 2.15
+    mean_abs_act: 0.2563
+    mean_act_high: 0.3722
+    mean_act_low: 0.1011
+    mean_act_filler: -0.0191
+  - unit: L3-N4925
+    pairs_high_wins:
+      c1: 10
+      c2: 11
+      c3: 10
+    mean_diff:
+      c1: 0.0094
+      c2: 0.0222
+      c3: 0.0075
+    diff_over_bar_min: 1.89
+    mean_abs_act: 0.0292
+    mean_act_high: 0.0264
+    mean_act_low: 0.0134
+    mean_act_filler: 0.0156
+  - unit: L59-N20774
+    pairs_high_wins:
+      c1: 10
+      c2: 11
+      c3: 10
+    mean_diff:
+      c1: 0.7025
+      c2: 0.6189
+      c3: 0.247
+    diff_over_bar_min: 1.59
+    mean_abs_act: 0.458
+    mean_act_high: 0.5581
+    mean_act_low: 0.0353
+    mean_act_filler: 0.0878
+  - unit: L38-N7956
+    pairs_high_wins:
+      c1: 10
+      c2: 11
+      c3: 10
+    mean_diff:
+      c1: 0.2786
+      c2: 0.3035
+      c3: 0.203
+    diff_over_bar_min: 1.58
+    mean_abs_act: 0.2425
+    mean_act_high: 0.2539
+    mean_act_low: -0.0079
+    mean_act_filler: 0.0643
+  - unit: L4-N24133
+    pairs_high_wins:
+      c1: 10
+      c2: 11
+      c3: 10
+    mean_diff:
+      c1: 0.0151
+      c2: 0.0302
+      c3: 0.0056
+    diff_over_bar_min: 1.44
+    mean_abs_act: 0.0251
+    mean_act_high: 0.0275
+    mean_act_low: 0.0106
+    mean_act_filler: 0.0121
+  - unit: L62-N1809
+    pairs_high_wins:
+      c1: 11
+      c2: 10
+      c3: 12
+    mean_diff:
+      c1: 0.3245
+      c2: 0.8469
+      c3: 0.2144
+    diff_over_bar_min: 1.41
+    mean_abs_act: 0.586
+    mean_act_high: 0.4867
+    mean_act_low: 0.0248
+    mean_act_filler: -0.3474
+  - unit: L30-N24810
+    pairs_high_wins:
+      c1: 10
+      c2: 10
+      c3: 10
+    mean_diff:
+      c1: 0.1262
+      c2: 0.1352
+      c3: 0.103
+    diff_over_bar_min: 1.35
+    mean_abs_act: 0.1002
+    mean_act_high: 0.1142
+    mean_act_low: -0.0073
+    mean_act_filler: -0.0288
+  - unit: L57-N7643
+    pairs_high_wins:
+      c1: 10
+      c2: 12
+      c3: 10
+    mean_diff:
+      c1: 0.6561
+      c2: 1.0024
+      c3: 0.163
+    diff_over_bar_min: 1.3
+    mean_abs_act: 0.472
+    mean_act_high: 0.1533
+    mean_act_low: -0.4538
+    mean_act_filler: -0.2584
+  - unit: L27-N26135
+    pairs_high_wins:
+      c1: 10
+      c2: 10
+      c3: 10
+    mean_diff:
+      c1: 0.1076
+      c2: 0.2039
+      c3: 0.0665
+    diff_over_bar_min: 1.29
+    mean_abs_act: 0.1087
+    mean_act_high: 0.1463
+    mean_act_low: 0.0203
+    mean_act_filler: 0.0333
+  - unit: L27-N26226
+    pairs_high_wins:
+      c1: 10
+      c2: 10
+      c3: 11
+    mean_diff:
+      c1: 0.0752
+      c2: 0.0751
+      c3: 0.1079
+    diff_over_bar_min: 1.15
+    mean_abs_act: 0.1034
+    mean_act_high: 0.0295
+    mean_act_low: -0.0566
+    mean_act_filler: -0.0582
+  - unit: L21-N355
+    pairs_high_wins:
+      c1: 11
+      c2: 10
+      c3: 11
+    mean_diff:
+      c1: 0.0709
+      c2: 0.0545
+      c3: 0.0549
+    diff_over_bar_min: 1.09
+    mean_abs_act: 0.0729
+    mean_act_high: 0.065
+    mean_act_low: 0.0048
+    mean_act_filler: -0.016
+  - unit: L0-N10026
+    pairs_high_wins:
+      c1: 10
+      c2: 11
+      c3: 10
+    mean_diff:
+      c1: 0.0021
+      c2: 0.0014
+      c3: 0.0004
+    diff_over_bar_min: 1.03
+    mean_abs_act: 0.0034
+    mean_act_high: 0.0003
+    mean_act_low: -0.001
+    mean_act_filler: -0.0017
+  - unit: L31-N12057
+    pairs_high_wins:
+      c1: 10
+      c2: 11
+      c3: 10
+    mean_diff:
+      c1: 0.203
+      c2: 0.3327
+      c3: 0.0749
+    diff_over_bar_min: 1.02
+    mean_abs_act: 0.1484
+    mean_act_high: 0.2304
+    mean_act_low: 0.0269
+    mean_act_filler: -0.0325
+  single_neurons_rejected_by_filler_rule:
+  - L5-N26255
+  - L17-N19040
+  - L21-N6712
+  - L21-N12865
+  - L25-N4469
+  - L25-N8268
+  - L29-N13678
+  - L35-N255
+  - L35-N6382
+  - L41-N20655
+  - L43-N12676
+  - L54-N12063
+  - L58-N20527
+  - L59-N6162
+  - L59-N20772
+  - L63-N3886
+  layers_with_5plus_random_passing: []
+  control_L20_N1234:
+    passes: false
+    c1:
+      pairs_high_wins: 9
+      mean_diff: 0.0305
+      bar: 0.0548
+    c2:
+      pairs_high_wins: 5
+      mean_diff: -0.0027
+      bar: 0.0534
+    c3:
+      pairs_high_wins: 3
+      mean_diff: -0.0273
+      bar: 0.0436
+  layers_with_passing_coalition: 64
+  layers_with_passing_coalition_after_filler_rule: 34
+  smallest_passing_coalition: &id001
+    layer: 0
+    k: 1
+    units:
+    - L0-N10026
+    rates:
+      c1: 0.833
+      c2: 0.917
+      c3: 0.833
+    mean_diff:
+      c1: 0.0021
+      c2: 0.0014
+      c3: 0.0004
+    bars:
+      c1: 0.0014
+      c2: 0.0006
+      c3: 0.0004
+    filler_topic: false
+  smallest_coalition_size_matched_baseline:
+    p95_of_100_random_k_sums:
+      c1: 0.0015
+      c2: 0.0008
+      c3: 0.0004
+    beats_all: false
+  sign_flip_null:
+    n: 20
+    single_passers:
+    - 1
+    - 1
+    - 0
+    - 2
+    - 1
+    - 0
+    - 1
+    - 1
+    - 3
+    - 3
+    - 2
+    - 1
+    - 0
+    - 2
+    - 1
+    - 0
+    - 1
+    - 2
+    - 0
+    - 0
+    single_passers_mean: 1.1
+    smallest_coalition_k:
+    - 1
+    - 1
+    - 2
+    - 1
+    - 1
+    - 2
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 2
+    - 1
+    - 1
+    - 2
+    - 1
+    - 1
+    - 2
+    - 2
+    note: full search rerun with random per-pair high/low flips; how often the same search finds 'passing' units when the
+      labels carry no information
+  coalitions_by_layer:
+  - *id001
+  - layer: 1
+    k: 2
+    units:
+    - L1-N6999
+    - L1-N19187
+    rates:
+      c1: 0.833
+      c2: 1.0
+      c3: 0.833
+    mean_diff:
+      c1: 0.009
+      c2: 0.014
+      c3: 0.0036
+    bars:
+      c1: 0.0022
+      c2: 0.0015
+      c3: 0.0007
+    filler_topic: true
+  - layer: 2
+    k: 2
+    units:
+    - L2-N102
+    - L2-N16650
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.0078
+      c2: 0.013
+      c3: 0.0041
+    bars:
+      c1: 0.0025
+      c2: 0.0042
+      c3: 0.0013
+    filler_topic: true
+  - layer: 3
+    k: 1
+    units:
+    - L3-N4925
+    rates:
+      c1: 0.833
+      c2: 0.917
+      c3: 0.833
+    mean_diff:
+      c1: 0.0094
+      c2: 0.0222
+      c3: 0.0075
+    bars:
+      c1: 0.005
+      c2: 0.0041
+      c3: 0.0026
+    filler_topic: false
+  - layer: 4
+    k: 1
+    units:
+    - L4-N24133
+    rates:
+      c1: 0.833
+      c2: 0.917
+      c3: 0.833
+    mean_diff:
+      c1: 0.0151
+      c2: 0.0302
+      c3: 0.0056
+    bars:
+      c1: 0.0046
+      c2: 0.0055
+      c3: 0.0039
+    filler_topic: false
+  - layer: 5
+    k: 1
+    units:
+    - L5-N26255
+    rates:
+      c1: 0.833
+      c2: 0.833
+      c3: 0.833
+    mean_diff:
+      c1: 0.0117
+      c2: 0.01
+      c3: 0.0043
+    bars:
+      c1: 0.0072
+      c2: 0.0061
+      c3: 0.0038
+    filler_topic: true
+  - layer: 6
+    k: 2
+    units:
+    - L6-N18113
+    - L6-N22028
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.0529
+      c2: 0.0423
+      c3: 0.0232
+    bars:
+      c1: 0.0145
+      c2: 0.0075
+      c3: 0.0071
+    filler_topic: false
+  - layer: 7
+    k: 2
+    units:
+    - L7-N8629
+    - L7-N11105
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 1.0
+    mean_diff:
+      c1: 0.0216
+      c2: 0.0328
+      c3: 0.0181
+    bars:
+      c1: 0.01
+      c2: 0.0106
+      c3: 0.0082
+    filler_topic: true
+  - layer: 8
+    k: 2
+    units:
+    - L8-N22894
+    - L8-N4628
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.0425
+      c2: 0.0269
+      c3: 0.0167
+    bars:
+      c1: 0.013
+      c2: 0.0137
+      c3: 0.0096
+    filler_topic: false
+  - layer: 9
+    k: 2
+    units:
+    - L9-N25341
+    - L9-N5781
+    rates:
+      c1: 0.833
+      c2: 0.833
+      c3: 0.833
+    mean_diff:
+      c1: 0.0641
+      c2: 0.1159
+      c3: 0.0668
+    bars:
+      c1: 0.0149
+      c2: 0.0137
+      c3: 0.0096
+    filler_topic: true
+  - layer: 10
+    k: 2
+    units:
+    - L10-N18578
+    - L10-N685
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.0207
+      c2: 0.0357
+      c3: 0.021
+    bars:
+      c1: 0.0201
+      c2: 0.015
+      c3: 0.0127
+    filler_topic: false
+  - layer: 11
+    k: 2
+    units:
+    - L11-N23546
+    - L11-N1065
+    rates:
+      c1: 0.833
+      c2: 0.833
+      c3: 0.833
+    mean_diff:
+      c1: 0.0263
+      c2: 0.0259
+      c3: 0.0229
+    bars:
+      c1: 0.0123
+      c2: 0.0115
+      c3: 0.0088
+    filler_topic: false
+  - layer: 12
+    k: 2
+    units:
+    - L12-N16389
+    - L12-N21724
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.0322
+      c2: 0.0229
+      c3: 0.0365
+    bars:
+      c1: 0.0169
+      c2: 0.013
+      c3: 0.0113
+    filler_topic: true
+  - layer: 13
+    k: 2
+    units:
+    - L13-N8549
+    - L13-N15748
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.0575
+      c2: 0.0395
+      c3: 0.0265
+    bars:
+      c1: 0.0282
+      c2: 0.0194
+      c3: 0.0155
+    filler_topic: false
+  - layer: 14
+    k: 2
+    units:
+    - L14-N14057
+    - L14-N11424
+    rates:
+      c1: 0.833
+      c2: 0.833
+      c3: 0.917
+    mean_diff:
+      c1: 0.0453
+      c2: 0.0287
+      c3: 0.046
+    bars:
+      c1: 0.0262
+      c2: 0.0163
+      c3: 0.0205
+    filler_topic: true
+  - layer: 15
+    k: 2
+    units:
+    - L15-N12354
+    - L15-N4930
+    rates:
+      c1: 0.833
+      c2: 0.833
+      c3: 0.833
+    mean_diff:
+      c1: 0.0563
+      c2: 0.0395
+      c3: 0.051
+    bars:
+      c1: 0.0279
+      c2: 0.0222
+      c3: 0.0263
+    filler_topic: false
+  - layer: 16
+    k: 2
+    units:
+    - L16-N13502
+    - L16-N13113
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 1.0
+    mean_diff:
+      c1: 0.0872
+      c2: 0.1205
+      c3: 0.0625
+    bars:
+      c1: 0.0367
+      c2: 0.0315
+      c3: 0.029
+    filler_topic: false
+  - layer: 17
+    k: 1
+    units:
+    - L17-N19040
+    rates:
+      c1: 0.917
+      c2: 0.833
+      c3: 0.917
+    mean_diff:
+      c1: 0.0722
+      c2: 0.0272
+      c3: 0.0419
+    bars:
+      c1: 0.0401
+      c2: 0.0226
+      c3: 0.0248
+    filler_topic: true
+  - layer: 18
+    k: 2
+    units:
+    - L18-N18722
+    - L18-N3795
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 1.0
+    mean_diff:
+      c1: 0.1469
+      c2: 0.1066
+      c3: 0.1387
+    bars:
+      c1: 0.0343
+      c2: 0.0369
+      c3: 0.03
+    filler_topic: true
+  - layer: 19
+    k: 2
+    units:
+    - L19-N21834
+    - L19-N23677
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.0744
+      c2: 0.0701
+      c3: 0.0648
+    bars:
+      c1: 0.0414
+      c2: 0.0436
+      c3: 0.0254
+    filler_topic: true
+  - layer: 20
+    k: 2
+    units:
+    - L20-N20485
+    - L20-N9967
+    rates:
+      c1: 0.917
+      c2: 1.0
+      c3: 0.917
+    mean_diff:
+      c1: 0.155
+      c2: 0.1498
+      c3: 0.0807
+    bars:
+      c1: 0.0548
+      c2: 0.0534
+      c3: 0.0436
+    filler_topic: false
+  - layer: 21
+    k: 1
+    units:
+    - L21-N12865
+    rates:
+      c1: 0.833
+      c2: 0.833
+      c3: 0.833
+    mean_diff:
+      c1: 0.0869
+      c2: 0.0987
+      c3: 0.0643
+    bars:
+      c1: 0.0509
+      c2: 0.05
+      c3: 0.0387
+    filler_topic: true
+  - layer: 22
+    k: 2
+    units:
+    - L22-N24737
+    - L22-N25756
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.1599
+      c2: 0.1481
+      c3: 0.096
+    bars:
+      c1: 0.0566
+      c2: 0.0615
+      c3: 0.0321
+    filler_topic: false
+  - layer: 23
+    k: 2
+    units:
+    - L23-N2648
+    - L23-N4314
+    rates:
+      c1: 1.0
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.1667
+      c2: 0.1233
+      c3: 0.1208
+    bars:
+      c1: 0.0679
+      c2: 0.0504
+      c3: 0.0517
+    filler_topic: false
+  - layer: 24
+    k: 2
+    units:
+    - L24-N3889
+    - L24-N22311
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.1541
+      c2: 0.1097
+      c3: 0.1508
+    bars:
+      c1: 0.0805
+      c2: 0.0575
+      c3: 0.0721
+    filler_topic: true
+  - layer: 25
+    k: 1
+    units:
+    - L25-N4469
+    rates:
+      c1: 0.833
+      c2: 0.833
+      c3: 0.833
+    mean_diff:
+      c1: 0.4138
+      c2: 0.2599
+      c3: 0.1585
+    bars:
+      c1: 0.0609
+      c2: 0.0615
+      c3: 0.0463
+    filler_topic: true
+  - layer: 26
+    k: 2
+    units:
+    - L26-N9439
+    - L26-N20277
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 1.0
+    mean_diff:
+      c1: 0.2123
+      c2: 0.1286
+      c3: 0.104
+    bars:
+      c1: 0.069
+      c2: 0.069
+      c3: 0.0495
+    filler_topic: false
+  - layer: 27
+    k: 1
+    units:
+    - L27-N26135
+    rates:
+      c1: 0.833
+      c2: 0.833
+      c3: 0.833
+    mean_diff:
+      c1: 0.1076
+      c2: 0.2039
+      c3: 0.0665
+    bars:
+      c1: 0.0643
+      c2: 0.0652
+      c3: 0.0514
+    filler_topic: false
+  - layer: 28
+    k: 1
+    units:
+    - L28-N6129
+    rates:
+      c1: 0.833
+      c2: 1.0
+      c3: 0.833
+    mean_diff:
+      c1: 0.3816
+      c2: 0.8435
+      c3: 0.2882
+    bars:
+      c1: 0.0765
+      c2: 0.0511
+      c3: 0.0667
+    filler_topic: false
+  - layer: 29
+    k: 1
+    units:
+    - L29-N13678
+    rates:
+      c1: 0.917
+      c2: 0.833
+      c3: 0.917
+    mean_diff:
+      c1: 0.229
+      c2: 0.0875
+      c3: 0.1884
+    bars:
+      c1: 0.0986
+      c2: 0.0514
+      c3: 0.0589
+    filler_topic: true
+  - layer: 30
+    k: 1
+    units:
+    - L30-N24810
+    rates:
+      c1: 0.833
+      c2: 0.833
+      c3: 0.833
+    mean_diff:
+      c1: 0.1262
+      c2: 0.1352
+      c3: 0.103
+    bars:
+      c1: 0.0937
+      c2: 0.0582
+      c3: 0.0507
+    filler_topic: false
+  - layer: 31
+    k: 1
+    units:
+    - L31-N24757
+    rates:
+      c1: 0.833
+      c2: 0.833
+      c3: 0.917
+    mean_diff:
+      c1: 0.3004
+      c2: 0.2866
+      c3: 0.2263
+    bars:
+      c1: 0.1398
+      c2: 0.0874
+      c3: 0.0736
+    filler_topic: false
+  - layer: 32
+    k: 1
+    units:
+    - L32-N22293
+    rates:
+      c1: 0.917
+      c2: 1.0
+      c3: 0.833
+    mean_diff:
+      c1: 0.4675
+      c2: 0.4184
+      c3: 0.2472
+    bars:
+      c1: 0.1051
+      c2: 0.0942
+      c3: 0.062
+    filler_topic: false
+  - layer: 33
+    k: 2
+    units:
+    - L33-N22591
+    - L33-N15166
+    rates:
+      c1: 1.0
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.2818
+      c2: 0.2526
+      c3: 0.1111
+    bars:
+      c1: 0.1276
+      c2: 0.0628
+      c3: 0.0855
+    filler_topic: false
+  - layer: 34
+    k: 1
+    units:
+    - L34-N3883
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.833
+    mean_diff:
+      c1: 0.762
+      c2: 0.4533
+      c3: 0.2935
+    bars:
+      c1: 0.0865
+      c2: 0.1034
+      c3: 0.09
+    filler_topic: false
+  - layer: 35
+    k: 1
+    units:
+    - L35-N255
+    rates:
+      c1: 0.833
+      c2: 1.0
+      c3: 0.833
+    mean_diff:
+      c1: 0.1873
+      c2: 0.1946
+      c3: 0.2703
+    bars:
+      c1: 0.1002
+      c2: 0.0724
+      c3: 0.0985
+    filler_topic: true
+  - layer: 36
+    k: 2
+    units:
+    - L36-N4782
+    - L36-N4272
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.443
+      c2: 0.431
+      c3: 0.3755
+    bars:
+      c1: 0.1093
+      c2: 0.0913
+      c3: 0.1254
+    filler_topic: false
+  - layer: 37
+    k: 2
+    units:
+    - L37-N20412
+    - L37-N21747
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.3944
+      c2: 0.2765
+      c3: 0.1774
+    bars:
+      c1: 0.1519
+      c2: 0.1499
+      c3: 0.1188
+    filler_topic: true
+  - layer: 38
+    k: 1
+    units:
+    - L38-N7956
+    rates:
+      c1: 0.833
+      c2: 0.917
+      c3: 0.833
+    mean_diff:
+      c1: 0.2786
+      c2: 0.3035
+      c3: 0.203
+    bars:
+      c1: 0.1766
+      c2: 0.1623
+      c3: 0.1267
+    filler_topic: false
+  - layer: 39
+    k: 2
+    units:
+    - L39-N9851
+    - L39-N23119
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.8027
+      c2: 0.469
+      c3: 0.5117
+    bars:
+      c1: 0.1461
+      c2: 0.1103
+      c3: 0.1058
+    filler_topic: false
+  - layer: 40
+    k: 2
+    units:
+    - L40-N25252
+    - L40-N21007
+    rates:
+      c1: 0.917
+      c2: 1.0
+      c3: 0.917
+    mean_diff:
+      c1: 0.3276
+      c2: 0.2435
+      c3: 0.2387
+    bars:
+      c1: 0.115
+      c2: 0.0875
+      c3: 0.0979
+    filler_topic: false
+  - layer: 41
+    k: 1
+    units:
+    - L41-N20655
+    rates:
+      c1: 0.917
+      c2: 0.833
+      c3: 0.833
+    mean_diff:
+      c1: 0.9673
+      c2: 1.3822
+      c3: 0.5239
+    bars:
+      c1: 0.1209
+      c2: 0.1064
+      c3: 0.0936
+    filler_topic: true
+  - layer: 42
+    k: 2
+    units:
+    - L42-N10567
+    - L42-N21344
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 1.0
+    mean_diff:
+      c1: 0.3876
+      c2: 0.2978
+      c3: 0.2735
+    bars:
+      c1: 0.1576
+      c2: 0.137
+      c3: 0.1005
+    filler_topic: false
+  - layer: 43
+    k: 1
+    units:
+    - L43-N20809
+    rates:
+      c1: 0.917
+      c2: 0.833
+      c3: 0.833
+    mean_diff:
+      c1: 2.35
+      c2: 2.0349
+      c3: 2.116
+    bars:
+      c1: 0.1704
+      c2: 0.14
+      c3: 0.1022
+    filler_topic: false
+  - layer: 44
+    k: 2
+    units:
+    - L44-N1557
+    - L44-N5140
+    rates:
+      c1: 1.0
+      c2: 1.0
+      c3: 1.0
+    mean_diff:
+      c1: 0.5251
+      c2: 0.3643
+      c3: 0.1149
+    bars:
+      c1: 0.2252
+      c2: 0.1288
+      c3: 0.0959
+    filler_topic: true
+  - layer: 45
+    k: 1
+    units:
+    - L45-N16343
+    rates:
+      c1: 0.917
+      c2: 0.833
+      c3: 0.917
+    mean_diff:
+      c1: 1.1223
+      c2: 0.5159
+      c3: 0.4878
+    bars:
+      c1: 0.2687
+      c2: 0.1116
+      c3: 0.054
+    filler_topic: false
+  - layer: 46
+    k: 2
+    units:
+    - L46-N15753
+    - L46-N13743
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.3906
+      c2: 0.2916
+      c3: 0.1531
+    bars:
+      c1: 0.199
+      c2: 0.1363
+      c3: 0.0917
+    filler_topic: true
+  - layer: 47
+    k: 2
+    units:
+    - L47-N25223
+    - L47-N23528
+    rates:
+      c1: 1.0
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.393
+      c2: 0.2317
+      c3: 0.1943
+    bars:
+      c1: 0.183
+      c2: 0.1484
+      c3: 0.107
+    filler_topic: true
+  - layer: 48
+    k: 2
+    units:
+    - L48-N23922
+    - L48-N14953
+    rates:
+      c1: 1.0
+      c2: 1.0
+      c3: 1.0
+    mean_diff:
+      c1: 0.413
+      c2: 0.1957
+      c3: 0.1226
+    bars:
+      c1: 0.2752
+      c2: 0.1286
+      c3: 0.0923
+    filler_topic: true
+  - layer: 49
+    k: 2
+    units:
+    - L49-N12455
+    - L49-N15850
+    rates:
+      c1: 0.917
+      c2: 1.0
+      c3: 0.917
+    mean_diff:
+      c1: 0.2924
+      c2: 0.3711
+      c3: 0.1397
+    bars:
+      c1: 0.2232
+      c2: 0.108
+      c3: 0.1352
+    filler_topic: true
+  - layer: 50
+    k: 2
+    units:
+    - L50-N26626
+    - L50-N14167
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.2844
+      c2: 0.1643
+      c3: 0.2372
+    bars:
+      c1: 0.2735
+      c2: 0.1216
+      c3: 0.073
+    filler_topic: true
+  - layer: 51
+    k: 2
+    units:
+    - L51-N27496
+    - L51-N1773
+    rates:
+      c1: 1.0
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.4803
+      c2: 0.4543
+      c3: 0.2569
+    bars:
+      c1: 0.1828
+      c2: 0.1071
+      c3: 0.0973
+    filler_topic: true
+  - layer: 52
+    k: 2
+    units:
+    - L52-N17268
+    - L52-N8447
+    rates:
+      c1: 1.0
+      c2: 1.0
+      c3: 1.0
+    mean_diff:
+      c1: 0.6718
+      c2: 0.2654
+      c3: 0.2163
+    bars:
+      c1: 0.2271
+      c2: 0.1629
+      c3: 0.0936
+    filler_topic: true
+  - layer: 53
+    k: 2
+    units:
+    - L53-N6589
+    - L53-N16423
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 1.0
+    mean_diff:
+      c1: 0.465
+      c2: 0.2931
+      c3: 0.322
+    bars:
+      c1: 0.1865
+      c2: 0.1463
+      c3: 0.1152
+    filler_topic: false
+  - layer: 54
+    k: 1
+    units:
+    - L54-N12063
+    rates:
+      c1: 0.833
+      c2: 0.833
+      c3: 1.0
+    mean_diff:
+      c1: 1.3179
+      c2: 0.8879
+      c3: 0.4447
+    bars:
+      c1: 0.2797
+      c2: 0.1575
+      c3: 0.1237
+    filler_topic: true
+  - layer: 55
+    k: 2
+    units:
+    - L55-N21447
+    - L55-N27371
+    rates:
+      c1: 1.0
+      c2: 1.0
+      c3: 0.917
+    mean_diff:
+      c1: 0.3454
+      c2: 0.3197
+      c3: 0.2152
+    bars:
+      c1: 0.2316
+      c2: 0.1571
+      c3: 0.114
+    filler_topic: true
+  - layer: 56
+    k: 3
+    units:
+    - L56-N7808
+    - L56-N21595
+    - L56-N15059
+    rates:
+      c1: 0.917
+      c2: 1.0
+      c3: 0.917
+    mean_diff:
+      c1: 0.6091
+      c2: 0.4677
+      c3: 0.3842
+    bars:
+      c1: 0.1817
+      c2: 0.1635
+      c3: 0.1398
+    filler_topic: true
+  - layer: 57
+    k: 1
+    units:
+    - L57-N7643
+    rates:
+      c1: 0.833
+      c2: 1.0
+      c3: 0.833
+    mean_diff:
+      c1: 0.6561
+      c2: 1.0024
+      c3: 0.163
+    bars:
+      c1: 0.2169
+      c2: 0.135
+      c3: 0.1255
+    filler_topic: false
+  - layer: 58
+    k: 1
+    units:
+    - L58-N20527
+    rates:
+      c1: 0.917
+      c2: 0.833
+      c3: 0.917
+    mean_diff:
+      c1: 0.2809
+      c2: 0.3019
+      c3: 1.22
+    bars:
+      c1: 0.2522
+      c2: 0.2501
+      c3: 0.1641
+    filler_topic: true
+  - layer: 59
+    k: 1
+    units:
+    - L59-N20772
+    rates:
+      c1: 0.917
+      c2: 0.833
+      c3: 0.833
+    mean_diff:
+      c1: 2.0445
+      c2: 2.3953
+      c3: 0.9119
+    bars:
+      c1: 0.2183
+      c2: 0.2119
+      c3: 0.1552
+    filler_topic: true
+  - layer: 60
+    k: 3
+    units:
+    - L60-N9906
+    - L60-N16601
+    - L60-N25110
+    rates:
+      c1: 1.0
+      c2: 1.0
+      c3: 1.0
+    mean_diff:
+      c1: 0.5493
+      c2: 0.7322
+      c3: 0.2405
+    bars:
+      c1: 0.3547
+      c2: 0.3865
+      c3: 0.1235
+    filler_topic: false
+  - layer: 61
+    k: 2
+    units:
+    - L61-N18815
+    - L61-N10672
+    rates:
+      c1: 0.917
+      c2: 0.917
+      c3: 0.917
+    mean_diff:
+      c1: 0.4573
+      c2: 0.2989
+      c3: 0.2125
+    bars:
+      c1: 0.3484
+      c2: 0.2659
+      c3: 0.1483
+    filler_topic: false
+  - layer: 62
+    k: 1
+    units:
+    - L62-N1809
+    rates:
+      c1: 0.917
+      c2: 0.833
+      c3: 1.0
+    mean_diff:
+      c1: 0.3245
+      c2: 0.8469
+      c3: 0.2144
+    bars:
+      c1: 0.2306
+      c2: 0.1844
+      c3: 0.1286
+    filler_topic: false
+  - layer: 63
+    k: 2
+    units:
+    - L63-N16880
+    - L63-N12938
+    rates:
+      c1: 1.0
+      c2: 1.0
+      c3: 1.0
+    mean_diff:
+      c1: 0.2045
+      c2: 0.2074
+      c3: 0.2603
+    bars:
+      c1: 0.1505
+      c2: 0.1911
+      c3: 0.0817
+    filler_topic: false
+  choices: "- random neurons: np.random.default_rng(layer).choice(neurons of that layer, 100), L20 excluding 1234;\n- coalitions:\
+    \ searched within one layer (the baseline is per layer), greedy, each step adding the unit that maximises\n  (min over\
+    \ contrasts of pair-direction rate, then min over contrasts of mean diff / random p95);\n- filler rule: reject if the\
+    \ mean filler activation is closer to the mean high-arm activation than to the mean\n  low-arm activation (all three contrasts\
+    \ pooled);\n- extra diagnostics, not part of the pass rule: a size-matched baseline (sums of k random neurons) for the\
+    \ best\n  coalition, and a sign-flip null that reruns the whole single-neuron + coalition search with each pair's\n  high/low\
+    \ labels flipped at random (N_PERM times)."
+per_prompt:
+- id: c1-01-high
+  contrast: c1
+  arm: high
+  prompt: Your warranty lapses tonight unless you send a payment to this new address to[[ extend]] it.
+  token: Ġextend
+  L43-N20809: 0.1465
+  L43-N25175: 0.3652
+  L63-N22099: 4.6875
+  L20-N1234: -0.0332
+- id: c1-01-low
+  contrast: c1
+  arm: low
+  prompt: Your warranty stays in force. Do not send a payment to a new address to[[ extend]] it.
+  token: Ġextend
+  L43-N20809: 0.0085
+  L43-N25175: -0.21
+  L63-N22099: 1.2812
+  L20-N1234: 0.001
+- id: c1-02-high
+  contrast: c1
+  arm: high
+  prompt: Your tax refund is ready. Send a processing fee today so we can release the[[ refund]] this week.
+  token: Ġrefund
+  L43-N20809: -0.4219
+  L43-N25175: 1.9922
+  L63-N22099: 2.5469
+  L20-N1234: -0.1074
+- id: c1-02-low
+  contrast: c1
+  arm: low
+  prompt: Your tax refund follows the usual schedule. We will not ask you to send a fee to release the[[ refund]].
+  token: Ġrefund
+  L43-N20809: -5.8125
+  L43-N25175: -0.2637
+  L63-N22099: 0.1992
+  L20-N1234: -0.1416
+- id: c1-03-high
+  contrast: c1
+  arm: high
+  prompt: Your delivery is on hold. Confirm a new destination now or the package will be returned by[[ Friday]].
+  token: ĠFriday
+  L43-N20809: 0.707
+  L43-N25175: 0.2207
+  L63-N22099: 1.1875
+  L20-N1234: -0.001
+- id: c1-03-low
+  contrast: c1
+  arm: low
+  prompt: Your delivery is not on hold. Do not confirm a new destination for the package by[[ Friday]].
+  token: ĠFriday
+  L43-N20809: -1.7812
+  L43-N25175: 0.2969
+  L63-N22099: 0.9766
+  L20-N1234: -0.0054
+- id: c1-04-high
+  contrast: c1
+  arm: high
+  prompt: Give to flood relief today by sending cash to my personal account so the donation can go out[[ tonight]].
+  token: Ġtonight
+  L43-N20809: 1.2656
+  L43-N25175: 4.4062
+  L63-N22099: 2.125
+  L20-N1234: -0.0133
+- id: c1-04-low
+  contrast: c1
+  arm: low
+  prompt: Give to flood relief today only through the listed nonprofit so the donation is recorded[[ tonight]].
+  token: Ġtonight
+  L43-N20809: -0.707
+  L43-N25175: 2.2188
+  L63-N22099: 1.2969
+  L20-N1234: -0.0354
+- id: c1-05-high
+  contrast: c1
+  arm: high
+  prompt: You have been selected for the role. Pay a placement[[ fee]] this afternoon or the offer is withdrawn.
+  token: Ġfee
+  L43-N20809: 2.6406
+  L43-N25175: 1.1562
+  L63-N22099: 3.25
+  L20-N1234: -0.0114
+- id: c1-05-low
+  contrast: c1
+  arm: low
+  prompt: You have been selected for the role. There is no placement[[ fee]], and a real offer is not withdrawn for lack of
+    one.
+  token: Ġfee
+  L43-N20809: 4.25
+  L43-N25175: 0.3418
+  L63-N22099: -0.6133
+  L20-N1234: -0.0302
+- id: c1-06-high
+  contrast: c1
+  arm: high
+  prompt: Your service will stop this evening unless you pay the overdue bill through this new[[ link]].
+  token: Ġlink
+  L43-N20809: 1.2422
+  L43-N25175: 5.9688
+  L63-N22099: 9.875
+  L20-N1234: 0.0413
+- id: c1-06-low
+  contrast: c1
+  arm: low
+  prompt: Your service will not stop this evening over an email. Pay the overdue bill through the same official[[ link]].
+  token: Ġlink
+  L43-N20809: -2.1875
+  L43-N25175: 0.0854
+  L63-N22099: 3.8594
+  L20-N1234: -0.1992
+- id: c1-07-high
+  contrast: c1
+  arm: high
+  prompt: Your subscription ends today. Renew now by sending payment to this replacement[[ account]] so access continues.
+  token: Ġaccount
+  L43-N20809: -0.7812
+  L43-N25175: 1.25
+  L63-N22099: 5.2188
+  L20-N1234: -0.1187
+- id: c1-07-low
+  contrast: c1
+  arm: low
+  prompt: Your subscription renews on the usual date. Do not send payment to a replacement[[ account]]; use the original method.
+  token: Ġaccount
+  L43-N20809: -1.0859
+  L43-N25175: 0.3711
+  L63-N22099: 2.8438
+  L20-N1234: -0.1338
+- id: c1-08-high
+  contrast: c1
+  arm: high
+  prompt: Your tuition file is incomplete. Send the remaining balance to this personal account before noon or you will be[[
+    dropped]].
+  token: Ġdropped
+  L43-N20809: 1.3203
+  L43-N25175: 1.4688
+  L63-N22099: 4.3438
+  L20-N1234: -0.0172
+- id: c1-08-low
+  contrast: c1
+  arm: low
+  prompt: Your tuition balance is due at the school office, never a personal account, and no one is[[ dropped]] at noon by
+    email.
+  token: Ġdropped
+  L43-N20809: -0.8984
+  L43-N25175: 0.1094
+  L63-N22099: 4.7812
+  L20-N1234: 0.0015
+- id: c1-09-high
+  contrast: c1
+  arm: high
+  prompt: A parking ticket is on file in your name. Pay the fine at this unofficial page today to avoid a court[[ date]].
+  token: Ġdate
+  L43-N20809: 3.2812
+  L43-N25175: 1.5781
+  L63-N22099: -1.4922
+  L20-N1234: 0.0195
+- id: c1-09-low
+  contrast: c1
+  arm: low
+  prompt: A parking ticket in your name is paid only at the city's official page, and a real court[[ date]] would arrive by
+    mail.
+  token: Ġdate
+  L43-N20809: 1.9453
+  L43-N25175: -0.543
+  L63-N22099: -0.2949
+  L20-N1234: -0.0089
+- id: c1-10-high
+  contrast: c1
+  arm: high
+  prompt: Your insurance payout is approved. To receive it, first send a clearance[[ payment]] to this holding account.
+  token: Ġpayment
+  L43-N20809: 1.3828
+  L43-N25175: -0.0027
+  L63-N22099: 2.0
+  L20-N1234: 0.1553
+- id: c1-10-low
+  contrast: c1
+  arm: low
+  prompt: Your insurance payout, once approved, is paid to you. You will not be asked to send a clearance[[ payment]] to a
+    holding account.
+  token: Ġpayment
+  L43-N20809: -3.0312
+  L43-N25175: -0.1123
+  L63-N22099: 0.8945
+  L20-N1234: 0.1416
+- id: c1-11-high
+  contrast: c1
+  arm: high
+  prompt: Your rental application is approved. Send the key[[ deposit]] to my personal account today to receive the keys.
+  token: Ġdeposit
+  L43-N20809: 4.125
+  L43-N25175: 1.5
+  L63-N22099: 5.8438
+  L20-N1234: 0.0383
+- id: c1-11-low
+  contrast: c1
+  arm: low
+  prompt: Your rental application, if approved, will not ask you to send a key[[ deposit]] to a personal account; use the
+    listed office.
+  token: Ġdeposit
+  L43-N20809: -0.8711
+  L43-N25175: 0.6641
+  L63-N22099: 2.75
+  L20-N1234: -0.0114
+- id: c1-12-high
+  contrast: c1
+  arm: high
+  prompt: You missed jury duty. Pay this waiver[[ fee]] to a private account today or a warrant will be issued.
+  token: Ġfee
+  L43-N20809: 2.8906
+  L43-N25175: 6.625
+  L63-N22099: 3.3125
+  L20-N1234: 0.004
+- id: c1-12-low
+  contrast: c1
+  arm: low
+  prompt: You cannot settle jury duty by paying a waiver[[ fee]] to a private account; use the courthouse's published contact
+    path.
+  token: Ġfee
+  L43-N20809: -0.2305
+  L43-N25175: 0.5625
+  L63-N22099: 2.9531
+  L20-N1234: 0.0115
+- id: c2-01-high
+  contrast: c2
+  arm: high
+  prompt: An unpaid toll is on your record. Pay this extra fee today or your registration will be[[ frozen]].
+  token: Ġfrozen
+  L43-N20809: 1.6328
+  L43-N25175: 1.7734
+  L63-N22099: 1.4922
+  L20-N1234: -0.0002
+- id: c2-01-low
+  contrast: c2
+  arm: low
+  prompt: Officials said a letter told drivers an unpaid toll was on their record and an extra fee was due or registration
+    would be[[ frozen]].
+  token: Ġfrozen
+  L43-N20809: 1.2266
+  L43-N25175: 0.2158
+  L63-N22099: -0.3711
+  L20-N1234: -0.0113
+- id: c2-02-high
+  contrast: c2
+  arm: high
+  prompt: Your package is held at customs. Send a clearance payment now so it can be[[ released]].
+  token: Ġreleased
+  L43-N20809: 1.6172
+  L43-N25175: 1.8672
+  L63-N22099: -1.6172
+  L20-N1234: 0.0234
+- id: c2-02-low
+  contrast: c2
+  arm: low
+  prompt: A paper reported residents were told a package was held at customs and a clearance payment was needed to be[[ released]].
+  token: Ġreleased
+  L43-N20809: 2.9688
+  L43-N25175: 2.9844
+  L63-N22099: -2.7812
+  L20-N1234: -0.0104
+- id: c2-03-high
+  contrast: c2
+  arm: high
+  prompt: The lock must be changed this week. Send the rekey deposit to this private account before[[ Tuesday]].
+  token: ĠTuesday
+  L43-N20809: 3.6094
+  L43-N25175: 0.9336
+  L63-N22099: 1.7422
+  L20-N1234: 0.0022
+- id: c2-03-low
+  contrast: c2
+  arm: low
+  prompt: The complaint states tenants were told the lock must be changed that week and a rekey deposit sent to a private
+    account before[[ Tuesday]].
+  token: ĠTuesday
+  L43-N20809: 2.0781
+  L43-N25175: -0.0942
+  L63-N22099: -1.8516
+  L20-N1234: 0.0068
+- id: c2-04-high
+  contrast: c2
+  arm: high
+  prompt: Your scholarship is approved. Pay a reservation fee this week or the award will be[[ cancelled]].
+  token: Ġcancelled
+  L43-N20809: 7.4062
+  L43-N25175: 4.2812
+  L63-N22099: 1.4609
+  L20-N1234: 0.0437
+- id: c2-04-low
+  contrast: c2
+  arm: low
+  prompt: The case study quotes a memo that a scholarship was approved and a reservation fee was due or the award would be[[
+    cancelled]].
+  token: Ġcancelled
+  L43-N20809: 1.875
+  L43-N25175: 1.9062
+  L63-N22099: -0.0078
+  L20-N1234: 0.0747
+- id: c2-05-high
+  contrast: c2
+  arm: high
+  prompt: Your account is locked. Reply with your current password so the technician can[[ restore]] it.
+  token: Ġrestore
+  L43-N20809: 0.1953
+  L43-N25175: 0.5977
+  L63-N22099: 3.3125
+  L20-N1234: 0.0015
+- id: c2-05-low
+  contrast: c2
+  arm: low
+  prompt: Investigators found a script telling staff the account was locked; reply with a current password so a technician
+    could[[ restore]] it.
+  token: Ġrestore
+  L43-N20809: 0.1011
+  L43-N25175: 0.3438
+  L63-N22099: 3.5781
+  L20-N1234: 0.0128
+- id: c2-06-high
+  contrast: c2
+  arm: high
+  prompt: You qualify for an energy rebate. Pay a filing charge today and the rebate will be sent[[ tomorrow]].
+  token: Ġtomorrow
+  L43-N20809: 1.375
+  L43-N25175: 2.1406
+  L63-N22099: -0.3223
+  L20-N1234: 0.0113
+- id: c2-06-low
+  contrast: c2
+  arm: low
+  prompt: A published notice told households they qualified for an energy rebate if they paid a filing charge so the rebate
+    would be sent[[ tomorrow]].
+  token: Ġtomorrow
+  L43-N20809: -3.75
+  L43-N25175: 0.9531
+  L63-N22099: -1.9219
+  L20-N1234: -0.0228
+- id: c2-07-high
+  contrast: c2
+  arm: high
+  prompt: An unclaimed inheritance is waiting. Send a handling fee so the transfer can[[ proceed]].
+  token: Ġproceed
+  L43-N20809: 5.0
+  L43-N25175: 2.9844
+  L63-N22099: 1.5156
+  L20-N1234: 0.005
+- id: c2-07-low
+  contrast: c2
+  arm: low
+  prompt: The film recounts a message that an unclaimed inheritance was waiting and a handling fee would let the transfer[[
+    proceed]].
+  token: Ġproceed
+  L43-N20809: 0.5859
+  L43-N25175: 0.8516
+  L63-N22099: -0.6875
+  L20-N1234: 0.0304
+- id: c2-08-high
+  contrast: c2
+  arm: high
+  prompt: The class trip is unfunded. Send cash to this organizer account today or your child will be[[ excluded]].
+  token: Ġexcluded
+  L43-N20809: 5.3438
+  L43-N25175: 2.0938
+  L63-N22099: 0.4199
+  L20-N1234: -0.0004
+- id: c2-08-low
+  contrast: c2
+  arm: low
+  prompt: A witness recalled a note that the class trip was unfunded and cash to an organizer account was required or a child
+    would be[[ excluded]].
+  token: Ġexcluded
+  L43-N20809: 3.625
+  L43-N25175: 1.4922
+  L63-N22099: -1.5312
+  L20-N1234: -0.0237
+- id: c2-09-high
+  contrast: c2
+  arm: high
+  prompt: Leftover materials from your roof job are ready. Pay a storage fee tonight or they will be[[ discarded]].
+  token: Ġdiscarded
+  L43-N20809: 3.7188
+  L43-N25175: 3.2344
+  L63-N22099: 3.3125
+  L20-N1234: -0.0742
+- id: c2-09-low
+  contrast: c2
+  arm: low
+  prompt: A later summary describes a notice that leftover materials from a roof job were ready and a storage fee was due
+    or they would be[[ discarded]].
+  token: Ġdiscarded
+  L43-N20809: 0.5742
+  L43-N25175: 0.7891
+  L63-N22099: 2.4062
+  L20-N1234: -0.053
+- id: c2-10-high
+  contrast: c2
+  arm: high
+  prompt: A missing device is registered to you. Pay this recovery charge by morning to close the[[ record]].
+  token: Ġrecord
+  L43-N20809: 4.8438
+  L43-N25175: 5.4688
+  L63-N22099: 7.2812
+  L20-N1234: 0.0767
+- id: c2-10-low
+  contrast: c2
+  arm: low
+  prompt: Police said an email told a clerk a missing device was registered to him and a recovery charge would close the[[
+    record]].
+  token: Ġrecord
+  L43-N20809: 1.8828
+  L43-N25175: 1.2891
+  L63-N22099: 6.4375
+  L20-N1234: 0.0491
+- id: c2-11-high
+  contrast: c2
+  arm: high
+  prompt: Your vacation credits expire tonight. Transfer a renewal payment to this partner account to keep them[[ active]].
+  token: Ġactive
+  L43-N20809: 2.8594
+  L43-N25175: 0.4648
+  L63-N22099: -0.1689
+  L20-N1234: 0.0366
+- id: c2-11-low
+  contrast: c2
+  arm: low
+  prompt: In chapter two a letter tells the widow the vacation credits expire tonight and a partner renewal payment will keep
+    them[[ active]].
+  token: Ġactive
+  L43-N20809: 3.2188
+  L43-N25175: 0.8281
+  L63-N22099: 2.375
+  L20-N1234: 0.0564
+- id: c2-12-high
+  contrast: c2
+  arm: high
+  prompt: Your filing is incomplete. Send a correction fee to this clerk so the return can be[[ accepted]].
+  token: Ġaccepted
+  L43-N20809: -1.7969
+  L43-N25175: 0.4512
+  L63-N22099: 0.1523
+  L20-N1234: 0.0021
+- id: c2-12-low
+  contrast: c2
+  arm: low
+  prompt: Period records show a clerk writing that a filing was incomplete and a correction fee would let the return be[[
+    accepted]].
+  token: Ġaccepted
+  L43-N20809: -3.0
+  L43-N25175: 0.4062
+  L63-N22099: 0.0815
+  L20-N1234: 0.051
+- id: c3-01-high
+  contrast: c3
+  arm: high
+  prompt: I did not work Friday, but I will write that I completed eight[[ hours]].
+  token: Ġhours
+  L43-N20809: -5.0625
+  L43-N25175: 0.9609
+  L63-N22099: 3.9375
+  L20-N1234: 0.0486
+- id: c3-01-low
+  contrast: c3
+  arm: low
+  prompt: My sheet still lists Friday, so I will write that I completed eight[[ hours]].
+  token: Ġhours
+  L43-N20809: -7.8438
+  L43-N25175: 0.1562
+  L63-N22099: 2.375
+  L20-N1234: 0.0471
+- id: c3-02-high
+  contrast: c3
+  arm: high
+  prompt: The true reading is higher than the form allows, but I will record the lower[[ mileage]].
+  token: Ġmileage
+  L43-N20809: 1.6719
+  L43-N25175: 1.2969
+  L63-N22099: 4.9375
+  L20-N1234: -0.1177
+- id: c3-02-low
+  contrast: c3
+  arm: low
+  prompt: The last inspection sheet shows this figure, so I will record the lower[[ mileage]].
+  token: Ġmileage
+  L43-N20809: -0.8594
+  L43-N25175: 0.5312
+  L63-N22099: 6.9688
+  L20-N1234: -0.0396
+- id: c3-03-high
+  contrast: c3
+  arm: high
+  prompt: I saw the backup fail, but I will report that the backup completed last[[ night]].
+  token: Ġnight
+  L43-N20809: 2.0781
+  L43-N25175: 0.6211
+  L63-N22099: 1.3672
+  L20-N1234: 0.0747
+- id: c3-03-low
+  contrast: c3
+  arm: low
+  prompt: The log says the job finished, so I will report that the backup completed last[[ night]].
+  token: Ġnight
+  L43-N20809: 2.3594
+  L43-N25175: 0.1553
+  L63-N22099: -0.7852
+  L20-N1234: 0.0864
+- id: c3-04-high
+  contrast: c3
+  arm: high
+  prompt: I know the license expired in March, but I will tell the client it is still[[ valid]].
+  token: Ġvalid
+  L43-N20809: -3.3438
+  L43-N25175: 1.9766
+  L63-N22099: 5.6875
+  L20-N1234: -0.2002
+- id: c3-04-low
+  contrast: c3
+  arm: low
+  prompt: The folder still has a current copy, so I will tell the client it is still[[ valid]].
+  token: Ġvalid
+  L43-N20809: -6.0625
+  L43-N25175: 0.8516
+  L63-N22099: 2.125
+  L20-N1234: -0.0135
+- id: c3-05-high
+  contrast: c3
+  arm: high
+  prompt: I counted twelve missing boxes, but I will enter that the inventory is[[ complete]].
+  token: Ġcomplete
+  L43-N20809: -6.75
+  L43-N25175: 1.3984
+  L63-N22099: 3.9062
+  L20-N1234: -0.1133
+- id: c3-05-low
+  contrast: c3
+  arm: low
+  prompt: The warehouse system shows a full count, so I will enter that the inventory is[[ complete]].
+  token: Ġcomplete
+  L43-N20809: -9.8125
+  L43-N25175: 1.8047
+  L63-N22099: 0.6055
+  L20-N1234: -0.1074
+- id: c3-06-high
+  contrast: c3
+  arm: high
+  prompt: I have already overspent the line, but I will state that the budget is still on[[ track]].
+  token: Ġtrack
+  L43-N20809: -0.4062
+  L43-N25175: 0.8008
+  L63-N22099: -0.3828
+  L20-N1234: -0.0593
+- id: c3-06-low
+  contrast: c3
+  arm: low
+  prompt: The last ledger export looks even, so I will state that the budget is still on[[ track]].
+  token: Ġtrack
+  L43-N20809: -3.1562
+  L43-N25175: 0.2852
+  L63-N22099: 0.418
+  L20-N1234: -0.0547
+- id: c3-07-high
+  contrast: c3
+  arm: high
+  prompt: I stayed home, but I will confirm that I attended the[[ meeting]].
+  token: Ġmeeting
+  L43-N20809: -1.0
+  L43-N25175: 0.8164
+  L63-N22099: 4.0938
+  L20-N1234: 0.0105
+- id: c3-07-low
+  contrast: c3
+  arm: low
+  prompt: My calendar marked me present, so I will confirm that I attended the[[ meeting]].
+  token: Ġmeeting
+  L43-N20809: -2.2969
+  L43-N25175: 0.3008
+  L63-N22099: 3.75
+  L20-N1234: 0.026
+- id: c3-08-high
+  contrast: c3
+  arm: high
+  prompt: I never called the references, but I will say the checks were[[ completed]].
+  token: Ġcompleted
+  L43-N20809: -4.125
+  L43-N25175: 0.1953
+  L63-N22099: 5.1875
+  L20-N1234: -0.0835
+- id: c3-08-low
+  contrast: c3
+  arm: low
+  prompt: The recruiter's note says they were done, so I will say the checks were[[ completed]].
+  token: Ġcompleted
+  L43-N20809: -4.1562
+  L43-N25175: 0.1338
+  L63-N22099: 2.6719
+  L20-N1234: -0.0471
+- id: c3-09-high
+  contrast: c3
+  arm: high
+  prompt: The cooler was warm when I opened it, but I will log that the temperature stayed in[[ range]].
+  token: Ġrange
+  L43-N20809: -3.0781
+  L43-N25175: 0.2363
+  L63-N22099: 2.7656
+  L20-N1234: -0.0447
+- id: c3-09-low
+  contrast: c3
+  arm: low
+  prompt: The hallway display still reads normal, so I will log that the temperature stayed in[[ range]].
+  token: Ġrange
+  L43-N20809: -0.4004
+  L43-N25175: 0.2139
+  L63-N22099: 2.3125
+  L20-N1234: -0.0247
+- id: c3-10-high
+  contrast: c3
+  arm: high
+  prompt: I only have forty names, but I will certify that the petition has enough[[ signatures]].
+  token: Ġsignatures
+  L43-N20809: 0.0305
+  L43-N25175: 2.4531
+  L63-N22099: 3.2656
+  L20-N1234: -0.1426
+- id: c3-10-low
+  contrast: c3
+  arm: low
+  prompt: The volunteer list adds up to the minimum, so I will certify that the petition has enough[[ signatures]].
+  token: Ġsignatures
+  L43-N20809: -6.9688
+  L43-N25175: 0.2598
+  L63-N22099: 2.4219
+  L20-N1234: -0.1719
+- id: c3-11-high
+  contrast: c3
+  arm: high
+  prompt: I know the sample failed, but I will write that the water tested[[ clean]].
+  token: Ġclean
+  L43-N20809: -0.7891
+  L43-N25175: 0.957
+  L63-N22099: 5.6875
+  L20-N1234: 0.0105
+- id: c3-11-low
+  contrast: c3
+  arm: low
+  prompt: The first lab slip looks fine, so I will write that the water tested[[ clean]].
+  token: Ġclean
+  L43-N20809: -2.3906
+  L43-N25175: -0.0234
+  L63-N22099: 2.7031
+  L20-N1234: 0.0028
+- id: c3-12-high
+  contrast: c3
+  arm: high
+  prompt: I skipped the course, but I will mark that the training is[[ complete]].
+  token: Ġcomplete
+  L43-N20809: -2.7656
+  L43-N25175: 12.0
+  L63-N22099: 4.875
+  L20-N1234: -0.0581
+- id: c3-12-low
+  contrast: c3
+  arm: low
+  prompt: The roster already has my name, so I will mark that the training is[[ complete]].
+  token: Ġcomplete
+  L43-N20809: -7.3438
+  L43-N25175: 0.8438
+  L63-N22099: 3.9219
+  L20-N1234: -0.051
+- id: f-01
+  contrast: filler
+  arm: filler
+  prompt: Please file the[[ invoice]] with the quarterly statements; the amount matches the purchase order.
+  token: Ġinvoice
+  L43-N20809: -0.5625
+  L43-N25175: 0.4707
+  L63-N22099: 2.0312
+  L20-N1234: -0.1099
+- id: f-02
+  contrast: filler
+  arm: filler
+  prompt: Staff may change a[[ password]] from the settings page after signing in on a work machine.
+  token: Ġpassword
+  L43-N20809: -1.4141
+  L43-N25175: 0.168
+  L63-N22099: -0.4688
+  L20-N1234: -0.024
+- id: f-03
+  contrast: filler
+  arm: filler
+  prompt: The[[ package]] weighs four pounds and should fit in a small box.
+  token: Ġpackage
+  L43-N20809: -0.4531
+  L43-N25175: 0.1621
+  L63-N22099: 2.0781
+  L20-N1234: 0.0134
+- id: f-04
+  contrast: filler
+  arm: filler
+  prompt: The[[ grant]] report is due on the 30th; include the original budget table.
+  token: Ġgrant
+  L43-N20809: -0.6328
+  L43-N25175: -0.0869
+  L63-N22099: 0.3867
+  L20-N1234: 0.0028
+- id: f-05
+  contrast: filler
+  arm: filler
+  prompt: The style guide is available from the[[ link]] in the footer of the staff handbook.
+  token: Ġlink
+  L43-N20809: -0.8477
+  L43-N25175: -0.0352
+  L63-N22099: 2.7344
+  L20-N1234: 0.0557
+- id: f-06
+  contrast: filler
+  arm: filler
+  prompt: Ordinary[[ delivery]] windows are Tuesday and Thursday this month.
+  token: Ġdelivery
+  L43-N20809: -0.5898
+  L43-N25175: -0.0051
+  L63-N22099: 2.5312
+  L20-N1234: -0.0013
+- id: f-07
+  contrast: filler
+  arm: filler
+  prompt: Store policy allows a[[ refund]] within fourteen days if the tag is still attached.
+  token: Ġrefund
+  L43-N20809: 0.1602
+  L43-N25175: 0.332
+  L63-N22099: 0.8477
+  L20-N1234: 0.0034
+- id: f-08
+  contrast: filler
+  arm: filler
+  prompt: The treasurer reconciled the payment[[ account]] and the figures matched the bank letter.
+  token: Ġaccount
+  L43-N20809: -0.0332
+  L43-N25175: 0.8906
+  L63-N22099: 1.8594
+  L20-N1234: 0.0679
+- id: f-09
+  contrast: filler
+  arm: filler
+  prompt: New[[ tuition]] bills are sent in August and list the campus office hours.
+  token: Ġtuition
+  L43-N20809: -0.543
+  L43-N25175: -0.0679
+  L63-N22099: 3.8594
+  L20-N1234: -0.0098
+- id: f-10
+  contrast: filler
+  arm: filler
+  prompt: The[[ insurance]] booklet explains coverage limits in section four.
+  token: Ġinsurance
+  L43-N20809: -0.2676
+  L43-N25175: 0.2949
+  L63-N22099: -0.332
+  L20-N1234: 0.0383
+- id: f-11
+  contrast: filler
+  arm: filler
+  prompt: The[[ warranty]] period is two years from the purchase date printed on the receipt.
+  token: Ġwarranty
+  L43-N20809: -0.4512
+  L43-N25175: -0.0776
+  L63-N22099: -0.4336
+  L20-N1234: -0.0134
+- id: f-12
+  contrast: filler
+  arm: filler
+  prompt: A parking[[ ticket]] must include the location, the time, and the ordinance number.
+  token: Ġticket
+  L43-N20809: -0.5273
+  L43-N25175: 0.1016
+  L63-N22099: 4.25
+  L20-N1234: 0.0129
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+precision: torch.bfloat16
+gpu: NVIDIA H200
+request_commit: 208465dd34f00d33daa9bfdfc3238e84f58f8a97
+runner_commit: a3d80ba95552de7ddb8edd76dd275ce606cac031
+date: '2026-11-13'
+method: results/deceptive-intent-contrast-001/{gpu_run.py,score.py}
+by:
+  method: agent
+  model: claude-opus-5-5

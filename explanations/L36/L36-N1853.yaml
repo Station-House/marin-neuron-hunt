@@ -1,0 +1,30 @@
+neuron: L36-N1853
+data: pilot/fineweb-10m-sparse
+label: "communicating and reaching out"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Fires on words for communicating or reaching out to others: "communication", "communicate",
+    "public relations", "outreach", and religious "ministry", "preach", "witness". About 28 of a random
+    40 strong firings (act 3.9 or more) fit.
+  fires_on: "communication, communicate, relations, outreach, ministry, preach, witness"
+  not_on: "untested"
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+  verification: untested
+negative:
+  status: unclear
+  cue_type: none
+  explanation: >-
+    Weak (min -7.9). Top firings include press release and legal wording, but a random 40 strong firings
+    (act -2.4 or less) show no shared pattern.
+  fires_on: "no clear pattern"
+  not_on: "untested"
+  evidence: []
+  verification: untested
+relation: none
+relation_note: >-
+  The negative side has no clear job of its own.
+by:
+  - {github: roshaneyshah, method: human}

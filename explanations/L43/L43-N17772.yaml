@@ -1,0 +1,47 @@
+neuron: L43-N17772
+data: pilot/fineweb-10m-sparse
+label: "baseball roles: pitching (+) vs batting (-)"
+positive:
+  status: explained
+  confidence: high
+  cue_type: semantic-topic
+  explanation: >-
+    Fires throughout baseball PITCHING text: pitchers and their lines (ERAs such as "Cordova ... 2.16",
+    win-loss records "9-1"), innings, strikeouts, starts, bullpen sessions, throwing and pitcher
+    handedness ("soft-tossing lefty", "veteran right-hander"), and hitters' results "off" a named
+    pitcher. Across all 9,441 positive stored firings it lands mostly on ordinary words (".", ",", "he",
+    "his", "and"; only ~6% are numbers), so it is a role detector that stays active across the pitching
+    passage rather than firing on any one marker. The logit lens pushes " pitching", " pitches",
+    " pitcher", " pitched" and " hurl"; the identity is clinched by the pitching-vs-batting sign split,
+    not by a token. Five random selective L43 neurons showed no baseball pattern.
+  fires_on: "baseball pitching text - pitchers, ERAs, innings, strikeouts, starts, bullpen, throwing, pitcher handedness, hits 'off' a pitcher; fires across the passage, mostly on common words"
+  not_on: >-
+    baseball batting (that is the - side) and non-baseball text. Untested beyond the exemplars: non-firing
+    can't be read from the sparse tier, so a contrast test (pitching vs batting sentences) is the real check;
+    requested as L43-N17772-001.
+  evidence: [2, 3, 4, 7, 9, 11, 13, 15, 17, 22]
+  verification: requested
+negative:
+  status: explained
+  confidence: high
+  cue_type: semantic-topic
+  explanation: >-
+    Fires throughout baseball BATTING / hitting text, the mirror of the + side: batting averages and
+    slash lines (".230/.308/.399", "batting .392"), home runs and RBIs, at-bats and plate appearances,
+    hits, and batting-order names. Across all 3,631 negative stored firings it also lands mostly on
+    ordinary words (only ~4% are numbers). The gate is open and a negative `up` carries the sign, and the
+    logit lens is coherent too, pushing " bat", " batting" and " Bat". A few borderline firings fall on
+    pitching wildness (walks), but the strong firings are clearly hitting.
+  fires_on: "baseball batting / hitting text - batting averages and slash lines, home runs, RBIs, at-bats, plate appearances, hits, lineups; fires across the passage, mostly on common words"
+  not_on: >-
+    baseball pitching (the + side) and non-baseball text. Untested beyond the exemplars (same sparse-tier
+    caveat); a mirror contrast test is requested as L43-N17772-002.
+  evidence: [0, 1, 2, 4, 5, 11, 17, 20, 22, 24]
+  verification: requested
+relation: variant
+relation_note: >-
+  Both sides fire in baseball text and split by role: the + side marks pitching, the - side marks batting
+  (hitting). The sign split is itself evidence that the neuron encodes the role, not merely baseball
+  stat-numbers.
+by:
+  - {github: vissutalim, method: agent, model: claude-opus-4-8}

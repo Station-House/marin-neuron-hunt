@@ -1,0 +1,48 @@
+neuron: L46-N13411
+data: pilot/fineweb-10m-sparse
+label: "grammatical person: 1st-person (+) vs 3rd-person (-)"
+positive:
+  status: explained
+  confidence: high
+  cue_type: next-token
+  explanation: >-
+    Marks the position right before a FIRST-PERSON pronoun: it fires on the token that precedes
+    "I / my / we / me / myself / ourselves", in first-person narration and direct address ("let me
+    know and I will", "trust me when I say", "this short essay I will simply", "what I am about to").
+    It is a next-token-prediction neuron - the weights-only logit lens pushes " I", " my", " we",
+    " myself", " ourselves", " our". Across all 35,982 positive stored firings the signal is crisp at
+    high activation and grows diffuse further down (contractions, generic function words), so it marks
+    the first-person prediction site rather than firing uniformly across every first-person passage.
+    The first-vs-third-person sign split is the evidence that it encodes grammatical person.
+  fires_on: "the token just before a first-person pronoun (I/my/we/me/myself/ourselves); first-person narration and direct address; strongest right before 'I'"
+  not_on: >-
+    third-person narration (that is the - side). At low activation the firings are diffuse and not
+    reliably first-person. Untested beyond the exemplars (non-firing can't be read from the sparse
+    tier); a first-person vs third-person contrast test is the real check.
+  evidence: [0, 1, 5, 8, 11, 13, 20, 22, 25, 30]
+  verification: untested
+negative:
+  status: explained
+  confidence: high
+  cue_type: next-token
+  explanation: >-
+    The mirror of the + side: marks the position right before a THIRD-PERSON pronoun, firing on the
+    token that precedes "he / she / they / him / her / their" in third-person narration ("Damian says
+    as far as he knows", "she looked like a teacher wondering how she could", "the only time he ever
+    wanted", "the books he could find"). The weights-only logit lens pushes " he", " she", " they",
+    " their", " theirs". Across all 25,804 negative stored firings the strongest (down to act -79) are
+    clearly pre-third-person; mid-range firings are more mixed (an occasional second-person "you").
+    Same next-token-prediction character as the + side.
+  fires_on: "the token just before a third-person pronoun (he/she/they/him/her/their); third-person narration"
+  not_on: >-
+    first-person / direct address (the + side). Second person is only occasional, and low-activation
+    firings are diffuse. Same sparse-tier caveat; the contrast test above covers this side too.
+  evidence: [0, 3, 4, 9, 10, 12, 20, 24, 26, 27]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both poles do the same job - predicting the grammatical PERSON of the upcoming pronoun - split by
+  person: the + side marks first person, the - side third person. The sign split is itself the
+  evidence that the neuron encodes person rather than any single token.
+by:
+  - {github: vissutalim, method: agent, model: claude-opus-4-8}

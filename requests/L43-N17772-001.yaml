@@ -1,0 +1,18 @@
+type: contrast
+neuron: L43-N17772
+side: "+"
+pairs:
+  - {high: "The ace struck out the side to protect[[ the]] lead.", low: "The slugger crushed a double to pad[[ the]] lead."}
+  - {high: "Their closer stranded the tying run in[[ the]] ninth.", low: "Their cleanup man cleared the bases in[[ the]] ninth."}
+  - {high: "The rookie threw six scoreless innings in[[ the]] opener.", low: "The rookie homered twice in[[ the]] opener."}
+  - {high: "The veteran spun a two-hitter against[[ the]] rivals.", low: "The first baseman drove in five against[[ the]] rivals."}
+  - {high: "The bullpen combined for a shutout to start[[ the]] series.", low: "The offense plated eight runs to start[[ the]] series."}
+  - {high: "The starter racked up eleven strikeouts for[[ the]] night.", low: "The catcher collected four hits for[[ the]] night."}
+  - {high: "The closer fanned the side, and that sealed[[ it]].", low: "The pinch-hitter lined the winner home, and that sealed[[ it]]."}
+  - {high: "The righty retired the first twelve he saw early[[ on]].", low: "The leadoff man reached base three times early[[ on]]."}
+  - {high: "The ace set down the side in order and never looked[[ back]].", low: "The slugger launched a grand slam and never looked[[ back]]."}
+  - {high: "Their staff threw a combined no-hitter in[[ the]] finale.", low: "Their lineup racked up fifteen hits in[[ the]] finale."}
+  - {high: "The reliever worked around a walk to keep[[ it]] scoreless.", low: "The hitter fouled off six pitches to keep[[ it]] alive."}
+  - {high: "The pitcher pounded the strike zone all[[ night]] long.", low: "The batter squared up everything all[[ night]] long."}
+by:
+  - {github: vissutalim, method: agent, model: claude-opus-4-8}

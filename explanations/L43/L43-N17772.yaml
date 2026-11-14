@@ -17,9 +17,10 @@ positive:
   fires_on: "baseball pitching text - pitchers, ERAs, innings, strikeouts, starts, bullpen, throwing, pitcher handedness, hits 'off' a pitcher; fires across the passage, mostly on common words"
   not_on: >-
     baseball batting (that is the - side) and non-baseball text. Untested beyond the exemplars: non-firing
-    can't be read from the sparse tier, so a contrast test (pitching vs batting sentences) is the real check.
+    can't be read from the sparse tier, so a contrast test (pitching vs batting sentences) is the real check;
+    requested as L43-N17772-001.
   evidence: [2, 3, 4, 7, 9, 11, 13, 15, 17, 22]
-  verification: untested
+  verification: requested
 negative:
   status: explained
   confidence: high
@@ -34,9 +35,9 @@ negative:
   fires_on: "baseball batting / hitting text - batting averages and slash lines, home runs, RBIs, at-bats, plate appearances, hits, lineups; fires across the passage, mostly on common words"
   not_on: >-
     baseball pitching (the + side) and non-baseball text. Untested beyond the exemplars (same sparse-tier
-    caveat); the contrast test above also covers this side.
+    caveat); a mirror contrast test is requested as L43-N17772-002.
   evidence: [0, 1, 2, 4, 5, 11, 17, 20, 22, 24]
-  verification: untested
+  verification: requested
 relation: variant
 relation_note: >-
   Both sides fire in baseball text and split by role: the + side marks pitching, the - side marks batting

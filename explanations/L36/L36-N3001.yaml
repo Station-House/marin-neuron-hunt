@@ -1,0 +1,30 @@
+neuron: L36-N3001
+data: pilot/fineweb-10m-sparse
+label: "Virginia, Afghanistan and Latvia"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Fires strongly (up to 52.9) on Virginia and things tied to it ("Virginia", "Old Dominion", "10VAC",
+    "Richmond", "George Mason"), and also on Afghanistan and Latvia. In a random 40 strong firings
+    (act 15.9 or more) about 22 are Virginia, about 12 Afghanistan and about 5 Latvia.
+  fires_on: "Virginia and Virginia places or institutions, Afghanistan and Afghans, Latvia and Latvians"
+  not_on: "untested"
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 29, 30, 31]
+  verification: untested
+negative:
+  status: unclear
+  cue_type: none
+  explanation: >-
+    Weak (min -7.2). Top firings include a few names and Eastern European places, but a random 40 strong
+    firings (act -2.2 or less) show no shared pattern.
+  fires_on: "no clear pattern"
+  not_on: "untested"
+  evidence: []
+  verification: untested
+relation: none
+relation_note: >-
+  The negative side has no clear job of its own.
+by:
+  - {github: roshaneyshah, method: human}

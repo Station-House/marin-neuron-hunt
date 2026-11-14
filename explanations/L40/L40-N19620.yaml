@@ -1,6 +1,7 @@
 neuron: L40-N19620
 data: pilot/fineweb-10m-sparse
 label: "South/east versus north/west geographic language"
+
 positive:
   status: explained
   confidence: weak
@@ -8,36 +9,52 @@ positive:
   explanation: >-
     Strong positive activations occur on or immediately after south- and
     east-oriented location phrases, particularly "southeast", "southeastern",
-    "eastern", and "south of". Some source documents also contain north/west
-    references with negative activations.
+    "eastern", and "south of". In a 24-pair contrast, activation at the
+    following " of" token was higher for south/east wording than for the
+    matched north/west wording in every pair (results PR #50).
   fires_on: >-
     Geographic expressions such as "southeast Nebraska", "Eastern Iowa",
     "southeastern Connecticut", and "southeast of Bossier City".
   not_on: >-
-    Not established for matched north/west or non-directional geographic phrases.
+    North/west alternatives produced lower positive activation in the 24
+    matched pairs, but absence of firing was not established. Non-directional
+    geographic phrases were not tested.
   evidence: [0, 1, 2, 3, 4, 6, 7, 8, 9, 11, 14, 17, 20, 24, 28, 31]
-  verification: untested
+  verification: confirmed
+
 negative:
   status: explained
   confidence: weak
   cue_type: lexical
   explanation: >-
-    Strong negative activations occur on or immediately after north- and
-    west-oriented location phrases, especially "northwest", "northwestern",
-    and "NW". Some examples are place names or institutional names, so a
-    strictly geographic interpretation remains uncertain.
+    Atlas examples show strong negative activations on or immediately after
+    north- and west-oriented location phrases, particularly "northwest",
+    "northwestern", and "NW". A follow-up experiment with 30 matched pairs
+    found that 18 of 30 north, west, and northwest prompts crossed the
+    negative-side magnitude threshold, below the preregistered requirement
+    of 24. None of the 30 south, east, and southeast controls crossed that
+    threshold. Signed activations separated the groups with AUROC 1.0,
+    but the threshold-based prediction was refuted (results PR #67).
+    The test does not establish whether this contrast reflects geographic
+    meaning or lexical differences between directional terms.
   fires_on: >-
-    Expressions such as "northwest corner of Louisiana", "NW Borneo",
-    "Northwest Illinois", and "northwestern shore".
+    Atlas examples include "northwest corner of Louisiana", "NW Borneo",
+    "Northwest Illinois", and "northwestern shore". In the controlled
+    experiment, 8 of 10 north, 5 of 10 west, and 5 of 10 northwest
+    prompts crossed the negative-side magnitude threshold.
   not_on: >-
-    Not established for matched south/east or non-directional geographic phrases.
+    All 30 matched south, east, and southeast controls remained below the
+    negative-side magnitude threshold. Non-directional geographic phrases
+    were not tested.
   evidence: [0, 1, 2, 3, 4, 5, 7, 8, 10, 12, 15, 17, 18, 22, 23, 28, 30, 31]
-  verification: untested
+  verification: refuted
+
 relation: variant
 relation_note: >-
-  Positive examples favor south/east references; negative examples favor
-  north/west references, sometimes within the same source document.
+  Positive and negative activations favor opposing directional expressions.
+  Matched experiments support this contrast, but the negative-side test
+  did not meet its preregistered threshold criterion.
+
 by:
   - github: chaewon-research
-    method: agent
-    model: GPT-6
+    method: human

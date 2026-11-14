@@ -1,36 +1,41 @@
 neuron: L40-N10819
 data: pilot/fineweb-10m-sparse
-label: "reciprocal phrases: preceding words and each"
+label: "Interaction context and uses of each"
 positive:
   status: explained
   confidence: weak
   cue_type: grammar
   explanation: >-
-    Strong positive firings occur mainly on verbs or prepositions before
-    reciprocal phrases such as "each other" and "one another". The cue can
-    also extend to an earlier verb in a coordinated phrase, as in
-    "influence and transform each other".
+    Atlas examples often show positive activation on verbs or prepositions
+    before reciprocal expressions such as "each other" and "one another".
+    In a separate 16-pair contrast, activation at " from" was higher after
+    descriptions of interactive actions in 15 pairs (results PR #53). This
+    supports sensitivity to the preceding wording, not a uniquely reciprocal cue.
   fires_on: "'transform each other', 'from each other', 'know each other', 'against one another'"
-  not_on: "verbs and prepositions without a reciprocal phrase (not tested)"
+  not_on: >-
+    The matched noninteractive contexts generally produced lower activation
+    at " from", but none was established as a non-firing context.
   evidence: [5433078, 1630135, 5069115, 8354981, 3530408, 8746334, 5433076]
-  verification: untested
+  verification: confirmed
 negative:
   status: explained
   confidence: weak
-  cue_type: phrase-idiom
+  cue_type: lexical
   explanation: >-
-    Strong negative firings concentrate on "each" in "each other", including
-    possessive uses such as "each other's". Some negative firings also occur
-    on "each" without a following "other", so the cue is not exclusive to
-    the reciprocal phrase.
-  fires_on: "the token 'each' in 'each other' and possessive 'each other's'"
-  not_on: "other uses of 'each' (not established; counterexamples occur)"
+    Negative activation at " each" was strong in all 12 reciprocal examples
+    and all 12 distributive controls. The reciprocal examples had a more
+    negative mean activation, but the controls also exceeded the negative-side
+    threshold in magnitude, refuting the predicted selectivity (results PR #45).
+    This test did not establish a response specific to "each other".
+  fires_on: "the token 'each' in both reciprocal and distributive contexts"
+  not_on: "No below-threshold control was found among the 24 tested prompts"
   evidence: [7193905, 5640015, 7783001, 6628500, 8307119, 7000615, 9248546]
-  verification: untested
+  verification: refuted
 relation: variant
 relation_note: >-
-  Both sides respond to reciprocal phrasing at different token positions:
-  positive firings tend to precede the phrase, while negative firings tend
-  to occur on "each".
+  The positive-side contrast showed sensitivity to interactive wording at
+  " from". The negative side also responded at " each" without reciprocal
+  phrasing, so a shared selective cue has not been established.
 by:
-  - {github: chaewon-research, method: agent, model: GPT-6}
+  - github: chaewon-research
+    method: human

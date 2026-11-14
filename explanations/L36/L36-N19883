@@ -1,0 +1,29 @@
+neuron: L36-N19883
+data: pilot/fineweb-10m-sparse
+label: "budget"
+positive:
+  status: unclear
+  cue_type: none
+  explanation: >-
+    Weak (max 10.1 vs min -61.8). A random 40 strong firings (act 3.0 or more) show no shared pattern.
+  fires_on: "no clear pattern"
+  not_on: "untested"
+  evidence: []
+  verification: untested
+negative:
+  status: explained
+  confidence: high
+  cue_type: lexical
+  explanation: >-
+    Fires on the word "budget" (also "budgets", "budgeting", "budget-friendly"), very strongly (down to -61.8).
+    About 32 of a random 40 strong firings (act -18.5 or less) are "budget" and most of the rest are
+    close words for money or means ("resources", "funds", "finances").
+  fires_on: "budget, budgets, budgeting, and sometimes resources, funds, finances"
+  not_on: "untested"
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30]
+  verification: untested
+relation: none
+relation_note: >-
+  The positive side has no clear job of its own.
+by:
+  - {github: roshaneyshah, method: human}

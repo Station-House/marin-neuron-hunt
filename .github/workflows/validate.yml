@@ -57,12 +57,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      # Diff against the base tip this merge ref was built on. pull_request.base.sha can be
+      # older, and then everything merged to main since then counts as this PR's change.
+      - run: echo "BASE_SHA=$(git rev-parse HEAD^1)" >> "$GITHUB_ENV"
       - run: python scripts/check_claims.py
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
           PR_BODY: ${{ github.event.pull_request.body }}
           PR_AUTHOR_ID: ${{ github.event.pull_request.user.id }}
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
 
   # Fails a PR that adds or changes an experiment request without a filled-in design
   # (the PR description's ## Design section, or requests/<id>/DESIGN.md for a custom request).
@@ -76,14 +78,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      # Diff against the base tip this merge ref was built on. pull_request.base.sha can be
+      # older, and then everything merged to main since then counts as this PR's change.
+      - run: echo "BASE_SHA=$(git rev-parse HEAD^1)" >> "$GITHUB_ENV"
       - run: python scripts/check_design.py
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
       # A note, not a gate: requests without a Station House Experimentation Wizard review get a warning.
       - run: python scripts/design_session_note.py
         if: always()
         continue-on-error: true
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}

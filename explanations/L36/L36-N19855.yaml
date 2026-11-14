@@ -1,0 +1,30 @@
+neuron: L36-N19855
+data: pilot/fineweb-10m-sparse
+label: "comparing distances and amounts"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: grammar
+  explanation: >-
+    Fires on "is", "are", "be" and "was" in plain statements of fact or definitions, as in "is said to be one
+    ampere" or "Call numbers are usually located". About 22 of a random 40 strong firings (act 3.0 or more) fit.
+  fires_on: "is, are, be, was in general statements and definitions"
+  not_on: "untested"
+  evidence: [0, 1, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14, 15, 17, 18, 20]
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Fires where text compares a distance, size or amount: "within 3 miles", "ten times the", "several years older",
+    "twice as long", "just a few clicks". About 25 of a random 40 strong firings (act -4.5 or less) fit.
+  fires_on: "within, times, twice, older, about, just, and the verb before such a comparison"
+  not_on: "untested"
+  evidence: [0, 1, 2, 3, 4, 5, 7, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27, 28, 29, 30, 31]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides often land on a linking verb, the negative side when an amount comparison follows and the positive side in plain statements.
+by:
+  - {github: roshaneyshah, method: human}

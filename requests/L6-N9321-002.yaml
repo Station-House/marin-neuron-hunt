@@ -1,0 +1,32 @@
+# Summary, + side, fresh prompts: a week or weekday word that places one particular occasion fires past +q99.
+# Should-not-fire: the same words naming a repeating slot.
+type: activation-test
+neuron: L6-N9321
+side: "+"
+hypothesis: "The positive side fires (past q99) on week and weekday words that point to one particular, located occasion (that week, Easter week, the week before the wedding, born on a Sunday), and stays quiet on the same words when they name a repeating slot."
+should_fire:
+  - "It snowed the whole[[ week]] of our honeymoon."
+  - "During Easter[[ week]], the town filled with pilgrims."
+  - "That[[ week]], everything in my life changed."
+  - "The[[ week]] before the wedding was chaos."
+  - "My grandmother was born on a[[ Sunday]] in 1931."
+  - "That year, New Year's Day fell on a[[ Thursday]]."
+  - "One morning this[[ week]], I found a fox in the garden."
+  - "I woke up early one day last[[ week]] and heard the news."
+  - "The heatwave peaked during the[[ week]] of the festival."
+  - "The baby arrived on[[ Tuesday]], two weeks early."
+  - "The house was quiet the[[ week]] after the funeral."
+  - "Her birthday falls on a[[ Saturday]] this year."
+should_not_fire:
+  - "It snows every[[ week]] here in January."
+  - "Pilgrims arrive each[[ week]] by bus."
+  - "My grandmother went to mass every[[ Sunday]]."
+  - "The choir practises every[[ Thursday]] evening."
+  - "Every[[ week]], I find a fox in the garden."
+  - "The bins are emptied every[[ Tuesday]]."
+  - "We call home once a week on[[ Saturday]]."
+  - "Tune in each[[ week]] for a new story."
+  - "The market comes to town every other[[ Friday]]."
+  - "The club meets weekly on[[ Mondays]]."
+threshold: atlas-q99
+by: {github: narang99, method: agent, model: claude-opus-5-5}

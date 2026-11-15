@@ -1,0 +1,32 @@
+# Random baseline for -002: the same should-fire prompts, scored against everyday sentences with the target
+# on the last word. Kept separate so these easy negatives don't pad -002's should-not-fire score.
+type: activation-test
+neuron: L6-N9321
+side: "+"
+hypothesis: "The positive side fires past q99 on the -002 should-fire prompts and stays below q99 on everyday sentences with no week or weekday word."
+should_fire:
+  - "It snowed the whole[[ week]] of our honeymoon."
+  - "During Easter[[ week]], the town filled with pilgrims."
+  - "That[[ week]], everything in my life changed."
+  - "The[[ week]] before the wedding was chaos."
+  - "My grandmother was born on a[[ Sunday]] in 1931."
+  - "That year, New Year's Day fell on a[[ Thursday]]."
+  - "One morning this[[ week]], I found a fox in the garden."
+  - "I woke up early one day last[[ week]] and heard the news."
+  - "The heatwave peaked during the[[ week]] of the festival."
+  - "The baby arrived on[[ Tuesday]], two weeks early."
+  - "The house was quiet the[[ week]] after the funeral."
+  - "Her birthday falls on a[[ Saturday]] this year."
+should_not_fire:
+  - "She poured a glass of cold[[ water]]."
+  - "The children laughed at the[[ clown]]."
+  - "Please pass me the[[ salt]]."
+  - "The dog chased the red[[ ball]]."
+  - "He fixed the leaking kitchen[[ tap]]."
+  - "The old man sat on the park[[ bench]]."
+  - "We planted tulips in the front[[ garden]]."
+  - "The baby fell asleep in the[[ car]]."
+  - "My brother bought a new[[ bicycle]]."
+  - "The teacher wrote on the[[ board]]."
+threshold: atlas-q99
+by: {github: narang99, method: agent, model: claude-opus-5-5}

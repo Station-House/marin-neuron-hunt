@@ -1,0 +1,116 @@
+request: L10-N18895-005
+type: activation-test
+outcome: confirmed
+reason: null
+summary:
+  threshold: 0.982
+  should_fire_above: 1.0
+  should_not_fire_below: 0.9
+  auroc: 1.0
+  should_fire_mean: 5.009375
+  should_not_fire_mean: 0.51644287109375
+per_prompt:
+- group: should_fire
+  prompt: The report can[[ wait]]; the client is on holiday.
+  token: Ġwait
+  act: 6.46875
+- group: should_fire
+  prompt: That conversation will have to[[ wait]].
+  token: Ġwait
+  act: 4.53125
+- group: should_fire
+  prompt: The garden can[[ wait]] until the rain stops.
+  token: Ġwait
+  act: 3.59375
+- group: should_fire
+  prompt: Your questions will have to[[ wait]] until after lunch.
+  token: Ġwait
+  act: 5.03125
+- group: should_fire
+  prompt: The email can[[ wait]] until morning.
+  token: Ġwait
+  act: 8.0625
+- group: should_fire
+  prompt: Lunch will have to[[ wait]]; the patient comes first.
+  token: Ġwait
+  act: 4.46875
+- group: should_fire
+  prompt: The paint job can[[ wait]] another year.
+  token: Ġwait
+  act: 4.75
+- group: should_fire
+  prompt: The renovation will just have to[[ wait]].
+  token: Ġwait
+  act: 3.65625
+- group: should_fire
+  prompt: Homework can[[ wait]] until after dinner.
+  token: Ġwait
+  act: 6.90625
+- group: should_fire
+  prompt: The rest of the tour will have to[[ wait]] for another day.
+  token: Ġwait
+  act: 2.625
+- group: should_not_fire
+  prompt: Please[[ wait]] by the door.
+  token: Ġwait
+  act: 0.671875
+- group: should_not_fire
+  prompt: We had to[[ wait]] in the rain for the bus.
+  token: Ġwait
+  act: -0.0247802734375
+- group: should_not_fire
+  prompt: The patients sat down to[[ wait]] for the doctor.
+  token: Ġwait
+  act: 0.040771484375
+- group: should_not_fire
+  prompt: I will[[ wait]] for you outside the station.
+  token: Ġwait
+  act: 0.58203125
+- group: should_not_fire
+  prompt: The dog learned to[[ wait]] at the kerb.
+  token: Ġwait
+  act: 0.62109375
+- group: should_not_fire
+  prompt: They stood in line to[[ wait]] for tickets.
+  token: Ġwait
+  act: 0.41015625
+- group: should_not_fire
+  prompt: Could you[[ wait]] here a moment?
+  token: Ġwait
+  act: 1.9765625
+- group: should_not_fire
+  prompt: The children had to[[ wait]] quietly in the hall.
+  token: Ġwait
+  act: 0.55078125
+- group: should_not_fire
+  prompt: She likes to[[ wait]] in the car.
+  token: Ġwait
+  act: 0.5
+- group: should_not_fire
+  prompt: We sat in the lobby to[[ wait]] for news.
+  token: Ġwait
+  act: -0.1640625
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: d3153e4c968b385bdaa20bc8f3350eeb603eec46
+request_commit: cc62e8819063eb341704c01c62dd81f3f9ffbad9
+gpu: NVIDIA H200
+date: '2026-11-16'
+seconds: 0.1
+atlas_stats:
+  n: 9995501.0
+  mean: -0.0010355733102187514
+  std: 0.039658110588788986
+  frac_pos: 0.4810762405395508
+  max: 5.71875
+  min: -3.6875
+  scale_abs_p999: 0.342891126871109
+  pos_q5: 0.012409377843141556
+  pos_q9: 0.05327979102730751
+  pos_q99: 0.12980195879936218
+  pos_q999: 0.3718026578426361
+  pos_q9999: 0.982171893119812
+  neg_q5: 0.013455698266625404
+  neg_q9: 0.05327979102730751
+  neg_q99: 0.12980195879936218
+  neg_q999: 0.342891126871109
+  neg_q9999: 0.7704043984413147

@@ -1,0 +1,124 @@
+request: L10-N18895-001
+type: activation-test
+outcome: confirmed
+reason: null
+summary:
+  threshold: 0.12980195879936218
+  should_fire_above: 1.0
+  should_not_fire_below: 1.0
+  auroc: 1.0
+  should_fire_mean: 3.4270833333333335
+  should_not_fire_mean: -1.42998046875
+per_prompt:
+- group: should_fire
+  prompt: The ironing can wait[[ until]] the weekend.
+  token: Ġuntil
+  act: 6.75
+- group: should_fire
+  prompt: We put off the house hunt[[ until]] the spring.
+  token: Ġuntil
+  act: 2.984375
+- group: should_fire
+  prompt: The board postponed its decision[[ until]] March.
+  token: Ġuntil
+  act: 2.234375
+- group: should_fire
+  prompt: Let's leave the dishes[[ until]] the morning.
+  token: Ġuntil
+  act: 4.625
+- group: should_fire
+  prompt: The rest of the story will have to[[ wait]].
+  token: Ġwait
+  act: 4.28125
+- group: should_fire
+  prompt: She saved the last chocolate[[ for]] later.
+  token: Ġfor
+  act: 2.578125
+- group: should_fire
+  prompt: They held off on hiring[[ until]] the funding came through.
+  token: Ġuntil
+  act: 1.921875
+- group: should_fire
+  prompt: The repairs were delayed[[ until]] after the holidays.
+  token: Ġuntil
+  act: 2.75
+- group: should_fire
+  prompt: My reply can[[ wait]]; go and rest.
+  token: Ġwait
+  act: 5.90625
+- group: should_fire
+  prompt: He kept the best joke[[ until]] the end of the speech.
+  token: Ġuntil
+  act: 1.484375
+- group: should_fire
+  prompt: Payment is deferred[[ until]] the goods arrive.
+  token: Ġuntil
+  act: 2.8125
+- group: should_fire
+  prompt: We are saving the champagne[[ for]] the wedding.
+  token: Ġfor
+  act: 2.796875
+- group: should_not_fire
+  prompt: Only four days left[[ until]] the holidays.
+  token: Ġuntil
+  act: -2.71875
+- group: should_not_fire
+  prompt: With a week to go[[ until]] the vote, the race is close.
+  token: Ġuntil
+  act: -2.46875
+- group: should_not_fire
+  prompt: We still have ten miles[[ until]] the border.
+  token: Ġuntil
+  act: -3.359375
+- group: should_not_fire
+  prompt: Just three more sleeps[[ until]] my birthday!
+  token: Ġuntil
+  act: -2.984375
+- group: should_not_fire
+  prompt: There are two months remaining[[ until]] the launch.
+  token: Ġuntil
+  act: -2.203125
+- group: should_not_fire
+  prompt: The library is open[[ until]] eight tonight.
+  token: Ġuntil
+  act: -0.15625
+- group: should_not_fire
+  prompt: She lived in Leeds[[ until]] 2004.
+  token: Ġuntil
+  act: -0.09326171875
+- group: should_not_fire
+  prompt: The shop stays open[[ until]] midnight on Fridays.
+  token: Ġuntil
+  act: -0.0498046875
+- group: should_not_fire
+  prompt: The ticket costs ten dollars[[ for]] adults.
+  token: Ġfor
+  act: -0.236328125
+- group: should_not_fire
+  prompt: This letter is[[ for]] your father.
+  token: Ġfor
+  act: -0.02978515625
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: d3153e4c968b385bdaa20bc8f3350eeb603eec46
+request_commit: cc62e8819063eb341704c01c62dd81f3f9ffbad9
+gpu: NVIDIA H200
+date: '2026-11-16'
+seconds: 2.4
+atlas_stats:
+  n: 9995501.0
+  mean: -0.0010355733102187514
+  std: 0.039658110588788986
+  frac_pos: 0.4810762405395508
+  max: 5.71875
+  min: -3.6875
+  scale_abs_p999: 0.342891126871109
+  pos_q5: 0.012409377843141556
+  pos_q9: 0.05327979102730751
+  pos_q99: 0.12980195879936218
+  pos_q999: 0.3718026578426361
+  pos_q9999: 0.982171893119812
+  neg_q5: 0.013455698266625404
+  neg_q9: 0.05327979102730751
+  neg_q99: 0.12980195879936218
+  neg_q999: 0.342891126871109
+  neg_q9999: 0.7704043984413147

@@ -1,0 +1,124 @@
+request: L10-N18895-008
+type: activation-test
+outcome: confirmed
+reason: null
+summary:
+  threshold: 0.12980195879936218
+  should_fire_above: 1.0
+  should_not_fire_below: 0.9
+  auroc: 1.0
+  should_fire_mean: -2.896484375
+  should_not_fire_mean: -0.00827789306640625
+per_prompt:
+- group: should_fire
+  prompt: Only five days left[[ until]] the final exam.
+  token: Ġuntil
+  act: -2.734375
+- group: should_fire
+  prompt: With two weeks to go[[ until]] the wedding, the cake is still not ordered.
+  token: Ġuntil
+  act: -2.578125
+- group: should_fire
+  prompt: We have forty miles[[ until]] the next petrol station.
+  token: Ġuntil
+  act: -3.625
+- group: should_fire
+  prompt: Just one more sleep[[ until]] Christmas!
+  token: Ġuntil
+  act: -2.84375
+- group: should_fire
+  prompt: There are three hours remaining[[ until]] the polls close.
+  token: Ġuntil
+  act: -2.671875
+- group: should_fire
+  prompt: The children are counting the days[[ until]] summer.
+  token: Ġuntil
+  act: -1.984375
+- group: should_fire
+  prompt: Ten more laps[[ till]] the finish line.
+  token: Ġtill
+  act: -5.09375
+- group: should_fire
+  prompt: It is only a matter of time[[ until]] the bridge gives way.
+  token: Ġuntil
+  act: -2.5
+- group: should_fire
+  prompt: With a year to go[[ until]] the Olympics, the stadium is half built.
+  token: Ġuntil
+  act: -3.328125
+- group: should_fire
+  prompt: How long[[ until]] we get there?
+  token: Ġuntil
+  act: -1.7265625
+- group: should_fire
+  prompt: Two more episodes[[ until]] the season finale.
+  token: Ġuntil
+  act: -2.90625
+- group: should_fire
+  prompt: We had six weeks left[[ until]] the baby was due.
+  token: Ġuntil
+  act: -2.765625
+- group: should_not_fire
+  prompt: She poured a glass of cold[[ water]].
+  token: Ġwater
+  act: 0.012939453125
+- group: should_not_fire
+  prompt: The children laughed at the[[ clown]].
+  token: Ġclown
+  act: 0.0341796875
+- group: should_not_fire
+  prompt: Please pass me the[[ salt]].
+  token: Ġsalt
+  act: -0.1669921875
+- group: should_not_fire
+  prompt: The dog chased the red[[ ball]].
+  token: Ġball
+  act: 0.011474609375
+- group: should_not_fire
+  prompt: He fixed the leaking kitchen[[ tap]].
+  token: Ġtap
+  act: 0.045166015625
+- group: should_not_fire
+  prompt: The old man sat on the park[[ bench]].
+  token: Ġbench
+  act: 0.0255126953125
+- group: should_not_fire
+  prompt: We planted tulips in the front[[ garden]].
+  token: Ġgarden
+  act: 0.007232666015625
+- group: should_not_fire
+  prompt: The baby fell asleep in the[[ car]].
+  token: Ġcar
+  act: -0.057373046875
+- group: should_not_fire
+  prompt: My brother bought a new[[ bicycle]].
+  token: Ġbicycle
+  act: 0.004547119140625
+- group: should_not_fire
+  prompt: The teacher wrote on the[[ board]].
+  token: Ġboard
+  act: 0.0005340576171875
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: d3153e4c968b385bdaa20bc8f3350eeb603eec46
+request_commit: cc62e8819063eb341704c01c62dd81f3f9ffbad9
+gpu: NVIDIA H200
+date: '2026-11-16'
+seconds: 0.0
+atlas_stats:
+  n: 9995501.0
+  mean: -0.0010355733102187514
+  std: 0.039658110588788986
+  frac_pos: 0.4810762405395508
+  max: 5.71875
+  min: -3.6875
+  scale_abs_p999: 0.342891126871109
+  pos_q5: 0.012409377843141556
+  pos_q9: 0.05327979102730751
+  pos_q99: 0.12980195879936218
+  pos_q999: 0.3718026578426361
+  pos_q9999: 0.982171893119812
+  neg_q5: 0.013455698266625404
+  neg_q9: 0.05327979102730751
+  neg_q99: 0.12980195879936218
+  neg_q999: 0.342891126871109
+  neg_q9999: 0.7704043984413147

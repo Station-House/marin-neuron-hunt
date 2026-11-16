@@ -1,0 +1,116 @@
+request: L10-N18895-006
+type: activation-test
+outcome: confirmed
+reason: null
+summary:
+  threshold: 0.12980195879936218
+  should_fire_above: 0.9
+  should_not_fire_below: 0.9
+  auroc: 0.98
+  should_fire_mean: -0.87822265625
+  should_not_fire_mean: 0.089300537109375
+per_prompt:
+- group: should_fire
+  prompt: Enter the code at checkout to[[ get]] ten percent off.
+  token: Ġget
+  act: -1.34375
+- group: should_fire
+  prompt: Sign up below to[[ receive]] our weekly offers.
+  token: Ġreceive
+  act: -0.625
+- group: should_fire
+  prompt: Fill in the form to[[ obtain]] a permit.
+  token: Ġobtain
+  act: -1.625
+- group: should_fire
+  prompt: Join the club and[[ get]] free delivery.
+  token: Ġget
+  act: -0.8125
+- group: should_fire
+  prompt: Download the app to[[ get]] exclusive deals.
+  token: Ġget
+  act: -0.86328125
+- group: should_fire
+  prompt: Visit the website to[[ receive]] a free sample.
+  token: Ġreceive
+  act: -0.50390625
+- group: should_fire
+  prompt: Click here to[[ obtain]] your certificate.
+  token: Ġobtain
+  act: -0.1083984375
+- group: should_fire
+  prompt: Refer a friend and[[ get]] a free month.
+  token: Ġget
+  act: -1.265625
+- group: should_fire
+  prompt: Students must apply early to[[ receive]] funding.
+  token: Ġreceive
+  act: -0.423828125
+- group: should_fire
+  prompt: Complete the survey to[[ get]] a voucher.
+  token: Ġget
+  act: -1.2109375
+- group: should_not_fire
+  prompt: It began to[[ get]] dark after six.
+  token: Ġget
+  act: 0.0966796875
+- group: should_not_fire
+  prompt: I always[[ get]] sleepy in meetings.
+  token: Ġget
+  act: -0.26171875
+- group: should_not_fire
+  prompt: The soup started to[[ get]] cold.
+  token: Ġget
+  act: 0.1591796875
+- group: should_not_fire
+  prompt: He tends to[[ get]] nervous before exams.
+  token: Ġget
+  act: 0.15234375
+- group: should_not_fire
+  prompt: The roads[[ get]] icy in January.
+  token: Ġget
+  act: 0.482421875
+- group: should_not_fire
+  prompt: She was surprised to[[ receive]] a letter from him.
+  token: Ġreceive
+  act: -0.11962890625
+- group: should_not_fire
+  prompt: The town used to[[ get]] a lot of snow.
+  token: Ġget
+  act: 0.034912109375
+- group: should_not_fire
+  prompt: My hands[[ get]] dry in winter.
+  token: Ġget
+  act: 0.2099609375
+- group: should_not_fire
+  prompt: The baby is starting to[[ get]] teeth.
+  token: Ġget
+  act: 0.1259765625
+- group: should_not_fire
+  prompt: We were sad to[[ receive]] the news.
+  token: Ġreceive
+  act: 0.01287841796875
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: d3153e4c968b385bdaa20bc8f3350eeb603eec46
+request_commit: cc62e8819063eb341704c01c62dd81f3f9ffbad9
+gpu: NVIDIA H200
+date: '2026-11-16'
+seconds: 0.1
+atlas_stats:
+  n: 9995501.0
+  mean: -0.0010355733102187514
+  std: 0.039658110588788986
+  frac_pos: 0.4810762405395508
+  max: 5.71875
+  min: -3.6875
+  scale_abs_p999: 0.342891126871109
+  pos_q5: 0.012409377843141556
+  pos_q9: 0.05327979102730751
+  pos_q99: 0.12980195879936218
+  pos_q999: 0.3718026578426361
+  pos_q9999: 0.982171893119812
+  neg_q5: 0.013455698266625404
+  neg_q9: 0.05327979102730751
+  neg_q99: 0.12980195879936218
+  neg_q999: 0.342891126871109
+  neg_q9999: 0.7704043984413147

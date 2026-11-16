@@ -1,0 +1,94 @@
+request: L10-N18895-003
+type: contrast
+outcome: confirmed
+reason: null
+summary:
+  threshold: 0.12980195879936218
+  pairs_in_predicted_direction: 1.0
+  mean_diff: 3.8498331705729165
+  mean_diff_needed: 0.06490097939968109
+per_prompt:
+- high: She went ahead and ushered him in, figuring that it could perhaps wait[[ until]] he was settled in.
+  low: She went ahead and ushered him in, figuring that she could perhaps stay[[ until]] he was settled in.
+  act_high: 5.0
+  act_low: 0.57421875
+  diff: 4.42578125
+- high: Writing something every day, as per my retirement goal, would have to wait[[ until]] I could organize a schedule.
+  low: Writing something every day, as per my retirement goal, would have to continue[[ until]] I could organize a schedule.
+  act_high: 3.6875
+  act_low: -0.1298828125
+  diff: 3.8173828125
+- high: The two largest measures, both facing deep cuts, are both likely to wait[[ until]] September.
+  low: The two largest measures, both facing deep cuts, are both likely to run[[ until]] September.
+  act_high: 3.265625
+  act_low: 0.515625
+  diff: 2.75
+- high: Of course we put off packing[[ until]] the very last minute, but we made it.
+  low: Of course we kept packing[[ until]] the very last minute, but we made it.
+  act_high: 3.3125
+  act_low: -0.466796875
+  diff: 3.779296875
+- high: I was postponing my clarification[[ until]] I got it all sorted out.
+  low: I was working on my clarification[[ until]] I got it all sorted out.
+  act_high: 3.40625
+  act_low: -0.158203125
+  diff: 3.564453125
+- high: What's inside our heads that says it's okay to put off reading the Bible[[ until]] later?
+  low: What's inside our heads that says it's okay to keep reading the Bible[[ until]] later?
+  act_high: 3.21875
+  act_low: -0.404296875
+  diff: 3.623046875
+- high: Everything I said above can wait[[ till]] you have had a good rest.
+  low: Everything I said above can continue[[ till]] you have had a good rest.
+  act_high: 5.84375
+  act_low: 0.2197265625
+  diff: 5.6240234375
+- high: Nothing on the radar just yet; that will wait[[ until]] later today.
+  low: Nothing on the radar just yet; that will last[[ until]] later today.
+  act_high: 4.65625
+  act_low: 0.69921875
+  diff: 3.95703125
+- high: The laundry can wait[[ until]] tomorrow.
+  low: The laundry can dry[[ until]] tomorrow.
+  act_high: 6.875
+  act_low: -0.047607421875
+  diff: 6.922607421875
+- high: Let's hold off[[ until]] Monday.
+  low: Let's keep going[[ until]] Monday.
+  act_high: 2.1875
+  act_low: -0.921875
+  diff: 3.109375
+- high: The committee postponed the vote[[ until]] next month.
+  low: The committee debated the vote[[ until]] next month.
+  act_high: 2.15625
+  act_low: -0.345703125
+  diff: 2.501953125
+- high: The council deferred payment[[ until]] the audit was done.
+  low: The council continued payment[[ until]] the audit was done.
+  act_high: 2.390625
+  act_low: 0.267578125
+  diff: 2.123046875
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: d3153e4c968b385bdaa20bc8f3350eeb603eec46
+request_commit: cc62e8819063eb341704c01c62dd81f3f9ffbad9
+gpu: NVIDIA H200
+date: '2026-11-16'
+seconds: 0.1
+atlas_stats:
+  n: 9995501.0
+  mean: -0.0010355733102187514
+  std: 0.039658110588788986
+  frac_pos: 0.4810762405395508
+  max: 5.71875
+  min: -3.6875
+  scale_abs_p999: 0.342891126871109
+  pos_q5: 0.012409377843141556
+  pos_q9: 0.05327979102730751
+  pos_q99: 0.12980195879936218
+  pos_q999: 0.3718026578426361
+  pos_q9999: 0.982171893119812
+  neg_q5: 0.013455698266625404
+  neg_q9: 0.05327979102730751
+  neg_q99: 0.12980195879936218
+  neg_q999: 0.342891126871109
+  neg_q9999: 0.7704043984413147

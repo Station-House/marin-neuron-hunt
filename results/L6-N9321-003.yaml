@@ -1,0 +1,94 @@
+request: L6-N9321-003
+type: contrast
+outcome: confirmed
+reason: null
+summary:
+  threshold: 0.07986265420913696
+  pairs_in_predicted_direction: 1.0
+  mean_diff: 1.48974609375
+  mean_diff_needed: 0.03993132710456848
+per_prompt:
+- high: Give the channel a follow here, and tune in every[[ week]] for an exciting discussion!
+  low: Give the channel a follow here, and tune in this[[ week]] for an exciting discussion!
+  act_high: -1.640625
+  act_low: -0.314453125
+  diff: 1.326171875
+- high: UCSB Athletics' weekly radio show, Talk'n Gauchos, airs every[[ Tuesday]] from 6-7 p.m.
+  low: UCSB Athletics' weekly radio show, Talk'n Gauchos, airs this[[ Tuesday]] from 6-7 p.m.
+  act_high: -3.265625
+  act_low: -1.8828125
+  diff: 1.3828125
+- high: The group meditation will be held once a week on[[ Sunday]] at 3:45pm.
+  low: The group meditation will be held this coming[[ Sunday]] at 3:45pm.
+  act_high: -3.046875
+  act_low: -0.875
+  diff: 2.171875
+- high: The SEC Bachstory will be a weekly SEC recap posted every[[ Monday]] morning.
+  low: The SEC Bachstory will be a weekly SEC recap posted this[[ Monday]] morning.
+  act_high: -2.796875
+  act_low: -1.3828125
+  diff: 1.4140625
+- high: Intermediate Bridge players are invited to join an informal group meeting every[[ Wednesday]], 10 a.m.
+  low: Intermediate Bridge players are invited to join an informal group meeting this[[ Wednesday]], 10 a.m.
+  act_high: -3.015625
+  act_low: -1.453125
+  diff: 1.5625
+- high: He can be seen in Mound City on Saturday of each[[ week]], and in Oregon the remainder.
+  low: He can be seen in Mound City on Saturday of this[[ week]], and in Oregon the remainder.
+  act_high: -4.0
+  act_low: -1.1875
+  diff: 2.8125
+- high: Miles leads a weekly[[ Friday]] night Midnight Rollers skate around the lake.
+  low: Miles leads a special[[ Friday]] night Midnight Rollers skate around the lake.
+  act_high: -3.078125
+  act_low: -0.578125
+  diff: 2.5
+- high: In the fall of 2001, my graduate media theory seminar at MIT met every[[ Tuesday]] and Thursday at noon.
+  low: In the fall of 2001, my graduate media theory seminar at MIT met one[[ Tuesday]] and Thursday at noon.
+  act_high: -2.015625
+  act_low: -0.76171875
+  diff: 1.25390625
+- high: The Debate Club gives students a sense of how to argue. Each[[ week]] teams of students work on plans.
+  low: The Debate Club gives students a sense of how to argue. This[[ week]] teams of students work on plans.
+  act_high: -2.09375
+  act_low: -1.28125
+  diff: 0.8125
+- high: His opponent presents the TV List every[[ Saturday]] in the Movie Zone.
+  low: His opponent presents the TV List this[[ Saturday]] in the Movie Zone.
+  act_high: -1.421875
+  act_low: -0.390625
+  diff: 1.03125
+- high: There is a Party Poker Weekly Tournament held every[[ Sunday]].
+  low: There is a Party Poker Weekly Tournament held this[[ Sunday]].
+  act_high: -2.078125
+  act_low: -1.328125
+  diff: 0.75
+- high: We will take a look at the old steam navies and will profile a different ship each[[ week]].
+  low: We will take a look at the old steam navies and will profile a different ship this[[ week]].
+  act_high: -1.390625
+  act_low: -0.53125
+  diff: 0.859375
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: d3153e4c968b385bdaa20bc8f3350eeb603eec46
+request_commit: f23589b005001bc56164d53d7377a53026c5b5c3
+gpu: NVIDIA H200
+date: '2026-11-16'
+seconds: 0.1
+atlas_stats:
+  n: 9995501.0
+  mean: -0.0018076618434861302
+  std: 0.026090659201145172
+  frac_pos: 0.45231398940086365
+  max: 3.3125
+  min: -3.484375
+  scale_abs_p999: 0.2480454444885254
+  pos_q5: 0.004697588738054037
+  pos_q9: 0.023713737726211548
+  pos_q99: 0.07365249842405319
+  pos_q999: 0.2287573218345642
+  pos_q9999: 0.8353625535964966
+  neg_q5: 0.0059888544492423534
+  neg_q9: 0.027881266549229622
+  neg_q99: 0.07986265420913696
+  neg_q999: 0.2689598798751831
+  neg_q9999: 0.982171893119812

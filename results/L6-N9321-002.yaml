@@ -1,0 +1,124 @@
+request: L6-N9321-002
+type: activation-test
+outcome: confirmed
+reason: null
+summary:
+  threshold: 0.07365249842405319
+  should_fire_above: 1.0
+  should_not_fire_below: 1.0
+  auroc: 1.0
+  should_fire_mean: 1.5084635416666667
+  should_not_fire_mean: -2.226171875
+per_prompt:
+- group: should_fire
+  prompt: It snowed the whole[[ week]] of our honeymoon.
+  token: Ġweek
+  act: 1.8203125
+- group: should_fire
+  prompt: During Easter[[ week]], the town filled with pilgrims.
+  token: Ġweek
+  act: 0.87890625
+- group: should_fire
+  prompt: That[[ week]], everything in my life changed.
+  token: Ġweek
+  act: 1.171875
+- group: should_fire
+  prompt: The[[ week]] before the wedding was chaos.
+  token: Ġweek
+  act: 0.53515625
+- group: should_fire
+  prompt: My grandmother was born on a[[ Sunday]] in 1931.
+  token: ĠSunday
+  act: 0.86328125
+- group: should_fire
+  prompt: That year, New Year's Day fell on a[[ Thursday]].
+  token: ĠThursday
+  act: 4.03125
+- group: should_fire
+  prompt: One morning this[[ week]], I found a fox in the garden.
+  token: Ġweek
+  act: 3.34375
+- group: should_fire
+  prompt: I woke up early one day last[[ week]] and heard the news.
+  token: Ġweek
+  act: 1.8671875
+- group: should_fire
+  prompt: The heatwave peaked during the[[ week]] of the festival.
+  token: Ġweek
+  act: 0.83984375
+- group: should_fire
+  prompt: The baby arrived on[[ Tuesday]], two weeks early.
+  token: ĠTuesday
+  act: 0.3671875
+- group: should_fire
+  prompt: The house was quiet the[[ week]] after the funeral.
+  token: Ġweek
+  act: 0.5546875
+- group: should_fire
+  prompt: Her birthday falls on a[[ Saturday]] this year.
+  token: ĠSaturday
+  act: 1.828125
+- group: should_not_fire
+  prompt: My uncle plays chess at the club every[[ week]].
+  token: Ġweek
+  act: -2.4375
+- group: should_not_fire
+  prompt: I visit my grandmother each[[ Wednesday]].
+  token: ĠWednesday
+  act: -0.83984375
+- group: should_not_fire
+  prompt: My grandmother went to mass every[[ Sunday]].
+  token: ĠSunday
+  act: -1.2890625
+- group: should_not_fire
+  prompt: The choir practises every[[ Thursday]] evening.
+  token: ĠThursday
+  act: -1.4921875
+- group: should_not_fire
+  prompt: Every[[ week]], I find a fox in the garden.
+  token: Ġweek
+  act: -1.1328125
+- group: should_not_fire
+  prompt: The bins are emptied every[[ Tuesday]].
+  token: ĠTuesday
+  act: -1.5078125
+- group: should_not_fire
+  prompt: We call home once a week on[[ Saturday]].
+  token: ĠSaturday
+  act: -2.796875
+- group: should_not_fire
+  prompt: Tune in each[[ week]] for a new story.
+  token: Ġweek
+  act: -2.9375
+- group: should_not_fire
+  prompt: The market comes to town every other[[ Friday]].
+  token: ĠFriday
+  act: -3.671875
+- group: should_not_fire
+  prompt: The club meets weekly on[[ Mondays]].
+  token: ĠMondays
+  act: -4.15625
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: d3153e4c968b385bdaa20bc8f3350eeb603eec46
+request_commit: f23589b005001bc56164d53d7377a53026c5b5c3
+gpu: NVIDIA H200
+date: '2026-11-16'
+seconds: 0.1
+atlas_stats:
+  n: 9995501.0
+  mean: -0.0018076618434861302
+  std: 0.026090659201145172
+  frac_pos: 0.45231398940086365
+  max: 3.3125
+  min: -3.484375
+  scale_abs_p999: 0.2480454444885254
+  pos_q5: 0.004697588738054037
+  pos_q9: 0.023713737726211548
+  pos_q99: 0.07365249842405319
+  pos_q999: 0.2287573218345642
+  pos_q9999: 0.8353625535964966
+  neg_q5: 0.0059888544492423534
+  neg_q9: 0.027881266549229622
+  neg_q99: 0.07986265420913696
+  neg_q999: 0.2689598798751831
+  neg_q9999: 0.982171893119812

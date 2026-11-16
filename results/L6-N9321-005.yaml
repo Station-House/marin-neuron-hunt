@@ -1,0 +1,116 @@
+request: L6-N9321-005
+type: activation-test
+outcome: confirmed
+reason: null
+summary:
+  threshold: 0.07986265420913696
+  should_fire_above: 1.0
+  should_not_fire_below: 0.9
+  auroc: 1.0
+  should_fire_mean: -0.999560546875
+  should_not_fire_mean: -0.014992141723632812
+per_prompt:
+- group: should_fire
+  prompt: I water the plants every[[ week]].
+  token: Ġweek
+  act: -0.12060546875
+- group: should_fire
+  prompt: She visits her mother every[[ Sunday]].
+  token: ĠSunday
+  act: -0.578125
+- group: should_fire
+  prompt: We pay the cleaner every[[ week]].
+  token: Ġweek
+  act: -1.1953125
+- group: should_fire
+  prompt: The ferry to the island runs every[[ Saturday]].
+  token: ĠSaturday
+  act: -0.443359375
+- group: should_fire
+  prompt: He goes fishing every[[ weekend]].
+  token: Ġweekend
+  act: -0.75
+- group: should_fire
+  prompt: The magazine comes out every[[ week]].
+  token: Ġweek
+  act: -0.458984375
+- group: should_fire
+  prompt: They hold a market every[[ Thursday]].
+  token: ĠThursday
+  act: -2.375
+- group: should_fire
+  prompt: I back up my files every[[ Friday]].
+  token: ĠFriday
+  act: -0.53515625
+- group: should_fire
+  prompt: We meet for coffee every[[ Tuesday]].
+  token: ĠTuesday
+  act: -2.9375
+- group: should_fire
+  prompt: The choir sings in the cathedral every[[ Sunday]].
+  token: ĠSunday
+  act: -0.6015625
+- group: should_not_fire
+  prompt: I water the plants every[[ morning]].
+  token: Ġmorning
+  act: -0.03125
+- group: should_not_fire
+  prompt: She visits her mother every[[ month]].
+  token: Ġmonth
+  act: 0.02099609375
+- group: should_not_fire
+  prompt: We pay the cleaner every[[ month]].
+  token: Ġmonth
+  act: 0.01220703125
+- group: should_not_fire
+  prompt: The ferry to the island runs every[[ hour]].
+  token: Ġhour
+  act: -0.000965118408203125
+- group: should_not_fire
+  prompt: He goes fishing every[[ summer]].
+  token: Ġsummer
+  act: 0.0007171630859375
+- group: should_not_fire
+  prompt: The magazine comes out every[[ year]].
+  token: Ġyear
+  act: -0.056640625
+- group: should_not_fire
+  prompt: They hold a market every[[ day]].
+  token: Ġday
+  act: -0.05078125
+- group: should_not_fire
+  prompt: I back up my files every[[ night]].
+  token: Ġnight
+  act: 0.058349609375
+- group: should_not_fire
+  prompt: We meet for coffee every[[ morning]].
+  token: Ġmorning
+  act: -0.099609375
+- group: should_not_fire
+  prompt: The choir sings in the cathedral every[[ Christmas]].
+  token: ĠChristmas
+  act: -0.0029449462890625
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: d3153e4c968b385bdaa20bc8f3350eeb603eec46
+request_commit: f23589b005001bc56164d53d7377a53026c5b5c3
+gpu: NVIDIA H200
+date: '2026-11-16'
+seconds: 0.1
+atlas_stats:
+  n: 9995501.0
+  mean: -0.0018076618434861302
+  std: 0.026090659201145172
+  frac_pos: 0.45231398940086365
+  max: 3.3125
+  min: -3.484375
+  scale_abs_p999: 0.2480454444885254
+  pos_q5: 0.004697588738054037
+  pos_q9: 0.023713737726211548
+  pos_q99: 0.07365249842405319
+  pos_q999: 0.2287573218345642
+  pos_q9999: 0.8353625535964966
+  neg_q5: 0.0059888544492423534
+  neg_q9: 0.027881266549229622
+  neg_q99: 0.07986265420913696
+  neg_q999: 0.2689598798751831
+  neg_q9999: 0.982171893119812

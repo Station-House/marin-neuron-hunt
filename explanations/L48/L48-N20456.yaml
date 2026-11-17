@@ -11,11 +11,15 @@ positive:
     "this 'extreme level'", "that illusion of", "Iraq's weapons of mass destruction". Its logit lens pushes
     " imaginary", " imagined", " supposed", " fictional", " phantom", " nonexistent", " alleged" and " perceived",
     so it looks like it expects a word that casts doubt on what comes next. The stronger the firing, the more
-    often scare quotes or such a word really follow; below an activation of about 10 it is diffuse.
+    often scare quotes or such a word really follow; below an activation of about 10 it is diffuse. In a
+    30-pair contrast, the target determiner fired higher after a set-up that casts doubt on what follows than
+    after a negative set-up that takes it as real, in every pair (mean gap 12.5; results PR #122).
   fires_on: "determiners and possessives before a doubted or scare-quoted noun phrase ('an alleged', 'the supposed', 'their \"guidelines\"'), and the 'so' of 'so-called'"
-  not_on: "most determiners in neutral text are absent from the stored firings, but the sparse tier keeps only each token's top 64 neurons, so non-firing is untested"
+  not_on: "the same determiner after a negative but not doubting set-up fires lower (30 of 30 pairs, results PR #122),
+    though some such set-ups still reach nearly 13; most determiners in neutral text are absent from the stored firings,
+    but the sparse tier keeps only each token's top 64 neurons, so non-firing is untested"
   evidence: [0, 1, 2, 3, 4, 5, 7, 8, 10, 12, 14, 15, 16, 17, 19, 21, 25, 26, 28, 29, 30, 31]
-  verification: untested
+  verification: confirmed
 negative:
   status: explained
   confidence: weak

@@ -130,10 +130,14 @@ strongest neurons. Check it with the `deep` tier in `fineweb-1m`, or request an 
 
 ## Credit
 
-Every explanation, request and result names its author in `by`. On Station House, a merged PR counts for a task
-card when its title or description names the card's id: `marin-explain-neuron` for an explanation,
-`marin-request-experiment` for a request. It's credited to the GitHub account verified on your Station House
-profile. Credit will also show on the public coverage map once it launches.
+Every explanation, request and result names its author in `by`. On Stationhouse, start your own copy of a task
+on the project's [Tasks tab](https://stationhouse.ai/marin-neuron-atlas/tasks) before you open the PR. A merged PR
+counts for your copy when its title or description names it: `task #` and your copy's number (for example
+`task #31`), or the task's link. It's credited to the GitHub account verified on your Stationhouse profile.
+Credit will also show on the public coverage map once it launches.
+
+Until 2026-11-20 a PR named a task card's id instead (`marin-explain-neuron`, `marin-request-experiment`). Those
+ids no longer credit anyone. Work credited that way was carried over to the Tasks tab.
 
 ## Repo layout
 

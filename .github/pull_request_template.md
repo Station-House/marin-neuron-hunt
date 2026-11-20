@@ -17,10 +17,11 @@ Cover both sides, and say plainly when a side is unclear. With several neurons, 
 
 ## Station House credit
 
-<!-- Keep the task id(s) this PR is for, and delete the rest. Credit goes to the GitHub account verified on your
-Station House profile. -->
+<!-- Start your own copy of a task at https://stationhouse.ai/marin-neuron-atlas/tasks, then replace N below with
+your copy's number. Credit goes to the GitHub account verified on your Stationhouse profile. The old task ids
+(marin-explain-neuron, marin-request-experiment) no longer credit anyone. -->
 
-marin-explain-neuron · marin-request-experiment
+task #N
 
 ## How you investigated
 

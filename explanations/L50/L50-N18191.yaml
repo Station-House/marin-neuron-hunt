@@ -1,0 +1,42 @@
+neuron: L50-N18191
+data: pilot/fineweb-10m-sparse
+label: "'get' in 'get rid of'"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: next-token
+  explanation: >-
+    Fires on "get / got / getting" right before "rid" ("looking to get rid of", "how to get rid of cellulite"),
+    and its output pushes " rid" (the top five logit-lens tokens are forms of "rid"). Of the 197 "get rid" in
+    the 10M tokens, 89% pass the threshold and 24% fire strongly, against 13 strong firings among the other
+    16,647 "get / got / getting" and none on "rid" itself; 66% of the side's 76 strong firings are right before
+    "rid", and many of the rest precede other removal verbs ("get eliminate", "eradicate", "delete", "throw
+    away"). Only 76 strong firings in all.
+  fires_on: "'get' / 'got' / 'getting' right before 'rid', e.g. 'get rid of it'"
+  not_on: >-
+    'get' in other uses (13 strong firings among 16,647) and 'rid' itself (no strong firing among 291). Sparse
+    tier only: the deep tier has no 'get rid', so this is untested.
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15, 16, 19]
+  verification: untested
+negative:
+  status: unclear
+  cue_type: mixed
+  explanation: >-
+    A very weak side (peak -12 against +264). Several of its strongest exemplars are about something ending or
+    going away ("swelling easing", "symptoms largely resolve", "the cancer reportedly disappeared", "refused
+    to go away", "eventually collapsed"), and its logit lens pushes " quitting", "Exiting", " Replacement",
+    but the bulk of its 490 strong firings is scattered (for example "how to deal with"), one document gives
+    19 of them, and 13 of its 64 exemplars are missing from the sparse tier because 64 other neurons outrank
+    them on those tokens.
+  fires_on: >-
+    weakly and loosely: words around something ending or going away (exemplar ranks 3-6, 10, 11, 16, 17);
+    otherwise scattered tokens
+  not_on: untested
+  evidence: [3, 4, 5, 6, 10, 11, 16, 17]
+  verification: untested
+relation: unrelated
+relation_note: >-
+  The negative side's strongest firings loosely echo the positive side's 'get rid of' (things ending or going
+  away), but that side is weak and unclear, so no shared job is claimed.
+by:
+  - {github: Parva-26, method: agent, model: claude-opus-5-5}

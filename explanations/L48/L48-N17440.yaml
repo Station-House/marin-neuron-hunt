@@ -1,0 +1,38 @@
+neuron: L48-N17440
+data: pilot/fineweb-10m-sparse
+label: "'the' in 'had the nerve to'"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: next-token
+  explanation: >-
+    Fires on the word right before nerve / gall / guts / courage in "had the nerve to", "had the gall to",
+    "have the guts to", "got up the courage to" (mostly on "the", sometimes on "up"), and its output pushes "
+    nerve", " gall", " balls", " guts" (logit lens top). Of the 28 "had / have / has the nerve (gall, guts,
+    courage...)", 96% pass the threshold and 36% fire strongly, against 5 strong firings among the other 2,822
+    "had the" and none among 366,459 other "the"; but "the nerve" in general (for example the body's nerves)
+    rarely fires (12% of 451), and the side has only 45 strong firings.
+  fires_on: "'the' (or 'up') right before nerve / gall / guts / courage, e.g. 'had the nerve to', 'got up the courage to'"
+  not_on: >-
+    'the' in other uses (no strong firing among 366,459 outside 'had the') and the nouns nerve / gall / courage
+    themselves (no strong firing among 2,680). Sparse tier only: the deep tier has no such phrase, so this is
+    untested.
+  evidence: [0, 1, 2, 3, 4, 5, 7, 8, 10, 11, 12, 13, 14, 15, 16, 21]
+  verification: untested
+negative:
+  status: unclear
+  cue_type: mixed
+  explanation: >-
+    A very weak side (peak -15 against +290) with no pattern we can name: its strongest exemplars are casino and
+    shopping copy ("fast, anonymous and secure"), product names ("Arizer") and worksheet titles, its 106 strong
+    firings are scattered, and its logit lens shows no meaningful tokens.
+  fires_on: "scattered tokens in promotional and technical text; no common pattern found"
+  not_on: untested
+  evidence: [0, 1, 2, 3, 4, 5]
+  verification: untested
+relation: unrelated
+relation_note: >-
+  The positive side anticipates 'nerve / gall / courage'; the negative side is weak and unclear, so no shared
+  job is claimed.
+by:
+  - {github: Parva-26, method: agent, model: claude-opus-5-5}

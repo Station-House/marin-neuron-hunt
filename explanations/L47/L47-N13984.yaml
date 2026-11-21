@@ -1,0 +1,41 @@
+neuron: L47-N13984
+data: pilot/fineweb-10m-sparse
+label: "time span right before 'ago'"
+positive:
+  status: explained
+  confidence: high
+  cue_type: next-token
+  explanation: >-
+    Fires on the time word right before "ago" ("a long time ago", "400 years ago", "not too long ago", "a
+    minute ago"), and its output pushes " ago" (logit lens top). Of the 1,318 time words right before "ago" in
+    the 10M tokens, 98% pass the threshold and 67% fire strongly; 87% of the side's 1,064 strong firings are
+    on the word before "ago", and most of the rest are near-synonyms ("a while back", "a few years back"). Time
+    words elsewhere fire strongly 109 times among 57,219. Both "years ago" in the deep tier fire (+69, +73).
+  fires_on: "the time word right before 'ago' (time, years, weeks, months, long, minute), e.g. 'a long time ago'"
+  not_on: >-
+    the same time words elsewhere (109 strong firings among 57,219) and before 'later' / 'away' / 'since'
+    (11 strong among 2,565); all other tokens give 16 strong firings. Sparse tier only, except that the deep
+    tier's one 'years later' does not fire on this side.
+  evidence: [0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  verification: untested
+negative:
+  status: unclear
+  cue_type: mixed
+  explanation: >-
+    A weak side (peak -20 against +172). Its strongest exemplars are a time span pointing forward ("six years
+    later", "a day away", "a year away", "a long way off"), close to a mirror of the positive side, but only
+    17% of its 875 strong firings are a time word before later / away / since / after / from, and those
+    phrases fire strongly only 6% of the time (19% for "away", 8% for "later"); the rest is scattered, and four
+    documents give 46 of the strong firings.
+  fires_on: >-
+    weakly: the time word before 'later' / 'away' / 'from now' ('six years later', 'a day away'; exemplar
+    ranks 0-4, 7-9, 13, 15-18, 23, 24); otherwise scattered tokens
+  not_on: "time words before 'ago' (0 of 1,318 pass the threshold); otherwise untested"
+  evidence: [0, 1, 2, 3, 4, 7, 8, 9, 13, 15, 16, 17, 18, 23, 24, 29]
+  verification: untested
+relation: unrelated
+relation_note: >-
+  The negative side's strongest firings ('years later', 'a day away') look like a forward-looking mirror of the
+  positive side's 'years ago', but that side is unclear and weak, so no shared job is claimed.
+by:
+  - {github: Parva-26, method: agent, model: claude-opus-5-5}

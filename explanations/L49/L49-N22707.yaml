@@ -1,0 +1,38 @@
+neuron: L49-N22707
+data: pilot/fineweb-10m-sparse
+label: "word before 'fine' as in 'just fine'"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: next-token
+  explanation: >-
+    Fires on the word right before "fine" meaning "all right", strongest on "just" in "just fine" ("you'll do
+    just fine", "it works just fine"), and its output pushes " fine" and " perfectly" (logit lens top). All 45
+    "just fine" pass the threshold and 78% fire strongly; "are / is / completely fine" pass it too but rarely
+    fire strongly (15% for verbs before "fine"), while "just" not before "fine" fires strongly 13 times among
+    10,850. Only 44.5% of the side's 155 strong firings are right before "fine"; much of the rest is the same
+    idea ("works just as well", "going to be okay", "everything is alright"). One deep-tier "just fine" fires
+    (+109.6).
+  fires_on: "the word right before 'fine' meaning all right, above all 'just' in 'just fine'; also 'just as well', 'be okay'"
+  not_on: >-
+    'just' not before 'fine' (13 strong firings among 10,850). Sparse tier only, apart from the one deep-tier
+    'just fine'; otherwise untested.
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 16, 17, 21]
+  verification: untested
+negative:
+  status: unclear
+  cue_type: mixed
+  explanation: >-
+    A weak side (peak -18 against +241) with no pattern we can name: its strongest exemplars are German "aus",
+    "dealt", "levittown", "US" sizes and similar unrelated tokens, its 670 strong firings are scattered (two
+    documents give 47 of them), and its logit lens shows no meaningful tokens.
+  fires_on: "scattered tokens; no common pattern found"
+  not_on: untested
+  evidence: [0, 1, 2, 3, 4, 5]
+  verification: untested
+relation: unrelated
+relation_note: >-
+  The positive side anticipates 'fine' ('just fine'); the negative side is weak and unclear, so no shared job is
+  claimed.
+by:
+  - {github: Parva-26, method: agent, model: claude-opus-5-5}

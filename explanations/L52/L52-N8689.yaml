@@ -1,0 +1,37 @@
+neuron: L52-N8689
+data: pilot/fineweb-10m-sparse
+label: "'run' in 'run into' (meet, hit a problem)"
+positive:
+  status: explained
+  confidence: high
+  cue_type: next-token
+  explanation: >-
+    Fires on "run / ran / runs / running" (and "bumped") right before "into", in the sense of meeting someone or
+    hitting a problem ("I ran into some cool people", "you could run into problems"), and its output pushes
+    " into" (logit lens top, with " ran" and " running"). Of the 110 "run/ran/runs/running into" in the 10M
+    tokens, 83% pass the threshold and 63% fire strongly, and 92% of the 39 "bumped / crashed into" pass it;
+    81.6% of the side's 114 strong firings are such phrases (with "run across", "run up against", "run
+    afoul"). "Run" in other uses ("ran a test", "run the risk") fires strongly 14 times among 3,935, and other
+    words before "into" 5 times among 11,177. One document gives 11 of the strong firings.
+  fires_on: "'run' / 'ran' / 'runs' / 'running' / 'bumped' right before 'into' (or 'across', 'afoul'), e.g. 'I ran into a problem'"
+  not_on: >-
+    'run' in other uses (14 strong firings among 3,935) and other verbs before 'into' such as 'go into' or 'turn
+    into' (5 strong among 11,177). Sparse tier only: the deep tier has no 'run into', so this is untested.
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  verification: untested
+negative:
+  status: unclear
+  cue_type: mixed
+  explanation: >-
+    A very weak side (peak -15 against +330) with no pattern we can name: its strongest firings are scattered
+    over dates, names ("Matt", "Black Cat"), units ("/mm3") and medical and technical text, and one
+    pulmonary-medicine document gives 14 of its 259 strong firings. The logit lens shows no meaningful tokens.
+  fires_on: "scattered tokens (dates, names, units, technical terms); no common pattern found"
+  not_on: untested
+  evidence: [0, 1, 2, 3, 4, 5]
+  verification: untested
+relation: unrelated
+relation_note: >-
+  The positive side marks 'run into'; the negative side is weak and unclear, so no shared job is claimed.
+by:
+  - {github: Parva-26, method: agent, model: claude-opus-5-5}

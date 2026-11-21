@@ -1,0 +1,31 @@
+neuron: L38-N6791
+data: pilot/fineweb-10m-sparse
+label: "not knowing vs not what it seems"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Fires where something turns out not to be what it seems or does not fit: "a golden boy who isn't what
+    he seems", "more to this than met the eye", "didn't add up", "may not be human". About 26 of a random 40
+    strong firings (act 4.6 or more) fit.
+  fires_on: "isn't what it seems, more than meets the eye, doesn't add up, not quite human"
+  not_on: "untested"
+  evidence: [0, 1, 2, 3, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24, 26, 28, 29, 31]
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Fires where someone does not know what to do or what is going on: "don't know what to do", "not sure where
+    to start", "wondering what", "what's going on". About 28 of a random 40 strong firings (act -4.0 or less) fit.
+  fires_on: "what, where, how after not knowing, not sure, wondering, trying to figure out"
+  not_on: "untested"
+  evidence: [0, 2, 3, 4, 5, 6, 9, 10, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 25, 26, 27, 29, 30, 31]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides mark uncertainty, the negative side not knowing what is going on and the positive side finding that something is not what it seems.
+by:
+  - {github: roshaneyshah, method: human}

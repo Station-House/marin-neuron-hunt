@@ -60,16 +60,20 @@ class Marin:
         return cls(model, AutoTokenizer.from_pretrained(model_dir), Stats(pq.read_table(pole_stats), n))
 
     @torch.no_grad()
-    def run(self, rows, reads=(), tokens=None, loss=False):
+    def run(self, rows, reads=(), tokens=None, loss=False, *, dense=False):
         """Forward every row; returns (acts [R, len(reads)], token logprobs at pos [R, len(tokens)] or None,
-        mean next-token loss over the predictions from pos onward [R] or None)."""
-        acts = np.zeros((len(rows), len(reads)), dtype=np.float64)
+        mean next-token loss over the predictions from pos onward [R] or None).
+        With dense=True, acts is float32 [R, layer, neuron] and reads must be empty."""
+        if dense and reads:
+            raise ValueError("choose dense or individual reads")
+        acts = (np.empty((len(rows), len(self.layers), self.n_neurons), dtype=np.float32)
+                if dense else np.zeros((len(rows), len(reads)), dtype=np.float64))
         lps = np.zeros((len(rows), len(tokens))) if tokens else None
         losses = np.zeros(len(rows)) if loss else None
         need_logits = bool(tokens) or loss
         for start in range(0, len(rows), BATCH):
             chunk = rows[start:start + BATCH]
-            a, lp, ls = self._batch(chunk, reads, tokens, loss, need_logits)
+            a, lp, ls = self._batch(chunk, reads, tokens, loss, need_logits, dense)
             acts[start:start + len(chunk)] = a
             if lps is not None:
                 lps[start:start + len(chunk)] = lp
@@ -77,7 +81,7 @@ class Marin:
                 losses[start:start + len(chunk)] = ls
         return acts, lps, losses
 
-    def _batch(self, rows, reads, tokens, loss, need_logits):
+    def _batch(self, rows, reads, tokens, loss, need_logits, dense):
         width = max(len(r.ids) for r in rows)
         pad = self.tok.pad_token_id if self.tok.pad_token_id is not None else self.tok.eos_token_id
         ids = torch.full((len(rows), width), pad, dtype=torch.long)
@@ -87,9 +91,10 @@ class Marin:
             mask[b, :len(r.ids)] = 1
         pos = torch.tensor([r.pos for r in rows])
         rows_idx = torch.arange(len(rows))
-        acts = torch.zeros((len(rows), len(reads)))
+        acts = (torch.full((len(rows), len(self.layers), self.n_neurons), float("nan"), dtype=torch.float32)
+                if dense else torch.zeros((len(rows), len(reads))))
 
-        by_layer = {}
+        by_layer = {layer: {"reads": [], "edits": []} for layer in range(len(self.layers))} if dense else {}
         for j, (layer, neuron) in enumerate(reads):
             by_layer.setdefault(layer, {"reads": [], "edits": []})["reads"].append((j, neuron))
         for b, r in enumerate(rows):
@@ -100,6 +105,8 @@ class Marin:
         def hook(layer, spec):
             def fn(module, args):
                 x = args[0]
+                if dense:
+                    acts[:, layer, :] = x[rows_idx, pos, :].float().cpu()
                 for j, neuron in spec["reads"]:
                     acts[:, j] = x[rows_idx, pos, neuron].float().cpu()
                 if spec["edits"]:

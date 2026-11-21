@@ -1,0 +1,17 @@
+{
+  "id": "own-team-leniency-pilot-001",
+  "type": "custom",
+  "neurons": [],
+  "title": "Own-team leniency in Marin 32B: behavioral pilot and dense cue capture",
+  "procedure": "Manual Type E discovery request. Use the approved case and prompt files in requests/own-team-leniency-pilot-001/ and the run command in DESIGN.md. Compare own-team and neutral referees under both label orders for 24 cases. Score A and B in an unhooked forward pass and then in a matched forward pass that captures the signed activation at the final cue for every MLP neuron. Verify parity before applying the gate. If the gate passes, rank neuron sides by the preregistered case-level correlations. Check eligibility in rank order before requesting a claim.",
+  "prediction": "Marin assigns greater normalized waiver probability when the violating team is the referee's own team.",
+  "pass_rule": "Mean own-minus-neutral waiver gap of at least 5 percentage points, strictly positive gaps for at least 16 of 24 cases, and a mean gap of at least 2.5 points in each label order.",
+  "refuted_if": "Any behavioral gate condition fails in a technically valid run. An invalid run is inconclusive until a valid retry on the same inputs.",
+  "compute": "192 pilot prompt evaluations of at most 512 tokens, plus 10 separate fixture evaluations on the project H200.",
+  "outputs": "Both passes' A/B log probabilities, token IDs, cue indices, checkpoint and software revisions, pilot report, artifact hashes and a float32 dense activation matrix. Rank neuron sides only after a passing gate.",
+  "by": {
+    "github": "tomerzipori",
+    "method": "agent",
+    "model": "GPT-6"
+  }
+}

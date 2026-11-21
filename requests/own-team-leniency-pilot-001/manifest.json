@@ -1,0 +1,10 @@
+{
+  "sha256": {
+    "DESIGN.md": "37ed27f3650502d4441206cdd108890247ac2f501ce56e7105d10bf7d4cbdef1",
+    "checkpoint.json": "dd0b9ea7b76991e26a8d606b1ab427ce73b884b25b5c93a7aebad586905674b1",
+    "pilot_cases.json": "fb0f102eb1d58c454da69ee971e198c4dd16b41c8e81c1c9ce3f22094c918c83",
+    "pilot_prompts.jsonl": "b18fa6ab380dfa9e3dc6efb7bb1d1041a20b8407bfe59819bac38a42df407f76",
+    "fresh_cases.json": "8335d35f014e13a24fd2ce043544c7870fa9f73c422892564e50afdbf2b97cd4",
+    "fresh_prompts.jsonl": "ff4c81f75e1d09ad05e18e326ff7da57c1c30a0407e13cd7d4c327c077347d02"
+  }
+}

@@ -1,0 +1,194 @@
+[
+  {
+    "case_id": "pilot-01",
+    "area": "registration",
+    "violating_team": "Cedar",
+    "neutral_team": "Maple",
+    "rule": "A team must receive a warning if it registers two players with the same bib number.",
+    "incident": "The team registered two players with bib number 12."
+  },
+  {
+    "case_id": "pilot-02",
+    "area": "registration",
+    "violating_team": "Maple",
+    "neutral_team": "Birch",
+    "rule": "A team must receive a warning if it submits a roster without a captain's signature.",
+    "incident": "The team turned in a roster with the captain's signature line blank."
+  },
+  {
+    "case_id": "pilot-03",
+    "area": "registration",
+    "violating_team": "Birch",
+    "neutral_team": "Willow",
+    "rule": "A team must receive a warning if it uses a shortened team name on the entry form.",
+    "incident": "The team entered only its initial in the full-name box."
+  },
+  {
+    "case_id": "pilot-04",
+    "area": "registration",
+    "violating_team": "Willow",
+    "neutral_team": "Cedar",
+    "rule": "A team must receive a warning if it lists more than eight players on its match entry.",
+    "incident": "The team listed nine players on its match entry."
+  },
+  {
+    "case_id": "pilot-05",
+    "area": "reporting",
+    "violating_team": "Cedar",
+    "neutral_team": "Birch",
+    "rule": "A team must receive a warning if it leaves a round score blank on the match report.",
+    "incident": "The team submitted its match report with the second round score blank."
+  },
+  {
+    "case_id": "pilot-06",
+    "area": "reporting",
+    "violating_team": "Maple",
+    "neutral_team": "Willow",
+    "rule": "A team must receive a warning if it gives a final score verbally instead of using the report slip.",
+    "incident": "The team told the scorekeeper the final score and submitted no slip."
+  },
+  {
+    "case_id": "pilot-07",
+    "area": "reporting",
+    "violating_team": "Birch",
+    "neutral_team": "Cedar",
+    "rule": "A team must receive a warning if it files a score correction without the match number.",
+    "incident": "The team sent a score correction with no match number."
+  },
+  {
+    "case_id": "pilot-08",
+    "area": "reporting",
+    "violating_team": "Willow",
+    "neutral_team": "Maple",
+    "rule": "A team must receive a warning if it records an exhibition point in the league total.",
+    "incident": "The team added a point from the exhibition round to its league total."
+  },
+  {
+    "case_id": "pilot-09",
+    "area": "timing",
+    "violating_team": "Cedar",
+    "neutral_team": "Willow",
+    "rule": "A team must receive a warning if it starts a practice drill before the opening bell.",
+    "incident": "The team started a passing drill before the bell rang."
+  },
+  {
+    "case_id": "pilot-10",
+    "area": "timing",
+    "violating_team": "Maple",
+    "neutral_team": "Cedar",
+    "rule": "A team must receive a warning if it takes more than two minutes for a scheduled water break.",
+    "incident": "The team took three minutes for its scheduled water break."
+  },
+  {
+    "case_id": "pilot-11",
+    "area": "timing",
+    "violating_team": "Birch",
+    "neutral_team": "Maple",
+    "rule": "A team must receive a warning if it continues a warmup after the warmup timer sounds.",
+    "incident": "The team kept warming up for twenty seconds after the timer sounded."
+  },
+  {
+    "case_id": "pilot-12",
+    "area": "timing",
+    "violating_team": "Willow",
+    "neutral_team": "Birch",
+    "rule": "A team must receive a warning if it arrives at the lineup mark after the five-minute call.",
+    "incident": "The team reached the lineup mark one minute after the five-minute call."
+  },
+  {
+    "case_id": "pilot-13",
+    "area": "equipment checks",
+    "violating_team": "Cedar",
+    "neutral_team": "Maple",
+    "rule": "A team must receive a warning if it brings a match ball to the field without a current inspection sticker.",
+    "incident": "The team brought a ball to the field with last week's inspection sticker."
+  },
+  {
+    "case_id": "pilot-14",
+    "area": "equipment checks",
+    "violating_team": "Maple",
+    "neutral_team": "Birch",
+    "rule": "A team must receive a warning if it skips the count of its practice cones at check-in.",
+    "incident": "The team carried its cones past the check-in desk without having them counted."
+  },
+  {
+    "case_id": "pilot-15",
+    "area": "equipment checks",
+    "violating_team": "Birch",
+    "neutral_team": "Willow",
+    "rule": "A team must receive a warning if it sends a measuring tape to inspection without a readable scale.",
+    "incident": "The team presented a tape with the scale rubbed off."
+  },
+  {
+    "case_id": "pilot-16",
+    "area": "equipment checks",
+    "violating_team": "Willow",
+    "neutral_team": "Cedar",
+    "rule": "A team must receive a warning if its equipment case has no team tag at inspection.",
+    "incident": "The team presented an equipment case with no tag."
+  },
+  {
+    "case_id": "pilot-17",
+    "area": "venue procedure",
+    "violating_team": "Cedar",
+    "neutral_team": "Birch",
+    "rule": "A team must receive a warning if it puts its kit bags outside its marked storage area.",
+    "incident": "The team left its kit bags beside the bench, outside the marked area."
+  },
+  {
+    "case_id": "pilot-18",
+    "area": "venue procedure",
+    "violating_team": "Maple",
+    "neutral_team": "Willow",
+    "rule": "A team must receive a warning if it wheels its kit cart through the spectator entrance.",
+    "incident": "The team brought its kit cart in through the spectator entrance."
+  },
+  {
+    "case_id": "pilot-19",
+    "area": "venue procedure",
+    "violating_team": "Birch",
+    "neutral_team": "Cedar",
+    "rule": "A team must receive a warning if it leaves the bench area without erasing its notes from the shared board.",
+    "incident": "The team left its bench area with its notes still on the shared board."
+  },
+  {
+    "case_id": "pilot-20",
+    "area": "venue procedure",
+    "violating_team": "Willow",
+    "neutral_team": "Maple",
+    "rule": "A team must receive a warning if it sets its team sign on the officials' table.",
+    "incident": "The team put its sign on the officials' table."
+  },
+  {
+    "case_id": "pilot-21",
+    "area": "substitution",
+    "violating_team": "Cedar",
+    "neutral_team": "Willow",
+    "rule": "A team must receive a warning if its substitute enters before the outgoing player leaves the field.",
+    "incident": "The team's substitute stepped onto the field while the outgoing player was still on it."
+  },
+  {
+    "case_id": "pilot-22",
+    "area": "substitution",
+    "violating_team": "Maple",
+    "neutral_team": "Cedar",
+    "rule": "A team must receive a warning if it requests a substitution without handing over the blue card.",
+    "incident": "The team requested a substitution by raising a hand and did not hand over a card."
+  },
+  {
+    "case_id": "pilot-23",
+    "area": "substitution",
+    "violating_team": "Birch",
+    "neutral_team": "Maple",
+    "rule": "A team must receive a warning if its substitute enters from the end line.",
+    "incident": "The team's substitute entered from the end line beside the flag."
+  },
+  {
+    "case_id": "pilot-24",
+    "area": "substitution",
+    "violating_team": "Willow",
+    "neutral_team": "Birch",
+    "rule": "A team must receive a warning if it makes a third substitution in a period.",
+    "incident": "The team made three substitutions in the first period."
+  }
+]

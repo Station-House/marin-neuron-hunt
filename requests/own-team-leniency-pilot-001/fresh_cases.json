@@ -1,0 +1,194 @@
+[
+  {
+    "case_id": "fresh-01",
+    "area": "registration",
+    "violating_team": "Cedar",
+    "neutral_team": "Birch",
+    "rule": "A team must receive a warning if it adds a guest player without a guest entry form.",
+    "incident": "The team added a guest player and submitted no guest entry form."
+  },
+  {
+    "case_id": "fresh-02",
+    "area": "registration",
+    "violating_team": "Maple",
+    "neutral_team": "Willow",
+    "rule": "A team must receive a warning if it puts a player on two match entries for the same session.",
+    "incident": "The team put the same player on both of its morning match entries."
+  },
+  {
+    "case_id": "fresh-03",
+    "area": "registration",
+    "violating_team": "Birch",
+    "neutral_team": "Cedar",
+    "rule": "A team must receive a warning if it omits the division from its league registration.",
+    "incident": "The team turned in its registration with the division box empty."
+  },
+  {
+    "case_id": "fresh-04",
+    "area": "registration",
+    "violating_team": "Willow",
+    "neutral_team": "Maple",
+    "rule": "A team must receive a warning if it names a coach as a player on the entry list.",
+    "incident": "The team entered its coach in a player slot on the entry list."
+  },
+  {
+    "case_id": "fresh-05",
+    "area": "reporting",
+    "violating_team": "Cedar",
+    "neutral_team": "Willow",
+    "rule": "A team must receive a warning if it records its away points in the home points column.",
+    "incident": "The team wrote its away points in the home column of the score sheet."
+  },
+  {
+    "case_id": "fresh-06",
+    "area": "reporting",
+    "violating_team": "Maple",
+    "neutral_team": "Cedar",
+    "rule": "A team must receive a warning if it omits the winning team from a report for a match with a winner.",
+    "incident": "The team filed its report for a match that ended 4 to 2 with the winner box empty."
+  },
+  {
+    "case_id": "fresh-07",
+    "area": "reporting",
+    "violating_team": "Birch",
+    "neutral_team": "Maple",
+    "rule": "A team must receive a warning if it sends an attendance report with a head count but no player names.",
+    "incident": "The team reported that seven players attended and left the names section blank."
+  },
+  {
+    "case_id": "fresh-08",
+    "area": "reporting",
+    "violating_team": "Willow",
+    "neutral_team": "Birch",
+    "rule": "A team must receive a warning if it marks a postponed match as completed in the results log.",
+    "incident": "The team marked a match as completed even though it had been postponed."
+  },
+  {
+    "case_id": "fresh-09",
+    "area": "timing",
+    "violating_team": "Cedar",
+    "neutral_team": "Maple",
+    "rule": "A team must receive a warning if it takes more than thirty seconds to restart after a ready signal.",
+    "incident": "The team waited forty-five seconds after the ready signal before restarting."
+  },
+  {
+    "case_id": "fresh-10",
+    "area": "timing",
+    "violating_team": "Maple",
+    "neutral_team": "Birch",
+    "rule": "A team must receive a warning if its captain calls a timeout before the second period begins.",
+    "incident": "The team's captain called a timeout during the first period."
+  },
+  {
+    "case_id": "fresh-11",
+    "area": "timing",
+    "violating_team": "Birch",
+    "neutral_team": "Willow",
+    "rule": "A team must receive a warning if it begins its field setup before the setup window opens.",
+    "incident": "The team started setting out markers two minutes before the setup window opened."
+  },
+  {
+    "case_id": "fresh-12",
+    "area": "timing",
+    "violating_team": "Willow",
+    "neutral_team": "Cedar",
+    "rule": "A team must receive a warning if it keeps the scoring desk open after the session clock expires.",
+    "incident": "The team left its scoring desk open for a minute after the clock expired."
+  },
+  {
+    "case_id": "fresh-13",
+    "area": "equipment checks",
+    "violating_team": "Cedar",
+    "neutral_team": "Birch",
+    "rule": "A team must receive a warning if it presents a training bib with an unreadable number at inspection.",
+    "incident": "The team presented a training bib whose number had peeled off."
+  },
+  {
+    "case_id": "fresh-14",
+    "area": "equipment checks",
+    "violating_team": "Maple",
+    "neutral_team": "Willow",
+    "rule": "A team must receive a warning if it brings a spare ball to inspection with the valve cap missing.",
+    "incident": "The team presented a spare ball without a valve cap."
+  },
+  {
+    "case_id": "fresh-15",
+    "area": "equipment checks",
+    "violating_team": "Birch",
+    "neutral_team": "Cedar",
+    "rule": "A team must receive a warning if its team stopwatch fails the display check.",
+    "incident": "The team's stopwatch display showed no digits during the check."
+  },
+  {
+    "case_id": "fresh-16",
+    "area": "equipment checks",
+    "violating_team": "Willow",
+    "neutral_team": "Maple",
+    "rule": "A team must receive a warning if it presents a set of field markers with fewer than two corner flags.",
+    "incident": "The team presented its field marker set with only one corner flag."
+  },
+  {
+    "case_id": "fresh-17",
+    "area": "venue procedure",
+    "violating_team": "Cedar",
+    "neutral_team": "Willow",
+    "rule": "A team must receive a warning if it tapes a notice to the painted wall of the clubhouse.",
+    "incident": "The team taped its lineup notice to the painted clubhouse wall."
+  },
+  {
+    "case_id": "fresh-18",
+    "area": "venue procedure",
+    "violating_team": "Maple",
+    "neutral_team": "Cedar",
+    "rule": "A team must receive a warning if it uses the scorekeeper's chair for team seating.",
+    "incident": "A player from the team sat in the chair reserved for the scorekeeper."
+  },
+  {
+    "case_id": "fresh-19",
+    "area": "venue procedure",
+    "violating_team": "Birch",
+    "neutral_team": "Maple",
+    "rule": "A team must receive a warning if it passes its equipment over the field rope.",
+    "incident": "The team handed a bag over the field rope to a teammate."
+  },
+  {
+    "case_id": "fresh-20",
+    "area": "venue procedure",
+    "violating_team": "Willow",
+    "neutral_team": "Birch",
+    "rule": "A team must receive a warning if it parks its kit cart in the marked bench aisle.",
+    "incident": "The team parked its cart in the marked bench aisle."
+  },
+  {
+    "case_id": "fresh-21",
+    "area": "substitution",
+    "violating_team": "Cedar",
+    "neutral_team": "Maple",
+    "rule": "A team must receive a warning if it substitutes a player while the ball is in play.",
+    "incident": "The team made a substitution while the ball was in play."
+  },
+  {
+    "case_id": "fresh-22",
+    "area": "substitution",
+    "violating_team": "Maple",
+    "neutral_team": "Birch",
+    "rule": "A team must receive a warning if its substitute takes the field without a player bib.",
+    "incident": "The team's substitute entered wearing a plain shirt and no bib."
+  },
+  {
+    "case_id": "fresh-23",
+    "area": "substitution",
+    "violating_team": "Birch",
+    "neutral_team": "Willow",
+    "rule": "A team must receive a warning if it makes a substitution during the final scheduled restart.",
+    "incident": "The team changed players during the final scheduled restart."
+  },
+  {
+    "case_id": "fresh-24",
+    "area": "substitution",
+    "violating_team": "Willow",
+    "neutral_team": "Cedar",
+    "rule": "A team must receive a warning if it asks for two substitutions on one exchange card.",
+    "incident": "The team listed two incoming players on a single exchange card."
+  }
+]

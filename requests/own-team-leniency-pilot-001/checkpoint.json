@@ -1,0 +1,63 @@
+{
+  "repo": "marin-community/marin-32b-base",
+  "revision": "f19b346615212ff9a6d92c10861a9cdb100cbf97",
+  "files": {
+    "config.json": {
+      "git_blob_sha1": "72a4ab325920c2ed9a9a00bdde459e42c4c7e5ee"
+    },
+    "model-00001-of-00014.safetensors": {
+      "sha256": "8d7fe840d275b5419fc3281347d18712b3356606d32e81c580a78b50a1b1baef"
+    },
+    "model-00002-of-00014.safetensors": {
+      "sha256": "a91357c1eaec82319e1083f1e7fac679b6de1ebd6bf9ea74657b64df4670f6b0"
+    },
+    "model-00003-of-00014.safetensors": {
+      "sha256": "cec3621ebb33e54cd4b589666ea88a954eb8256a9ec556b11a47efa4f3055951"
+    },
+    "model-00004-of-00014.safetensors": {
+      "sha256": "18b6b9847c142f8be0d3ca5b1b3a1e11a77ff9ddf546e23d46a75a4a61dea8c6"
+    },
+    "model-00005-of-00014.safetensors": {
+      "sha256": "8426c582020acd8777d19704dacb4150515318f507146603a896520e67869ecf"
+    },
+    "model-00006-of-00014.safetensors": {
+      "sha256": "0b0ac3489db71e07427513049f7ad543206eaf7e07413020198c67a9e8ee6e98"
+    },
+    "model-00007-of-00014.safetensors": {
+      "sha256": "cef7b1c0e87c6fe7e37d8bbea14ae168eafeeace3cfd00a92eb2f9999d00af0a"
+    },
+    "model-00008-of-00014.safetensors": {
+      "sha256": "fbdafb37fb76158ebc4d852a9c5079931deda38f06c95612f8171b0e00bcb97b"
+    },
+    "model-00009-of-00014.safetensors": {
+      "sha256": "affe4c88ceb29aa2a3495555804f9af7ba04084e7e37a6a6c84a0cdc95cd66ef"
+    },
+    "model-00010-of-00014.safetensors": {
+      "sha256": "a69ba4712e3e20f266a57befc4e609eee1eea21c4d808bdc1d8575dc6a16d586"
+    },
+    "model-00011-of-00014.safetensors": {
+      "sha256": "45ba2637bab6d8af95505dab80d47ec695e5deb069b349f22978ab0b802f45d0"
+    },
+    "model-00012-of-00014.safetensors": {
+      "sha256": "f6f9179484b6aee1ab7b230d0fc487cdde02a82064993bbf5ec78de50542a383"
+    },
+    "model-00013-of-00014.safetensors": {
+      "sha256": "e3219064f61a14aadbc371b29f2354a78eda451092448d66719af5f04ff34533"
+    },
+    "model-00014-of-00014.safetensors": {
+      "sha256": "2148eecf9ac50308e02f31ed6a20facce0c3d4528d4fc72111ec91c6bb7b5caa"
+    },
+    "model.safetensors.index.json": {
+      "git_blob_sha1": "2e8deafc05f616e7728a11d3b06e19479059aaff"
+    },
+    "special_tokens_map.json": {
+      "git_blob_sha1": "cfabacc2620186cd3dd4b1dde9a37e057208636e"
+    },
+    "tokenizer.json": {
+      "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+    },
+    "tokenizer_config.json": {
+      "git_blob_sha1": "5346f10a1884fed79cfa9e4a40ce7173418b5732"
+    }
+  }
+}

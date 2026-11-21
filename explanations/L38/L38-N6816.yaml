@@ -1,0 +1,28 @@
+neuron: L38-N6816
+data: pilot/fineweb-10m-sparse
+label: "unclear on both sides"
+positive:
+  status: unclear
+  cue_type: none
+  explanation: >-
+    Weak (max 9.9). Top firings are mostly affiliate and deal-site text, and a random 40 strong firings
+    (act 3.0 or more) show no shared pattern.
+  fires_on: "no clear pattern"
+  not_on: "untested"
+  evidence: []
+  verification: untested
+negative:
+  status: unclear
+  cue_type: none
+  explanation: >-
+    Top firings lean toward "things you'll find on websites" and "check out before deciding", but a random 40
+    strong firings (act -2.6 or less) are too mixed to name one job.
+  fires_on: "no clear pattern"
+  not_on: "untested"
+  evidence: []
+  verification: untested
+relation: none
+relation_note: >-
+  Neither side has a clear job.
+by:
+  - {github: roshaneyshah, method: human}

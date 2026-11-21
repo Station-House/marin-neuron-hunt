@@ -1,0 +1,28 @@
+neuron: L38-N13786
+data: pilot/fineweb-10m-sparse
+label: "unclear on both sides"
+positive:
+  status: unclear
+  cue_type: none
+  explanation: >-
+    Top firings include "do more with less" and "pick up work", but a random 40 strong firings (act 2.9 or more)
+    show no shared pattern.
+  fires_on: "no clear pattern"
+  not_on: "untested"
+  evidence: []
+  verification: untested
+negative:
+  status: unclear
+  cue_type: none
+  explanation: >-
+    Top firings lean toward privacy policy wording ("reasonable measures to ensure your data is kept secure"),
+    but only about 12 of a random 40 strong firings (act -3.3 or less) fit, so the pattern is too weak to claim.
+  fires_on: "sometimes privacy policy and data protection wording"
+  not_on: "untested"
+  evidence: []
+  verification: untested
+relation: none
+relation_note: >-
+  Neither side has a clear job.
+by:
+  - {github: roshaneyshah, method: human}

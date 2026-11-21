@@ -1,0 +1,28 @@
+neuron: L38-N13750
+data: pilot/fineweb-10m-sparse
+label: "unclear on both sides"
+positive:
+  status: unclear
+  cue_type: none
+  explanation: >-
+    Weak (max 9.1). Top firings are mostly casino and spam web text, and a random 40 strong firings
+    (act 2.8 or more) show no shared pattern.
+  fires_on: "no clear pattern"
+  not_on: "untested"
+  evidence: []
+  verification: untested
+negative:
+  status: unclear
+  cue_type: none
+  explanation: >-
+    Weak (min -9.2). Top firings mix privacy policy, product and medical text, and a random 40 strong firings
+    (act -2.8 or less) show no shared pattern.
+  fires_on: "no clear pattern"
+  not_on: "untested"
+  evidence: []
+  verification: untested
+relation: none
+relation_note: >-
+  Neither side has a clear job.
+by:
+  - {github: roshaneyshah, method: human}

@@ -1,6 +1,6 @@
 neuron: L50-N22895
 data: pilot/fineweb-10m-sparse
-label: "domestic political/economic offices vs early-20th-century political-military history"
+label: "UK government offices vs early political-military history"
 positive:
   status: explained
   confidence: weak

@@ -1,0 +1,37 @@
+neuron: L50-N22895
+data: pilot/fineweb-10m-sparse
+label: "domestic political/economic offices vs early-20th-century political-military history"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Fires on early 20th-century political and military history, especially Ottoman/Turkish history and colonial
+    administration: "He was met with great enthusiasm in Ankara", "Mustafa Kemal joined the battle with units
+    from Gallipoli", "started to work at the Ministry of Defense", "Sir William Foster...entered the India Office",
+    "Academy protested before the Minister of Education". About 22 of a random 40 strong firings (act 6.3 or
+    more) fit.
+  fires_on: "Ankara, Ministry of Defense, Minister of Education, India Office, Gallipoli, Staff Officer"
+  not_on: "untested"
+  evidence: [0, 1, 5, 6, 7, 8, 10, 11, 12, 14, 15, 18, 19, 20, 24, 26, 28, 29, 31, 33, 35, 39]
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Fires on UK political/government offices and economic text ("Under-Secretary of State, Scottish Office",
+    "Secretary of State for War", "Department of Social Security"), sports personnel trades/signings ("the trade
+    that brought them Jon Sanchez", "Jeff Green (FA), Jason Collins"), and business/consumer-trade boilerplate
+    ("unfair trade practices"). About 24 of a random 40 strong firings (act -7.6 or less) fit.
+  fires_on: "Secretary of State for, Department of, the trade that brought, FA signings, unfair trade practices"
+  not_on: "untested"
+  evidence: [0, 1, 2, 3, 4, 8, 9, 11, 12, 14, 17, 18, 21, 24, 25, 26, 27, 28, 29, 30, 31, 35, 36, 37]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides mark institutional/governmental text, but the negative side is domestic UK offices and modern
+  sports/business transactions, while the positive side is early 20th-century international political and
+  military history.
+by:
+  - {github: roshaneyshah, method: human}

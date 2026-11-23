@@ -1,0 +1,35 @@
+neuron: L50-N1660
+data: pilot/fineweb-10m-sparse
+label: "sports trades & casino bonuses vs forex/trading jargon"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Fires mainly on forex/CFD trading jargon: "trading EUR/USD", "PrimeXBT charges a zero", "Plus500 is not very
+    appropriate for long-lasting trading", "dynamic spread which is constantly adjusted". Also fires on
+    Gospel new-wine/new-garment parables and Talmudic tractate references. About 19 of a random 40 strong
+    firings (act 5.5 or more) fit.
+  fires_on: "trading EUR/USD, spread, PrimeXBT, Plus500, new wine/old wine parable, tractate"
+  not_on: "untested"
+  evidence: [1, 2, 5, 6, 7, 9, 10, 12, 13, 17, 19, 20, 23, 25, 26, 29, 30, 35, 38]
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Fires on two related contexts: baseball/hockey trade transactions naming the players and positions
+    received ("traded outfielder Tommy Pham to Tampa Bay for two prospects: LH reliever Genesis Cabrera"), and
+    online casino bonus/account boilerplate repeating "your account" ("Create your 100,", "verify your account").
+    About 30 of a random 40 strong firings (act -12.7 or less) fit.
+  fires_on: "traded ... for two prospects, LH reliever, outfielder, create your account, deposit bonus"
+  not_on: "untested"
+  evidence: [0, 1, 2, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 28, 29, 30, 32, 33, 34, 36, 37]
+  verification: untested
+relation: none
+relation_note: >-
+  No obvious connection between the sides: the negative side marks sports-trade announcements and casino bonus
+  text, while the positive side marks forex-trading jargon and scriptural/Talmudic passages.
+by:
+  - {github: roshaneyshah, method: human}

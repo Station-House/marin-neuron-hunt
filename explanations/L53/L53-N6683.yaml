@@ -1,0 +1,44 @@
+neuron: L53-N6683
+data: pilot/fineweb-10m-sparse
+label: "future tense: 'going (to)' (+), spun-text 'will' (-)"
+positive:
+  status: explained
+  confidence: high
+  cue_type: next-token
+  explanation: >-
+    Fires on "going" when it starts the "be going to + verb" future ("it's going to be", "you're going to
+    find", "isn't going to end"), before "to" is seen. All 32 top exemplars are this "going" (rank 29 is
+    "gon" in "gonna"), and 94.9% of the 1,539 firings at 30% of max or more are on "going", 1,438 of them
+    right before "to". Of 2,284 "is/are/'re/not ... going" followed by "to", 87.9% pass 18 (about pos_q999),
+    against 23.3% of the same left context with no "to" after it. The logit lens fits: it pushes " be" and
+    bare verbs (" conclude", " provide", " emerge", " arrive"). Weaker firings (18 to 44) spread to other
+    future markers: "will" (1,187), "would", "'ll", "likely (to)", "shall".
+  fires_on: "'going' in 'is/are/'re (not) going to + verb', e.g. 'it's going to be fun', 'you're going to need'"
+  not_on: >-
+    'go', 'goes', 'went' (7 of 8,218 occurrences stored and above pos_q99); 'going' after 'keep', 'by', 'of',
+    'before', 'while', 'without' (0 of 204 stored); 'going to the/a/school/bed' (0-3% strong). Sparse tier only:
+    a token not stored can still be above the threshold, so this is untested.
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+  verification: requested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: lexical
+  explanation: >-
+    Much weaker (min -87 vs max +148; 237 firings at 30% of min or more). All of those are on modals:
+    "will" (74%), "'ll" (12%), "'d" (7%, a few of them "had") and "would" (6%), often "you will need / find"
+    in how-to copy. They come mostly from machine-spun SEO pages (dumpster rental, bankruptcy lawyers, cheap jerseys):
+    132 docs whose URL names such a topic (2.7% of docs) hold 114 of the 237. In those docs 21% of "will"
+    pass neg_q99, against 3.6% elsewhere; in ordinary text "will" fires positive more often (29% past pos_q99).
+  fires_on: "'will', ''ll', 'would', ''d' in spun or templated web copy, e.g. 'you will need to determine the size'"
+  not_on: >-
+    'will' in ordinary prose, which more often fires the positive side; the noun 'will' ('will power') fires
+    only weakly (-11 to -22). Sparse tier only, so untested.
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides fire on future-tense auxiliaries: the positive side most strongly on 'going' in 'going to', the
+  negative side on 'will' / 'would' mainly in spun web copy.
+by:
+  - {github: albertlieyingadrian, method: agent, model: claude-opus-5-5}

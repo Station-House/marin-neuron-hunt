@@ -1,0 +1,51 @@
+type: activation-test
+neuron: L53-N6683
+side: "+"
+hypothesis: >-
+  The positive side fires above 18 on " going" when the words before it set up the "be going to" future
+  (after is / are / 're / 'm, with or without "not"), and stays below 18 on the same token used as a plain
+  gerund or participle (after "keep", "by", "before", "while", "without", "of").
+should_fire:
+  - "Look at those dark clouds; I think it's[[ going]] to rain this afternoon."
+  - "If prices keep rising like this, people are[[ going]] to stop eating out."
+  - "Don't worry about the exam, you're[[ going]] to do just fine."
+  - "The new stadium is[[ going]] to cost far more than the city planned."
+  - "I'm[[ going]] to tell you a story about my grandmother."
+  - "Nobody believes the bridge is[[ going]] to open on time."
+  - "We're[[ going]] to need a bigger table for the holidays."
+  - "This winter is[[ going]] to be colder than the last one."
+  - "Honestly, the team isn't[[ going]] to win many games this season."
+  - "Once the kids see the puppy, they're[[ going]] to love it."
+  - "My manager said the report was[[ going]] to be late again."
+  - "Are you[[ going]] to finish that sandwich?"
+  - "The doctor warned that recovery was[[ going]] to take months."
+  - "If you skip breakfast, you are[[ going]] to feel tired by noon."
+  - "Experts say the market is[[ going]] to recover slowly."
+  - "I knew the meeting was[[ going]] to run long."
+  - "The roof is[[ going]] to need repairs before spring."
+  - "They're not[[ going]] to like this news."
+  - "It looks like the train is[[ going]] to be delayed."
+  - "She is[[ going]] to start her new job on Monday."
+should_not_fire:
+  - "The hike was hard, but we had to keep[[ going]] until we reached the hut."
+  - "You can save money by[[ going]] through your bank statements every month."
+  - "Check the weather before[[ going]] out on the boat."
+  - "He listened to podcasts while[[ going]] through his old emails."
+  - "She left the party without[[ going]] back for her coat."
+  - "The thought of[[ going]] home made him smile."
+  - "When the[[ going]] gets tough, the tough get going."
+  - "The car kept[[ going]] after the light turned red."
+  - "After[[ going]] over the numbers twice, the accountant found the mistake."
+  - "There is no point in[[ going]] there on a Sunday."
+  - "The children enjoy[[ going]] to the park after school."
+  - "Thanks for[[ going]] with me to the appointment."
+  - "Instead of[[ going]] by train, we drove."
+  - "Avoid[[ going]] outside during the hottest hours."
+  - "The idea of[[ going]] abroad alone scared her."
+  - "Keep[[ going]] straight past the church."
+  - "He apologized for[[ going]] over the time limit."
+  - "We talked about[[ going]] camping next summer."
+  - "Prices are steady at the[[ going]] rate for used cars."
+  - "She hurt her knee from[[ going]] up and down the stairs."
+threshold: 18
+by: {github: albertlieyingadrian, method: agent, model: claude-opus-5-5}

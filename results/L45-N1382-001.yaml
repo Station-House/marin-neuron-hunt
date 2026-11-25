@@ -1,0 +1,134 @@
+request: L45-N1382-001
+type: contrast
+outcome: confirmed
+reason: null
+summary:
+  threshold: 2.2067341804504395
+  pairs_in_predicted_direction: 1.0
+  mean_diff: 132.32913994789124
+  mean_diff_needed: 1.1033670902252197
+per_prompt:
+- high: My brother called me just[[ the]] other day to ask about the car.
+  low: The apartment is cheap, but on[[ the]] other hand it is far from work.
+  act_high: 127.0
+  act_low: -0.0079345703125
+  diff: 127.0079345703125
+- high: I bumped into an old classmate at the bank[[ the]] other day.
+  low: The bridge connects one side of the river to[[ the]] other side.
+  act_high: 220.0
+  act_low: -0.0002460479736328125
+  diff: 220.00024604797363
+- high: We were talking about this very thing[[ the]] other night over dinner.
+  low: He typed with one hand and held a sandwich in[[ the]] other.
+  act_high: 177.0
+  act_low: -0.0014495849609375
+  diff: 177.00144958496094
+- high: The neighbor's dog got out of the yard[[ the]] other day and ran down the street.
+  low: The store has an entrance at one end and an exit at[[ the]] other end.
+  act_high: 146.0
+  act_low: -0.0017547607421875
+  diff: 146.0017547607422
+- high: She told me about her new job[[ the]] other evening.
+  low: She is good at math, but on[[ the]] other hand she struggles with writing.
+  act_high: 62.0
+  act_low: -0.1123046875
+  diff: 62.1123046875
+- high: Our team had fifteen assists[[ the]] other night against Denver.
+  low: He is standing on one side of the road, and his dog is on[[ the]] other side.
+  act_high: 44.5
+  act_low: -0.00074005126953125
+  diff: 44.50074005126953
+- high: I read an interesting article about sleep[[ the]] other day.
+  low: I can go on Friday, or on[[ the]] other hand we could wait until Monday.
+  act_high: 177.0
+  act_low: -0.1279296875
+  diff: 177.1279296875
+- high: He mentioned that he was moving to Spain[[ the]] other day.
+  low: Half of the road was closed, so the traffic used[[ the]] other half.
+  act_high: 27.625
+  act_low: -0.008544921875
+  diff: 27.633544921875
+- high: My phone stopped working completely[[ the]] other day while I was at lunch.
+  low: The first plan is risky, but on[[ the]] other hand the reward is large.
+  act_high: 95.5
+  act_low: -0.00121307373046875
+  diff: 95.50121307373047
+- high: I saw a fox in the garden[[ the]] other night.
+  low: One of the boxes is heavy, and[[ the]] other box is light.
+  act_high: 189.0
+  act_low: -0.00194549560546875
+  diff: 189.00194549560547
+- high: A friend of mine was complaining about rent[[ the]] other day.
+  low: One of the twins is tall, and[[ the]] other one is short.
+  act_high: 117.0
+  act_low: -0.00022411346435546875
+  diff: 117.00022411346436
+- high: We watched a great documentary about whales[[ the]] other evening.
+  low: My left shoe is red, and[[ the]] other shoe is blue.
+  act_high: 162.0
+  act_low: -0.1953125
+  diff: 162.1953125
+- high: I was cleaning the garage[[ the]] other day when I found my old guitar.
+  low: One group sat by the window while[[ the]] other group stood near the door.
+  act_high: 204.0
+  act_low: -0.00101470947265625
+  diff: 204.00101470947266
+- high: The power went out in our building[[ the]] other night.
+  low: The first team scored early, but[[ the]] other team answered quickly.
+  act_high: 129.0
+  act_low: -0.203125
+  diff: 129.203125
+- high: My daughter asked me about it[[ the]] other day.
+  low: One kid wanted pizza and[[ the]] other kid wanted pasta.
+  act_high: 158.0
+  act_low: -0.00144195556640625
+  diff: 158.0014419555664
+- high: I heard a strange noise upstairs[[ the]] other night.
+  low: Jon took one seat and Mia took[[ the]] other seat.
+  act_high: 123.0
+  act_low: -0.002471923828125
+  diff: 123.00247192382812
+- high: Someone left a package on my porch[[ the]] other day.
+  low: I washed one window, and my sister washed[[ the]] other window.
+  act_high: 115.5
+  act_low: -0.00634765625
+  diff: 115.50634765625
+- high: I had lunch with my cousin[[ the]] other day.
+  low: One glove was on the table, but I could not find[[ the]] other glove.
+  act_high: 142.0
+  act_low: -0.00121307373046875
+  diff: 142.00121307373047
+- high: The coach said as much to reporters[[ the]] other night.
+  low: Some of the students walk to school, but[[ the]] other students take the bus.
+  act_high: 62.5
+  act_low: -1.28125
+  diff: 63.78125
+- high: We drove past that old mill[[ the]] other day.
+  low: Two cars were in the lot, and one was newer than[[ the]] other one.
+  act_high: 166.0
+  act_low: -0.00133514404296875
+  diff: 166.00133514404297
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: 4a81f124e0bbb483f840976fcaf6d585872c254c
+request_commit: c04eb8a776e86e3cdc86a5b0e4b1436c4486aa5d
+gpu: NVIDIA H200
+date: '2026-11-25'
+seconds: 2.4
+atlas_stats:
+  n: 9995501.0
+  mean: -0.11333085596561432
+  std: 0.5931684970855713
+  frac_pos: 0.3238511085510254
+  max: 205.0
+  min: -17.875
+  scale_abs_p999: 5.829415321350098
+  pos_q5: 0.11039991676807404
+  pos_q9: 0.4031519293785095
+  pos_q99: 2.2067341804504395
+  pos_q999: 11.139739036560059
+  pos_q9999: 29.427270889282227
+  neg_q5: 0.19456399977207184
+  neg_q9: 0.6042963862419128
+  neg_q99: 1.5963385105133057
+  neg_q999: 2.392799139022827
+  neg_q9999: 4.958068370819092

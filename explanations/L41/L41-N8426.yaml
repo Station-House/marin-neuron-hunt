@@ -1,0 +1,55 @@
+neuron: L41-N8426
+data: pilot/fineweb-10m-sparse
+label: "'after' (+) vs the word 'before' (-)"
+positive:
+  status: explained
+  confidence: high
+  cue_type: lexical
+  explanation: >-
+    Fires strongly on the word "after" in every sense and case. On fineweb-10m-sparse, at least 94% of
+    "after"/"After" tokens (8,571 of 9,156) are stored with a + firing past the threshold (+1.73), median
+    +19.4. This is a floor: a token is stored only when this neuron is among its 64 strongest. Its firings
+    include temporal "after", "year after year", the "after" of "after all" (exemplars 2, 4, 8) and "After" at
+    the start of Afternoon, Afterparty, aftertaste. It also fires on aftermath (47 of 51) and afterward(s) (101
+    of 185, about +10), and on the Swedish and Vietnamese words for "after" (efter, sau) in the top exemplars.
+    More weakly it fires on other words for coming after or being caused by something: "post" (40% stored),
+    "following" (37% when not after "the", 1% in "the following"; "Following" 86%), "because" (20%) and
+    "result" (15%). "post" is stored mostly where it turns out to be the prefix meaning "after" (post-war,
+    postnatal: 587 of 721, 81%) and rarely as a whole word (131 of 1,129, 12%; "blog post" 0 of 101). That
+    split uses the next token, which the model can't see, so it's a correlation with the preceding context.
+    In "because of" and "result of" the firing is on "because"/"result", not on "of" (3%).
+  fires_on: "'after'/'After' in every sense (year after year, after all, the After of Afternoon), aftermath; weaker on prefix 'post' (post-war), 'following' (not after 'the'), 'because', 'result'"
+  not_on: >-
+    'post' in 'blog post' (0 of 101 stored), the 'of' in 'because of'/'result of' (3%) and 'following' in
+    'the following' (1%). Other time words: then (0 of 7,464), later (13 of 2,111), until (0 of 2,388),
+    since (0 of 2,997), during (0 of 3,694), and 'due to' (5 of 1,356) are almost never stored in the
+    sparse tier. The deep tier (fineweb-1m, 6,141 tokens) shows 'since' can still fire weakly (+4.0 once),
+    so these weak-firing limits are untested.
+  evidence: [0, 1, 2, 4, 5, 7, 8, 18, 19, 20, 23, 24, 27, 29, 31]
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: lexical
+  explanation: >-
+    Fires on the word "before". 290 of the 291 stored - firings on fineweb-10m-sparse land on the before
+    family: before/Before (284, median -10.2), beforehand (4), afore and FORE (1 each). The 291st is on
+    'advance' (in advance). It covers time ("the year before"), order ("before and after photos") and titles
+    ("Before the Fall"). The logit lens agrees: this side pushes ' after' and ' aftermarket'.
+    The side is about 2x weaker than the + side, so the sparse tier keeps only 4% of the 6,331 "before"
+    tokens. In the deep tier (fineweb-1m), both "before" tokens fire past the threshold (-3.6 and -4.0,
+    threshold -1.25), so many unstored ones probably fire too. 'pre' also fires there (-5.4 and -4.9) but is
+    never stored in the sparse tier. Confidence stays weak until an activation test measures the coverage.
+  fires_on: "'before'/'Before' in every sense (the year before, before and after, Before the Fall), beforehand, afore"
+  not_on: >-
+    Other 'earlier' words: prior (0 of 953), earlier (0 of 745), ago (0 of 1,397), previously (0 of 516)
+    and ahead (0 of 634) are never stored in the sparse tier, but the sparse tier can't show weak firings,
+    and the deep tier has 'pre' at -5.4 and -4.9, so this is untested.
+  evidence: [0, 1, 2, 3, 4, 6, 8, 14, 16, 22, 30]
+  verification: untested
+relation: variant
+relation_note: >-
+  The two sides mark a pair of opposite words: the + side 'after' (and, more weakly, other words for coming
+  after or being caused by something), the - side, more weakly, 'before'.
+by:
+  - {github: Yasas-Sri, method: agent, model: claude-opus-5-5}

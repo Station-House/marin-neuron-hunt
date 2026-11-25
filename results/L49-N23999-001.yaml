@@ -1,0 +1,134 @@
+request: L49-N23999-001
+type: contrast
+outcome: confirmed
+reason: null
+summary:
+  threshold: 4.216965198516846
+  pairs_in_predicted_direction: 1.0
+  mean_diff: 74.60419921875
+  mean_diff_needed: 2.108482599258423
+per_prompt:
+- high: Skip the warm-up and you will[[ end]] up with an injury.
+  low: Skip to the[[ end]] of the chapter and read the summary.
+  act_high: 72.5
+  act_low: -3.046875
+  diff: 75.546875
+- high: If I never learn to budget, I might[[ end]] up in debt.
+  low: If I do not hurry, I will miss the[[ end]] of the film.
+  act_high: 94.0
+  act_low: -0.859375
+  diff: 94.859375
+- high: Most people who start this diet[[ end]] up quitting.
+  low: Most people who start this novel never reach the[[ end]].
+  act_high: 89.5
+  act_low: -5.28125
+  diff: 94.78125
+- high: Do not leave the keys there, or they will[[ end]] up lost.
+  low: Please sign your name at the[[ end]] of the form.
+  act_high: 80.0
+  act_low: -1.4453125
+  diff: 81.4453125
+- high: Without a map, hikers often[[ end]] up miles off course.
+  low: Without any warning, we reached the[[ end]] of the trail.
+  act_high: 68.5
+  act_low: -5.28125
+  diff: 73.78125
+- high: I hope we do not[[ end]] up arguing again.
+  low: We all hope for an[[ end]] to the arguing.
+  act_high: 72.0
+  act_low: -14.5
+  diff: 86.5
+- high: Whatever you cook, the leftovers will[[ end]] up in my lunch.
+  low: Whatever you decide, the[[ end]] of the month is the deadline.
+  act_high: 103.5
+  act_low: -7.25
+  diff: 110.75
+- high: Talk to him long enough and you will[[ end]] up agreeing.
+  low: Talk to us at the[[ end]] of the meeting.
+  act_high: 60.25
+  act_low: -0.47265625
+  diff: 60.72265625
+- high: Many small shops[[ end]] up closing within a year.
+  low: Many small shops struggle until the[[ end]] of the year.
+  act_high: 66.0
+  act_low: 4.0625
+  diff: 61.9375
+- high: Take the wrong train and you will[[ end]] up in another city.
+  low: Take the train to the[[ end]] of the line.
+  act_high: 28.625
+  act_low: -3.609375
+  diff: 32.234375
+- high: Those old photos always[[ end]] up in the attic.
+  low: Those old stories always have a sad[[ end]].
+  act_high: 106.5
+  act_low: -4.40625
+  diff: 110.90625
+- high: Pour in too much water and the soup will[[ end]] up thin.
+  low: Pour in the water and cut off the[[ end]] of the carrot.
+  act_high: 88.0
+  act_low: -4.90625
+  diff: 92.90625
+- high: We got lost twice, and we finally[[ ended]] up at a gas station.
+  low: We got lost twice, and the trip finally[[ ended]] at a gas station.
+  act_high: 54.5
+  act_low: 41.0
+  diff: 13.5
+- high: After trying three jobs, she[[ ended]] up in sales.
+  low: After three long hours, the show[[ ended]] early.
+  act_high: 78.0
+  act_low: 0.60546875
+  diff: 77.39453125
+- high: He never planned to teach, but he[[ ended]] up loving it.
+  low: He never planned to teach, but the school year[[ ended]] with a party.
+  act_high: 138.0
+  act_low: 33.5
+  diff: 104.5
+- high: They argued all night and[[ ended]] up friends.
+  low: They argued all night until the storm[[ ended]] around dawn.
+  act_high: 69.0
+  act_low: 15.5
+  diff: 53.5
+- high: Take the back road and you might[[ wind]] up lost.
+  low: Take a warm coat, because the[[ wind]] is strong.
+  act_high: 58.75
+  act_low: -5.78125
+  diff: 64.53125
+- high: Careless investors often[[ wind]] up broke.
+  low: Careful sailors always watch the[[ wind]] and the waves.
+  act_high: 89.0
+  act_low: -1.53125
+  diff: 90.53125
+- high: After years of travel, they[[ wound]] up in Lisbon.
+  low: After the accident, the nurse cleaned the[[ wound]] carefully.
+  act_high: 79.0
+  act_low: 0.298828125
+  diff: 78.701171875
+- high: The two rivals[[ wound]] up sharing the prize.
+  low: The soldier pressed a cloth on the[[ wound]] to stop the bleeding.
+  act_high: 32.75
+  act_low: -0.3046875
+  diff: 33.0546875
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: 4a81f124e0bbb483f840976fcaf6d585872c254c
+request_commit: dfe88f9bc2e5729ca8245b74947d3603a3829610
+gpu: NVIDIA H200
+date: '2026-11-25'
+seconds: 2.0
+atlas_stats:
+  n: 9995501.0
+  mean: 0.19033966958522797
+  std: 1.2800427675247192
+  frac_pos: 0.7322355508804321
+  max: 256.0
+  min: -23.25
+  scale_abs_p999: 13.097472190856934
+  pos_q5: 0.2287573218345642
+  pos_q9: 0.6042963862419128
+  pos_q99: 4.216965198516846
+  pos_q999: 15.39926528930664
+  pos_q9999: 44.10940933227539
+  neg_q5: 0.11970850080251694
+  neg_q9: 0.9057977795600891
+  neg_q99: 3.307739019393921
+  neg_q999: 6.320933818817139
+  neg_q9999: 11.139739036560059

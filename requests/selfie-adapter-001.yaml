@@ -1,0 +1,70 @@
+type: custom
+neurons: [L42-N5277, L32-N24138, L40-N10819, L44-N10594, L49-N22962]
+title: "Fit a SelfIE adapter lens to Marin 32B"
+procedure: |
+  1. Audit and build vector-label training pairs from existing interpretability
+     artifacts (DESIGN.md, Data): auto-labeled features of the canonical
+     sae-64k sweep (width 65536, k=32, raw-activation convention). Labels are
+     written by a Gemini-family model; the two scoring judges come from two
+     other families. Logit-lens readouts are not training pairs (their labels
+     are token lists, not phrases); the logit lens serves only as the
+     cross-check readout. No explained neuron appears in training: all 19
+     atlas explained neurons are held out for evaluation, and any sae-64k
+     feature whose decoder vector has cosine similarity 0.5 or higher to any
+     explained neuron's direction is likewise excluded from training. A
+     random 20% of the SAE pairs is also held out, split by feature id. If
+     the audit finds too few usable pairs, stop and fall back to the
+     tuned-lens design rather than training on scraps.
+  2. Freeze Marin 32B. Take each pair's activation vector at its home layer.
+  3. Fit one scalar affine adapter (one shared scalar scale and a bias vector,
+     d_model + 1 parameters in total) mapping a raw activation into the model's token
+     embedding space, trained so that interpretation generations match the
+     pair labels (the method of Pepper et al., arXiv:2602.10352).
+  4. Interpretation protocol, fixed for every run: inject the adapted vector
+     in place of a designated token embedding in a fresh forward pass whose
+     prompt asks the model to explain the "previous message" (SelfIE,
+     arXiv:2403.10949); generate the description at fixed decoding settings.
+  5. Score blind: two LLM judges from different model families rate whether
+     each generated description matches its held-out label or atlas
+     explanation; disagreements escalate. The contributor scores a small
+     blind sample first, and the judges' scores count only once they match
+     the contributor's ratings at the agreement rate declared in DESIGN.md.
+     Margins are reported per source, and the claim's verdict rests on the
+     19 held-out explained neurons, because the claim is stated about
+     explained neurons: a margin carried only by auto-labeled SAE pairs does
+     not support this claim. On 19 items one neuron flipping moves the
+     margin by about 5 points, the scale of the declared noise floor.
+  6. Shuffled-pairs control: fit the identical adapter, with identical
+     capacity and training steps, on the same pairs with the vector-label
+     correspondence shuffled, and score it the same way. Its margin over
+     untrained SelfIE is the style-and-topics baseline the real adapter
+     must beat for its gain to be credited to reading the vectors.
+prediction: "The trained adapter's plain-language descriptions of held-out explained neurons recover the substance of their atlas explanations where untrained SelfIE produces generic or prior-driven text, with the clearest gains on topic neurons such as L42-N5277. Registered prediction (contributor, design review round 1): the expected margin over untrained SelfIE is 35 points of blind generation score on the held-out pair set, 80% interval 18 to 58; below 10 points the contributor would skip the full run or switch to the tuned lens."
+pass_rule: "Pilot: the adapter beats untrained SelfIE by at least 25 points of blind generation score on the 19 held-out explained neurons, produces non-degenerate descriptions on at least 4 of the 5 check neurons, and two adapters fitted on disjoint halves of the pairs agree within 5 points on a fixed probe set. Full run: those margins hold on the full held-out set and the all-19 readout table."
+refuted_if: "The adapter fails to beat untrained SelfIE on held-out generation scoring, or its descriptions collapse to generic text (prior override, visible against the unpatched contrast control) on 3 or more of the 5 check neurons, or the shuffled-pairs adapter's margin comes within 10 points of the real adapter's margin. A net margin within 5 points of zero is inconclusive rather than a refutation."
+compute: "Adapter training is a small optimization on cached vectors (CPU-feasible). The real cost is 32B inference for description generation and scoring: pilot a few hundred forward passes (one GPU, hours); full run on the order of one to two thousand generations (one GPU, under a day). Both are estimates for the runner to refine."
+outputs: "Adapter weights, the interpretation protocol (prompt, injection layer rule, scale, decoding settings), the fit log, the pair manifest with the held-out split, the per-neuron readout table for all 19 explained neurons, and the baseline comparison table (adapter vs untrained SelfIE vs logit lens)."
+lens_fit:
+  lens: "selfie-adapter"
+  follows: "SelfIE: Chen, Vondrick, Mao 2024 (arXiv:2403.10949) for the interpretation procedure; adapter training on interpretability artifacts: Pepper et al. (arXiv:2602.10352); faithfulness control after Patchscopes (arXiv:2401.06102) and Faithful-Patchscopes (arXiv:2602.00300)"
+  fit_text: "Not text passages: this lens fits on vector-label pairs from interpretability artifacts (auto-labeled sae-64k features), because the fitted object maps activations, not text. No explained neuron is a training pair. Pair sources, counts, and the audit are specified in DESIGN.md, Data. The template's passage fields below are answered with pair counts."
+  heldout_text: "All 19 atlas explained neurons (the 5 check neurons listed in neurons are the named subset reported individually), plus a random 20% of the SAE pairs, withheld before fitting and evaluated only through the fixed interpretation protocol. The split is by unit id: every pair belonging to one feature lands on the same side, and any sae-64k feature whose decoder vector has cosine similarity 0.5 or higher to any explained neuron's direction is excluded from training, so no form of an explained neuron's vector can land in training."
+  passage_tokens: 128
+  bos: true
+  baseline: "untrained SelfIE under the identical interpretation protocol (same prompt, injection, decoding), with the atlas logit lens readouts for the same neurons as cross-check"
+  pilot:
+    passages: 500
+    layers: "all (each pair's vector is extracted at its home layer)"
+    settings: "Scalar affine adapter (one shared scalar scale plus a bias vector), model frozen; the vector is extracted at its home layer and injected at the embedding slot of the interpretation pass, and the untrained baseline arm uses the identical extraction and injection, differing only by the adapter; one fixed interpretation prompt; fixed decoding; BOS prepended. 500 pairs, of which 100 are held out and double as the fixed probe set."
+    compute: "Training negligible; a few hundred 32B generations for readout and scoring, one GPU, hours (estimate)."
+    bar: "Beats untrained SelfIE by at least 25 points of blind generation score on held-out pairs; non-degenerate descriptions on at least 4 of 5 check neurons; split-half fitted adapters agree within 5 points on a fixed probe set."
+  full_run:
+    passages: 1000
+    layers: "all (readout over every layer the atlas has explanations in, plus the declared sample)"
+    settings: "Same adapter form and protocol as the pilot, fitted on the full audited pair set minus held-out material; readout over all 19 explained neurons plus a declared sample of 100 unexplained neurons in covered layers."
+    stop_when: "The readout table is complete and the full held-out set is scored."
+    compute: "One to two thousand 32B generations, one GPU, under a day (estimate)."
+    bar: "The pilot margins hold at full scale: at least 25 points over untrained SelfIE on the full held-out set, check-set recovery at or above the pilot's."
+    failed_if: "The refuted_if conditions trigger, or the full-run margin on the 19 explained neurons falls under the pilot bar, or recovery across the 19 drops by 3 or more neurons from the pilot. A change within the 5 named check neurons alone does not by itself fail the run."
+  publish: ["adapter weights", "interpretation protocol", "fit log", "pair manifest", "per-neuron readout table", "baseline comparison table"]
+by: {github: NososAnosos, method: agent, model: "Muse Wonder (Habibi)"}

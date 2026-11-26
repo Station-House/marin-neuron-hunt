@@ -1,0 +1,81 @@
+neuron: L41-N8292
+data: pilot/fineweb-10m-sparse
+label: "modifier 'here' (+) vs 'there', verb-complement 'here' (-)"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: grammar
+  explanation: >-
+    Fires on "here" when it is not the complement of a verb or preposition: after a noun or noun phrase, after
+    "right"/"so"/"and"/"but", after a comma, or at the start of a line or sentence. Examples: "the prospects
+    here", "nation building here", "inflation here", "folks here", "Right here". All counts below are
+    fineweb-10m-sparse tokens, written as + stored / - stored of all tokens. "here" means every token whose
+    text is here in any case, with or without a leading space (6,862 tokens: 1,554 + / 1,478 -); "there" is
+    the same (18,213 tokens: 1,416 + / 5,499 -). Tokens with a quote mark fused on ("There, 31 tokens) are
+    left out. Each token is put in exactly one group by the word before it (left context only, tagged with
+    spaCy). The groups below are disjoint but don't cover every token; adverbs other than right/so,
+    pronouns, proper nouns and adjectives are left out. After a noun: 407 + / 263 - of 1,367. After a comma:
+    130 + / 3 - of 328. After . ! or ?: 132 + / 61 - of 864. At a line start: 87 + / 20 - of 581. After
+    "right": 62 + / 4 - of 105. After "so": 38 + / 0 - of 78. After "and"/"but": 70 + / 8 - of 200. The word
+    matters as much as the position: + firings of +15 or more are "here" 65 times and
+    "there" 4 times, and "there" after a noun goes the other way (84 + / 519 - of 1,121). Exceptions: "here"
+    after a few verbs or "from" can still be +, as in "made here in the USA" (exemplar 18), "happening here"
+    (15), "from here in Edmonton" (20); "made here" is 4 + / 2 - of 7 tokens and "listed here" 4 + / 2 - of
+    16. 31 of the 32 top exemplars are "here"; the other is "there in my drawing room" (12). Below +6, 606 +
+    firings are on other words: home, we, in, over, world, away, down, country, room. A token is stored only
+    when this neuron is among its 64 strongest, so all these counts are floors. The logit lens pushes place
+    words: onto, onstage, inside, abroad, therein.
+  fires_on: "'here' after a noun or noun phrase (the prospects here, folks here, inflation here), after 'right'/'so'/'and'/'but', after a comma, or at the start of a line or sentence (Here in Holburn, Here's); weakly on home, we, world, away, down"
+  not_on: >-
+    "here" after a verb (174 + / 532 - of 1,287 tokens), an auxiliary such as is/be (23 + / 274 - of 429),
+    "to" (1 + / 20 - of 31) or from/in/on/of (21 + / 65 - of 206): click here, be here, come back here. These
+    go to the - side. "there" after punctuation or at a line start is not a + cue: 822 + / 1,622 - of 8,393
+    tokens, 71% not stored. In the deep tier (fineweb-1m, 6,141 tokens) that, it, this, they,
+    their, these, then, where and now never pass the threshold (0 of 142). That sample has only 20 here/there
+    tokens, so the boundary between the two sides is untested.
+  evidence: [0, 1, 2, 5, 6, 11, 13, 14, 17, 19, 21, 26, 28, 29, 30]
+  verification: untested
+negative:
+  status: explained
+  confidence: high
+  cue_type: grammar
+  explanation: >-
+    Fires on "there" when it follows a verb, auxiliary, preposition or noun, strongest as the complement of a
+    verb of being or going ("While there, we announced" -44.0, "nobody is there", "he's been there",
+    "immigrants moved there", "tourists flock there"). It also fires on "here" when it is the complement of a
+    verb, auxiliary, "to" or preposition ("click here", "be here", "come back here"). Counts are
+    fineweb-10m-sparse tokens in all case and spacing forms, each put in one group by the word before it (left
+    context only, tagged with spaCy), written as + stored / - stored of all tokens; see the + side for the
+    token forms. "there" overall: 1,416 + / 5,499 - of 18,213. After a verb: 32 + / 822 - of 1,317; after an
+    auxiliary: 9 + / 547 - of 953; after a preposition: 9 + / 245 - of 531; after a noun ("the Jesuits there",
+    "very few people there"): 84 + / 519 - of 1,121. After punctuation or at a line start, the largest
+    group, it is mixed and mostly not stored: 822 + / 1,622 - of 8,393 (71% not stored). That splits into
+    after . ! or ? (311 + / 847 - of 3,386), at a line start (86 + / 339 - of 1,518) and after a comma (343 + /
+    282 - of 2,673). "here" after a verb: 174 + / 532 - of 1,287; after an auxiliary: 23 + / 274 - of 429. 97% of -
+    firings of -15 or stronger are here/there (1,030 of 1,065), and "there" makes up 942 of them. Stored -
+    firings on "there" have a median of -8.2, well clear of the threshold (-2.04). Other words that end a
+    place phrase fire up to about -22: around, town, country, therein, herein, abroad, home, area, place. 31 of
+    the 32 top exemplars are the place "there". Exemplar 23 ("While there are many museums") is existential
+    in the text, but at the "there" token the model has seen only "While there", which usually starts the
+    place reading ("While there, he ..."). The same goes for the strongest deep-tier firing, "While there is
+    evidence" (-23.4). The logit lens (/go, adh, Bind, padd, dated) has no clear reading.
+  fires_on: "'there' after a verb, auxiliary, preposition or noun (been there, moved there, nobody is there, While there, in/from/out there, the Jesuits there); 'here' after a verb, auxiliary, 'to' or preposition (click here, be here, come back here); weaker on other place-phrase ends (around, town, country, abroad, therein)"
+  not_on: >-
+    "here" after a noun, after "right"/"so"/"and"/"but", or opening a sentence (folks here, right here, Here
+    in Holburn), which goes to the + side. "there" after punctuation or at a line start is only weakly -:
+    822 + / 1,622 - of 8,393 tokens, 71% not stored. In the deep tier (fineweb-1m) other function
+    words (that, it, this, they, then, where, now) never pass the threshold (0 of 142), but the sample is
+    small, so this is untested.
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 10, 12, 15, 17, 18, 22, 24]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides read the same two words, here and there, and the sign depends on the word and on its role
+  together. "here" that hangs off a noun, follows "right" or a comma, or opens a line or sentence goes +.
+  "here" as the complement of a verb, auxiliary or preposition goes -, and so does "there" after a verb,
+  auxiliary, preposition or noun; "there" after punctuation or at a line start is mixed. The
+  word alone doesn't set the sign. All splits use only the words before here/there, since the model is
+  causal; contrasts such as "here and now" or "here in Washington" depend on later words and are only
+  correlations.
+by:
+  - {github: Yasas-Sri, method: agent, model: claude-opus-5-5}

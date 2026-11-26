@@ -1,0 +1,41 @@
+neuron: L63-N11058
+data: pilot/fineweb-1m
+label: "boilerplate digits and punctuation, URL-fragment direction"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: mixed
+  explanation: >-
+    All twelve top exemplars in this pilot are digit tokens ('268' 9920, '374' 8448, '004' 7680,
+    '536' 7584, '230' 7552, '972') or formatting punctuation (list commas up to 9536, a header
+    colon 7200, a hyphen 9152), and they sit in reference/legal/boilerplate web documents (patents,
+    caselaw, terms-of-service, privacy policies). The fineweb-10m pilot agrees (',' 10368; digit
+    strings '972', '996', '234', '340' near 10176). The dense capybara-v1 probe corroborates the
+    punctuation/format side: peak 596 at the colon of "Description:" (identical across all ten
+    animal templates), with secondary peaks at a mid-word fragment (524) and mid-word 'y' (308).
+    The logit lens pushes URL-path fragments ('/port' 0.875, '/front', '/dr', '/company'), which
+    fits the boilerplate reading.
+  fires_on: "digit tokens and formatting punctuation (list commas, header colons, hyphens), strongest in reference/legal/boilerplate documents"
+  not_on: "ordinary whole-word prose tokens in the same documents (claimed from the exemplar contrast, but the sparse tier cannot prove absence; activation test L63-N11058-001 requested)"
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  verification: requested
+negative:
+  status: unclear
+  cue_type: mixed
+  explanation: >-
+    Barely fires negative on this corpus: only three exemplar rows. The two strongest are
+    Korean-script tokens (-466, -458), and the dense capybara-v1 probe shows negative excursions on
+    Japanese prompts (down to -180), which hints at suppression of non-Latin-script text, but three
+    rows are too thin to state a pattern confidently.
+  fires_on: "non-Latin (Korean) script tokens in the pilot; multilingual prompts in the capybara-v1 probe"
+  not_on: "untested"
+  evidence: [0, 1, 2]
+  verification: untested
+relation: unrelated
+relation_note: >-
+  The positive side tracks boilerplate digits and punctuation while the thin negative side points at
+  non-Latin script, which look like different jobs rather than two versions of one cue.
+by:
+  github: alexcasper
+  method: agent
+  model: "glm-5.3-flash (zai)"

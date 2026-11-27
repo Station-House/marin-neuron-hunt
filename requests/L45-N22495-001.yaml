@@ -1,0 +1,38 @@
+type: contrast
+neuron: L45-N22495
+side: "+"
+# Marin is causal: the activation at " over" cannot see "the years" or "time" after it. So the two prompts in a
+# pair differ only in the words BEFORE " over", and the target is always " over".
+# High: a completed perfect-tense clause that looks back on accumulated experience ("We have had some incredible
+# artists teach here"), so " the years" is the likely next words.
+# Low, pairs 1-16: a gradual process, change or measurement ("Students usually get much better at drawing here"),
+# so " time" is the likely next word (the explanation's - side, "over time").
+# Low, pairs 17-20: other time or spatial " over" with the same noun phrase kept as close as possible: "over the
+# weekend", "over the next month", "over the course of a week" and "over the door", which the explanation lists
+# as not_on for the + side.
+# The lows avoid perfect-tense change verbs ("have built up over"), which the explanation names as a
+# counterexample, so the test is about retrospective accumulated experience and not about the verb tense alone.
+# The text after the target only keeps each sentence natural.
+pairs:
+  - {high: "We have had some incredible artists teach here[[ over]] the years.", low: "Students usually get much better at drawing here[[ over]] time."}
+  - {high: "She has served on several local boards[[ over]] the years.", low: "Her influence on local boards tends to grow[[ over]] time."}
+  - {high: "The old bridge has carried millions of cars[[ over]] the years.", low: "The old bridge will weaken slowly[[ over]] time."}
+  - {high: "I have met many interesting people at this cafe[[ over]] the years.", low: "People at this cafe slowly become friends[[ over]] time."}
+  - {high: "Our family has lived in three different cities[[ over]] the years.", low: "The city's population is expected to rise[[ over]] time."}
+  - {high: "The coach has trained hundreds of young players[[ over]] the years.", low: "Young players will build their strength[[ over]] time."}
+  - {high: "My grandmother has collected hundreds of recipes[[ over]] the years.", low: "The flavor of this sauce deepens[[ over]] time."}
+  - {high: "He has written dozens of songs about the sea[[ over]] the years.", low: "Songs about the sea tend to change[[ over]] time."}
+  - {high: "The company has hired thousands of workers[[ over]] the years.", low: "The company plans to cut its costs gradually[[ over]] time."}
+  - {high: "We have seen many storms hit this coast[[ over]] the years.", low: "The coast will slowly erode[[ over]] time."}
+  - {high: "Many doctors have worked in this clinic[[ over]] the years.", low: "Doctors can track a patient's blood pressure[[ over]] time."}
+  - {high: "The teacher has taught thousands of children to read[[ over]] the years.", low: "Children learn to read more quickly[[ over]] time."}
+  - {high: "This garden has given us countless tomatoes[[ over]] the years.", low: "This garden will fill in nicely[[ over]] time."}
+  - {high: "I have made many friends in this choir[[ over]] the years.", low: "The choir's sound should get richer[[ over]] time."}
+  - {high: "The museum has shown thousands of paintings[[ over]] the years.", low: "Scientists can monitor how the paint fades[[ over]] time."}
+  - {high: "Our team has won a few prizes[[ over]] the years.", low: "Our team's results will be compared[[ over]] time."}
+  - {high: "My uncle has repaired hundreds of old radios[[ over]] the years.", low: "My uncle will repair these old radios[[ over]] the weekend."}
+  - {high: "The library has lent out millions of books[[ over]] the years.", low: "The library will lend out these books[[ over]] the next month."}
+  - {high: "The village has hosted many fairs[[ over]] the years.", low: "The village fair will run[[ over]] the course of a week."}
+  - {high: "She has taught dozens of workshops here[[ over]] the years.", low: "She hung a banner[[ over]] the door of the workshop."}
+by:
+  - {github: faisalhacks, method: agent, model: claude-sonnet-5-5}

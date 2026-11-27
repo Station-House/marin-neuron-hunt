@@ -1,0 +1,40 @@
+neuron: L52-N10540
+data: pilot/fineweb-10m-sparse
+label: "word before 'the courage' / 'the right'"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: next-token
+  explanation: >-
+    Fires on the word right before "the / my courage" and "the right / authority / ability" ("got up the nerve
+    to", "worked up the courage to", "you have the right to", "has the authority"), and its output pushes
+    " the" and " possess(es)" (logit lens top). "up" in "got / worked up the courage" fires strongly on 7 of
+    9 cases, against 3 strong firings among 14,351 other "up"; "have / has / had the right (authority,
+    ability...)" passes the threshold 57% of the time but fires strongly only 6%. 61.9% of the side's 118
+    strong firings are right before "the / my / a" + right / courage / authority. Close to the "had the nerve
+    to" pattern of L48-N17440, one layer earlier.
+  fires_on: "the word right before 'the / my courage (nerve)' or 'the right (authority, ability)', e.g. 'got up the courage to', 'have the right to'"
+  not_on: >-
+    'up' in other uses (3 strong among 14,351) and 'have / has / had' in other uses (10 strong among 58,779).
+    Sparse tier only: the deep tier has no such phrase, so this is untested.
+  evidence: [0, 1, 2, 3, 4, 5, 7, 9, 11, 13, 15, 16, 17, 19, 21, 26]
+  verification: untested
+negative:
+  status: unclear
+  cue_type: mixed
+  explanation: >-
+    A weak side (peak -20 against +219). 83.5% of its 248 strong firings are on "have / has / had" ("we have a
+    legal basis", "has been implicated", "does not have enough"), and its logit lens leans to " unable" and
+    " incap", but it passes the threshold on only 1% of the 69,610 "have / has / had" (whether before "been",
+    "a" or anything else) and we found nothing that picks those out; eight of its 64 exemplars are missing
+    from the sparse tier because 64 other neurons outrank them on those tokens.
+  fires_on: "occasionally 'have / has / had' (no distinguishing context found); otherwise scattered tokens"
+  not_on: "'have the right'-type phrases (1 strong among 582); otherwise untested"
+  evidence: [1, 2, 3, 4, 6, 8, 11, 15, 16, 17, 18, 22, 24, 26]
+  verification: untested
+relation: unrelated
+relation_note: >-
+  Both sides often sit on 'have', the positive side when 'the right / the courage' follows and the negative
+  side on other uses, but the negative side is unclear, so no shared job is claimed.
+by:
+  - {github: Parva-26, method: agent, model: claude-opus-5-5}

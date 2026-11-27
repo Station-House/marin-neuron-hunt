@@ -1,0 +1,35 @@
+neuron: L50-N1572
+data: pilot/fineweb-10m-sparse
+label: "academic/NHS citations vs Moorish Spain and pharmacology"
+positive:
+  status: unclear
+  cue_type: none
+  explanation: >-
+    Top firings mix UK government ministry titles ("Minister of Health and the Secretary of State for Scotland"),
+    Islamic/Moorish Spain history and tourism ("Caves of Sacromonte", "the Palace of Charles V", "Alhambra"), and
+    pharmacology terms ("cytochrome P450", "dutasteride"), but a random 40 strong firings (act 5.5 or more) show
+    no single dominant pattern — maybe 14 of 40 loosely fit the Moorish-Spain or pharmacology subthemes.
+  fires_on: "no clear single pattern — Moorish Spain place names and pharmacology terms recur loosely"
+  not_on: "untested"
+  evidence: [1, 2, 5, 9, 10, 15, 16, 17, 18, 24, 25, 32, 38]
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: semantic-topic
+  explanation: >-
+    Fires on formal citations and NHS/health-service administrative text: journal names with volume numbers
+    ("BMC Research Notes volume 6", "BMC Plant Biology volume 19", "Acta Neuropathologica Communications"),
+    university/institution names ("University of Split"), and NHS appointment-booking boilerplate ("Patient
+    Access app", "routine surgeries run from 08:30"). About 27 of a random 40 strong firings (act -8.5 or less)
+    fit.
+  fires_on: "BMC, Acta, journal volume, Patient Access app, NHS app, routine appointments, University of"
+  not_on: "untested"
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 14, 16, 17, 18, 19, 24, 26, 28, 29, 30, 32, 33, 35, 36, 37, 38]
+  verification: untested
+relation: none
+relation_note: >-
+  The positive side has no clear job of its own, so no relation to the negative side's citation/NHS theme can be
+  established.
+by:
+  - {github: roshaneyshah, method: human}

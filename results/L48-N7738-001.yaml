@@ -1,0 +1,200 @@
+request: L48-N7738-001
+type: steering
+outcome: confirmed
+reason: null
+summary:
+  k: 4.0
+  set_to: -18.29010772705078
+  effect: 1.3968827962875365
+  baseline_p95: 0.06329846024513244
+  baseline_mean: 0.006936781764030457
+  baseline_n: 100
+  effect_percentile: 1.0
+per_prompt:
+- prompt: The package on the porch contained[[ a]] gift from her aunt.
+  token: Ġa
+  act: 0.1708984375
+  effect: 1.2687034606933594
+- prompt: Our neighbors recently bought[[ an]] old farmhouse.
+  token: Ġan
+  act: 0.23828125
+  effect: 1.2748451232910156
+- prompt: The teacher asked the class to describe[[ the]] picture.
+  token: Ġthe
+  act: 0.267578125
+  effect: 1.6380517482757568
+- prompt: Before dinner, he finished reading[[ his]] book.
+  token: Ġhis
+  act: 0.031005859375
+  effect: 1.5927352905273438
+- prompt: The magazine ran a long piece on[[ some]] new restaurants.
+  token: Ġsome
+  act: 0.5
+  effect: 1.4820556640625
+- prompt: On the way home, we passed[[ a]] bakery.
+  token: Ġa
+  act: 0.41015625
+  effect: 1.4736380577087402
+- prompt: The radio program was about[[ the]] harvest.
+  token: Ġthe
+  act: 0.216796875
+  effect: 1.2793550491333008
+- prompt: At the end of the trip, they visited[[ an]] aquarium.
+  token: Ġan
+  act: 0.15625
+  effect: 1.5852699279785156
+- prompt: The email was a reminder about[[ this]] weekend.
+  token: Ġthis
+  act: 0.69921875
+  effect: 1.2343416213989258
+- prompt: My cousin has always wanted[[ a]] garden.
+  token: Ġa
+  act: 0.05078125
+  effect: 1.3810069561004639
+- prompt: The first chapter introduces[[ the]] main characters.
+  token: Ġthe
+  act: -0.0625
+  effect: 1.4883651733398438
+- prompt: For her birthday, she asked for[[ a]] bicycle.
+  token: Ġa
+  act: -2.578125
+  effect: 1.0652799606323242
+- prompt: The mayor thanked[[ the]] volunteers.
+  token: Ġthe
+  act: -0.07373046875
+  effect: 1.5765247344970703
+- prompt: In the morning, the fishermen checked[[ their]] nets.
+  token: Ġtheir
+  act: 0.251953125
+  effect: 1.6181936264038086
+- prompt: The exhibit includes[[ several]] maps.
+  token: Ġseveral
+  act: 0.01556396484375
+  effect: 1.5422306060791016
+- prompt: The company announced[[ its]] plans.
+  token: Ġits
+  act: 0.166015625
+  effect: 1.4401798248291016
+- prompt: Later that evening, we watched[[ a]] film.
+  token: Ġa
+  act: -0.1494140625
+  effect: 1.351518154144287
+- prompt: The guidebook recommends[[ two]] trails.
+  token: Ġtwo
+  act: -0.07568359375
+  effect: 1.4974918365478516
+- prompt: The reporter asked about[[ her]] work.
+  token: Ġher
+  act: -3.0625
+  effect: 0.9458925724029541
+- prompt: Everyone at the table was talking about[[ the]] storm.
+  token: Ġthe
+  act: -0.1748046875
+  effect: 1.2019765377044678
+model: marin-community/marin-32b-base@f19b346615212ff9a6d92c10861a9cdb100cbf97
+runner_commit: 4a81f124e0bbb483f840976fcaf6d585872c254c
+request_commit: ece79f0120e3d6a36c0245d72dd704e5b30c12e5
+gpu: NVIDIA H200
+date: '2026-11-25'
+seconds: 8.6
+baseline_neurons:
+- 8348
+- 405
+- 5823
+- 13035
+- 20083
+- 17621
+- 23972
+- 25857
+- 20420
+- 21164
+- 7452
+- 22887
+- 13236
+- 2051
+- 6124
+- 11629
+- 12966
+- 23648
+- 2443
+- 10075
+- 8007
+- 17238
+- 24468
+- 4290
+- 14447
+- 26639
+- 13519
+- 17702
+- 6261
+- 7879
+- 2813
+- 21374
+- 11872
+- 15508
+- 1628
+- 18370
+- 2015
+- 12870
+- 2628
+- 22033
+- 27501
+- 4592
+- 22589
+- 5552
+- 19900
+- 2449
+- 2380
+- 24369
+- 15931
+- 5784
+- 2990
+- 17845
+- 23951
+- 5147
+- 23729
+- 5205
+- 22765
+- 7515
+- 17193
+- 25757
+- 14806
+- 7466
+- 12441
+- 20720
+- 16379
+- 24684
+- 22096
+- 22496
+- 11212
+- 23739
+- 15667
+- 1035
+- 25577
+- 22395
+- 1946
+- 25711
+- 1800
+- 7129
+- 3063
+- 21145
+- 11248
+- 14952
+- 20868
+- 19585
+- 26254
+- 2247
+- 5072
+- 6945
+- 21034
+- 8298
+- 16631
+- 18681
+- 1717
+- 24420
+- 3857
+- 20546
+- 26803
+- 11764
+- 25276
+- 18165

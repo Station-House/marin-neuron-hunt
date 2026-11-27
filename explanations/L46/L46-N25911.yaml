@@ -1,0 +1,34 @@
+neuron: L46-N25911
+data: pilot/fineweb-10m-sparse
+label: "expects 'circle': one's social circle, friends, peers"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: next-token
+  explanation: >-
+    Fires on the possessive, "social" or "in" right before a word for the people around someone: "moved in [a]
+    social circle", "amongst [my] circle of friends", "others in [their] social circles", "from [their] peers",
+    "in [their] network", "[close] friends". Of the 32 stored exemplars, 7 come directly before "circle(s)", 3
+    before "social" and 5 before "friend(s)"; others precede "peers", "network", "community", "crowd" and
+    "town". Its logit lens pushes " circle", " circles", "circle" and " Circle". In my own run of the hunt's
+    steering procedure on 20 neutral prompts, 4x raised " circle" by 1.07 nats and " circles" by 0.96, against
+    a 95th percentile of 0.04 for 128 random layer-46 neurons; at 64x " social" and " inner" rose as well.
+  fires_on: "possessives and 'social' before a word for someone's social circle: 'their [social circles]', 'my [circle of friends]', 'their [peers]', 'moved in [the] best literary circles'"
+  not_on: "untested; whether it stays quiet before a geometric circle ('draw a circle') is not known"
+  evidence: [0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 19, 20, 22, 23, 24, 25, 26, 27, 29, 31]
+  verification: requested
+negative:
+  status: unclear
+  cue_type: mixed
+  explanation: >-
+    Much weaker (min -13.6 against max +83). The strongest firings are scattered: "for [everyone]", "lots [of]",
+    "phone [number]", "there [are]". I see no shared pattern.
+  fires_on: "no pattern found"
+  not_on: "untested"
+  evidence: [0, 1, 2, 3]
+  verification: untested
+relation: none
+relation_note: >-
+  Only the positive side has a job I can name; the negative side is about 6 times weaker and shows no pattern.
+by:
+  - {github: tumanian, method: agent, model: claude-fable-5-2}

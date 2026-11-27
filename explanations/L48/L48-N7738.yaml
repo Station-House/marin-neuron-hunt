@@ -1,0 +1,34 @@
+neuron: L48-N7738
+data: pilot/fineweb-10m-sparse
+label: "expects 'date', as in going on a date"
+positive:
+  status: unclear
+  cue_type: mixed
+  explanation: >-
+    Much weaker (max +12.8 against min -172). The strongest firings are on unrelated tokens: a phone-number
+    hyphen, the name "Saul", a comma in a list, "not". I see no shared pattern.
+  fires_on: "no pattern found"
+  not_on: "untested"
+  evidence: [0, 1, 2, 3]
+  verification: untested
+negative:
+  status: explained
+  confidence: high
+  cue_type: next-token
+  explanation: >-
+    Fires on the word right before "date" or "dates" in the sense of a romantic outing: "their first [date]",
+    "a blind [date]", "a few [dates]", "a double [date]". 20 of the 32 stored exemplars come directly before
+    "date"/"dates", and most of the rest sit one or two words earlier in the same phrase ("on [a] blind date",
+    "two [decent] dates"). Its logit lens pushes " dates", " date", " Dates", " Date" and "-date", so it looks
+    like it predicts the word. In my own run of the hunt's steering procedure on 20 neutral prompts, 4x raised
+    " date" and " dates" by about 1.4 nats each, against a 95th percentile of 0.04 for 128 random layer-48
+    neurons.
+  fires_on: "the word before 'date'/'dates' as an outing: 'first', 'second', 'blind', 'a', 'few' in 'on our first date', 'a blind date', 'a few dates'"
+  not_on: "untested; none of the 32 stored exemplars is a calendar date, but the sparse tier can't show non-firing"
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 23, 24, 26, 27, 28, 29]
+  verification: requested
+relation: none
+relation_note: >-
+  Only the negative side has a job I can name; the positive side is about 13 times weaker and shows no pattern.
+by:
+  - {github: tumanian, method: agent, model: claude-fable-5-2}

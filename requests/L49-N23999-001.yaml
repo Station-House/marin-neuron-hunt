@@ -1,0 +1,37 @@
+type: contrast
+neuron: L49-N23999
+side: "+"
+# The + side is the strong one (max +256 against min -23). It fires on the verb of the idiom "end up" / "wind up"
+# before the model can see the "up", so the target is always the verb token itself and "up" only appears after it.
+# Marin is causal: the activation on the target cannot see anything after it. So the two prompts in a pair share
+# the exact target token (" end", " ended", " wind" or " wound") and differ only in the words BEFORE it.
+# High: a prefix where the verb is the start of "end up" / "wind up" (a subject plus "will / might / often /
+# finally", an unplanned outcome), so " up" is the likely next word.
+# Low: the same token in a context where " up" is not a likely next word, which is exactly the explanation's
+# not_on cases: the noun "the end of ..." / "an end to ..." (pairs 1-12), an inanimate-subject "ended" (13-16),
+# the noun "wind" (17, 18) and the noun "wound" (19, 20).
+# Low prefixes with a person as subject are avoided for " ended": "We ended" would itself predict "up".
+# Text after the target only keeps each sentence natural; it is not seen by the target.
+pairs:
+  - {high: "Skip the warm-up and you will[[ end]] up with an injury.", low: "Skip to the[[ end]] of the chapter and read the summary."}
+  - {high: "If I never learn to budget, I might[[ end]] up in debt.", low: "If I do not hurry, I will miss the[[ end]] of the film."}
+  - {high: "Most people who start this diet[[ end]] up quitting.", low: "Most people who start this novel never reach the[[ end]]."}
+  - {high: "Do not leave the keys there, or they will[[ end]] up lost.", low: "Please sign your name at the[[ end]] of the form."}
+  - {high: "Without a map, hikers often[[ end]] up miles off course.", low: "Without any warning, we reached the[[ end]] of the trail."}
+  - {high: "I hope we do not[[ end]] up arguing again.", low: "We all hope for an[[ end]] to the arguing."}
+  - {high: "Whatever you cook, the leftovers will[[ end]] up in my lunch.", low: "Whatever you decide, the[[ end]] of the month is the deadline."}
+  - {high: "Talk to him long enough and you will[[ end]] up agreeing.", low: "Talk to us at the[[ end]] of the meeting."}
+  - {high: "Many small shops[[ end]] up closing within a year.", low: "Many small shops struggle until the[[ end]] of the year."}
+  - {high: "Take the wrong train and you will[[ end]] up in another city.", low: "Take the train to the[[ end]] of the line."}
+  - {high: "Those old photos always[[ end]] up in the attic.", low: "Those old stories always have a sad[[ end]]."}
+  - {high: "Pour in too much water and the soup will[[ end]] up thin.", low: "Pour in the water and cut off the[[ end]] of the carrot."}
+  - {high: "We got lost twice, and we finally[[ ended]] up at a gas station.", low: "We got lost twice, and the trip finally[[ ended]] at a gas station."}
+  - {high: "After trying three jobs, she[[ ended]] up in sales.", low: "After three long hours, the show[[ ended]] early."}
+  - {high: "He never planned to teach, but he[[ ended]] up loving it.", low: "He never planned to teach, but the school year[[ ended]] with a party."}
+  - {high: "They argued all night and[[ ended]] up friends.", low: "They argued all night until the storm[[ ended]] around dawn."}
+  - {high: "Take the back road and you might[[ wind]] up lost.", low: "Take a warm coat, because the[[ wind]] is strong."}
+  - {high: "Careless investors often[[ wind]] up broke.", low: "Careful sailors always watch the[[ wind]] and the waves."}
+  - {high: "After years of travel, they[[ wound]] up in Lisbon.", low: "After the accident, the nurse cleaned the[[ wound]] carefully."}
+  - {high: "The two rivals[[ wound]] up sharing the prize.", low: "The soldier pressed a cloth on the[[ wound]] to stop the bleeding."}
+by:
+  - {github: faisalhacks, method: agent, model: claude-sonnet-5-5}

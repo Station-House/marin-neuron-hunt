@@ -12,6 +12,16 @@ for the request types, and [CONTRIBUTING.md](CONTRIBUTING.md) for how to design 
   go-ahead. Don't handle their passwords or tokens.
 - Put the model or agent in `by`, as `method: agent` with `model: ...`.
 - Run `python scripts/validate.py` before any PR.
+- Before pushing or opening a PR that adds or changes a request (`requests/*.yaml` or a
+  `DESIGN.md`), run the design through the Station House Experimentation Wizard and put the
+  `Design-Session: ds_…` line it gives you in the PR description. CI fails a request PR without
+  it. Use the stationhouse plugin in Claude Code, `stationhouse mcp` elsewhere, or
+  `stationhouse design start "<title>"` then `stationhouse design round <file>` for each round and
+  `stationhouse design finalize`. The contributor answers the rounds, not you. Run
+  `stationhouse hooks install` once per clone so the push is checked too
+  (see CONTRIBUTING.md, "Before you open the PR").
+- The PR must also name a Station House task the contributor owns (`task #N`; they claim it first),
+  or it can't auto-run.
 - Never put format examples under `explanations/`. Only real explanations go there, and examples go
   in `examples/`. Blank templates to copy are in `templates/`.
 
@@ -35,7 +45,8 @@ evidence holds up, act as their design partner. Don't design it for them.
    - Are the expected activations well clear of the threshold?
 4. **Check it** with `python scripts/check_design.py <file>` (or `stationhouse design check <file> --json`),
    which also works on a saved PR description. CI runs the same check, and a request PR can't merge
-   while it fails. Fix the errors with them, and talk through each warning.
+   while it fails. Fix the errors with them, and talk through each warning. Then run the
+   Experimentation Wizard on it (see Ground rules) before the PR.
 5. **Red-team it before it's submitted.**
    - What simpler explanation would pass the same prompts: the token alone, the position, the
      document type?

@@ -1,0 +1,33 @@
+# Causal check for explanations/L54/L54-N9222.yaml (- side). Its logit lens pushes " imp", " driver", " drivers", " push" and " pushed", and its strongest firings come right before drive, push and force words.
+# Steering tests whether pushing the side at a neutral token moves the next-token prediction toward those
+# words, compared with 100 random layer-54 neurons. The marked tokens are plain determiners where the side
+# has no reason to fire. Prompts written 2026-11-22, before any run on them. An earlier sweep of mine ran
+# the same procedure on 20 different prompts; none of those prompts is used here.
+type: steering
+neuron: L54-N9222
+side: "-"
+k: 4
+prompts:
+  - "The package on the porch contained[[ a]] gift from her aunt."
+  - "Our neighbors recently bought[[ an]] old farmhouse."
+  - "The teacher asked the class to describe[[ the]] picture."
+  - "Before dinner, he finished reading[[ his]] book."
+  - "The magazine ran a long piece on[[ some]] new restaurants."
+  - "On the way home, we passed[[ a]] bakery."
+  - "The radio program was about[[ the]] harvest."
+  - "At the end of the trip, they visited[[ an]] aquarium."
+  - "The email was a reminder about[[ this]] weekend."
+  - "My cousin has always wanted[[ a]] garden."
+  - "The first chapter introduces[[ the]] main characters."
+  - "For her birthday, she asked for[[ a]] bicycle."
+  - "The mayor thanked[[ the]] volunteers."
+  - "In the morning, the fishermen checked[[ their]] nets."
+  - "The exhibit includes[[ several]] maps."
+  - "The company announced[[ its]] plans."
+  - "Later that evening, we watched[[ a]] film."
+  - "The guidebook recommends[[ two]] trails."
+  - "The reporter asked about[[ her]] work."
+  - "Everyone at the table was talking about[[ the]] storm."
+expect_up: [" driver", " drivers", " push", " pushed"]
+expect_down: []
+by: {github: tumanian, method: agent, model: claude-fable-5-2}

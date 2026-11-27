@@ -1,0 +1,38 @@
+neuron: L54-N9222
+data: pilot/fineweb-10m-sparse
+label: "expects drive/push words (-), incentive words (+)"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: next-token
+  explanation: >-
+    Fires right before a word about giving someone a reason to act: "every [incentive]", "to [encourage]",
+    "financial [rewards]", "being [inspired]", "dis[incentives]", "and [persuaded]", "or [motives]". About half
+    of the 32 stored exemplars precede a word of this kind. Weaker than the negative
+    side (max +50 against min -138). Not steered yet.
+  fires_on: "the word before 'incentive(s)', 'encourage(s)', 'inspired', 'rewards', 'persuaded': 'every [incentive]', 'to [encourage] swallowing'"
+  not_on: "untested"
+  evidence: [0, 2, 3, 5, 6, 7, 10, 11, 12, 16, 17, 22, 24, 28, 29, 30, 31]
+  verification: untested
+negative:
+  status: explained
+  confidence: weak
+  cue_type: next-token
+  explanation: >-
+    Fires right before a word for driving or pushing something: "or [drive]", "and [push] back", "should
+    [stimulate]", "to [generate]", "imp[el]", "imp[etus]", "will [prompt]", "when [forced]". It also fires before
+    the literal "driveway", "hard drives" and "International Drive", so part of it follows the letters "driv"
+    as well as the meaning. Of the 32 stored exemplars, 9 precede a drive/driving/driven/driveway token and 6
+    precede push or force. Its logit lens pushes " imp", " driver", " drivers", " push" and " pushed". In my own
+    run of the hunt's steering procedure on 20 neutral prompts, 4x raised " driver", " drivers", " push" and
+    " pushed" by 1.0 to 1.2 nats each, against a 95th percentile of 0.05 for 128 random layer-54 neurons.
+  fires_on: "the word before drive/push/force words: 'or [drive]', 'and [push]', 'should [stimulate]', 'imp[el]', and before 'driveway' and 'hard drives'"
+  not_on: "untested"
+  evidence: [0, 1, 2, 4, 5, 6, 8, 9, 10, 11, 12, 13, 16, 17, 18, 19, 21, 22, 26, 27, 28, 29, 30, 31]
+  verification: requested
+relation: variant
+relation_note: >-
+  Both sides come before words about getting someone or something to act: the negative side before force
+  (drive, push, impel), the positive side before persuasion (incentive, encourage, reward).
+by:
+  - {github: tumanian, method: agent, model: claude-fable-5-2}

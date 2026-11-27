@@ -1,0 +1,39 @@
+neuron: L40-N6687
+data: pilot/fineweb-10m-sparse
+label: "'soon' / 'shortly', strongest before 'after'"
+positive:
+  status: explained
+  confidence: high
+  cue_type: lexical
+  explanation: >-
+    Fires on "soon" and "shortly" ("soon after birth", "shortly after joining", "as soon as", "soon to
+    be"), and its output pushes " thereafter", " afterwards", " after" (logit lens top). "Soon" passes
+    the threshold 95% of the time (47% strongly) and "shortly" 98% (80%); "soon after" fires strongly on
+    94 of 99 cases and "shortly after" on 123 of 126. Other words about speed or time fire only weakly
+    ("immediately" 96% past the threshold but 2 strong of 767, "quickly" 0 strong of 1,205, "sooner" 1
+    of 94); 98.3% of the side's 835 strong firings are on "soon" or "shortly".
+  fires_on: "'soon' and 'shortly' in any use, most strongly when 'after / afterwards / thereafter' follows"
+  not_on: >-
+    other time adverbs ('immediately', 'quickly', 'directly', 'eventually', 'later', 'promptly', 'sooner'):
+    at most 2 strong firings each; the deep tier has no 'soon' or 'shortly'. Otherwise untested.
+  evidence: [0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 13, 14, 15, 16, 25, 30]
+  verification: untested
+negative:
+  status: unclear
+  cue_type: mixed
+  explanation: >-
+    A weak side (peak -9.5 against +143). Its strongest firings are scattered over time expressions
+    ("the date that is five business days", "the first 24 hours", "within an hour", "quick to assure",
+    "the end of the month"), but only 24.6% of its 264 strong firings are on within / after / quick /
+    less / end / once / immediate, and "within", "after", "quick", "less" and "end" each pass the threshold
+    at most 1% of the time.
+  fires_on: "weakly and loosely: words in time expressions ('within', 'the first', 'the end of', 'quick to')"
+  not_on: untested
+  evidence: [0, 1, 2, 3, 8, 10]
+  verification: untested
+relation: unrelated
+relation_note: >-
+  The positive side is the words 'soon' / 'shortly'; the negative side is unclear, so no shared job is
+  claimed.
+by:
+  - {github: Parva-26, method: agent, model: claude-opus-5-5}

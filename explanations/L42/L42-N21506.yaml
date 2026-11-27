@@ -1,0 +1,40 @@
+neuron: L42-N21506
+data: pilot/fineweb-10m-sparse
+label: "'set' in 'set aside / set apart'"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: next-token
+  explanation: >-
+    Fires on "set" right before "aside" or "apart" ("the space set aside for office", "funds must be set
+    aside", "set aside 10-", "he set it apart for himself"), and its output pushes " aside", " reserved",
+    " reserve" (logit lens top). "Set / sets / setting" right before "aside" passes the threshold 54% of the
+    time and fires strongly 32% (68 cases), and before "apart" 7 and 4 of 10, against 2 strong of 605 for
+    "set up", 0 of 641 for "set of", 2 among 3,546 other "set", 0 of 11 for "put aside" and 0 of 258 for
+    "aside" itself; 47.4% of the side's 57 strong firings are on this "set". Many of the rest are other
+    words about keeping something for later ("held for", "kept the best wine", "saved them").
+  fires_on: "'set' (sets, setting) directly before 'aside' or 'apart'"
+  not_on: >-
+    'set' in 'set up' (2 strong of 605), 'a set of' (0 of 641) and other uses (2 of 3,546); 'put aside'
+    (0 of 11); 'aside' itself (0 of 258); the deep tier's nine 'setting' (noun) cases do not fire. Otherwise
+    untested.
+  evidence: [0, 1, 2, 3, 5, 7, 8, 9, 10, 11, 13, 15, 18, 21, 23, 26]
+  verification: untested
+negative:
+  status: unclear
+  cue_type: mixed
+  explanation: >-
+    A weak side (peak -13.4 against +171) with only 62 strong firings. 43.5% of them are on "R" or "r"
+    (mostly the start of names such as "Ravelry", "Rangel"), but only 27 of the 5,919 "R / r" fire
+    strongly, and the rest are scattered ("I read the news today", "worth reading in full", "go in one
+    end").
+  fires_on: "weakly and loosely: 'R' at the start of a name, 'in' in 'read in full'; otherwise scattered"
+  not_on: untested
+  evidence: [0, 1, 2, 4, 5, 7]
+  verification: untested
+relation: unrelated
+relation_note: >-
+  The positive side anticipates 'aside' in 'set aside'; the negative side is unclear, so no shared job is
+  claimed.
+by:
+  - {github: Parva-26, method: agent, model: claude-opus-5-5}

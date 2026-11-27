@@ -1,0 +1,39 @@
+neuron: L40-N6160
+data: pilot/fineweb-10m-sparse
+label: "first 'as' in 'as early / recently as'"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: phrase-idiom
+  explanation: >-
+    Fires on the first "as" of an "as ... as" phrase that sets an extreme time or amount ("as early as
+    1820", "as recently as February", "as far back as", "as long ago as", "as little as five years"),
+    and its output pushes " early", " late", " recently" (logit lens top). "As early as" passes the
+    threshold 76% of the time (40% strongly), "as recently as" 92% (46%), "as far back as" 10 of 11
+    (5 strongly) and "as little / few / low as" 83% (16%), against 2% strongly for the common "as soon
+    as", 0 of 255 for "as far as", 1% for "as long as" and 22 strong firings among 37,586 other "as";
+    58.7% of the side's 121 strong firings are in these phrases.
+  fires_on: "the first 'as' of 'as early / recently / late / far back / long ago / little / few / low as'"
+  not_on: >-
+    'as' in 'as far as' (0 strong of 255), 'as long as' (1%), 'as well' (1 strong of 3,877) and 'as a /
+    an' (8 strong of 8,880); the deep tier has no such phrase. Otherwise untested.
+  evidence: [0, 1, 2, 3, 4, 5, 6, 8, 10, 11, 12, 13, 14, 15, 16, 18]
+  verification: untested
+negative:
+  status: unclear
+  cue_type: mixed
+  explanation: >-
+    A weak side (peak -12.5 against +144). 82.3% of its 502 strong firings are on "as" or "As", mostly
+    in comparisons and conjunctions ("as well", "as much", "as far as", "As you see"), but only 1% of
+    the 53,533 "as" pass the threshold and "as well / as much" account for only 22.1% of the strong
+    firings, so no common pattern picks them out.
+  fires_on: "weakly and loosely: 'as' in comparisons or as a conjunction ('as well', 'as much', 'As a result')"
+  not_on: untested
+  evidence: [1, 3, 5, 9, 14, 26]
+  verification: untested
+relation: unrelated
+relation_note: >-
+  Both sides fire on 'as', but the positive side is specific to 'as early / recently as' and the negative
+  side is unclear, so no shared job is claimed.
+by:
+  - {github: Parva-26, method: agent, model: claude-opus-5-5}

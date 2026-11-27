@@ -1,0 +1,41 @@
+neuron: L40-N20029
+data: pilot/fineweb-10m-sparse
+label: "'the' in 'to the point that / where'"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: phrase-idiom
+  explanation: >-
+    Fires on "the" in "to the point that / where / of" meaning "so much that" ("easier to the point that
+    they just", "overwhelmed with sorrow to the point of death"), and its output pushes " point" (logit
+    lens top). That "the" passes the threshold 88% of the time and fires strongly 29% (97 cases), against
+    0 strong for the literal "get / come / straight to the point" (20 cases) and "to the point." (16), 1
+    strong of 261 for "the point" not after "to", and 3 strong among 19,368 other "the" after "to"; "to
+    the extent" passes the threshold 79% but never strongly. 65.9% of the side's 44 strong firings are
+    on "the" right before "point".
+  fires_on: "'the' (and more weakly 'to') in 'to the point that / where / of' as a degree phrase"
+  not_on: >-
+    'the' in the literal 'get / come to the point' (0 strong of 20), in 'the point is / what's the point'
+    (1 strong of 261) and in 'to the extent' (0 strong of 56). Otherwise untested.
+  evidence: [0, 1, 2, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 19]
+  verification: untested
+negative:
+  status: unclear
+  cue_type: mixed
+  explanation: >-
+    A weak side (peak -11 against +236). It fires on "by" in "by now / by then" (38% strongly, 130 cases),
+    on "the" in "by the time" (27%), "by the way" (22%) and "for the most" (19%), and on every "By" at
+    document position 1 (35 of 35, a position artifact), but these together are only 19.3% of its 1,777
+    strong firings, and the rest is spread over "the" and "to" in many phrases.
+  fires_on: >-
+    weakly and loosely: 'by' / 'By' and 'the' in fixed phrases such as 'by now', 'by the time', 'by the
+    way', 'for the most part'; otherwise scattered
+  not_on: untested
+  evidence: [2, 3, 4, 5, 6, 7]
+  verification: untested
+relation: unrelated
+relation_note: >-
+  The positive side anticipates 'point' in 'to the point that'; the negative side is unclear, so no shared
+  job is claimed.
+by:
+  - {github: Parva-26, method: agent, model: claude-opus-5-5}

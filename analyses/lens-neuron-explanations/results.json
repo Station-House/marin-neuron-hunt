@@ -1,0 +1,3463 @@
+{
+ "neurons": {
+  "L45-N1382": {
+   "layer": 45,
+   "neuron": 1382,
+   "file": "explanations/L45/L45-N1382.yaml",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       " other",
+       12.002
+      ],
+      [
+       "other",
+       10.267
+      ],
+      [
+       " OTHER",
+       8.804
+      ],
+      [
+       "-other",
+       8.122
+      ],
+      [
+       " Other",
+       7.971
+      ],
+      [
+       "_other",
+       7.688
+      ],
+      [
+       "(other",
+       7.681
+      ],
+      [
+       "Other",
+       7.659
+      ],
+      [
+       "OTHER",
+       7.362
+      ],
+      [
+       ".other",
+       6.705
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.017,
+     "raw_lens_top10_overlap": 10,
+     "top1_z": 44.97,
+     "top1_value": 12.002,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " other",
+       "other",
+       " OTHER"
+      ],
+      "cited": {
+       " other": 12.0,
+       "other": 10.25,
+       " OTHER": 8.81
+      }
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " other",
+       "rank": 1,
+       "value": 12.002,
+       "z": 44.97
+      },
+      {
+       "token": "other",
+       "rank": 2,
+       "value": 10.267,
+       "z": 38.42
+      },
+      {
+       "token": " OTHER",
+       "rank": 3,
+       "value": 8.804,
+       "z": 32.9
+      }
+     ],
+     "cited_check": [
+      {
+       "token": " other",
+       "cited": 12.0,
+       "ours": 12.002
+      },
+      {
+       "token": "other",
+       "cited": 10.25,
+       "ours": 10.267
+      },
+      {
+       "token": " OTHER",
+       "cited": 8.81,
+       "ours": 8.804
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 3,
+     "claimed_in_top100": 3,
+     "claimed_total": 3,
+     "behaviour": {
+      "n_firings_past_q999": 2915,
+      "n_sampled": 2000,
+      "q999_mag": 11.139739036560059,
+      "hit_top10": 26,
+      "hit_top10_rate": 0.013,
+      "hit_top10_ci95": [
+       0.0089,
+       0.019
+      ],
+      "base_rate_top10": 0.001341,
+      "enrichment_top10": 9.7,
+      "cur_hit_top10_rate": 0.015,
+      "hit_top100_rate": 0.0215,
+      "base_rate_top100": 0.00277,
+      "median_rank_percentile_of_actual_next": 0.255,
+      "hit_claimed_rate": 0.013,
+      "base_rate_claimed": 0.001263,
+      "enrichment_claimed": 10.3,
+      "strongest100_hit_top10_rate": 0.23,
+      "control_hit_top10_rate": 0.0013,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       " rest",
+       -1.731
+      ],
+      [
+       " weekend",
+       -1.478
+      ],
+      [
+       "Rest",
+       -1.33
+      ],
+      [
+       "-rest",
+       -1.28
+      ],
+      [
+       " Weekend",
+       -1.264
+      ],
+      [
+       " Rest",
+       -1.261
+      ],
+      [
+       "rest",
+       -1.179
+      ],
+      [
+       "week",
+       -1.157
+      ],
+      [
+       "Previous",
+       -1.128
+      ],
+      [
+       " morning",
+       -1.122
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.006,
+     "raw_lens_top10_overlap": 8,
+     "top1_z": 6.87,
+     "top1_value": -1.731,
+     "claim": {
+      "kind": "none",
+      "tokens": []
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [],
+     "behaviour": {
+      "n_firings_past_q999": 1864,
+      "n_sampled": 1864,
+      "q999_mag": 2.392799139022827,
+      "hit_top10": 18,
+      "hit_top10_rate": 0.0097,
+      "hit_top10_ci95": [
+       0.0061,
+       0.0152
+      ],
+      "base_rate_top10": 0.000325,
+      "enrichment_top10": 29.7,
+      "cur_hit_top10_rate": 0.0,
+      "hit_top100_rate": 0.0762,
+      "base_rate_top100": 0.00087,
+      "median_rank_percentile_of_actual_next": 0.349,
+      "strongest100_hit_top10_rate": 0.01,
+      "control_hit_top10_rate": 0.0007,
+      "control_n": 3000
+     }
+    }
+   }
+  },
+  "L45-N22495": {
+   "layer": 45,
+   "neuron": 22495,
+   "file": "explanations/L45/L45-N22495.yaml",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       " years",
+       4.586
+      ],
+      [
+       " over",
+       4.414
+      ],
+      [
+       " Years",
+       4.231
+      ],
+      [
+       "years",
+       4.09
+      ],
+      [
+       "Years",
+       3.742
+      ],
+      [
+       " YEARS",
+       3.671
+      ],
+      [
+       "-years",
+       3.16
+      ],
+      [
+       " overtime",
+       3.151
+      ],
+      [
+       " Over",
+       3.137
+      ],
+      [
+       "Over",
+       3.027
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.013,
+     "raw_lens_top10_overlap": 10,
+     "top1_z": 17.31,
+     "top1_value": 4.586,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " years",
+       " over",
+       " Years"
+      ],
+      "cited": {
+       " years": 4.59,
+       " over": 4.41,
+       " Years": 4.22
+      }
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " over",
+       "rank": 2,
+       "value": 4.414,
+       "z": 16.68
+      },
+      {
+       "token": " years",
+       "rank": 1,
+       "value": 4.586,
+       "z": 17.31
+      },
+      {
+       "token": " Years",
+       "rank": 3,
+       "value": 4.231,
+       "z": 16.03
+      }
+     ],
+     "cited_check": [
+      {
+       "token": " years",
+       "cited": 4.59,
+       "ours": 4.586
+      },
+      {
+       "token": " over",
+       "cited": 4.41,
+       "ours": 4.414
+      },
+      {
+       "token": " Years",
+       "cited": 4.22,
+       "ours": 4.231
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 3,
+     "claimed_in_top100": 3,
+     "claimed_total": 3,
+     "behaviour": {
+      "n_firings_past_q999": 5695,
+      "n_sampled": 2000,
+      "q999_mag": 8.737883567810059,
+      "hit_top10": 133,
+      "hit_top10_rate": 0.0665,
+      "hit_top10_ci95": [
+       0.0564,
+       0.0783
+      ],
+      "base_rate_top10": 0.001648,
+      "enrichment_top10": 40.4,
+      "cur_hit_top10_rate": 0.0975,
+      "hit_top100_rate": 0.086,
+      "base_rate_top100": 0.00664,
+      "median_rank_percentile_of_actual_next": 0.186,
+      "hit_claimed_rate": 0.066,
+      "base_rate_claimed": 0.001572,
+      "enrichment_claimed": 42.0,
+      "strongest100_hit_top10_rate": 0.3,
+      "control_hit_top10_rate": 0.004,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       " atm",
+       -1.772
+      ],
+      [
+       "zer",
+       -1.497
+      ],
+      [
+       " cham",
+       -1.465
+      ],
+      [
+       " RTC",
+       -1.453
+      ],
+      [
+       "rut",
+       -1.432
+      ],
+      [
+       ")const",
+       -1.403
+      ],
+      [
+       "kar",
+       -1.394
+      ],
+      [
+       " kov",
+       -1.386
+      ],
+      [
+       " NEO",
+       -1.386
+      ],
+      [
+       " tob",
+       -1.373
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.005,
+     "raw_lens_top10_overlap": 6,
+     "top1_z": 5.66,
+     "top1_value": -1.772,
+     "claim": {
+      "kind": "none",
+      "tokens": []
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [],
+     "behaviour": {
+      "n_firings_past_q999": 1663,
+      "n_sampled": 1663,
+      "q999_mag": 3.889051914215088,
+      "hit_top10": 0,
+      "hit_top10_rate": 0.0,
+      "hit_top10_ci95": [
+       0.0,
+       0.0023
+      ],
+      "base_rate_top10": 2.3e-05,
+      "enrichment_top10": 0.0,
+      "cur_hit_top10_rate": 0.0,
+      "hit_top100_rate": 0.0006,
+      "base_rate_top100": 0.00058,
+      "median_rank_percentile_of_actual_next": 0.814,
+      "strongest100_hit_top10_rate": 0.0,
+      "control_hit_top10_rate": 0.0,
+      "control_n": 3000
+     }
+    }
+   }
+  },
+  "L49-N23999": {
+   "layer": 49,
+   "neuron": 23999,
+   "file": "explanations/L49/L49-N23999.yaml",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       " ended",
+       12.007
+      ],
+      [
+       " ends",
+       11.788
+      ],
+      [
+       " ending",
+       11.641
+      ],
+      [
+       " Ends",
+       10.05
+      ],
+      [
+       " Ended",
+       9.764
+      ],
+      [
+       " Ending",
+       9.39
+      ],
+      [
+       " wound",
+       9.219
+      ],
+      [
+       " winds",
+       8.946
+      ],
+      [
+       "-ended",
+       8.897
+      ],
+      [
+       " wind",
+       8.733
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.032,
+     "raw_lens_top10_overlap": 10,
+     "top1_z": 38.95,
+     "top1_value": 12.007,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " ended",
+       " ends",
+       " ending",
+       " wound"
+      ],
+      "cited": {
+       " ended": 12.0,
+       " ends": 11.8,
+       " ending": 11.6,
+       " wound": 9.2
+      },
+      "also_said": "top is the verb family itself, not ' up'"
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " ended",
+       "rank": 1,
+       "value": 12.007,
+       "z": 38.95
+      },
+      {
+       "token": " ends",
+       "rank": 2,
+       "value": 11.788,
+       "z": 38.24
+      },
+      {
+       "token": " ending",
+       "rank": 3,
+       "value": 11.641,
+       "z": 37.77
+      },
+      {
+       "token": " wound",
+       "rank": 7,
+       "value": 9.219,
+       "z": 29.91
+      }
+     ],
+     "cited_check": [
+      {
+       "token": " ended",
+       "cited": 12.0,
+       "ours": 12.007
+      },
+      {
+       "token": " ends",
+       "cited": 11.8,
+       "ours": 11.788
+      },
+      {
+       "token": " ending",
+       "cited": 11.6,
+       "ours": 11.641
+      },
+      {
+       "token": " wound",
+       "cited": 9.2,
+       "ours": 9.219
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 4,
+     "claimed_in_top100": 4,
+     "claimed_total": 4,
+     "behaviour": {
+      "n_firings_past_q999": 6402,
+      "n_sampled": 2000,
+      "q999_mag": 15.39926528930664,
+      "hit_top10": 29,
+      "hit_top10_rate": 0.0145,
+      "hit_top10_ci95": [
+       0.0101,
+       0.0207
+      ],
+      "base_rate_top10": 0.000174,
+      "enrichment_top10": 83.4,
+      "cur_hit_top10_rate": 0.0655,
+      "hit_top100_rate": 0.13,
+      "base_rate_top100": 0.00235,
+      "median_rank_percentile_of_actual_next": 0.524,
+      "hit_claimed_rate": 0.0135,
+      "base_rate_claimed": 0.000115,
+      "enrichment_claimed": 117.6,
+      "strongest100_hit_top10_rate": 0.0,
+      "control_hit_top10_rate": 0.0003,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       "anki",
+       -1.568
+      ],
+      [
+       "apg",
+       -1.374
+      ],
+      [
+       "\u010d",
+       -1.329
+      ],
+      [
+       "uy",
+       -1.318
+      ],
+      [
+       "ando",
+       -1.26
+      ],
+      [
+       " triplet",
+       -1.229
+      ],
+      [
+       " Gund",
+       -1.213
+      ],
+      [
+       "zin",
+       -1.193
+      ],
+      [
+       "stop",
+       -1.192
+      ],
+      [
+       " Cub",
+       -1.191
+      ]
+     ],
+     "atlas_top10_overlap": 9,
+     "atlas_value_max_abs_diff_on_common": 0.004,
+     "raw_lens_top10_overlap": 8,
+     "top1_z": 5.06,
+     "top1_value": -1.568,
+     "claim": {
+      "kind": "none",
+      "tokens": []
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [],
+     "behaviour": {
+      "n_firings_past_q999": 723,
+      "n_sampled": 723,
+      "q999_mag": 6.320933818817139,
+      "hit_top10": 0,
+      "hit_top10_rate": 0.0,
+      "hit_top10_ci95": [
+       0.0,
+       0.0053
+      ],
+      "base_rate_top10": 3.3e-05,
+      "enrichment_top10": 0.0,
+      "cur_hit_top10_rate": 0.0,
+      "hit_top100_rate": 0.0028,
+      "base_rate_top100": 0.00038,
+      "median_rank_percentile_of_actual_next": 0.327,
+      "strongest100_hit_top10_rate": 0.0,
+      "control_hit_top10_rate": 0.0,
+      "control_n": 3000
+     }
+    }
+   }
+  },
+  "L42-N8668": {
+   "layer": 42,
+   "neuron": 8668,
+   "file": "explanations/L42/L42-N8668.yaml",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       "-or",
+       4.759
+      ],
+      [
+       " or",
+       4.353
+      ],
+      [
+       "_or",
+       3.471
+      ],
+      [
+       " Or",
+       3.297
+      ],
+      [
+       "\tor",
+       3.054
+      ],
+      [
+       "or",
+       2.809
+      ],
+      [
+       "orf",
+       2.69
+      ],
+      [
+       "Or",
+       2.633
+      ],
+      [
+       "\u6216",
+       2.602
+      ],
+      [
+       " oro",
+       2.446
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.009,
+     "raw_lens_top10_overlap": 10,
+     "top1_z": 16.25,
+     "top1_value": 4.759,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       "-or",
+       " or",
+       " Or",
+       "or"
+      ],
+      "cited": {
+       "-or": 4.75,
+       " or": 4.34
+      }
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": "or",
+       "rank": 6,
+       "value": 2.809,
+       "z": 9.79
+      },
+      {
+       "token": " or",
+       "rank": 2,
+       "value": 4.353,
+       "z": 14.91
+      },
+      {
+       "token": " Or",
+       "rank": 4,
+       "value": 3.297,
+       "z": 11.41
+      },
+      {
+       "token": "-or",
+       "rank": 1,
+       "value": 4.759,
+       "z": 16.25
+      }
+     ],
+     "cited_check": [
+      {
+       "token": "-or",
+       "cited": 4.75,
+       "ours": 4.759
+      },
+      {
+       "token": " or",
+       "cited": 4.34,
+       "ours": 4.353
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 4,
+     "claimed_in_top100": 4,
+     "claimed_total": 4,
+     "behaviour": {
+      "n_firings_past_q999": 4006,
+      "n_sampled": 2000,
+      "q999_mag": 9.474635124206543,
+      "hit_top10": 203,
+      "hit_top10_rate": 0.1015,
+      "hit_top10_ci95": [
+       0.089,
+       0.1155
+      ],
+      "base_rate_top10": 0.004091,
+      "enrichment_top10": 24.8,
+      "cur_hit_top10_rate": 0.0305,
+      "hit_top100_rate": 0.118,
+      "base_rate_top100": 0.00488,
+      "median_rank_percentile_of_actual_next": 0.454,
+      "hit_claimed_rate": 0.1015,
+      "base_rate_claimed": 0.004068,
+      "enrichment_claimed": 25.0,
+      "strongest100_hit_top10_rate": 0.48,
+      "control_hit_top10_rate": 0.0057,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       "ESC",
+       -1.935
+      ],
+      [
+       "ICO",
+       -1.778
+      ],
+      [
+       " Dawn",
+       -1.731
+      ],
+      [
+       "/loading",
+       -1.696
+      ],
+      [
+       "/ec",
+       -1.655
+      ],
+      [
+       "/check",
+       -1.604
+      ],
+      [
+       "(b",
+       -1.599
+      ],
+      [
+       "/history",
+       -1.575
+      ],
+      [
+       " Dome",
+       -1.57
+      ],
+      [
+       "VEC",
+       -1.56
+      ]
+     ],
+     "atlas_top10_overlap": 9,
+     "atlas_value_max_abs_diff_on_common": 0.005,
+     "raw_lens_top10_overlap": 7,
+     "top1_z": 5.93,
+     "top1_value": -1.935,
+     "claim": {
+      "kind": "noise",
+      "tokens": []
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [],
+     "behaviour": {
+      "n_firings_past_q999": 505,
+      "n_sampled": 505,
+      "q999_mag": 1.8768843412399292,
+      "hit_top10": 0,
+      "hit_top10_rate": 0.0,
+      "hit_top10_ci95": [
+       0.0,
+       0.0075
+      ],
+      "base_rate_top10": 3.5e-05,
+      "enrichment_top10": 0.0,
+      "cur_hit_top10_rate": 0.0,
+      "hit_top100_rate": 0.0,
+      "base_rate_top100": 0.00027,
+      "median_rank_percentile_of_actual_next": 0.48,
+      "strongest100_hit_top10_rate": 0.0,
+      "control_hit_top10_rate": 0.0,
+      "control_n": 3000
+     }
+    }
+   }
+  },
+  "L43-N22771": {
+   "layer": 43,
+   "neuron": 22771,
+   "file": "explanations/L43/L43-N22771.yaml",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       " so",
+       14.519
+      ],
+      [
+       "so",
+       8.572
+      ],
+      [
+       "-so",
+       6.813
+      ],
+      [
+       "_so",
+       6.785
+      ],
+      [
+       " So",
+       5.969
+      ],
+      [
+       "(so",
+       5.857
+      ],
+      [
+       "\"So",
+       5.567
+      ],
+      [
+       ".so",
+       5.436
+      ],
+      [
+       "So",
+       5.141
+      ],
+      [
+       " s\u00e5",
+       4.757
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.019,
+     "raw_lens_top10_overlap": 10,
+     "top1_z": 66.84,
+     "top1_value": 14.519,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " so",
+       "so",
+       "-so",
+       " So"
+      ],
+      "cited": {
+       " so": 14.5
+      }
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": "so",
+       "rank": 2,
+       "value": 8.572,
+       "z": 39.26
+      },
+      {
+       "token": " so",
+       "rank": 1,
+       "value": 14.519,
+       "z": 66.84
+      },
+      {
+       "token": " So",
+       "rank": 5,
+       "value": 5.969,
+       "z": 27.19
+      },
+      {
+       "token": "-so",
+       "rank": 3,
+       "value": 6.813,
+       "z": 31.1
+      }
+     ],
+     "cited_check": [
+      {
+       "token": " so",
+       "cited": 14.5,
+       "ours": 14.519
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 4,
+     "claimed_in_top100": 4,
+     "claimed_total": 4,
+     "behaviour": {
+      "n_firings_past_q999": 631,
+      "n_sampled": 631,
+      "q999_mag": 91.3981704711914,
+      "hit_top10": 520,
+      "hit_top10_rate": 0.8241,
+      "hit_top10_ci95": [
+       0.7924,
+       0.8518
+      ],
+      "base_rate_top10": 0.001907,
+      "enrichment_top10": 432.1,
+      "cur_hit_top10_rate": 0.0,
+      "hit_top100_rate": 0.8257,
+      "base_rate_top100": 0.00205,
+      "median_rank_percentile_of_actual_next": 0.0,
+      "hit_claimed_rate": 0.8241,
+      "base_rate_claimed": 0.001771,
+      "enrichment_claimed": 465.2,
+      "strongest100_hit_top10_rate": 0.95,
+      "control_hit_top10_rate": 0.002,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       " neither",
+       -1.069
+      ],
+      [
+       " Neither",
+       -0.932
+      ],
+      [
+       "assen",
+       -0.876
+      ],
+      [
+       "Neither",
+       -0.863
+      ],
+      [
+       "OMET",
+       -0.859
+      ],
+      [
+       "icht",
+       -0.838
+      ],
+      [
+       " Tage",
+       -0.828
+      ],
+      [
+       "atur",
+       -0.819
+      ],
+      [
+       "icut",
+       -0.788
+      ],
+      [
+       "SW",
+       -0.781
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.005,
+     "raw_lens_top10_overlap": 8,
+     "top1_z": 5.46,
+     "top1_value": -1.069,
+     "claim": {
+      "kind": "noise",
+      "tokens": []
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [],
+     "behaviour": {
+      "n_firings_past_q999": 0,
+      "n_sampled": 0,
+      "q999_mag": 2.392799139022827
+     }
+    }
+   }
+  },
+  "L44-N12797": {
+   "layer": 44,
+   "neuron": 12797,
+   "file": "explanations/L44/L44-N12797.yaml",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       "UME",
+       1.342
+      ],
+      [
+       "335",
+       1.3
+      ],
+      [
+       "bew",
+       1.195
+      ],
+      [
+       " ==>",
+       1.166
+      ],
+      [
+       "hattan",
+       1.156
+      ],
+      [
+       "fur",
+       1.123
+      ],
+      [
+       "IMATE",
+       1.098
+      ],
+      [
+       "Nam",
+       1.078
+      ],
+      [
+       "XI",
+       1.066
+      ],
+      [
+       "390",
+       1.063
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.006,
+     "raw_lens_top10_overlap": 8,
+     "top1_z": 5.3,
+     "top1_value": 1.342,
+     "claim": {
+      "kind": "noise",
+      "tokens": []
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [],
+     "behaviour": {
+      "n_firings_past_q999": 2749,
+      "n_sampled": 2000,
+      "q999_mag": 2.035137414932251,
+      "hit_top10": 0,
+      "hit_top10_rate": 0.0,
+      "hit_top10_ci95": [
+       0.0,
+       0.0019
+      ],
+      "base_rate_top10": 1e-05,
+      "enrichment_top10": 0.0,
+      "cur_hit_top10_rate": 0.0,
+      "hit_top100_rate": 0.0,
+      "base_rate_top100": 0.00024,
+      "median_rank_percentile_of_actual_next": 0.544,
+      "strongest100_hit_top10_rate": 0.0,
+      "control_hit_top10_rate": 0.0,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       " atleast",
+       -13.961
+      ],
+      [
+       " least",
+       -13.03
+      ],
+      [
+       "least",
+       -11.022
+      ],
+      [
+       " Least",
+       -10.256
+      ],
+      [
+       "Least",
+       -9.414
+      ],
+      [
+       "\u81f3\u5c11",
+       -7.986
+      ],
+      [
+       " at",
+       -5.396
+      ],
+      [
+       "_least",
+       -5.354
+      ],
+      [
+       " minimum",
+       -5.265
+      ],
+      [
+       "minimum",
+       -4.668
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.03,
+     "raw_lens_top10_overlap": 10,
+     "top1_z": 50.4,
+     "top1_value": -13.961,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " atleast",
+       " least",
+       "least",
+       " Least"
+      ],
+      "cited": {
+       " atleast": -13.9,
+       " least": -13.0,
+       "least": -11.0,
+       " Least": -10.3,
+       " at": -5.4,
+       " minimum": -5.3
+      }
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " least",
+       "rank": 2,
+       "value": -13.03,
+       "z": 47.01
+      },
+      {
+       "token": "least",
+       "rank": 3,
+       "value": -11.022,
+       "z": 39.7
+      },
+      {
+       "token": " atleast",
+       "rank": 1,
+       "value": -13.961,
+       "z": 50.4
+      },
+      {
+       "token": " Least",
+       "rank": 4,
+       "value": -10.256,
+       "z": 36.91
+      }
+     ],
+     "cited_check": [
+      {
+       "token": " atleast",
+       "cited": -13.9,
+       "ours": -13.961
+      },
+      {
+       "token": " least",
+       "cited": -13.0,
+       "ours": -13.03
+      },
+      {
+       "token": "least",
+       "cited": -11.0,
+       "ours": -11.022
+      },
+      {
+       "token": " Least",
+       "cited": -10.3,
+       "ours": -10.256
+      },
+      {
+       "token": " at",
+       "cited": -5.4,
+       "ours": -5.396
+      },
+      {
+       "token": " minimum",
+       "cited": -5.3,
+       "ours": -5.265
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 4,
+     "claimed_in_top100": 4,
+     "claimed_total": 4,
+     "behaviour": {
+      "n_firings_past_q999": 1485,
+      "n_sampled": 1485,
+      "q999_mag": 21.287517547607422,
+      "hit_top10": 545,
+      "hit_top10_rate": 0.367,
+      "hit_top10_ci95": [
+       0.3429,
+       0.3918
+      ],
+      "base_rate_top10": 0.00346,
+      "enrichment_top10": 106.1,
+      "cur_hit_top10_rate": 0.33,
+      "hit_top100_rate": 0.3704,
+      "base_rate_top100": 0.00424,
+      "median_rank_percentile_of_actual_next": 0.206,
+      "hit_claimed_rate": 0.301,
+      "base_rate_claimed": 0.000222,
+      "enrichment_claimed": 1356.5,
+      "strongest100_hit_top10_rate": 0.79,
+      "control_hit_top10_rate": 0.0007,
+      "control_n": 3000
+     }
+    }
+   }
+  },
+  "L47-N26485": {
+   "layer": 47,
+   "neuron": 26485,
+   "file": "explanations/L47/L47-N26485.yaml",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       " well",
+       9.113
+      ],
+      [
+       "well",
+       7.946
+      ],
+      [
+       " WELL",
+       6.846
+      ],
+      [
+       " Well",
+       6.67
+      ],
+      [
+       "Well",
+       5.521
+      ],
+      [
+       " wellbeing",
+       4.489
+      ],
+      [
+       "\"Well",
+       4.01
+      ],
+      [
+       " wel",
+       3.839
+      ],
+      [
+       " wells",
+       3.731
+      ],
+      [
+       " bien",
+       3.603
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.014,
+     "raw_lens_top10_overlap": 10,
+     "top1_z": 31.18,
+     "top1_value": 9.113,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " well",
+       "well",
+       " WELL",
+       " Well"
+      ],
+      "cited": {
+       " well": 9.1
+      }
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " well",
+       "rank": 1,
+       "value": 9.113,
+       "z": 31.18
+      },
+      {
+       "token": " Well",
+       "rank": 4,
+       "value": 6.67,
+       "z": 22.72
+      },
+      {
+       "token": "well",
+       "rank": 2,
+       "value": 7.946,
+       "z": 27.14
+      },
+      {
+       "token": " WELL",
+       "rank": 3,
+       "value": 6.846,
+       "z": 23.33
+      }
+     ],
+     "cited_check": [
+      {
+       "token": " well",
+       "cited": 9.1,
+       "ours": 9.113
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 4,
+     "claimed_in_top100": 4,
+     "claimed_total": 4,
+     "behaviour": {
+      "n_firings_past_q999": 4108,
+      "n_sampled": 2000,
+      "q999_mag": 19.632190704345703,
+      "hit_top10": 439,
+      "hit_top10_rate": 0.2195,
+      "hit_top10_ci95": [
+       0.2019,
+       0.2382
+      ],
+      "base_rate_top10": 0.000927,
+      "enrichment_top10": 236.7,
+      "cur_hit_top10_rate": 0.0005,
+      "hit_top100_rate": 0.2875,
+      "base_rate_top100": 0.00591,
+      "median_rank_percentile_of_actual_next": 0.897,
+      "hit_claimed_rate": 0.2195,
+      "base_rate_claimed": 0.00088,
+      "enrichment_claimed": 249.5,
+      "strongest100_hit_top10_rate": 0.97,
+      "control_hit_top10_rate": 0.0013,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       "Too",
+       -1.87
+      ],
+      [
+       " Too",
+       -1.812
+      ],
+      [
+       " also",
+       -1.759
+      ],
+      [
+       "Also",
+       -1.719
+      ],
+      [
+       "also",
+       -1.659
+      ],
+      [
+       " Also",
+       -1.517
+      ],
+      [
+       "-too",
+       -1.499
+      ],
+      [
+       " TOO",
+       -1.457
+      ],
+      [
+       " too",
+       -1.383
+      ],
+      [
+       " ALSO",
+       -1.351
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.004,
+     "raw_lens_top10_overlap": 9,
+     "top1_z": 6.84,
+     "top1_value": -1.87,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " too",
+       " also"
+      ],
+      "cited": {},
+      "also_said": "faint lens bottom, -1.9 to -1.4"
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " also",
+       "rank": 3,
+       "value": -1.759,
+       "z": 6.45
+      },
+      {
+       "token": " too",
+       "rank": 9,
+       "value": -1.383,
+       "z": 5.15
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 2,
+     "claimed_in_top100": 2,
+     "claimed_total": 2,
+     "behaviour": {
+      "n_firings_past_q999": 665,
+      "n_sampled": 665,
+      "q999_mag": 3.050527811050415,
+      "hit_top10": 0,
+      "hit_top10_rate": 0.0,
+      "hit_top10_ci95": [
+       0.0,
+       0.0057
+      ],
+      "base_rate_top10": 0.001903,
+      "enrichment_top10": 0.0,
+      "cur_hit_top10_rate": 0.003,
+      "hit_top100_rate": 0.0,
+      "base_rate_top100": 0.00238,
+      "median_rank_percentile_of_actual_next": 0.007,
+      "hit_claimed_rate": 0.0,
+      "base_rate_claimed": 0.001774,
+      "enrichment_claimed": 0.0,
+      "strongest100_hit_top10_rate": 0.0,
+      "control_hit_top10_rate": 0.0013,
+      "control_n": 3000
+     }
+    }
+   }
+  },
+  "L49-N22962": {
+   "layer": 49,
+   "neuron": 22962,
+   "file": "explanations/L49/L49-N22962.yaml",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       " alone",
+       3.229
+      ],
+      [
+       "alone",
+       2.847
+      ],
+      [
+       "-alone",
+       2.576
+      ],
+      [
+       " Alone",
+       2.083
+      ],
+      [
+       " solitary",
+       1.435
+      ],
+      [
+       "ovit",
+       1.428
+      ],
+      [
+       " Nor",
+       1.375
+      ],
+      [
+       "\\[",
+       1.373
+      ],
+      [
+       " lon",
+       1.371
+      ],
+      [
+       " lonely",
+       1.367
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.006,
+     "raw_lens_top10_overlap": 8,
+     "top1_z": 11.36,
+     "top1_value": 3.229,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " alone",
+       "alone",
+       "-alone",
+       " Alone"
+      ],
+      "cited": {}
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " alone",
+       "rank": 1,
+       "value": 3.229,
+       "z": 11.36
+      },
+      {
+       "token": "alone",
+       "rank": 2,
+       "value": 2.847,
+       "z": 10.01
+      },
+      {
+       "token": " Alone",
+       "rank": 4,
+       "value": 2.083,
+       "z": 7.31
+      },
+      {
+       "token": "-alone",
+       "rank": 3,
+       "value": 2.576,
+       "z": 9.05
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 4,
+     "claimed_in_top100": 4,
+     "claimed_total": 4,
+     "behaviour": {
+      "n_firings_past_q999": 286,
+      "n_sampled": 286,
+      "q999_mag": 2.594552755355835,
+      "hit_top10": 59,
+      "hit_top10_rate": 0.2063,
+      "hit_top10_ci95": [
+       0.1634,
+       0.2569
+      ],
+      "base_rate_top10": 0.000113,
+      "enrichment_top10": 1818.4,
+      "cur_hit_top10_rate": 0.0,
+      "hit_top100_rate": 0.2063,
+      "base_rate_top100": 0.00047,
+      "median_rank_percentile_of_actual_next": 0.232,
+      "hit_claimed_rate": 0.2063,
+      "base_rate_claimed": 8.3e-05,
+      "enrichment_claimed": 2487.3,
+      "strongest100_hit_top10_rate": 0.57,
+      "control_hit_top10_rate": 0.0,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       " much",
+       -14.417
+      ],
+      [
+       "much",
+       -13.193
+      ],
+      [
+       " MUCH",
+       -11.585
+      ],
+      [
+       " Much",
+       -11.378
+      ],
+      [
+       "Much",
+       -10.943
+      ],
+      [
+       " mucho",
+       -4.373
+      ],
+      [
+       " muchas",
+       -3.839
+      ],
+      [
+       " viel",
+       -3.595
+      ],
+      [
+       "uch",
+       -3.37
+      ],
+      [
+       " beaucoup",
+       -2.895
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.022,
+     "raw_lens_top10_overlap": 9,
+     "top1_z": 50.96,
+     "top1_value": -14.417,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " much"
+      ],
+      "cited": {}
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " much",
+       "rank": 1,
+       "value": -14.417,
+       "z": 50.96
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 1,
+     "claimed_in_top100": 1,
+     "claimed_total": 1,
+     "behaviour": {
+      "n_firings_past_q999": 4233,
+      "n_sampled": 2000,
+      "q999_mag": 14.201811790466309,
+      "hit_top10": 19,
+      "hit_top10_rate": 0.0095,
+      "hit_top10_ci95": [
+       0.0061,
+       0.0148
+      ],
+      "base_rate_top10": 0.000686,
+      "enrichment_top10": 13.9,
+      "cur_hit_top10_rate": 0.0125,
+      "hit_top100_rate": 0.018,
+      "base_rate_top100": 0.00194,
+      "median_rank_percentile_of_actual_next": 0.33,
+      "hit_claimed_rate": 0.009,
+      "base_rate_claimed": 0.000639,
+      "enrichment_claimed": 14.1,
+      "strongest100_hit_top10_rate": 0.06,
+      "control_hit_top10_rate": 0.0037,
+      "control_n": 3000
+     }
+    }
+   }
+  },
+  "L48-N20456": {
+   "layer": 48,
+   "neuron": 20456,
+   "file": "explanations/L48/L48-N20456.yaml",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       " imaginary",
+       6.905
+      ],
+      [
+       " imagined",
+       6.685
+      ],
+      [
+       " supposed",
+       6.011
+      ],
+      [
+       " fict",
+       5.79
+      ],
+      [
+       " phantom",
+       5.33
+      ],
+      [
+       " fictional",
+       5.227
+      ],
+      [
+       " nonexistent",
+       5.115
+      ],
+      [
+       " alleged",
+       4.982
+      ],
+      [
+       " perceived",
+       4.928
+      ],
+      [
+       "imag",
+       4.746
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.013,
+     "raw_lens_top10_overlap": 10,
+     "top1_z": 23.63,
+     "top1_value": 6.905,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " imaginary",
+       " imagined",
+       " supposed",
+       " fictional",
+       " phantom",
+       " nonexistent",
+       " alleged",
+       " perceived"
+      ],
+      "cited": {}
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " supposed",
+       "rank": 3,
+       "value": 6.011,
+       "z": 20.54
+      },
+      {
+       "token": " alleged",
+       "rank": 8,
+       "value": 4.982,
+       "z": 16.98
+      },
+      {
+       "token": " perceived",
+       "rank": 9,
+       "value": 4.928,
+       "z": 16.8
+      },
+      {
+       "token": " imagined",
+       "rank": 2,
+       "value": 6.685,
+       "z": 22.87
+      },
+      {
+       "token": " fictional",
+       "rank": 6,
+       "value": 5.227,
+       "z": 17.83
+      },
+      {
+       "token": " imaginary",
+       "rank": 1,
+       "value": 6.905,
+       "z": 23.63
+      },
+      {
+       "token": " phantom",
+       "rank": 5,
+       "value": 5.33,
+       "z": 18.19
+      },
+      {
+       "token": " nonexistent",
+       "rank": 7,
+       "value": 5.115,
+       "z": 17.44
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 8,
+     "claimed_in_top100": 8,
+     "claimed_total": 8,
+     "behaviour": {
+      "n_firings_past_q999": 5137,
+      "n_sampled": 2000,
+      "q999_mag": 11.139739036560059,
+      "hit_top10": 21,
+      "hit_top10_rate": 0.0105,
+      "hit_top10_ci95": [
+       0.0069,
+       0.016
+      ],
+      "base_rate_top10": 0.000102,
+      "enrichment_top10": 103.0,
+      "cur_hit_top10_rate": 0.0015,
+      "hit_top100_rate": 0.0235,
+      "base_rate_top100": 0.00229,
+      "median_rank_percentile_of_actual_next": 0.61,
+      "hit_claimed_rate": 0.01,
+      "base_rate_claimed": 9.8e-05,
+      "enrichment_claimed": 101.9,
+      "strongest100_hit_top10_rate": 0.07,
+      "control_hit_top10_rate": 0.0,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       " potentially",
+       -1.836
+      ],
+      [
+       " apparently",
+       -1.478
+      ],
+      [
+       " possibly",
+       -1.416
+      ],
+      [
+       " Possibly",
+       -1.355
+      ],
+      [
+       " seemingly",
+       -1.336
+      ],
+      [
+       " promising",
+       -1.243
+      ],
+      [
+       " Apparently",
+       -1.2
+      ],
+      [
+       "Apparently",
+       -1.186
+      ],
+      [
+       " reportedly",
+       -1.139
+      ],
+      [
+       "Poss",
+       -1.116
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.005,
+     "raw_lens_top10_overlap": 9,
+     "top1_z": 6.58,
+     "top1_value": -1.836,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " potentially",
+       " apparently",
+       " possibly",
+       " seemingly",
+       " reportedly"
+      ],
+      "cited": {},
+      "also_said": "only weakly"
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " possibly",
+       "rank": 3,
+       "value": -1.416,
+       "z": 5.13
+      },
+      {
+       "token": " potentially",
+       "rank": 1,
+       "value": -1.836,
+       "z": 6.58
+      },
+      {
+       "token": " apparently",
+       "rank": 2,
+       "value": -1.478,
+       "z": 5.34
+      },
+      {
+       "token": " reportedly",
+       "rank": 9,
+       "value": -1.139,
+       "z": 4.17
+      },
+      {
+       "token": " seemingly",
+       "rank": 5,
+       "value": -1.336,
+       "z": 4.85
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 5,
+     "claimed_in_top100": 5,
+     "claimed_total": 5,
+     "behaviour": {
+      "n_firings_past_q999": 307,
+      "n_sampled": 307,
+      "q999_mag": 4.216965198516846,
+      "hit_top10": 0,
+      "hit_top10_rate": 0.0,
+      "hit_top10_ci95": [
+       0.0,
+       0.0124
+      ],
+      "base_rate_top10": 0.000153,
+      "enrichment_top10": 0.0,
+      "cur_hit_top10_rate": 0.0,
+      "hit_top100_rate": 0.0261,
+      "base_rate_top100": 0.00091,
+      "median_rank_percentile_of_actual_next": 0.303,
+      "hit_claimed_rate": 0.0,
+      "base_rate_claimed": 0.000128,
+      "enrichment_claimed": 0.0,
+      "strongest100_hit_top10_rate": 0.0,
+      "control_hit_top10_rate": 0.0,
+      "control_n": 3000
+     }
+    }
+   }
+  },
+  "L41-N12578": {
+   "layer": 41,
+   "neuron": 12578,
+   "file": "explanations/L41/L41-N12578.yaml",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       "\tthe",
+       3.007
+      ],
+      [
+       " the",
+       2.781
+      ],
+      [
+       "the",
+       2.632
+      ],
+      [
+       ",the",
+       2.396
+      ],
+      [
+       "theValue",
+       2.155
+      ],
+      [
+       "_the",
+       2.042
+      ],
+      [
+       ":The",
+       2.029
+      ],
+      [
+       "The",
+       1.913
+      ],
+      [
+       ".the",
+       1.883
+      ],
+      [
+       " teh",
+       1.874
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.007,
+     "raw_lens_top10_overlap": 8,
+     "top1_z": 9.89,
+     "top1_value": 3.007,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " the",
+       "the",
+       " The"
+      ],
+      "cited": {},
+      "also_said": "'the' in several forms"
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " the",
+       "rank": 2,
+       "value": 2.781,
+       "z": 9.12
+      },
+      {
+       "token": " The",
+       "rank": 22,
+       "value": 1.5,
+       "z": 4.74
+      },
+      {
+       "token": "the",
+       "rank": 3,
+       "value": 2.632,
+       "z": 8.61
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 2,
+     "claimed_in_top100": 3,
+     "claimed_total": 3,
+     "behaviour": {
+      "n_firings_past_q999": 5090,
+      "n_sampled": 2000,
+      "q999_mag": 8.737883567810059,
+      "hit_top10": 651,
+      "hit_top10_rate": 0.3255,
+      "hit_top10_ci95": [
+       0.3053,
+       0.3464
+      ],
+      "base_rate_top10": 0.038775,
+      "enrichment_top10": 8.4,
+      "cur_hit_top10_rate": 0.025,
+      "hit_top100_rate": 0.3555,
+      "base_rate_top100": 0.0425,
+      "median_rank_percentile_of_actual_next": 0.564,
+      "hit_claimed_rate": 0.335,
+      "base_rate_claimed": 0.040419,
+      "enrichment_claimed": 8.3,
+      "strongest100_hit_top10_rate": 0.7,
+      "control_hit_top10_rate": 0.036,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       " another",
+       -4.724
+      ],
+      [
+       " others",
+       -4.581
+      ],
+      [
+       " other",
+       -4.406
+      ],
+      [
+       "others",
+       -4.351
+      ],
+      [
+       "another",
+       -4.074
+      ],
+      [
+       "other",
+       -3.896
+      ],
+      [
+       " Another",
+       -3.476
+      ],
+      [
+       " OTHER",
+       -3.465
+      ],
+      [
+       " Others",
+       -3.429
+      ],
+      [
+       "Others",
+       -3.26
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.012,
+     "raw_lens_top10_overlap": 10,
+     "top1_z": 16.53,
+     "top1_value": -4.724,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " another",
+       " others",
+       " other"
+      ],
+      "cited": {}
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " other",
+       "rank": 3,
+       "value": -4.406,
+       "z": 15.44
+      },
+      {
+       "token": " another",
+       "rank": 1,
+       "value": -4.724,
+       "z": 16.53
+      },
+      {
+       "token": " others",
+       "rank": 2,
+       "value": -4.581,
+       "z": 16.04
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 3,
+     "claimed_in_top100": 3,
+     "claimed_total": 3,
+     "behaviour": {
+      "n_firings_past_q999": 4192,
+      "n_sampled": 2000,
+      "q999_mag": 4.572526931762695,
+      "hit_top10": 308,
+      "hit_top10_rate": 0.154,
+      "hit_top10_ci95": [
+       0.1388,
+       0.1705
+      ],
+      "base_rate_top10": 0.001902,
+      "enrichment_top10": 81.0,
+      "cur_hit_top10_rate": 0.0,
+      "hit_top100_rate": 0.268,
+      "base_rate_top100": 0.00373,
+      "median_rank_percentile_of_actual_next": 0.268,
+      "hit_claimed_rate": 0.1525,
+      "base_rate_claimed": 0.001825,
+      "enrichment_claimed": 83.6,
+      "strongest100_hit_top10_rate": 0.42,
+      "control_hit_top10_rate": 0.002,
+      "control_n": 3000
+     }
+    }
+   }
+  },
+  "L38-N24400": {
+   "layer": 38,
+   "neuron": 24400,
+   "file": "explanations/L38/L38-N24400.yaml",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       "ILING",
+       1.692
+      ],
+      [
+       " Tate",
+       1.685
+      ],
+      [
+       "AMS",
+       1.658
+      ],
+      [
+       "aal",
+       1.643
+      ],
+      [
+       " Desire",
+       1.607
+      ],
+      [
+       " consul",
+       1.606
+      ],
+      [
+       "erah",
+       1.599
+      ],
+      [
+       "idor",
+       1.591
+      ],
+      [
+       "Net",
+       1.566
+      ],
+      [
+       " Nah",
+       1.551
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.004,
+     "raw_lens_top10_overlap": 8,
+     "top1_z": 4.55,
+     "top1_value": 1.692,
+     "claim": {
+      "kind": "noise",
+      "tokens": []
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [],
+     "behaviour": {
+      "n_firings_past_q999": 1468,
+      "n_sampled": 1468,
+      "q999_mag": 2.392799139022827,
+      "hit_top10": 0,
+      "hit_top10_rate": 0.0,
+      "hit_top10_ci95": [
+       0.0,
+       0.0026
+      ],
+      "base_rate_top10": 2e-05,
+      "enrichment_top10": 0.0,
+      "cur_hit_top10_rate": 0.0,
+      "hit_top100_rate": 0.0,
+      "base_rate_top100": 0.00034,
+      "median_rank_percentile_of_actual_next": 0.387,
+      "strongest100_hit_top10_rate": 0.0,
+      "control_hit_top10_rate": 0.0,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       " enough",
+       -14.883
+      ],
+      [
+       " Enough",
+       -12.422
+      ],
+      [
+       " sufficiently",
+       -11.35
+      ],
+      [
+       "Enough",
+       -10.986
+      ],
+      [
+       " sufficient",
+       -10.901
+      ],
+      [
+       "ufficient",
+       -6.302
+      ],
+      [
+       " suf",
+       -6.223
+      ],
+      [
+       " adequately",
+       -5.982
+      ],
+      [
+       " suffice",
+       -5.768
+      ],
+      [
+       " adequate",
+       -5.742
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.026,
+     "raw_lens_top10_overlap": 10,
+     "top1_z": 45.91,
+     "top1_value": -14.883,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " enough",
+       " Enough",
+       " sufficiently",
+       " sufficient",
+       " adequately"
+      ],
+      "cited": {
+       " enough": -14.9,
+       " Enough": -12.4,
+       " sufficiently": -11.4,
+       " sufficient": -10.9,
+       " adequately": -6.0
+      }
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " enough",
+       "rank": 1,
+       "value": -14.883,
+       "z": 45.91
+      },
+      {
+       "token": " sufficient",
+       "rank": 5,
+       "value": -10.901,
+       "z": 33.79
+      },
+      {
+       "token": " sufficiently",
+       "rank": 3,
+       "value": -11.35,
+       "z": 35.15
+      },
+      {
+       "token": " adequately",
+       "rank": 8,
+       "value": -5.982,
+       "z": 18.81
+      },
+      {
+       "token": " Enough",
+       "rank": 2,
+       "value": -12.422,
+       "z": 38.41
+      }
+     ],
+     "cited_check": [
+      {
+       "token": " enough",
+       "cited": -14.9,
+       "ours": -14.883
+      },
+      {
+       "token": " Enough",
+       "cited": -12.4,
+       "ours": -12.422
+      },
+      {
+       "token": " sufficiently",
+       "cited": -11.4,
+       "ours": -11.35
+      },
+      {
+       "token": " sufficient",
+       "cited": -10.9,
+       "ours": -10.901
+      },
+      {
+       "token": " adequately",
+       "cited": -6.0,
+       "ours": -5.982
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 5,
+     "claimed_in_top100": 5,
+     "claimed_total": 5,
+     "behaviour": {
+      "n_firings_past_q999": 4026,
+      "n_sampled": 2000,
+      "q999_mag": 8.058422088623047,
+      "hit_top10": 321,
+      "hit_top10_rate": 0.1605,
+      "hit_top10_ci95": [
+       0.1451,
+       0.1772
+      ],
+      "base_rate_top10": 0.000321,
+      "enrichment_top10": 500.6,
+      "cur_hit_top10_rate": 0.0145,
+      "hit_top100_rate": 0.2025,
+      "base_rate_top100": 0.0018,
+      "median_rank_percentile_of_actual_next": 0.321,
+      "hit_claimed_rate": 0.16,
+      "base_rate_claimed": 0.000293,
+      "enrichment_claimed": 545.8,
+      "strongest100_hit_top10_rate": 0.63,
+      "control_hit_top10_rate": 0.0,
+      "control_n": 3000
+     }
+    }
+   }
+  },
+  "L39-N21755": {
+   "layer": 39,
+   "neuron": 21755,
+   "file": "explanations/L39/L39-N21755.yaml",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       " cres",
+       1.517
+      ],
+      [
+       " Sons",
+       1.453
+      ],
+      [
+       " Autos",
+       1.387
+      ],
+      [
+       " Treasure",
+       1.353
+      ],
+      [
+       "icas",
+       1.334
+      ],
+      [
+       "CX",
+       1.326
+      ],
+      [
+       "omi",
+       1.31
+      ],
+      [
+       "pare",
+       1.293
+      ],
+      [
+       "398",
+       1.269
+      ],
+      [
+       "rud",
+       1.255
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.005,
+     "raw_lens_top10_overlap": 8,
+     "top1_z": 5.05,
+     "top1_value": 1.517,
+     "claim": {
+      "kind": "noise",
+      "tokens": [],
+      "cited": {},
+      "also_said": "top is noise (max 1.52)"
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [],
+     "behaviour": {
+      "n_firings_past_q999": 2926,
+      "n_sampled": 2000,
+      "q999_mag": 2.392799139022827,
+      "hit_top10": 0,
+      "hit_top10_rate": 0.0,
+      "hit_top10_ci95": [
+       0.0,
+       0.0019
+      ],
+      "base_rate_top10": 2.8e-05,
+      "enrichment_top10": 0.0,
+      "cur_hit_top10_rate": 0.0,
+      "hit_top100_rate": 0.0,
+      "base_rate_top100": 0.00057,
+      "median_rank_percentile_of_actual_next": 0.662,
+      "strongest100_hit_top10_rate": 0.0,
+      "control_hit_top10_rate": 0.0,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       " to",
+       -2.507
+      ],
+      [
+       " be",
+       -2.001
+      ],
+      [
+       "-to",
+       -1.83
+      ],
+      [
+       "to",
+       -1.522
+      ],
+      [
+       " toi",
+       -1.438
+      ],
+      [
+       "\tto",
+       -1.415
+      ],
+      [
+       "toBe",
+       -1.389
+      ],
+      [
+       " belong",
+       -1.362
+      ],
+      [
+       " suppose",
+       -1.344
+      ],
+      [
+       "/tree",
+       -1.304
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.007,
+     "raw_lens_top10_overlap": 10,
+     "top1_z": 9.27,
+     "top1_value": -2.507,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " to",
+       " be",
+       "-to",
+       "to"
+      ],
+      "cited": {
+       " to": -2.5,
+       " be": -2.0,
+       "-to": -1.83,
+       "to": -1.52
+      },
+      "also_said": "weak but on topic"
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " to",
+       "rank": 1,
+       "value": -2.507,
+       "z": 9.27
+      },
+      {
+       "token": " be",
+       "rank": 2,
+       "value": -2.001,
+       "z": 7.47
+      },
+      {
+       "token": "to",
+       "rank": 4,
+       "value": -1.522,
+       "z": 5.76
+      },
+      {
+       "token": "-to",
+       "rank": 3,
+       "value": -1.83,
+       "z": 6.86
+      }
+     ],
+     "cited_check": [
+      {
+       "token": " to",
+       "cited": -2.5,
+       "ours": -2.507
+      },
+      {
+       "token": " be",
+       "cited": -2.0,
+       "ours": -2.001
+      },
+      {
+       "token": "-to",
+       "cited": -1.83,
+       "ours": -1.83
+      },
+      {
+       "token": "to",
+       "cited": -1.52,
+       "ours": -1.522
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 4,
+     "claimed_in_top100": 4,
+     "claimed_total": 4,
+     "behaviour": {
+      "n_firings_past_q999": 5130,
+      "n_sampled": 2000,
+      "q999_mag": 3.307739019393921,
+      "hit_top10": 482,
+      "hit_top10_rate": 0.241,
+      "hit_top10_ci95": [
+       0.2228,
+       0.2602
+      ],
+      "base_rate_top10": 0.02521,
+      "enrichment_top10": 9.6,
+      "cur_hit_top10_rate": 0.195,
+      "hit_top100_rate": 0.248,
+      "base_rate_top100": 0.02604,
+      "median_rank_percentile_of_actual_next": 0.144,
+      "hit_claimed_rate": 0.241,
+      "base_rate_claimed": 0.025182,
+      "enrichment_claimed": 9.6,
+      "strongest100_hit_top10_rate": 0.94,
+      "control_hit_top10_rate": 0.046,
+      "control_n": 3000
+     }
+    }
+   }
+  },
+  "L44-N10594": {
+   "layer": 44,
+   "neuron": 10594,
+   "file": "explanations/L44/L44-N10594.yaml",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       " QB",
+       5.51
+      ],
+      [
+       " quarterback",
+       5.416
+      ],
+      [
+       " quarterbacks",
+       5.328
+      ],
+      [
+       "QB",
+       4.806
+      ],
+      [
+       " linebacker",
+       4.645
+      ],
+      [
+       " NFL",
+       4.614
+      ],
+      [
+       " lineback",
+       4.594
+      ],
+      [
+       " football",
+       4.5
+      ],
+      [
+       " receivers",
+       4.414
+      ],
+      [
+       " Football",
+       4.327
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.015,
+     "raw_lens_top10_overlap": 10,
+     "top1_z": 14.36,
+     "top1_value": 5.51,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " QB",
+       " quarterback",
+       " linebacker",
+       " NFL",
+       " football"
+      ],
+      "cited": {}
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " football",
+       "rank": 8,
+       "value": 4.5,
+       "z": 11.71
+      },
+      {
+       "token": " NFL",
+       "rank": 6,
+       "value": 4.614,
+       "z": 12.0
+      },
+      {
+       "token": " quarterback",
+       "rank": 2,
+       "value": 5.416,
+       "z": 14.11
+      },
+      {
+       "token": " QB",
+       "rank": 1,
+       "value": 5.51,
+       "z": 14.36
+      },
+      {
+       "token": " linebacker",
+       "rank": 5,
+       "value": 4.645,
+       "z": 12.09
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 5,
+     "claimed_in_top100": 5,
+     "claimed_total": 5,
+     "behaviour": {
+      "n_firings_past_q999": 4014,
+      "n_sampled": 2000,
+      "q999_mag": 19.632190704345703,
+      "hit_top10": 31,
+      "hit_top10_rate": 0.0155,
+      "hit_top10_ci95": [
+       0.0109,
+       0.0219
+      ],
+      "base_rate_top10": 8.8e-05,
+      "enrichment_top10": 176.7,
+      "cur_hit_top10_rate": 0.017,
+      "hit_top100_rate": 0.0505,
+      "base_rate_top100": 0.00047,
+      "median_rank_percentile_of_actual_next": 0.384,
+      "hit_claimed_rate": 0.0125,
+      "base_rate_claimed": 7.1e-05,
+      "enrichment_claimed": 177.0,
+      "strongest100_hit_top10_rate": 0.01,
+      "control_hit_top10_rate": 0.0003,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       " forwards",
+       -2.301
+      ],
+      [
+       " foul",
+       -2.161
+      ],
+      [
+       " Shooting",
+       -2.14
+      ],
+      [
+       " baskets",
+       -2.104
+      ],
+      [
+       " fou",
+       -2.018
+      ],
+      [
+       " buz",
+       -2.008
+      ],
+      [
+       " shooting",
+       -1.99
+      ],
+      [
+       " tournament",
+       -1.966
+      ],
+      [
+       "MSC",
+       -1.821
+      ],
+      [
+       " Floor",
+       -1.8
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.007,
+     "raw_lens_top10_overlap": 9,
+     "top1_z": 6.16,
+     "top1_value": -2.301,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " forwards",
+       " foul",
+       " Shooting",
+       " baskets",
+       " tournament",
+       " Floor"
+      ],
+      "cited": {}
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " tournament",
+       "rank": 8,
+       "value": -1.966,
+       "z": 5.28
+      },
+      {
+       "token": " Floor",
+       "rank": 10,
+       "value": -1.8,
+       "z": 4.84
+      },
+      {
+       "token": " foul",
+       "rank": 2,
+       "value": -2.161,
+       "z": 5.79
+      },
+      {
+       "token": " forwards",
+       "rank": 1,
+       "value": -2.301,
+       "z": 6.16
+      },
+      {
+       "token": " Shooting",
+       "rank": 3,
+       "value": -2.14,
+       "z": 5.74
+      },
+      {
+       "token": " baskets",
+       "rank": 4,
+       "value": -2.104,
+       "z": 5.64
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 6,
+     "claimed_in_top100": 6,
+     "claimed_total": 6,
+     "behaviour": {
+      "n_firings_past_q999": 3816,
+      "n_sampled": 2000,
+      "q999_mag": 14.201811790466309,
+      "hit_top10": 3,
+      "hit_top10_rate": 0.0015,
+      "hit_top10_ci95": [
+       0.0005,
+       0.0044
+      ],
+      "base_rate_top10": 7.2e-05,
+      "enrichment_top10": 20.8,
+      "cur_hit_top10_rate": 0.0,
+      "hit_top100_rate": 0.0075,
+      "base_rate_top100": 0.0006,
+      "median_rank_percentile_of_actual_next": 0.443,
+      "hit_claimed_rate": 0.0015,
+      "base_rate_claimed": 3.9e-05,
+      "enrichment_claimed": 38.3,
+      "strongest100_hit_top10_rate": 0.0,
+      "control_hit_top10_rate": 0.0,
+      "control_n": 3000
+     }
+    }
+   }
+  },
+  "L42-N970": {
+   "layer": 42,
+   "neuron": 970,
+   "file": "explanations/L42/L42-N970.yaml",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       " Christians",
+       3.026
+      ],
+      [
+       " believers",
+       2.638
+      ],
+      [
+       " brothers",
+       2.615
+      ],
+      [
+       " believer",
+       2.482
+      ],
+      [
+       " Christian",
+       2.27
+      ],
+      [
+       " Brothers",
+       2.199
+      ],
+      [
+       " Bel",
+       2.162
+      ],
+      [
+       " sisters",
+       2.098
+      ],
+      [
+       " Christianity",
+       2.012
+      ],
+      [
+       " siblings",
+       1.997
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.006,
+     "raw_lens_top10_overlap": 10,
+     "top1_z": 9.09,
+     "top1_value": 3.026,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " Christians",
+       " believers",
+       " brothers",
+       " sisters",
+       " Christianity"
+      ],
+      "cited": {}
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " brothers",
+       "rank": 3,
+       "value": 2.615,
+       "z": 7.88
+      },
+      {
+       "token": " Christians",
+       "rank": 1,
+       "value": 3.026,
+       "z": 9.09
+      },
+      {
+       "token": " sisters",
+       "rank": 8,
+       "value": 2.098,
+       "z": 6.35
+      },
+      {
+       "token": " Christianity",
+       "rank": 9,
+       "value": 2.012,
+       "z": 6.1
+      },
+      {
+       "token": " believers",
+       "rank": 2,
+       "value": 2.638,
+       "z": 7.95
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 5,
+     "claimed_in_top100": 5,
+     "claimed_total": 5,
+     "behaviour": {
+      "n_firings_past_q999": 4157,
+      "n_sampled": 2000,
+      "q999_mag": 13.097472190856934,
+      "hit_top10": 59,
+      "hit_top10_rate": 0.0295,
+      "hit_top10_ci95": [
+       0.0229,
+       0.0379
+      ],
+      "base_rate_top10": 0.000197,
+      "enrichment_top10": 149.5,
+      "cur_hit_top10_rate": 0.0205,
+      "hit_top100_rate": 0.043,
+      "base_rate_top100": 0.00104,
+      "median_rank_percentile_of_actual_next": 0.577,
+      "hit_claimed_rate": 0.0175,
+      "base_rate_claimed": 9.3e-05,
+      "enrichment_claimed": 188.3,
+      "strongest100_hit_top10_rate": 0.12,
+      "control_hit_top10_rate": 0.0,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       " Jonah",
+       -3.409
+      ],
+      [
+       " Luke",
+       -2.996
+      ],
+      [
+       " evangel",
+       -2.7
+      ],
+      [
+       " preaching",
+       -2.596
+      ],
+      [
+       "Luke",
+       -2.552
+      ],
+      [
+       " missionary",
+       -2.467
+      ],
+      [
+       " Noah",
+       -2.443
+      ],
+      [
+       " preached",
+       -2.415
+      ],
+      [
+       " mission",
+       -2.341
+      ],
+      [
+       " Elijah",
+       -2.262
+      ]
+     ],
+     "atlas_top10_overlap": 9,
+     "atlas_value_max_abs_diff_on_common": 0.007,
+     "raw_lens_top10_overlap": 9,
+     "top1_z": 9.9,
+     "top1_value": -3.409,
+     "claim": {
+      "kind": "promotes",
+      "tokens": [
+       " Jonah",
+       " Luke",
+       " evangel",
+       " preaching",
+       " missionary",
+       " Noah",
+       " preached"
+      ],
+      "cited": {}
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [
+      {
+       "token": " Luke",
+       "rank": 2,
+       "value": -2.996,
+       "z": 8.68
+      },
+      {
+       "token": " evangel",
+       "rank": 3,
+       "value": -2.7,
+       "z": 7.8
+      },
+      {
+       "token": " Noah",
+       "rank": 7,
+       "value": -2.443,
+       "z": 7.04
+      },
+      {
+       "token": " preaching",
+       "rank": 4,
+       "value": -2.596,
+       "z": 7.5
+      },
+      {
+       "token": " missionary",
+       "rank": 6,
+       "value": -2.467,
+       "z": 7.12
+      },
+      {
+       "token": " preached",
+       "rank": 8,
+       "value": -2.415,
+       "z": 6.96
+      },
+      {
+       "token": " Jonah",
+       "rank": 1,
+       "value": -3.409,
+       "z": 9.9
+      }
+     ],
+     "verdict_rule_based": "agree",
+     "claimed_in_top10": 7,
+     "claimed_in_top100": 7,
+     "claimed_total": 7,
+     "behaviour": {
+      "n_firings_past_q999": 4053,
+      "n_sampled": 2000,
+      "q999_mag": 12.079007148742676,
+      "hit_top10": 46,
+      "hit_top10_rate": 0.023,
+      "hit_top10_ci95": [
+       0.0173,
+       0.0305
+      ],
+      "base_rate_top10": 0.00011,
+      "enrichment_top10": 209.2,
+      "cur_hit_top10_rate": 0.011,
+      "hit_top100_rate": 0.076,
+      "base_rate_top100": 0.0007,
+      "median_rank_percentile_of_actual_next": 0.276,
+      "hit_claimed_rate": 0.018,
+      "base_rate_claimed": 5e-05,
+      "enrichment_claimed": 360.6,
+      "strongest100_hit_top10_rate": 0.01,
+      "control_hit_top10_rate": 0.0003,
+      "control_n": 3000
+     }
+    }
+   }
+  },
+  "L38-N6175": {
+   "layer": 38,
+   "neuron": 6175,
+   "file": "(open PR #217)",
+   "poles": {
+    "pos": {
+     "top10": [
+      [
+       "orc",
+       1.427
+      ],
+      [
+       " thing",
+       1.344
+      ],
+      [
+       "(dat",
+       1.341
+      ],
+      [
+       "/do",
+       1.333
+      ],
+      [
+       " place",
+       1.304
+      ],
+      [
+       "hhh",
+       1.284
+      ],
+      [
+       ".include",
+       1.283
+      ],
+      [
+       "orce",
+       1.275
+      ],
+      [
+       "hal",
+       1.26
+      ],
+      [
+       "/as",
+       1.247
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.006,
+     "raw_lens_top10_overlap": 9,
+     "top1_z": 5.15,
+     "top1_value": 1.427,
+     "claim": {
+      "kind": "none",
+      "tokens": []
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [],
+     "behaviour": {
+      "n_firings_past_q999": 4582,
+      "n_sampled": 2000,
+      "q999_mag": 3.5866377353668213,
+      "hit_top10": 2,
+      "hit_top10_rate": 0.001,
+      "hit_top10_ci95": [
+       0.0003,
+       0.0036
+      ],
+      "base_rate_top10": 0.000659,
+      "enrichment_top10": 1.5,
+      "cur_hit_top10_rate": 0.0,
+      "hit_top100_rate": 0.003,
+      "base_rate_top100": 0.00128,
+      "median_rank_percentile_of_actual_next": 0.613,
+      "strongest100_hit_top10_rate": 0.0,
+      "control_hit_top10_rate": 0.0023,
+      "control_n": 3000
+     }
+    },
+    "neg": {
+     "top10": [
+      [
+       "ORT",
+       -1.387
+      ],
+      [
+       " dese",
+       -1.319
+      ],
+      [
+       " (),",
+       -1.235
+      ],
+      [
+       " Bez",
+       -1.232
+      ],
+      [
+       " PURE",
+       -1.205
+      ],
+      [
+       " COLL",
+       -1.199
+      ],
+      [
+       "Resource",
+       -1.197
+      ],
+      [
+       " these",
+       -1.181
+      ],
+      [
+       " Vox",
+       -1.177
+      ],
+      [
+       "amak",
+       -1.175
+      ]
+     ],
+     "atlas_top10_overlap": 10,
+     "atlas_value_max_abs_diff_on_common": 0.005,
+     "raw_lens_top10_overlap": 6,
+     "top1_z": 5.16,
+     "top1_value": -1.387,
+     "claim": {
+      "kind": "none",
+      "tokens": []
+     },
+     "claim_missing_tokens": [],
+     "claim_tokens": [],
+     "behaviour": {
+      "n_firings_past_q999": 2333,
+      "n_sampled": 2000,
+      "q999_mag": 2.392799139022827,
+      "hit_top10": 16,
+      "hit_top10_rate": 0.008,
+      "hit_top10_ci95": [
+       0.0049,
+       0.013
+      ],
+      "base_rate_top10": 0.000903,
+      "enrichment_top10": 8.9,
+      "cur_hit_top10_rate": 0.0,
+      "hit_top100_rate": 0.008,
+      "base_rate_top100": 0.00141,
+      "median_rank_percentile_of_actual_next": 0.175,
+      "strongest100_hit_top10_rate": 0.01,
+      "control_hit_top10_rate": 0.0007,
+      "control_n": 3000
+     }
+    }
+   }
+  }
+ },
+ "controls": {
+  "38": [
+   4683,
+   23986,
+   6363,
+   9812,
+   8555,
+   7348,
+   18955,
+   1027,
+   11795,
+   3573
+  ],
+  "39": [
+   8670,
+   21686,
+   13388,
+   23598,
+   12188,
+   21890,
+   2205,
+   4713,
+   714,
+   1910
+  ],
+  "41": [
+   22543,
+   9212,
+   22425,
+   404,
+   9156,
+   16958,
+   2653,
+   24364,
+   12464,
+   27254
+  ],
+  "42": [
+   26703,
+   9976,
+   7825,
+   18541,
+   13765,
+   25254,
+   2342,
+   10586,
+   13199,
+   23151
+  ],
+  "43": [
+   24924,
+   5741,
+   6404,
+   1570,
+   11741,
+   12307,
+   22969,
+   19028,
+   9699,
+   16275
+  ],
+  "44": [
+   4796,
+   20468,
+   16542,
+   6803,
+   23473,
+   16676,
+   18621,
+   3592,
+   83,
+   7662
+  ],
+  "45": [
+   1184,
+   13696,
+   18952,
+   5201,
+   11012,
+   21590,
+   7484,
+   6658,
+   3808,
+   14656
+  ],
+  "47": [
+   17941,
+   18555,
+   2836,
+   23564,
+   13077,
+   24095,
+   9819,
+   1671,
+   9603,
+   1776
+  ],
+  "48": [
+   25351,
+   102,
+   26391,
+   19580,
+   20575,
+   14471,
+   7831,
+   27415,
+   27215,
+   3736
+  ],
+  "49": [
+   7203,
+   17512,
+   4109,
+   10919,
+   14929,
+   24941,
+   21694,
+   24809,
+   10398,
+   4904
+  ]
+ },
+ "vocab_size": 128256
+}

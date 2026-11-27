@@ -1,0 +1,39 @@
+neuron: L57-N3872
+data: pilot/fineweb-1m
+label: "always-on positive baseline, no selectivity"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: none
+  explanation: >-
+    Always-on rather than selective: frac_pos = 1.0000 in this pilot (min 5.59 over 1,000,983
+    tokens; the fineweb-10m pilot agrees, min 3.83), and the twelve top exemplars are heterogeneous
+    high-frequency tokens ('ĠESL', 'By', 'Ġcyber', 'Ġrepaired', ',', 'Ġonly', 'Ġfalling',
+    'Ġstomach', 'Ġwhen', 'Ġopportunity', 'Ġthem', 'Ġfree') drawn from SEO/boilerplate-heavy web
+    pages, with no token-type or topic concentration. The dense capybara-v1 probe has it as the
+    top-1 neuron on all 253 prompts with a flat profile across prompt sets (pairs 98.97 vs
+    unrelated 97.73) and across the ten animal substitutions (capybara 100.51 vs dog 101.60). The
+    logit lens pushes generic prose continuations (' the', newline tokens) and down-weights
+    'advertisement', consistent with a register baseline rather than a content feature.
+  fires_on: "everything recorded so far: every token of both pilot corpora, and it is the top neuron on all 253 capybara-v1 probe prompts"
+  not_on: "nothing observed; the prediction that its magnitude drops below the atlas q99 on short, simple sentences is pre-registered in L57-N3872-001, untested"
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  verification: requested
+negative:
+  status: silent
+  cue_type: none
+  explanation: >-
+    Never fires negative on this corpus: min 5.59 with no negative exemplar rows, neg_q99 = 0. The
+    fineweb-10m pilot agrees (min 3.83).
+  fires_on: "nothing"
+  not_on: "everything (no negative activations recorded in either pilot)"
+  evidence: []
+  verification: untested
+relation: none
+relation_note: >-
+  The negative side is silent and the positive side has no selective cue, so there is no relation
+  between two patterns to state.
+by:
+  github: alexcasper
+  method: agent
+  model: "glm-5.3-flash (zai)"

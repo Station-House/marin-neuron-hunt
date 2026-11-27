@@ -1,0 +1,39 @@
+# Activation test (type A) for L57-N3872+, testing the always-on/register reading.
+# Should-fire prompts put common function/content words inside long boilerplate/SEO-style
+# passages (the exemplar regime); should-not-fire prompts put the SAME word types in short,
+# simple sentences. Same-token near-miss contrast, pre-registered before any run output.
+type: activation-test
+neuron: L57-N3872
+side: "+"
+hypothesis: >-
+  The + side is an always-on register baseline: it exceeds the atlas q99 on common-word tokens
+  inside long, boilerplate/SEO-style passages and stays below it on the same word types inside
+  short, simple sentences, with no token-class or topic selectivity beyond that register split.
+should_fire:
+  - "Welcome to our vacation resources hub[[,]] where you will find honest reviews, guides, and seasonal discounts for every destination our editors have visited in the past year, updated weekly by the team."
+  - "Get started today and download the toolkit with your[[ free]] trial, which includes every template, checklist, and walkthrough our members use to launch their first campaign in a single weekend."
+  - "The review covers what happens[[ when]] the warranty expires, which repairs are actually covered, and how the service compares with the independent shops our readers asked about most."
+  - "This guide is[[ only]] for readers who want the full breakdown of pricing, specifications, and long-term reliability data we collected across three years of ownership and thousands of miles."
+  - "Most owners recommend them[[ for]] the price alone, but our long-term review found the real differences only show up after the first winter on the road."
+  - "Do not miss the opportunity[[ to]] lock in the early rate before the deadline; the previous enrollment window closed two weeks early once the cohort reached capacity."
+  - "The bundle ships[[ with]] everything in the box, including the mounting hardware, the quick-start card, and a spare gasket kit for the first service interval."
+  - "Reviewed[[ By]] the editors: we tested the budget option against the premium model for a full month, scoring each on setup time, build quality, and support responsiveness."
+  - "The paper needs one more[[ citation]] for the survey claim in section 2, preferably a peer-reviewed source dated within the last five years."
+  - "The mechanic[[ repaired]] the housing instead of replacing it, which kept the repair under the deductible and saved the owner a full week of rental fees."
+  - "Our security desk explains[[ cyber]] insurance basics, what a typical policy actually pays after a breach, and the three questions to ask before signing with any carrier."
+  - "Of all the dishes we tried, only the soup upset my[[ stomach]], and the staff replaced it without being asked, which says a lot about the service here."
+should_not_fire:
+  - "We offer a[[ free]] trial."
+  - "She read it[[ when]] it arrived."
+  - "This guide is[[ only]] a draft."
+  - "I bought them[[ for]] a dollar."
+  - "Get your[[ free]] quote."
+  - "A cup[[ of]] tea, please."
+  - "He left[[ with]] the keys."
+  - "[[By]] then it was too late."
+  - "Tell[[ them]] the news."
+  - "Add one more[[ citation]] here."
+  - "The shop[[ repaired]] it fast."
+  - "My[[ stomach]] hurts today."
+threshold: atlas-q99
+by: {github: alexcasper, method: agent, model: "glm-5.3-flash (zai)"}

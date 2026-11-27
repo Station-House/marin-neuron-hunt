@@ -21,7 +21,7 @@ jobs:
       - run: python scripts/validate.py
       - run: python -m unittest scripts/test_check_claims.py
       - run: python -m unittest scripts/test_check_design.py
-      - run: python -m unittest scripts/test_design_session_note.py
+      - run: python -m unittest scripts/test_check_design_session.py
 
   # Each [[ ]] target must be one Marin token, as the daily runner requires. The log lists every target token.
   tokens:
@@ -84,9 +84,8 @@ jobs:
       - run: python scripts/check_design.py
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
-      # A note, not a gate: requests without a Station House Experimentation Wizard review get a warning.
-      - run: python scripts/design_session_note.py
+      # Requests need a Station House Experimentation Wizard review: a Design-Session: line in the PR description.
+      - run: python scripts/check_design_session.py
         if: always()
-        continue-on-error: true
         env:
           PR_BODY: ${{ github.event.pull_request.body }}

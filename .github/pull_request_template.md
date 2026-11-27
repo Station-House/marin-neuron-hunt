@@ -23,6 +23,13 @@ your copy's number. Credit goes to the GitHub account verified on your Stationho
 
 task #N
 
+<!-- Required for a request PR (CI's `design` check fails without it); delete for an explanation-only PR.
+Run the design through the Experimentation Wizard (Claude Code: the stationhouse plugin; otherwise
+`stationhouse design start`), then paste the line `stationhouse design finalize` gives you. See
+CONTRIBUTING.md, "Before you open the PR". -->
+
+Design-Session: ds_
+
 ## How you investigated
 
 <!-- Data prefix, tools, queries or notebooks. If an agent wrote it, name the model or agent (also in `by`). -->
@@ -63,4 +70,5 @@ requests/<request id>/DESIGN.md instead and link it here. -->
 - [ ] `python scripts/validate.py` passes
 - [ ] I wrote the request's prompts and prediction before seeing any result for them
 - [ ] The `## Design` section is filled in (the `design` check passes)
+- [ ] The design went through the Experimentation Wizard and its `Design-Session:` line is in the credit section
 - [ ] Each marked `[[target]]` is a single token for the Marin tokenizer

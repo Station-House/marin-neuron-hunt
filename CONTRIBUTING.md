@@ -82,8 +82,8 @@ To run it:
 - **Without MCP:** `stationhouse design start "<title>"`, then `stationhouse design round <file>`
   for each round.
 
-A request PR without the line gets a warning in CI and a note on the Station House platform. Both
-are notes, not blocks.
+A request PR without the line fails CI's `design` check. Explanation-only PRs don't need one.
+Run `stationhouse hooks install` once in your clone to catch it before you push.
 
 ## Auto-run
 

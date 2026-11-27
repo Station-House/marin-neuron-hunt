@@ -1,0 +1,37 @@
+# Contrast test for the negative side of L24-N23357 ("a word piece that is not finished yet").
+# Every pair marks the SAME token in both prompts. The model reads left to right, so what decides the
+# activation is the text BEFORE the target: in `high` it signals that a longer word is coming
+# (tall| will|ow), in `low` it signals the token is a whole word (tall man| will| lean). The text after the
+# target only keeps the sentence readable. `high` = predicted more negative.
+# Words were chosen from corpus counts and the tokenizer only; no activations were looked at for them.
+type: contrast
+neuron: L24-N23357
+side: "-"
+pairs:
+  # --- Main pairs (1-9): longer word cued vs whole word in a normal sentence ---
+  - {high: "A tall[[ will]]ow leaned over the pond.", low: "A tall man[[ will]] lean over the pond."}
+  - {high: "They paddled their[[ can]]oes across the lake.", low: "They said they[[ can]] paddle across the lake."}
+  - {high: "The picnic was ruined by a swarm of[[ was]]ps.", low: "The picnic was ruined, and the swarm[[ was]] to blame."}
+  - {high: "Spread a little[[ may]]onnaise on the bread.", low: "If you like, you[[ may]] spread a little on the bread."}
+  - {high: "The swamp is home to dozens of[[ all]]igators.", low: "The swamp is home to[[ all]] kinds of animals."}
+  - {high: "In the canopy we spotted a[[ how]]ler monkey.", low: "In the canopy we spotted[[ how]] the monkey moved."}
+  - {high: "Seal the gaps around the glass with[[ put]]ty.", low: "Seal the gaps, then[[ put]] the glass back."}
+  - {high: "Cheese is made from the milk protein[[ case]]in.", low: "Cheese is made from milk, in[[ case]] you wondered."}
+  - {high: "We booked two romantic weekend[[ get]]aways.", low: "We booked two weekends to[[ get]] away."}
+  # --- SURPRISE CONTROL (10-12) ---
+  # In most `high` prompts above the target would be odd as a whole word ("a swarm of was"), so "fires on
+  # any surprising token" could also pass pairs 1-9. Here `low` puts the same token among random words:
+  # just as out of place, but nothing cues a longer word. If the neuron only tracks surprise, these lows
+  # should be as negative as their highs and these pairs fail. Scored separately as well (rule committed in
+  # the PR's Readout): a mean gap below 0.453 over pairs 10-12 alone, or 2-3 of them going the wrong way,
+  # counts as refuted. Caveat: " but" and " she" can open a clause
+  # almost anywhere, so those two lows are "no sentence structure" rather than strictly ungrammatical.
+  - {high: "The cottage had a[[ that]]ched roof and a red door.", low: "Purple seven ladder quietly ran[[ that]] window spoon green."}
+  - {high: "We bought sausages from the local[[ but]]chers.", low: "Seven ladder purple window green[[ but]] loudly spoon chair."}
+  - {high: "The wax gave the table a glossy[[ she]]en.", low: "Window purple seven spoon ladder[[ she]] green loudly run."}
+  # --- POSITIVE CONTROL (13) ---
+  # The neuron's strongest atlas pattern: a mid-word piece in run-together text (handles, URLs). In `high` the
+  # target follows letters with no space, so it is visibly mid-word; `low` changes only " #" before it, which
+  # starts a new word. This pair shows whether the setup can produce a large gap at all (see the PR's Readout).
+  - {high: "Follow us at @river[[stone]]cafe for opening hours.", low: "Follow us at @river #[[stone]] for opening hours."}
+by: {github: constantine1824, method: agent, model: claude-fable-5-1}

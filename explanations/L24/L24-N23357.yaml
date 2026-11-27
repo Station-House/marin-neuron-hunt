@@ -1,0 +1,63 @@
+# Evidence = exemplar ranks in pilot/fineweb-10m-sparse/summaries/exemplars.parquet.
+# "Strong" = beyond the side's atlas q99 (+ >= 0.557, - <= -0.906) over all 154,273 stored sparse firings.
+# Word-position classes use alphabetic tokens only (optional leading space + letters) over all 9,995,501
+# tokens: a piece "continues" when the next token starts with a letter and no space; a "final piece" does not
+# start the word and does not continue; a "whole word" starts the word and does not continue. Rates are strong
+# firings per 10k tokens of the class. Random-neuron comparison: 12 random layer-24 neurons, same classes.
+neuron: L24-N23357
+data: pilot/fineweb-10m-sparse
+label: "word pieces: unfinished (-) vs just finished (+)"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: subword
+  explanation: >-
+    Fires on the last piece of a word the tokenizer split (cer|ium, ol|factory, Jim|enez, Conjug|ated,
+    Cass|ius, Trink|en, pass|ieren): final pieces carry 44% of the 9,300 strong firings at 81 per 10k, against
+    4.7 per 10k for whole words and 4-17 per 10k for pieces that still continue, and the rate rises with piece
+    length. Among 12 random layer-24 neurons the final-piece share is 1-9%. Another 36% are rare whole words,
+    mostly technical or foreign (pregnant, vomiting, therapeutic, Psychological, gastric, magnesium, sagen), so
+    the broader reading is "an uncommon word has just been completed". The logit lens pushes what follows a
+    finished name (&S, &P, FC, GM). Weak because the final-piece and rare-word clusters are not separated by any
+    test yet, and 15% of strong firings are punctuation ("." is the single most frequent token).
+  fires_on: "the final piece of a multi-piece word (-ium, -factory, -enez, -ated, -ius) and rare one-token words (therapeutic, gastric, magnesium)"
+  not_on: >-
+    pieces that still need more letters (458 of 9,300 strong firings; 4-17 per 10k); common whole words
+    (4.7 per 10k); sparse tier only, not checked in the deep tier
+  evidence: [1, 3, 4, 8, 10, 11, 13, 15, 16, 17, 22, 24, 26, 27, 28]
+  verification: untested
+negative:
+  status: explained
+  confidence: high
+  cue_type: subword
+  explanation: >-
+    Fires on a piece of a word that is not finished yet: 89% of its 36,686 strong firings sit on a non-final
+    piece of a multi-piece word (Acc|urate, intermedi|aries, Un|belie|vably, ant|imony, myst|ics, Cab|ot),
+    against about 8% of alphabetic tokens. Rate per 10k: 304 on word-opening pieces, 1,065 on mid-word pieces,
+    20 on final pieces, 1.6 on whole words. The same token flips with position: suppress| 54 of 183 vs
+    "suppress" 0 of 81, per| 8 of 371 vs "per" 0 of 1,925, Dec| 8 of 88 vs "Dec" 0 of 189, Matt| 8 of 53 vs
+    "Matt" 0 of 179. It needs a real fragment: single capital letters (S|, B|, D|: 0 of 2,000+ each, 28 per
+    10k overall) and "un" (0 of 210 on fineweb-1m) stay quiet, while lowercase pieces of 2-8 letters fire
+    400-800 per 10k. Among 12 random layer-24 neurons, 2-8% of strong negative firings fall on word-opening
+    pieces; here 40%. The logit lens pushes suffix pieces (tures, aries, ifiers, ments, tion, ative). The
+    strongest firings are run-together text where a word boundary is missing (homosass|as|prings.org,
+    yosem|item|ountaineering, @ari|els|anchez, gif|ty|ou, beliz|el|awyer.com), digit runs (316|85712) and a
+    bare possessive "s" without its apostrophe (Cleopatra s): the same "this token did not close the word"
+    signal.
+  fires_on: "a non-final piece of a word split into several tokens (Acc|urate, intermedi|aries, ant|imony, suppress|ion), run-together URLs and handles, digit runs, bare possessive 's'"
+  not_on: >-
+    the same token as a whole word (suppress, per, Dec, Matt: 1 of 2,374); whole words in general (1.6 per
+    10k); final pieces (2.8% of strong firings, 20 per 10k); single capital-letter initials; the prefix "un";
+    sparse tier only, not checked in the deep tier
+  evidence: [0, 2, 3, 5, 7, 9, 10, 12, 13, 14, 21, 25, 29]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides track where the current token sits in a multi-piece word: the negative side says the word is
+  still open (more letters coming), the positive side says it has just closed (final piece, or a rare word that
+  is one token). The negative side is the main one (36,686 strong firings vs 9,300; min -5.3 vs max +3.5) and
+  the cleaner one. The same classes and thresholds on pilot/fineweb-1m give the same picture (87% non-final
+  for the - side, 43% final pieces for the + side). All counts are from the sparse tier, so non-firing rates
+  are floors.
+by:
+  - {github: constantine1824, method: agent, model: claude-fable-5-1}

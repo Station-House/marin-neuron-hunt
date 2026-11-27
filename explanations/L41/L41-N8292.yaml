@@ -1,0 +1,34 @@
+neuron: L41-N8292
+data: pilot/fineweb-10m-sparse
+label: "modifier 'here' (+) vs 'there', verb-complement 'here' (-)"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: grammar
+  explanation: >-
+    Fires on "here" when it hangs off a noun, follows "right" or a comma, or starts a sentence ("the
+    prospects here", "folks here", "right here", "Here in Holburn"); 31 of the 32 top exemplars are "here".
+    Judged by the word before it, "here" after a noun is 407 + / 263 - of 1,367 tokens and after "right" 62 +
+    / 4 - of 105.
+  fires_on: "'here' after a noun, 'right', a comma, or at the start of a sentence (folks here, right here, Here in Holburn)"
+  not_on: "'here' after a verb (click here, be here), which goes -; 'there' after a noun (84 + / 519 - of 1,121); untested in the deep tier, which has only 20 here/there tokens"
+  evidence: [0, 1, 2, 5, 6, 11, 13, 14, 17, 19, 21, 26, 28, 29, 30]
+  verification: untested
+negative:
+  status: explained
+  confidence: high
+  cue_type: grammar
+  explanation: >-
+    Fires on "there" pointing to a place after a verb, preposition or noun ("While there, we announced",
+    "nobody is there", "immigrants moved there"), and on "here" after a verb ("click here", "come back here").
+    "there" after a verb is 32 + / 822 - of 1,317 tokens, and 97% of the firings at -15 or stronger are
+    here/there.
+  fires_on: "'there' after a verb, preposition or noun (been there, moved there, in there, the Jesuits there); 'here' after a verb (click here, be here)"
+  not_on: "'here' after a noun or 'right' (folks here, right here); 'there' after a full stop or comma is mixed (822 + / 1,622 - of 8,393); function words like that, it, this never pass the threshold in the deep tier (0 of 142), untested"
+  evidence: [0, 1, 2, 3, 4, 5, 6, 7, 10, 12, 15, 17, 18, 22, 24]
+  verification: untested
+relation: variant
+relation_note: >-
+  Both sides read "here" and "there", and the sign depends on the word and its role together.
+by:
+  - {github: Yasas-Sri, method: agent, model: claude-opus-5-5}

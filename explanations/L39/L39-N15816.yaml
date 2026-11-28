@@ -1,0 +1,32 @@
+neuron: L39-N15816
+data: pilot/fineweb-10m-sparse
+label: "'every' and similar words (+) vs 'each' (-)"
+positive:
+  status: explained
+  confidence: weak
+  cue_type: lexical
+  explanation: >-
+    Fires on "every" in any position (1,796 of 4,484 tokens stored, median +4.9; 30 of the 32 top
+    exemplars), and more weakly on both, any, all, one and either. It is about 6x weaker than the - side, and
+    the unstored "every" tokens may still fire just under the storage cut.
+  fires_on: "'every' in any position (for every chapter, Every four weeks); weaker on 'both' before a noun, 'any', 'all', 'one', 'either'"
+  not_on: "'each' (2 + of 5,678); 'both' after is/are/were and similar (0 of 332); almost never stored on some, no, most, many or few, untested since the deep tier has only one 'every'"
+  evidence: [0, 1, 2, 4, 6, 7, 9, 11, 15, 18, 21, 23, 24, 25, 29]
+  verification: untested
+negative:
+  status: explained
+  confidence: high
+  cue_type: lexical
+  explanation: >-
+    Fires very strongly on the word "each" (5,611 of 5,678 tokens, median -27.6, down to -104.5), most of all
+    after a verb (median -34.3), where it usually turns out to be "each other". The firing often carries onto
+    the next token (each of, each other, each time).
+  fires_on: "'each' in any position (for each document, each of us, each other), plus the token right after it"
+  not_on: "'every' (42 - of 4,484), 'both', 'any', 'all'; words that only contain 'each' (beach 1 of 626, teacher 1 of 521)"
+  evidence: [1, 4, 6, 9, 10, 12, 13, 14, 15, 18, 20, 21, 26, 28, 29]
+  verification: untested
+relation: variant
+relation_note: >-
+  The near-synonyms "each" and "every" land on opposite sides, with "each" much stronger.
+by:
+  - {github: Yasas-Sri, method: agent, model: claude-opus-5-5}

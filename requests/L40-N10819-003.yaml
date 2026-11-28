@@ -1,0 +1,36 @@
+type: ablation
+neurons: [L40-N10819]
+mode: zero
+prompts:
+- "At the field station, two botanists compared their observations of rare plants. During the debrief, they described what they had learned[[ from]]"
+- "Two mechanics demonstrated different ways to locate an engine fault. At the end of the session, they summarized what they had learned[[ from]]"
+- "During rehearsal, two violinists exchanged suggestions about phrasing and tempo. Afterward, they discussed what they had learned[[ from]]"
+- "At the coding club, two students traded debugging strategies and corrected their mistakes. They explained what they had learned[[ from]]"
+- "Two architects examined their competing designs and offered detailed critiques. Both noted the advice they had received[[ from]]"
+- "At the clinic, two nurses compared how they handled difficult patient handovers. They recounted the advice they had received[[ from]]"
+- "During a writing workshop, two poets reviewed drafts and suggested revisions. They reflected on the advice they had received[[ from]]"
+- "Two rowing coaches compared their training plans and discussed weaknesses. They recorded the advice they had received[[ from]]"
+- "At a community garden, two volunteers compared planting layouts and offered improvements. They later explained the ideas they had borrowed[[ from]]"
+- "Two software designers debated navigation patterns for their apps and sketched alternatives. They discussed ideas they had borrowed[[ from]]"
+- "At the museum, two curators exchanged suggestions for a new exhibition. They listed the ideas they had borrowed[[ from]]"
+- "During a robotics workshop, two teams of students traded sensor-calibration methods. They documented the ideas they had borrowed[[ from]]"
+- "Two photographers examined their portfolios together and suggested new framing choices. They talked about the inspiration they had taken[[ from]]"
+- "At a theater rehearsal, two actors exchanged approaches to their roles. After rehearsal, they discussed the inspiration they had drawn[[ from]]"
+- "Two urban planners compared proposals for public squares and challenged the assumptions behind them. They wrote about the inspiration they had drawn[[ from]]"
+- "During a cooking workshop, two chefs demonstrated contrasting preparation techniques. They described the inspiration they had taken[[ from]]"
+- "At the repair cafe, two bicycle technicians showed each other efficient ways to adjust gears. They shared the practical tips they had picked up[[ from]]"
+- "Two librarians compared methods for organizing a crowded archive. They wrote down the practical tips they had picked up[[ from]]"
+- "During the mapping exercise, two surveyors demonstrated alternative ways to check measurements. They recalled the practical tips they had picked up[[ from]]"
+- "At the ceramics studio, two potters exchanged techniques for handling delicate clay. They discussed the practical tips they had picked up[[ from]]"
+- "Two linguists reviewed their translations and questioned ambiguous word choices. They explained how they used the feedback they had received[[ from]]"
+- "At the science fair, two student teams critiqued one another's experimental displays. They discussed the feedback they had received[[ from]]"
+- "Two ecologists reviewed competing habitat surveys and offered concrete corrections. They revised their reports using the feedback they had received[[ from]]"
+- "During a peer-review session, two mathematicians checked each other's proofs and suggested improvements. They summarized the feedback they had received[[ from]]"
+metric:
+  kind: next-token-logprob
+  token: ' each'
+predicted_effect: -0.05
+by:
+  github: chaewon-research
+  method: agent
+  model: GPT-6

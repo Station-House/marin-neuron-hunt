@@ -19,6 +19,7 @@
     "seconds": {"type": "number"},
     "atlas_stats": {"type": "object"},
     "baseline_neurons": {"type": "array", "items": {"type": "integer"}},
-    "baseline_sets": {"type": "array", "items": {"type": "array", "items": {"type": "string"}}}
+    "baseline_sets": {"type": "array", "items": {"type": "array", "items": {"type": "string"}}},
+    "baseline_effects": {"type": "array", "items": {"type": "number"}}
   }
 }

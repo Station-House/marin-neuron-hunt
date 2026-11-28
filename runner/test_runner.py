@@ -203,9 +203,38 @@ class TestPassRules(unittest.TestCase):
     def test_ablation_random_sets_match_layers(self):
         m = FakeMarin(lps=self.ablation_lps(-1, 0))
         res = experiments.ablation(m, self.ablation_req(-1.0), "x")
+        self.assertEqual(len(res["baseline_sets"]), experiments.BASELINE_N)
         for s in res["baseline_sets"]:
             self.assertEqual([n.split("-")[0] for n in s], ["L3", "L5"])
             self.assertNotIn("L3-N7", s)
+
+    def test_ablation_baseline_effects_are_preserved_in_results(self):
+        p = len(self.ablation_req(-1.0)["prompts"])
+
+        def lps(rows):
+            values = np.zeros((len(rows), 1))
+            values[p:2 * p] = -0.8
+            for i in range(experiments.BASELINE_N):
+                values[(i + 2) * p:(i + 3) * p] = (i - 50) / 100.0
+            return values
+
+        req = self.ablation_req(-1.0)
+        res = experiments.ablation(FakeMarin(lps=lps), req, "L3-N7-001")
+        baseline = res["baseline_effects"]
+        self.assertEqual(len(baseline), experiments.BASELINE_N)
+        self.assertEqual(len(res["baseline_sets"]), len(baseline))
+        self.assertTrue(np.allclose(baseline, [(i - 50) / 100.0 for i in range(100)]))
+        self.assertAlmostEqual(res["summary"]["baseline_p95_in_opposite_direction"],
+                               np.quantile(baseline, 0.95))
+        item = dict(id="L3-N7-001", request=req, commit="abc1234def")
+        saved = report.record(item, res, "f00dfeed", "2026-11-27", "NVIDIA H200")
+        self.assertEqual(saved["baseline_effects"], baseline)
+        self.assertEqual(len(saved["baseline_sets"]), experiments.BASELINE_N)
+        self.assertEqual(yaml.safe_load(report.dump(saved))["baseline_effects"], baseline)
+        schema = json.loads((ROOT / "schema" / "result.schema.json").read_text())
+        self.assertEqual(schema["properties"]["baseline_effects"],
+                         {"type": "array", "items": {"type": "number"}})
+        self.assertEqual(list(Draft202012Validator(schema).iter_errors(saved)), [])
 
 
 class TestPrompts(unittest.TestCase):

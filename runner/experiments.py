@@ -161,7 +161,8 @@ def ablation(m, req, request_id):
     p95 = float(np.quantile(direction * base, 0.95))
     beats = direction * effect > p95
     big_enough = abs(effect) >= 0.5 * abs(predicted)
-    opposite = -direction * effect > float(np.quantile(-direction * base, 0.95))
+    opposite_p95 = float(np.quantile(-direction * base, 0.95))
+    opposite = -direction * effect > opposite_p95
     if beats and big_enough:
         outcome = "confirmed"
     elif opposite:
@@ -171,9 +172,12 @@ def ablation(m, req, request_id):
     per = [dict(prompt=e.text, token=e.token, clean_acts=[float(x) for x in acts[i]], clean_metric=float(clean[i]),
                 change=float(target_d[i])) for i, e in enumerate(enc)]
     summary = dict(mode=mode, metric=metric["kind"], predicted_effect=predicted, effect=effect,
-                   baseline_p95_in_predicted_direction=p95, baseline_mean=float(np.nanmean(base)),
-                   baseline_n=len(sets), beats_baseline=bool(beats), at_least_half_predicted=bool(big_enough))
-    return result(outcome, summary, per, baseline_sets=[[f"L{l}-N{n}" for l, n in s] for s in sets[:5]])
+                   baseline_p95_in_predicted_direction=p95, baseline_p95_in_opposite_direction=opposite_p95,
+                   baseline_mean=float(np.nanmean(base)), baseline_n=len(sets),
+                   beats_baseline=bool(beats), at_least_half_predicted=bool(big_enough))
+    return result(outcome, summary, per,
+                  baseline_sets=[[f"L{l}-N{n}" for l, n in s] for s in sets],
+                  baseline_effects=[float(v) for v in base])
 
 
 RUNNERS = {"activation-test": activation_test, "contrast": contrast, "steering": steering, "ablation": ablation}

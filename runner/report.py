@@ -33,7 +33,7 @@ def record(item, res, runner_commit, date, gpu):
         gpu=gpu,
         date=date,
         seconds=round(res.get("seconds", 0.0), 1),
-        **{k: res[k] for k in ("atlas_stats", "baseline_neurons", "baseline_sets") if k in res},
+        **{k: res[k] for k in ("atlas_stats", "baseline_neurons", "baseline_sets", "baseline_effects") if k in res},
     )
 
 
